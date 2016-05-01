@@ -1,0 +1,2 @@
+C:\Users\Paulo\Desktop\TrabalhoLP2\TrabalhoLP2\EstoqueLP2\EstoqueLP2\bin\Debug\EstoqueLP2.exe.config
+C:\Users\Paulo\Desktop\SimpleWK\SimpleWK\EstoqueLP2\bin\Debug\EstoqueLP2.exe.config
