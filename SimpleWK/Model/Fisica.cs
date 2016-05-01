@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Model {
-    class Fisica {
+    class Fisica : Pessoa {
         private String sobrenome;
         private String cpf;
         private String dataNascimento;
