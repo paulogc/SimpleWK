@@ -18,11 +18,15 @@ namespace View {
         string senha = "admin";
 
         private void btnOk_Click(object sender, EventArgs e) {
-            if((tbCpf.Text == usuario) && (tbSenha.Text == senha)) {
+            if((tbUsuario.Text == usuario) && (tbSenha.Text == senha)) {
                 MessageBox.Show("Login efetuado com sucesso!");
+                MenuPrincipal menu = new MenuPrincipal();
+                this.Hide();
+                menu.Show();
             }
             else {
                 MessageBox.Show("Usuário e/ou senha estão incorretos!");
+                tbUsuario.Text = tbSenha.Text = "";
             }
         }
     }
