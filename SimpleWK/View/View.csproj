@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Insumo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Insumo.Designer.cs">
+      <DependentUpon>Insumo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,8 +70,29 @@
     <Compile Include="ModeloCadastroGeral.Designer.cs">
       <DependentUpon>ModeloCadastroGeral.cs</DependentUpon>
     </Compile>
+    <Compile Include="PessoaFisica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PessoaFisica.Designer.cs">
+      <DependentUpon>PessoaFisica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PessoaJuridica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PessoaJuridica.Designer.cs">
+      <DependentUpon>PessoaJuridica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProdutoFinal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdutoFinal.Designer.cs">
+      <DependentUpon>ProdutoFinal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Insumo.resx">
+      <DependentUpon>Insumo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -75,6 +102,15 @@
     <EmbeddedResource Include="ModeloCadastroGeral.resx">
       <DependentUpon>ModeloCadastroGeral.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PessoaFisica.resx">
+      <DependentUpon>PessoaFisica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PessoaJuridica.resx">
+      <DependentUpon>PessoaJuridica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdutoFinal.resx">
+      <DependentUpon>ProdutoFinal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -83,6 +119,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -96,6 +133,37 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Imagens\1462508851_More.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\1462508854_common-new-edit-compose-glyph.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\1462508897_Cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\1462508916_search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\1462508937_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\search.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

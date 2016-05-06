@@ -24,5 +24,10 @@ namespace View
         private void label2_Click(object sender, EventArgs e) {
 
         }
+
+        private void btnAdicionar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -72,18 +72,21 @@
             this.produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
             this.produtosToolStripMenuItem.Size = new System.Drawing.Size(182, 26);
             this.produtosToolStripMenuItem.Text = "Produtos";
+            this.produtosToolStripMenuItem.Click += new System.EventHandler(this.produtosToolStripMenuItem_Click);
             // 
             // pessoaFisicaToolStripMenuItem
             // 
             this.pessoaFisicaToolStripMenuItem.Name = "pessoaFisicaToolStripMenuItem";
             this.pessoaFisicaToolStripMenuItem.Size = new System.Drawing.Size(182, 26);
             this.pessoaFisicaToolStripMenuItem.Text = "Pessoa Fisica";
+            this.pessoaFisicaToolStripMenuItem.Click += new System.EventHandler(this.pessoaFisicaToolStripMenuItem_Click);
             // 
             // pessoaJuridicaToolStripMenuItem
             // 
             this.pessoaJuridicaToolStripMenuItem.Name = "pessoaJuridicaToolStripMenuItem";
             this.pessoaJuridicaToolStripMenuItem.Size = new System.Drawing.Size(182, 26);
             this.pessoaJuridicaToolStripMenuItem.Text = "Pessoa Juridica";
+            this.pessoaJuridicaToolStripMenuItem.Click += new System.EventHandler(this.pessoaJuridicaToolStripMenuItem_Click);
             // 
             // açõesToolStripMenuItem
             // 
@@ -114,7 +117,7 @@
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuPrincipal";
