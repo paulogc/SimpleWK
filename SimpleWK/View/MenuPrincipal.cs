@@ -13,5 +13,11 @@ namespace View {
         public MenuPrincipal() {
             InitializeComponent();
         }
+
+        private void insumosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ModeloCadastroGeral mcg = new ModeloCadastroGeral();
+            mcg.Show();
+        }
     }
 }
