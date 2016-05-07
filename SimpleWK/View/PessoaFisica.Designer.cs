@@ -32,23 +32,30 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.txtCpf = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtTelefone = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtSobrenome = new System.Windows.Forms.TextBox();
+            this.btnLocalizacao = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dvgID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dvgNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dvgSobrenome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dvgCPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dvgEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvPessoaFisica = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sobrenome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPessoaFisica)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAdicionar
@@ -73,15 +80,13 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.textBox6);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.btnLocalizacao);
+            this.groupBox1.Controls.Add(this.txtSobrenome);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtTelefone);
+            this.groupBox1.Controls.Add(this.txtEmail);
+            this.groupBox1.Controls.Add(this.txtCpf);
+            this.groupBox1.Controls.Add(this.txtNome);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
@@ -91,15 +96,17 @@
             this.groupBox1.Controls.SetChildIndex(this.label5, 0);
             this.groupBox1.Controls.SetChildIndex(this.label6, 0);
             this.groupBox1.Controls.SetChildIndex(this.label7, 0);
-            this.groupBox1.Controls.SetChildIndex(this.textBox1, 0);
-            this.groupBox1.Controls.SetChildIndex(this.textBox2, 0);
-            this.groupBox1.Controls.SetChildIndex(this.textBox3, 0);
-            this.groupBox1.Controls.SetChildIndex(this.textBox4, 0);
+            this.groupBox1.Controls.SetChildIndex(this.txtNome, 0);
+            this.groupBox1.Controls.SetChildIndex(this.txtCpf, 0);
+            this.groupBox1.Controls.SetChildIndex(this.txtEmail, 0);
+            this.groupBox1.Controls.SetChildIndex(this.txtTelefone, 0);
             this.groupBox1.Controls.SetChildIndex(this.label8, 0);
-            this.groupBox1.Controls.SetChildIndex(this.textBox5, 0);
-            this.groupBox1.Controls.SetChildIndex(this.label9, 0);
-            this.groupBox1.Controls.SetChildIndex(this.textBox6, 0);
-            this.groupBox1.Controls.SetChildIndex(this.button1, 0);
+            this.groupBox1.Controls.SetChildIndex(this.txtSobrenome, 0);
+            this.groupBox1.Controls.SetChildIndex(this.btnLocalizacao, 0);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.dgvPessoaFisica);
             // 
             // label2
             // 
@@ -114,7 +121,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(313, 145);
+            this.label5.Location = new System.Drawing.Point(258, 182);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(57, 20);
@@ -142,37 +149,37 @@
             this.label7.Text = "CPF:";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
-            // textBox1
+            // txtNome
             // 
-            this.textBox1.Location = new System.Drawing.Point(106, 75);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(301, 26);
-            this.textBox1.TabIndex = 6;
+            this.txtNome.Location = new System.Drawing.Point(106, 75);
+            this.txtNome.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(301, 26);
+            this.txtNome.TabIndex = 6;
             // 
-            // textBox2
+            // txtCpf
             // 
-            this.textBox2.Location = new System.Drawing.Point(106, 141);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(188, 26);
-            this.textBox2.TabIndex = 7;
+            this.txtCpf.Location = new System.Drawing.Point(106, 141);
+            this.txtCpf.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCpf.Name = "txtCpf";
+            this.txtCpf.Size = new System.Drawing.Size(188, 26);
+            this.txtCpf.TabIndex = 7;
             // 
-            // textBox3
+            // txtEmail
             // 
-            this.textBox3.Location = new System.Drawing.Point(372, 142);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(226, 26);
-            this.textBox3.TabIndex = 8;
+            this.txtEmail.Location = new System.Drawing.Point(319, 178);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(226, 26);
+            this.txtEmail.TabIndex = 8;
             // 
-            // textBox4
+            // txtTelefone
             // 
-            this.textBox4.Location = new System.Drawing.Point(106, 178);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(114, 26);
-            this.textBox4.TabIndex = 9;
+            this.txtTelefone.Location = new System.Drawing.Point(106, 178);
+            this.txtTelefone.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTelefone.Name = "txtTelefone";
+            this.txtTelefone.Size = new System.Drawing.Size(114, 26);
+            this.txtTelefone.TabIndex = 9;
             // 
             // label8
             // 
@@ -185,42 +192,23 @@
             this.label8.Text = "Sobrenome:";
             this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
-            // textBox5
+            // txtSobrenome
             // 
-            this.textBox5.Location = new System.Drawing.Point(106, 109);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(301, 26);
-            this.textBox5.TabIndex = 11;
+            this.txtSobrenome.Location = new System.Drawing.Point(106, 109);
+            this.txtSobrenome.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSobrenome.Name = "txtSobrenome";
+            this.txtSobrenome.Size = new System.Drawing.Size(301, 26);
+            this.txtSobrenome.TabIndex = 11;
             // 
-            // label9
+            // btnLocalizacao
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(241, 180);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(75, 20);
-            this.label9.TabIndex = 12;
-            this.label9.Text = "Telefone:";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(316, 180);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(114, 26);
-            this.textBox6.TabIndex = 13;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(460, 91);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 24);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Endereço";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnLocalizacao.Location = new System.Drawing.Point(539, 26);
+            this.btnLocalizacao.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLocalizacao.Name = "btnLocalizacao";
+            this.btnLocalizacao.Size = new System.Drawing.Size(114, 34);
+            this.btnLocalizacao.TabIndex = 14;
+            this.btnLocalizacao.Text = "Localização";
+            this.btnLocalizacao.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -263,6 +251,61 @@
             this.dvgEmail.HeaderText = "E-mail";
             this.dvgEmail.Name = "dvgEmail";
             // 
+            // dgvPessoaFisica
+            // 
+            this.dgvPessoaFisica.AllowUserToAddRows = false;
+            this.dgvPessoaFisica.AllowUserToDeleteRows = false;
+            this.dgvPessoaFisica.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPessoaFisica.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPessoaFisica.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.Nome,
+            this.Sobrenome,
+            this.CPF,
+            this.Telefone,
+            this.Email});
+            this.dgvPessoaFisica.Location = new System.Drawing.Point(8, 34);
+            this.dgvPessoaFisica.Name = "dgvPessoaFisica";
+            this.dgvPessoaFisica.ReadOnly = true;
+            this.dgvPessoaFisica.Size = new System.Drawing.Size(760, 218);
+            this.dgvPessoaFisica.TabIndex = 0;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // Nome
+            // 
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            // 
+            // Sobrenome
+            // 
+            this.Sobrenome.HeaderText = "Sobrenome";
+            this.Sobrenome.Name = "Sobrenome";
+            this.Sobrenome.ReadOnly = true;
+            // 
+            // CPF
+            // 
+            this.CPF.HeaderText = "CPF";
+            this.CPF.Name = "CPF";
+            this.CPF.ReadOnly = true;
+            // 
+            // Telefone
+            // 
+            this.Telefone.HeaderText = "Telefone";
+            this.Telefone.Name = "Telefone";
+            this.Telefone.ReadOnly = true;
+            // 
+            // Email
+            // 
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            // 
             // PessoaFisica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -271,7 +314,9 @@
             this.Text = "Cadastro Pessoa Fisica";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPessoaFisica)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -281,21 +326,26 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTelefone;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtCpf;
+        private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtSobrenome;
+        private System.Windows.Forms.Button btnLocalizacao;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dvgID;
         private System.Windows.Forms.DataGridViewTextBoxColumn dvgNome;
         private System.Windows.Forms.DataGridViewTextBoxColumn dvgSobrenome;
         private System.Windows.Forms.DataGridViewTextBoxColumn dvgCPF;
         private System.Windows.Forms.DataGridViewTextBoxColumn dvgEmail;
+        private System.Windows.Forms.DataGridView dgvPessoaFisica;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sobrenome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CPF;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Telefone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
     }
 }
