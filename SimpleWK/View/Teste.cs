@@ -6,17 +6,10 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace View
-{
-    public partial class Insumo : ModeloCadastroGeral
-    {
-        public Insumo()
-        {
+namespace View {
+    public partial class Teste : View.ModeloCadastroGeral {
+        public Teste() {
             InitializeComponent();
-        }
-
-        private void btnAdicionar_Click(object sender, EventArgs e) {
-
         }
     }
 }

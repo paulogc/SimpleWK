@@ -20,10 +20,8 @@ namespace View
         string usuario = "admin";
         string senha = "admin";
 
-        private void btnOk_Click(object sender, EventArgs e)
-        {
-            if ((tbUsuario.Text == usuario) && (tbSenha.Text == senha))
-            {
+        private void EfetuarLogin() {
+            if((tbUsuario.Text == usuario) && (tbSenha.Text == senha)) {
                 MessageBox.Show("Login efetuado com sucesso!");
                 MenuPrincipal menu = new MenuPrincipal();
                 this.Hide();
@@ -31,31 +29,27 @@ namespace View
                 menu.Dispose(); // Libera recurso do Menu
                 Dispose(); // Libera recurso Login e fecha apliacação
             }
-            else
-            {
-                MessageBox.Show("Usuário e/ou senha estão incorretos!");
+            else {
+                MessageBox.Show("Usuario e/ou senha incorretos!");
                 tbUsuario.Text = tbSenha.Text = "";
+                tbUsuario.Focus();
             }
         }
-        //Código para funcionar botão enter
-        private void btnOk_KeyPress(object sender, KeyPressEventArgs e)
+
+        private void btnOk_Click(object sender, EventArgs e)
         {
-            if (e.KeyChar == 13)
-            {
-                if ((tbUsuario.Text == usuario) && (tbSenha.Text == senha))
-                {
-                    MessageBox.Show("Login efetuado com sucesso!");
-                    MenuPrincipal menu = new MenuPrincipal();
-                    this.Hide();
-                    menu.ShowDialog(); //Abre a interface e espera usuario interagir
-                    menu.Dispose(); // Libera recurso do Menu
-                    Dispose(); // Libera recurso Login e fecha apliacação
-                }
-                else
-                {
-                    MessageBox.Show("Usuário e/ou senha estão incorretos!");
-                    tbUsuario.Text = tbSenha.Text = "";
-                }
+            EfetuarLogin();
+        }
+
+        private void tbUsuario_KeyPress(object sender, KeyPressEventArgs e) {
+            if(e.KeyChar == 13) {
+                EfetuarLogin();
+            }
+        }
+
+        private void tbSenha_KeyPress(object sender, KeyPressEventArgs e) {
+            if(e.KeyChar == 13) {
+                EfetuarLogin();
             }
         }
     }
