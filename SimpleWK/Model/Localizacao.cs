@@ -5,8 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Model {
-    class Endereco {
+    class Localizacao {
         private long id;
+        private long idPessoa;
         private String rua;
         private int numero;
         private String bairro;
@@ -14,8 +15,11 @@ namespace Model {
         private String cidade;
         private String estado;
         private String pais;
+        private String complemento;
+
 
         public long Id { get; set; }
+        public long IdPessoa { get; set; }
         public String Rua { get; set; }
         public int Numero { get; set; }
         public String Bairro { get; set; }
@@ -23,5 +27,6 @@ namespace Model {
         public String Cidade { get; set; }
         public String Estado { get; set; }
         public String Pais { get; set; }
+        public String Complemento { get; set; }
     }
 }

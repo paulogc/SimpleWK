@@ -10,13 +10,13 @@ namespace Model {
         private String nome;
         private String email;
         private String telefone;
-        private Endereco endereco;
+        private Localizacao endereco;
 
         public long Id { get; set; }
         public String Nome { get; set; }
         public String Email { get; set; }
         public String Telefone { get; set; }
-        public Endereco Endereco { get; set; }
+        public Localizacao Endereco { get; set; }
 
 
     }

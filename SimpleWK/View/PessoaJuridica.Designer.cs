@@ -205,6 +205,7 @@
             this.btnLocalizacao.TabIndex = 26;
             this.btnLocalizacao.Text = "Localização";
             this.btnLocalizacao.UseVisualStyleBackColor = true;
+            this.btnLocalizacao.Click += new System.EventHandler(this.btnLocalizacao_Click);
             // 
             // dataGridView1
             // 

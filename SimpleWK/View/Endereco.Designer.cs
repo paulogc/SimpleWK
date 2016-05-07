@@ -38,7 +38,7 @@
             this.txtEstado = new System.Windows.Forms.TextBox();
             this.txtPais = new System.Windows.Forms.TextBox();
             this.txtCEP = new System.Windows.Forms.TextBox();
-            this.dgvEndereco = new System.Windows.Forms.DataGridView();
+            this.dgvLocalizacao = new System.Windows.Forms.DataGridView();
             this.Rua = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nº = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Bairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,7 +48,7 @@
             this.CEP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEndereco)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLocalizacao)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAdicionar
@@ -105,7 +105,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dgvEndereco);
+            this.groupBox2.Controls.Add(this.dgvLocalizacao);
             // 
             // label2
             // 
@@ -220,13 +220,13 @@
             this.txtCEP.Size = new System.Drawing.Size(140, 26);
             this.txtCEP.TabIndex = 15;
             // 
-            // dgvEndereco
+            // dgvLocalizacao
             // 
-            this.dgvEndereco.AllowUserToAddRows = false;
-            this.dgvEndereco.AllowUserToDeleteRows = false;
-            this.dgvEndereco.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvEndereco.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEndereco.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvLocalizacao.AllowUserToAddRows = false;
+            this.dgvLocalizacao.AllowUserToDeleteRows = false;
+            this.dgvLocalizacao.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvLocalizacao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLocalizacao.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Rua,
             this.Nº,
             this.Bairro,
@@ -234,11 +234,11 @@
             this.Estado,
             this.País,
             this.CEP});
-            this.dgvEndereco.Location = new System.Drawing.Point(8, 34);
-            this.dgvEndereco.Name = "dgvEndereco";
-            this.dgvEndereco.ReadOnly = true;
-            this.dgvEndereco.Size = new System.Drawing.Size(760, 218);
-            this.dgvEndereco.TabIndex = 0;
+            this.dgvLocalizacao.Location = new System.Drawing.Point(8, 34);
+            this.dgvLocalizacao.Name = "dgvLocalizacao";
+            this.dgvLocalizacao.ReadOnly = true;
+            this.dgvLocalizacao.Size = new System.Drawing.Size(760, 218);
+            this.dgvLocalizacao.TabIndex = 0;
             // 
             // Rua
             // 
@@ -291,7 +291,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEndereco)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLocalizacao)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -312,7 +312,7 @@
         private System.Windows.Forms.TextBox txtNumero;
         private System.Windows.Forms.TextBox txtRua;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DataGridView dgvEndereco;
+        private System.Windows.Forms.DataGridView dgvLocalizacao;
         private System.Windows.Forms.DataGridViewTextBoxColumn Rua;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nº;
         private System.Windows.Forms.DataGridViewTextBoxColumn Bairro;
