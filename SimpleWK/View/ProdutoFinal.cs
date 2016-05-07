@@ -72,5 +72,11 @@ namespace View
         private void txtValorFinal_Enter(object sender, EventArgs e) {
             str = "";
         }
+
+        private void btnAddInsumo_Click(object sender, EventArgs e) {
+            AdicaoInsumos add = new AdicaoInsumos();
+            add.ShowDialog();
+            add.Dispose();
+        }
     }
 }
