@@ -109,40 +109,40 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 88);
+            this.label2.Location = new System.Drawing.Point(72, 88);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 20);
+            this.label2.Size = new System.Drawing.Size(44, 15);
             this.label2.TabIndex = 2;
             this.label2.Text = "Nome:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(20, 126);
+            this.label5.Location = new System.Drawing.Point(51, 123);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(84, 20);
+            this.label5.Size = new System.Drawing.Size(65, 15);
             this.label5.TabIndex = 3;
             this.label5.Text = "Descrição:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(19, 164);
+            this.label6.Location = new System.Drawing.Point(42, 161);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(96, 20);
+            this.label6.Size = new System.Drawing.Size(74, 15);
             this.label6.TabIndex = 4;
             this.label6.Text = "Quantidade:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(20, 198);
+            this.label7.Location = new System.Drawing.Point(46, 198);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(93, 20);
+            this.label7.Size = new System.Drawing.Size(70, 15);
             this.label7.TabIndex = 5;
             this.label7.Text = "Valor custo:";
             // 
@@ -151,7 +151,7 @@
             this.txtNome.Location = new System.Drawing.Point(119, 85);
             this.txtNome.Margin = new System.Windows.Forms.Padding(2);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(336, 26);
+            this.txtNome.Size = new System.Drawing.Size(336, 21);
             this.txtNome.TabIndex = 6;
             // 
             // txtDescricao
@@ -159,7 +159,7 @@
             this.txtDescricao.Location = new System.Drawing.Point(119, 120);
             this.txtDescricao.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(336, 26);
+            this.txtDescricao.Size = new System.Drawing.Size(336, 21);
             this.txtDescricao.TabIndex = 7;
             // 
             // txtQuantidade
@@ -167,7 +167,7 @@
             this.txtQuantidade.Location = new System.Drawing.Point(119, 158);
             this.txtQuantidade.Margin = new System.Windows.Forms.Padding(2);
             this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.Size = new System.Drawing.Size(114, 26);
+            this.txtQuantidade.Size = new System.Drawing.Size(114, 21);
             this.txtQuantidade.TabIndex = 8;
             // 
             // txtValorCusto
@@ -175,7 +175,7 @@
             this.txtValorCusto.Location = new System.Drawing.Point(119, 195);
             this.txtValorCusto.Margin = new System.Windows.Forms.Padding(2);
             this.txtValorCusto.Name = "txtValorCusto";
-            this.txtValorCusto.Size = new System.Drawing.Size(114, 26);
+            this.txtValorCusto.Size = new System.Drawing.Size(114, 21);
             this.txtValorCusto.TabIndex = 9;
             this.txtValorCusto.Enter += new System.EventHandler(this.txtValorCusto_Enter);
             this.txtValorCusto.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtValorCusto_KeyDown);
@@ -276,9 +276,9 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(254, 198);
+            this.label8.Location = new System.Drawing.Point(273, 198);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(83, 20);
+            this.label8.Size = new System.Drawing.Size(64, 15);
             this.label8.TabIndex = 10;
             this.label8.Text = "Valor final:";
             // 
@@ -286,7 +286,7 @@
             // 
             this.txtValorFinal.Location = new System.Drawing.Point(340, 195);
             this.txtValorFinal.Name = "txtValorFinal";
-            this.txtValorFinal.Size = new System.Drawing.Size(115, 26);
+            this.txtValorFinal.Size = new System.Drawing.Size(115, 21);
             this.txtValorFinal.TabIndex = 11;
             this.txtValorFinal.Enter += new System.EventHandler(this.txtValorFinal_Enter);
             this.txtValorFinal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtValorFinal_KeyDown);

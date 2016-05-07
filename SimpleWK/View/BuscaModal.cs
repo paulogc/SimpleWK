@@ -13,6 +13,7 @@ namespace View {
         public BuscaModal() {
             InitializeComponent();
         }
+
         
         private void cbBuscar_SelectedIndexChanged(object sender, EventArgs e) {
             if(cbBuscar.Text != null)
@@ -35,6 +36,10 @@ namespace View {
             {
                 btnBuscar.Enabled = false;
             }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e) {
+            Close();
         }
     }
 }
