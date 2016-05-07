@@ -14,18 +14,15 @@ namespace View
         {
             InitializeComponent();
         }
+
+        private void tbValor_TextChanged(object sender, EventArgs e) {
+
+        }
+
         string str;
 
         private bool IsNumeric(int Val) {
             return ((Val >= 48 && Val <= 57) || (Val == 8) || (Val == 46));
-        }
-
-        private void btnAdicionar_Click(object sender, EventArgs e) {
-
-        }
-
-        private void tbValor_TextChanged(object sender, EventArgs e) {
-
         }
 
         private void tbValor_KeyDown(object sender, KeyEventArgs e) {

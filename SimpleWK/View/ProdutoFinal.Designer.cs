@@ -35,7 +35,7 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.txtQuantidade = new System.Windows.Forms.TextBox();
-            this.txtValor = new System.Windows.Forms.TextBox();
+            this.txtValorCusto = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dvgID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dvgNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +47,9 @@
             this.Decricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAddInsumo = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtValorFinal = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -75,7 +78,10 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtValor);
+            this.groupBox1.Controls.Add(this.txtValorFinal);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.txtValorCusto);
+            this.groupBox1.Controls.Add(this.btnAddInsumo);
             this.groupBox1.Controls.Add(this.txtQuantidade);
             this.groupBox1.Controls.Add(this.txtDescricao);
             this.groupBox1.Controls.Add(this.txtNome);
@@ -91,7 +97,10 @@
             this.groupBox1.Controls.SetChildIndex(this.txtNome, 0);
             this.groupBox1.Controls.SetChildIndex(this.txtDescricao, 0);
             this.groupBox1.Controls.SetChildIndex(this.txtQuantidade, 0);
-            this.groupBox1.Controls.SetChildIndex(this.txtValor, 0);
+            this.groupBox1.Controls.SetChildIndex(this.btnAddInsumo, 0);
+            this.groupBox1.Controls.SetChildIndex(this.txtValorCusto, 0);
+            this.groupBox1.Controls.SetChildIndex(this.label8, 0);
+            this.groupBox1.Controls.SetChildIndex(this.txtValorFinal, 0);
             // 
             // groupBox2
             // 
@@ -133,9 +142,9 @@
             this.label7.Location = new System.Drawing.Point(20, 198);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(50, 20);
+            this.label7.Size = new System.Drawing.Size(93, 20);
             this.label7.TabIndex = 5;
-            this.label7.Text = "Valor:";
+            this.label7.Text = "Valor custo:";
             // 
             // txtNome
             // 
@@ -158,16 +167,19 @@
             this.txtQuantidade.Location = new System.Drawing.Point(119, 158);
             this.txtQuantidade.Margin = new System.Windows.Forms.Padding(2);
             this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.Size = new System.Drawing.Size(132, 26);
+            this.txtQuantidade.Size = new System.Drawing.Size(114, 26);
             this.txtQuantidade.TabIndex = 8;
             // 
-            // txtValor
+            // txtValorCusto
             // 
-            this.txtValor.Location = new System.Drawing.Point(119, 195);
-            this.txtValor.Margin = new System.Windows.Forms.Padding(2);
-            this.txtValor.Name = "txtValor";
-            this.txtValor.Size = new System.Drawing.Size(132, 26);
-            this.txtValor.TabIndex = 9;
+            this.txtValorCusto.Location = new System.Drawing.Point(119, 195);
+            this.txtValorCusto.Margin = new System.Windows.Forms.Padding(2);
+            this.txtValorCusto.Name = "txtValorCusto";
+            this.txtValorCusto.Size = new System.Drawing.Size(114, 26);
+            this.txtValorCusto.TabIndex = 9;
+            this.txtValorCusto.Enter += new System.EventHandler(this.txtValorCusto_Enter);
+            this.txtValorCusto.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtValorCusto_KeyDown);
+            this.txtValorCusto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValorKeyPress);
             // 
             // dataGridView1
             // 
@@ -251,6 +263,35 @@
             this.Valor.Name = "Valor";
             this.Valor.ReadOnly = true;
             // 
+            // btnAddInsumo
+            // 
+            this.btnAddInsumo.Location = new System.Drawing.Point(535, 25);
+            this.btnAddInsumo.Name = "btnAddInsumo";
+            this.btnAddInsumo.Size = new System.Drawing.Size(112, 30);
+            this.btnAddInsumo.TabIndex = 10;
+            this.btnAddInsumo.Text = "Add Insumos";
+            this.btnAddInsumo.UseVisualStyleBackColor = true;
+            this.btnAddInsumo.Click += new System.EventHandler(this.btnAddInsumo_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(254, 198);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(83, 20);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "Valor final:";
+            // 
+            // txtValorFinal
+            // 
+            this.txtValorFinal.Location = new System.Drawing.Point(340, 195);
+            this.txtValorFinal.Name = "txtValorFinal";
+            this.txtValorFinal.Size = new System.Drawing.Size(115, 26);
+            this.txtValorFinal.TabIndex = 11;
+            this.txtValorFinal.Enter += new System.EventHandler(this.txtValorFinal_Enter);
+            this.txtValorFinal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtValorFinal_KeyDown);
+            this.txtValorFinal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValorKeyPress);
+            // 
             // ProdutoFinal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -269,7 +310,7 @@
         #endregion
 
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtValor;
+        private System.Windows.Forms.TextBox txtValorCusto;
         private System.Windows.Forms.TextBox txtQuantidade;
         private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.TextBox txtNome;
@@ -287,5 +328,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Decricao;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
+        private System.Windows.Forms.TextBox txtValorFinal;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnAddInsumo;
     }
 }
