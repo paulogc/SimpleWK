@@ -29,9 +29,11 @@ namespace View
         {
 
         }
-
+        //Chama a tela para cadastro de endereço
         private void btnLocalizacao_Click(object sender, EventArgs e) {
-            
+            Endereco end = new Endereco();
+            end.ShowDialog();
+            end.Dispose();
         }
     }
 }
