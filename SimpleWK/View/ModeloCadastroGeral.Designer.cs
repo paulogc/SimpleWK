@@ -110,6 +110,7 @@
             this.btnBuscar.Size = new System.Drawing.Size(92, 41);
             this.btnBuscar.TabIndex = 5;
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnCancelar
             // 

@@ -29,5 +29,10 @@ namespace View
         {
 
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e) {
+            BuscaModal busca = new BuscaModal();
+            busca.Show();
+        }
     }
 }
