@@ -33,6 +33,8 @@
             this.açõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comprarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.venderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.programaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,7 +43,8 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.insumosToolStripMenuItem,
-            this.açõesToolStripMenuItem});
+            this.açõesToolStripMenuItem,
+            this.programaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(919, 24);
@@ -99,14 +102,29 @@
             // comprarToolStripMenuItem
             // 
             this.comprarToolStripMenuItem.Name = "comprarToolStripMenuItem";
-            this.comprarToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.comprarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.comprarToolStripMenuItem.Text = "Comprar";
             // 
             // venderToolStripMenuItem
             // 
             this.venderToolStripMenuItem.Name = "venderToolStripMenuItem";
-            this.venderToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.venderToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.venderToolStripMenuItem.Text = "Vender";
+            // 
+            // programaToolStripMenuItem
+            // 
+            this.programaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sobreToolStripMenuItem});
+            this.programaToolStripMenuItem.Name = "programaToolStripMenuItem";
+            this.programaToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.programaToolStripMenuItem.Text = "Programa";
+            // 
+            // sobreToolStripMenuItem
+            // 
+            this.sobreToolStripMenuItem.Name = "sobreToolStripMenuItem";
+            this.sobreToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.sobreToolStripMenuItem.Text = "Sobre";
+            this.sobreToolStripMenuItem.Click += new System.EventHandler(this.sobreToolStripMenuItem_Click);
             // 
             // MenuPrincipal
             // 
@@ -138,5 +156,7 @@
         private System.Windows.Forms.ToolStripMenuItem açõesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem comprarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem venderToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem programaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sobreToolStripMenuItem;
     }
 }

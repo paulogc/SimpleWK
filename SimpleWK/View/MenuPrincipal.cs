@@ -37,5 +37,10 @@ namespace View {
             PessoaJuridica pj = new PessoaJuridica();
             pj.Show();
         }
+
+        private void sobreToolStripMenuItem_Click(object sender, EventArgs e) {
+            Sobre sobre = new Sobre();
+            sobre.ShowDialog();
+        }
     }
 }
