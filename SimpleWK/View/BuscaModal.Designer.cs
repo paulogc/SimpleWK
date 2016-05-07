@@ -50,7 +50,6 @@
             this.lblBusca.Size = new System.Drawing.Size(115, 24);
             this.lblBusca.TabIndex = 3;
             this.lblBusca.Text = "Aguardando";
-            this.lblBusca.Click += new System.EventHandler(this.lblBusca_Click);
             // 
             // cbBuscar
             // 

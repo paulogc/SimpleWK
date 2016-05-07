@@ -22,7 +22,6 @@ namespace View
 
         private void EfetuarLogin() {
             if((tbUsuario.Text == usuario) && (tbSenha.Text == senha)) {
-                MessageBox.Show("Login efetuado com sucesso!");
                 MenuPrincipal menu = new MenuPrincipal();
                 this.Hide();
                 menu.ShowDialog(); //Abre a interface e espera usuario interagir

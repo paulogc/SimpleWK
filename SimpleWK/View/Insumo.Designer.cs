@@ -34,11 +34,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.tbNome = new System.Windows.Forms.TextBox();
+            this.tbDescricao = new System.Windows.Forms.TextBox();
+            this.tbCategoria = new System.Windows.Forms.TextBox();
+            this.tbQuantidade = new System.Windows.Forms.TextBox();
+            this.tbValor = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dvgID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dvgNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,11 +81,11 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.tbValor);
+            this.groupBox1.Controls.Add(this.tbQuantidade);
+            this.groupBox1.Controls.Add(this.tbCategoria);
+            this.groupBox1.Controls.Add(this.tbDescricao);
+            this.groupBox1.Controls.Add(this.tbNome);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
@@ -97,11 +97,11 @@
             this.groupBox1.Controls.SetChildIndex(this.label6, 0);
             this.groupBox1.Controls.SetChildIndex(this.label7, 0);
             this.groupBox1.Controls.SetChildIndex(this.label8, 0);
-            this.groupBox1.Controls.SetChildIndex(this.textBox1, 0);
-            this.groupBox1.Controls.SetChildIndex(this.textBox2, 0);
-            this.groupBox1.Controls.SetChildIndex(this.textBox3, 0);
-            this.groupBox1.Controls.SetChildIndex(this.textBox4, 0);
-            this.groupBox1.Controls.SetChildIndex(this.textBox5, 0);
+            this.groupBox1.Controls.SetChildIndex(this.tbNome, 0);
+            this.groupBox1.Controls.SetChildIndex(this.tbDescricao, 0);
+            this.groupBox1.Controls.SetChildIndex(this.tbCategoria, 0);
+            this.groupBox1.Controls.SetChildIndex(this.tbQuantidade, 0);
+            this.groupBox1.Controls.SetChildIndex(this.tbValor, 0);
             // 
             // groupBox2
             // 
@@ -166,45 +166,47 @@
             this.label8.TabIndex = 6;
             this.label8.Text = "Categoria:";
             // 
-            // textBox1
+            // tbNome
             // 
-            this.textBox1.Location = new System.Drawing.Point(100, 75);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(151, 26);
-            this.textBox1.TabIndex = 7;
+            this.tbNome.Location = new System.Drawing.Point(100, 75);
+            this.tbNome.Margin = new System.Windows.Forms.Padding(2);
+            this.tbNome.Name = "tbNome";
+            this.tbNome.Size = new System.Drawing.Size(151, 26);
+            this.tbNome.TabIndex = 7;
             // 
-            // textBox2
+            // tbDescricao
             // 
-            this.textBox2.Location = new System.Drawing.Point(100, 111);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(151, 26);
-            this.textBox2.TabIndex = 8;
+            this.tbDescricao.Location = new System.Drawing.Point(100, 111);
+            this.tbDescricao.Margin = new System.Windows.Forms.Padding(2);
+            this.tbDescricao.Name = "tbDescricao";
+            this.tbDescricao.Size = new System.Drawing.Size(151, 26);
+            this.tbDescricao.TabIndex = 8;
             // 
-            // textBox3
+            // tbCategoria
             // 
-            this.textBox3.Location = new System.Drawing.Point(100, 145);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(151, 26);
-            this.textBox3.TabIndex = 9;
+            this.tbCategoria.Location = new System.Drawing.Point(100, 145);
+            this.tbCategoria.Margin = new System.Windows.Forms.Padding(2);
+            this.tbCategoria.Name = "tbCategoria";
+            this.tbCategoria.Size = new System.Drawing.Size(151, 26);
+            this.tbCategoria.TabIndex = 9;
             // 
-            // textBox4
+            // tbQuantidade
             // 
-            this.textBox4.Location = new System.Drawing.Point(430, 74);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(76, 26);
-            this.textBox4.TabIndex = 10;
+            this.tbQuantidade.Location = new System.Drawing.Point(430, 74);
+            this.tbQuantidade.Margin = new System.Windows.Forms.Padding(2);
+            this.tbQuantidade.Name = "tbQuantidade";
+            this.tbQuantidade.Size = new System.Drawing.Size(114, 26);
+            this.tbQuantidade.TabIndex = 10;
             // 
-            // textBox5
+            // tbValor
             // 
-            this.textBox5.Location = new System.Drawing.Point(430, 111);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(76, 26);
-            this.textBox5.TabIndex = 11;
+            this.tbValor.Location = new System.Drawing.Point(430, 111);
+            this.tbValor.Margin = new System.Windows.Forms.Padding(2);
+            this.tbValor.Name = "tbValor";
+            this.tbValor.Size = new System.Drawing.Size(114, 26);
+            this.tbValor.TabIndex = 11;
+            this.tbValor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbValor_KeyDown);
+            this.tbValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbValor_KeyPress);
             // 
             // dataGridView1
             // 
@@ -319,16 +321,16 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbCategoria;
+        private System.Windows.Forms.TextBox tbDescricao;
+        private System.Windows.Forms.TextBox tbNome;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox tbValor;
+        private System.Windows.Forms.TextBox tbQuantidade;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dvgID;
         private System.Windows.Forms.DataGridViewTextBoxColumn dvgNome;
