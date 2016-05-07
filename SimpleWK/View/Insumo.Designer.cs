@@ -61,7 +61,6 @@
             // btnAdicionar
             // 
             this.btnAdicionar.FlatAppearance.BorderSize = 0;
-            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
             // btnEditar
             // 

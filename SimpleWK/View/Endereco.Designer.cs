@@ -37,7 +37,6 @@
             this.txtCidade = new System.Windows.Forms.TextBox();
             this.txtEstado = new System.Windows.Forms.TextBox();
             this.txtPais = new System.Windows.Forms.TextBox();
-            this.txtCEP = new System.Windows.Forms.TextBox();
             this.dgvLocalizacao = new System.Windows.Forms.DataGridView();
             this.Rua = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nº = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,6 +45,7 @@
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.País = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CEP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLocalizacao)).BeginInit();
@@ -73,7 +73,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtCEP);
+            this.groupBox1.Controls.Add(this.maskedTextBox1);
             this.groupBox1.Controls.Add(this.txtPais);
             this.groupBox1.Controls.Add(this.txtEstado);
             this.groupBox1.Controls.Add(this.txtCidade);
@@ -101,7 +101,7 @@
             this.groupBox1.Controls.SetChildIndex(this.txtCidade, 0);
             this.groupBox1.Controls.SetChildIndex(this.txtEstado, 0);
             this.groupBox1.Controls.SetChildIndex(this.txtPais, 0);
-            this.groupBox1.Controls.SetChildIndex(this.txtCEP, 0);
+            this.groupBox1.Controls.SetChildIndex(this.maskedTextBox1, 0);
             // 
             // groupBox2
             // 
@@ -213,13 +213,6 @@
             this.txtPais.Size = new System.Drawing.Size(140, 26);
             this.txtPais.TabIndex = 14;
             // 
-            // txtCEP
-            // 
-            this.txtCEP.Location = new System.Drawing.Point(349, 172);
-            this.txtCEP.Name = "txtCEP";
-            this.txtCEP.Size = new System.Drawing.Size(140, 26);
-            this.txtCEP.TabIndex = 15;
-            // 
             // dgvLocalizacao
             // 
             this.dgvLocalizacao.AllowUserToAddRows = false;
@@ -282,6 +275,14 @@
             this.CEP.Name = "CEP";
             this.CEP.ReadOnly = true;
             // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Location = new System.Drawing.Point(349, 174);
+            this.maskedTextBox1.Mask = "_____-___";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(140, 26);
+            this.maskedTextBox1.TabIndex = 15;
+            // 
             // Localizacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -304,7 +305,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtCEP;
         private System.Windows.Forms.TextBox txtPais;
         private System.Windows.Forms.TextBox txtEstado;
         private System.Windows.Forms.TextBox txtCidade;
@@ -320,5 +320,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn País;
         private System.Windows.Forms.DataGridViewTextBoxColumn CEP;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
     }
 }

@@ -33,9 +33,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.txtCpf = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtTelefone = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtSobrenome = new System.Windows.Forms.TextBox();
             this.btnLocalizacao = new System.Windows.Forms.Button();
@@ -52,6 +50,8 @@
             this.CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -80,12 +80,12 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.maskedTextBox2);
+            this.groupBox1.Controls.Add(this.maskedTextBox1);
             this.groupBox1.Controls.Add(this.btnLocalizacao);
             this.groupBox1.Controls.Add(this.txtSobrenome);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.txtTelefone);
             this.groupBox1.Controls.Add(this.txtEmail);
-            this.groupBox1.Controls.Add(this.txtCpf);
             this.groupBox1.Controls.Add(this.txtNome);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
@@ -97,12 +97,12 @@
             this.groupBox1.Controls.SetChildIndex(this.label6, 0);
             this.groupBox1.Controls.SetChildIndex(this.label7, 0);
             this.groupBox1.Controls.SetChildIndex(this.txtNome, 0);
-            this.groupBox1.Controls.SetChildIndex(this.txtCpf, 0);
             this.groupBox1.Controls.SetChildIndex(this.txtEmail, 0);
-            this.groupBox1.Controls.SetChildIndex(this.txtTelefone, 0);
             this.groupBox1.Controls.SetChildIndex(this.label8, 0);
             this.groupBox1.Controls.SetChildIndex(this.txtSobrenome, 0);
             this.groupBox1.Controls.SetChildIndex(this.btnLocalizacao, 0);
+            this.groupBox1.Controls.SetChildIndex(this.maskedTextBox1, 0);
+            this.groupBox1.Controls.SetChildIndex(this.maskedTextBox2, 0);
             // 
             // groupBox2
             // 
@@ -157,14 +157,6 @@
             this.txtNome.Size = new System.Drawing.Size(301, 26);
             this.txtNome.TabIndex = 6;
             // 
-            // txtCpf
-            // 
-            this.txtCpf.Location = new System.Drawing.Point(106, 141);
-            this.txtCpf.Margin = new System.Windows.Forms.Padding(2);
-            this.txtCpf.Name = "txtCpf";
-            this.txtCpf.Size = new System.Drawing.Size(188, 26);
-            this.txtCpf.TabIndex = 7;
-            // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(319, 178);
@@ -172,14 +164,6 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(226, 26);
             this.txtEmail.TabIndex = 8;
-            // 
-            // txtTelefone
-            // 
-            this.txtTelefone.Location = new System.Drawing.Point(106, 178);
-            this.txtTelefone.Margin = new System.Windows.Forms.Padding(2);
-            this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(114, 26);
-            this.txtTelefone.TabIndex = 9;
             // 
             // label8
             // 
@@ -307,6 +291,22 @@
             this.Email.Name = "Email";
             this.Email.ReadOnly = true;
             // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Location = new System.Drawing.Point(106, 176);
+            this.maskedTextBox1.Mask = "(__) ____-____";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(147, 26);
+            this.maskedTextBox1.TabIndex = 15;
+            // 
+            // maskedTextBox2
+            // 
+            this.maskedTextBox2.Location = new System.Drawing.Point(106, 142);
+            this.maskedTextBox2.Mask = "___,___,___-__";
+            this.maskedTextBox2.Name = "maskedTextBox2";
+            this.maskedTextBox2.Size = new System.Drawing.Size(209, 26);
+            this.maskedTextBox2.TabIndex = 16;
+            // 
             // PessoaFisica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -327,9 +327,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtTelefone;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtCpf;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
@@ -348,5 +346,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CPF;
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefone;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
     }
 }
