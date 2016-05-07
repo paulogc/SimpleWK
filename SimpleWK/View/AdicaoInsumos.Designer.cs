@@ -38,6 +38,7 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnRemover = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgInsumos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIsumoPF)).BeginInit();
             this.SuspendLayout();
@@ -157,6 +158,7 @@
             this.btnRemover.TabIndex = 5;
             this.btnRemover.Text = "<";
             this.btnRemover.UseVisualStyleBackColor = true;
+            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
             // 
             // btnCancel
             // 
@@ -168,11 +170,21 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Location = new System.Drawing.Point(436, 316);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(75, 53);
+            this.btnSalvar.TabIndex = 7;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            // 
             // AdicaoInsumos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(942, 440);
+            this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnRemover);
             this.Controls.Add(this.btnAdd);
@@ -208,5 +220,6 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnRemover;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnSalvar;
     }
 }
