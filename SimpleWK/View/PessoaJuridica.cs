@@ -16,8 +16,7 @@ namespace View
         }
 
         private void btnLocalizacao_Click(object sender, EventArgs e) {
-            Localizacao localizacao = new Localizacao();
-            localizacao.Show();
+            
         }
     }
 }

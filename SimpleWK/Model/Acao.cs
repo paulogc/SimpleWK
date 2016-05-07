@@ -11,13 +11,13 @@ namespace Model {
         private String cpf;
         private String cnpj;
         private double valor;
-        private String usuario;
+        private String idUsuario;
 
         public long Id { get; set; }
         public String NotaFiscal { get; set; }
         public String Cpf { get; set; }
         public String Cnpj { get; set; }
         public double Valor { get; set; }
-        public String Usuario { get; set; }
+        public String IdUsuario { get; set; }
     }
 }

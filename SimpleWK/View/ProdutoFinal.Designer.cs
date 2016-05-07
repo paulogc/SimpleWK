@@ -47,6 +47,7 @@
             this.Decricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAddInsumo = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.txtValorFinal = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
@@ -80,6 +81,7 @@
             this.groupBox1.Controls.Add(this.txtValorFinal);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.txtValorCusto);
+            this.groupBox1.Controls.Add(this.btnAddInsumo);
             this.groupBox1.Controls.Add(this.txtQuantidade);
             this.groupBox1.Controls.Add(this.txtDescricao);
             this.groupBox1.Controls.Add(this.txtNome);
@@ -95,6 +97,7 @@
             this.groupBox1.Controls.SetChildIndex(this.txtNome, 0);
             this.groupBox1.Controls.SetChildIndex(this.txtDescricao, 0);
             this.groupBox1.Controls.SetChildIndex(this.txtQuantidade, 0);
+            this.groupBox1.Controls.SetChildIndex(this.btnAddInsumo, 0);
             this.groupBox1.Controls.SetChildIndex(this.txtValorCusto, 0);
             this.groupBox1.Controls.SetChildIndex(this.label8, 0);
             this.groupBox1.Controls.SetChildIndex(this.txtValorFinal, 0);
@@ -279,6 +282,15 @@
             this.txtValorFinal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtValorFinal_KeyDown);
             this.txtValorFinal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValorKeyPress);
             // 
+            // btnAddInsumo
+            // 
+            this.btnAddInsumo.Location = new System.Drawing.Point(535, 25);
+            this.btnAddInsumo.Name = "btnAddInsumo";
+            this.btnAddInsumo.Size = new System.Drawing.Size(112, 30);
+            this.btnAddInsumo.TabIndex = 10;
+            this.btnAddInsumo.Text = "Add Insumos";
+            this.btnAddInsumo.UseVisualStyleBackColor = true;
+            // 
             // ProdutoFinal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -317,5 +329,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
         private System.Windows.Forms.TextBox txtValorFinal;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnAddInsumo;
     }
 }
