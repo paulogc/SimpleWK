@@ -47,11 +47,11 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(9, 18);
+            this.groupBox1.Location = new System.Drawing.Point(9, 11);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(668, 223);
+            this.groupBox1.Size = new System.Drawing.Size(668, 229);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Propriedades";
@@ -92,7 +92,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(775, 264);
+            this.groupBox2.Size = new System.Drawing.Size(775, 267);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cadastros";
@@ -101,7 +101,7 @@
             // 
             this.btnBuscar.BackColor = System.Drawing.SystemColors.Control;
             this.btnBuscar.BackgroundImage = global::View.Properties.Resources.search;
-            this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnBuscar.FlatAppearance.BorderSize = 0;
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Location = new System.Drawing.Point(693, 200);
@@ -115,7 +115,7 @@
             // 
             this.btnCancelar.BackColor = System.Drawing.SystemColors.Control;
             this.btnCancelar.BackgroundImage = global::View.Properties.Resources.cancel;
-            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnCancelar.FlatAppearance.BorderSize = 0;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Location = new System.Drawing.Point(693, 154);
@@ -129,7 +129,7 @@
             // 
             this.btnExcluir.BackColor = System.Drawing.SystemColors.Control;
             this.btnExcluir.BackgroundImage = global::View.Properties.Resources.delete;
-            this.btnExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnExcluir.FlatAppearance.BorderSize = 0;
             this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcluir.Location = new System.Drawing.Point(693, 109);
@@ -143,7 +143,7 @@
             // 
             this.btnEditar.BackColor = System.Drawing.SystemColors.Control;
             this.btnEditar.BackgroundImage = global::View.Properties.Resources.edit;
-            this.btnEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnEditar.FlatAppearance.BorderSize = 0;
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Location = new System.Drawing.Point(693, 63);
@@ -155,9 +155,9 @@
             // 
             // btnAdicionar
             // 
-            this.btnAdicionar.BackColor = System.Drawing.SystemColors.Control;
+            this.btnAdicionar.BackColor = System.Drawing.Color.Transparent;
             this.btnAdicionar.BackgroundImage = global::View.Properties.Resources.add;
-            this.btnAdicionar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAdicionar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnAdicionar.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnAdicionar.FlatAppearance.BorderSize = 0;
             this.btnAdicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -173,7 +173,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(794, 509);
+            this.ClientSize = new System.Drawing.Size(794, 523);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnCancelar);

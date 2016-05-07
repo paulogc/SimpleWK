@@ -46,8 +46,16 @@
             this.dvgCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dvgQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dvgValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvInsumo = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descrição = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInsumo)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAdicionar
@@ -95,6 +103,10 @@
             this.groupBox1.Controls.SetChildIndex(this.textBox4, 0);
             this.groupBox1.Controls.SetChildIndex(this.textBox5, 0);
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.dgvInsumo);
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(291, 152);
@@ -107,7 +119,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 78);
+            this.label2.Location = new System.Drawing.Point(14, 78);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 20);
@@ -117,7 +129,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 111);
+            this.label5.Location = new System.Drawing.Point(12, 114);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(84, 20);
@@ -127,7 +139,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(336, 111);
+            this.label6.Location = new System.Drawing.Point(330, 114);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(50, 20);
@@ -137,7 +149,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(336, 78);
+            this.label7.Location = new System.Drawing.Point(330, 78);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(96, 20);
@@ -147,7 +159,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 145);
+            this.label8.Location = new System.Drawing.Point(14, 148);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(82, 20);
@@ -156,8 +168,8 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(100, 74);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Location = new System.Drawing.Point(100, 75);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(151, 26);
             this.textBox1.TabIndex = 7;
@@ -165,7 +177,7 @@
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(100, 111);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(151, 26);
             this.textBox2.TabIndex = 8;
@@ -173,7 +185,7 @@
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(100, 145);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(151, 26);
             this.textBox3.TabIndex = 9;
@@ -181,7 +193,7 @@
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(430, 74);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(76, 26);
             this.textBox4.TabIndex = 10;
@@ -189,7 +201,7 @@
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(430, 111);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(76, 26);
             this.textBox5.TabIndex = 11;
@@ -241,16 +253,65 @@
             this.dvgValor.HeaderText = "Valor";
             this.dvgValor.Name = "dvgValor";
             // 
+            // dgvInsumo
+            // 
+            this.dgvInsumo.AllowUserToAddRows = false;
+            this.dgvInsumo.AllowUserToDeleteRows = false;
+            this.dgvInsumo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvInsumo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInsumo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.Descrição,
+            this.Categoria,
+            this.Quantidade,
+            this.Valor});
+            this.dgvInsumo.Location = new System.Drawing.Point(8, 34);
+            this.dgvInsumo.Name = "dgvInsumo";
+            this.dgvInsumo.ReadOnly = true;
+            this.dgvInsumo.Size = new System.Drawing.Size(760, 218);
+            this.dgvInsumo.TabIndex = 0;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // Descrição
+            // 
+            this.Descrição.HeaderText = "Descrição";
+            this.Descrição.Name = "Descrição";
+            this.Descrição.ReadOnly = true;
+            // 
+            // Categoria
+            // 
+            this.Categoria.HeaderText = "Categoria";
+            this.Categoria.Name = "Categoria";
+            this.Categoria.ReadOnly = true;
+            // 
+            // Quantidade
+            // 
+            this.Quantidade.HeaderText = "Quantidade";
+            this.Quantidade.Name = "Quantidade";
+            this.Quantidade.ReadOnly = true;
+            // 
+            // Valor
+            // 
+            this.Valor.HeaderText = "Valor";
+            this.Valor.Name = "Valor";
+            this.Valor.ReadOnly = true;
+            // 
             // Insumo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(794, 509);
-            this.Location = new System.Drawing.Point(0, 0);
+            this.ClientSize = new System.Drawing.Size(794, 523);
             this.Name = "Insumo";
             this.Text = "Cadastro Insumo";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInsumo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -275,5 +336,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dvgCategoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn dvgQuantidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn dvgValor;
+        private System.Windows.Forms.DataGridView dgvInsumo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descrição;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
     }
 }

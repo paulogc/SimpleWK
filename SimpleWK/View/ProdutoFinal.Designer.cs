@@ -46,6 +46,26 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
+            // btnAdicionar
+            // 
+            this.btnAdicionar.FlatAppearance.BorderSize = 0;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.FlatAppearance.BorderSize = 0;
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.FlatAppearance.BorderSize = 0;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.FlatAppearance.BorderSize = 0;
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.textBox4);
@@ -56,6 +76,7 @@
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.SetChildIndex(this.label1, 0);
             this.groupBox1.Controls.SetChildIndex(this.label2, 0);
             this.groupBox1.Controls.SetChildIndex(this.label5, 0);
             this.groupBox1.Controls.SetChildIndex(this.label6, 0);
@@ -68,65 +89,73 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 106);
+            this.label2.Location = new System.Drawing.Point(20, 86);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 25);
+            this.label2.Size = new System.Drawing.Size(55, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Nome:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(26, 148);
+            this.label5.Location = new System.Drawing.Point(20, 120);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(105, 25);
+            this.label5.Size = new System.Drawing.Size(84, 20);
             this.label5.TabIndex = 3;
             this.label5.Text = "Descrição:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(396, 112);
+            this.label6.Location = new System.Drawing.Point(297, 91);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(120, 25);
+            this.label6.Size = new System.Drawing.Size(96, 20);
             this.label6.TabIndex = 4;
             this.label6.Text = "Quantidade:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(396, 148);
+            this.label7.Location = new System.Drawing.Point(297, 120);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(64, 25);
+            this.label7.Size = new System.Drawing.Size(50, 20);
             this.label7.TabIndex = 5;
             this.label7.Text = "Valor:";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(137, 101);
+            this.textBox1.Location = new System.Drawing.Point(103, 82);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 30);
+            this.textBox1.Size = new System.Drawing.Size(76, 26);
             this.textBox1.TabIndex = 6;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(137, 145);
+            this.textBox2.Location = new System.Drawing.Point(103, 118);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 30);
+            this.textBox2.Size = new System.Drawing.Size(76, 26);
             this.textBox2.TabIndex = 7;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(522, 101);
+            this.textBox3.Location = new System.Drawing.Point(392, 82);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 30);
+            this.textBox3.Size = new System.Drawing.Size(76, 26);
             this.textBox3.TabIndex = 8;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(522, 143);
+            this.textBox4.Location = new System.Drawing.Point(392, 116);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 30);
+            this.textBox4.Size = new System.Drawing.Size(76, 26);
             this.textBox4.TabIndex = 9;
             // 
             // dataGridView1
@@ -172,9 +201,8 @@
             // 
             // ProdutoFinal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.ClientSize = new System.Drawing.Size(1059, 626);
-            this.Location = new System.Drawing.Point(0, 0);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.ClientSize = new System.Drawing.Size(794, 523);
             this.Name = "ProdutoFinal";
             this.Text = "Cadastro de Produto Final";
             this.groupBox1.ResumeLayout(false);

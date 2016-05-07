@@ -85,7 +85,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbSenha);
             this.Controls.Add(this.tbUsuario);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
