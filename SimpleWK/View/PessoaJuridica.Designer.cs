@@ -28,26 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtRazaoSocial = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtTelefone = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtCnpj = new System.Windows.Forms.TextBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnLocalizacao = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dgvID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvRazaoSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvCNPJ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvPessoaJuridica = new System.Windows.Forms.DataGridView();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RazaoSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CNPJ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPessoaJuridica)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAdicionar
@@ -72,15 +78,13 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.textBox6);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.btnLocalizacao);
+            this.groupBox1.Controls.Add(this.txtRazaoSocial);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtTelefone);
+            this.groupBox1.Controls.Add(this.txtEmail);
+            this.groupBox1.Controls.Add(this.txtCnpj);
+            this.groupBox1.Controls.Add(this.txtNome);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
@@ -90,41 +94,25 @@
             this.groupBox1.Controls.SetChildIndex(this.label5, 0);
             this.groupBox1.Controls.SetChildIndex(this.label6, 0);
             this.groupBox1.Controls.SetChildIndex(this.label7, 0);
-            this.groupBox1.Controls.SetChildIndex(this.textBox1, 0);
-            this.groupBox1.Controls.SetChildIndex(this.textBox2, 0);
-            this.groupBox1.Controls.SetChildIndex(this.textBox3, 0);
-            this.groupBox1.Controls.SetChildIndex(this.textBox4, 0);
+            this.groupBox1.Controls.SetChildIndex(this.txtNome, 0);
+            this.groupBox1.Controls.SetChildIndex(this.txtCnpj, 0);
+            this.groupBox1.Controls.SetChildIndex(this.txtEmail, 0);
+            this.groupBox1.Controls.SetChildIndex(this.txtTelefone, 0);
             this.groupBox1.Controls.SetChildIndex(this.label8, 0);
-            this.groupBox1.Controls.SetChildIndex(this.textBox5, 0);
-            this.groupBox1.Controls.SetChildIndex(this.label9, 0);
-            this.groupBox1.Controls.SetChildIndex(this.textBox6, 0);
-            this.groupBox1.Controls.SetChildIndex(this.button1, 0);
+            this.groupBox1.Controls.SetChildIndex(this.txtRazaoSocial, 0);
+            this.groupBox1.Controls.SetChildIndex(this.btnLocalizacao, 0);
             // 
-            // textBox6
+            // groupBox2
             // 
-            this.textBox6.Location = new System.Drawing.Point(348, 166);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(114, 26);
-            this.textBox6.TabIndex = 25;
+            this.groupBox2.Controls.Add(this.dgvPessoaJuridica);
             // 
-            // label9
+            // txtRazaoSocial
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(269, 169);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(75, 20);
-            this.label9.TabIndex = 24;
-            this.label9.Text = "Telefone:";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(128, 96);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(301, 26);
-            this.textBox5.TabIndex = 23;
+            this.txtRazaoSocial.Location = new System.Drawing.Point(119, 95);
+            this.txtRazaoSocial.Margin = new System.Windows.Forms.Padding(2);
+            this.txtRazaoSocial.Name = "txtRazaoSocial";
+            this.txtRazaoSocial.Size = new System.Drawing.Size(301, 26);
+            this.txtRazaoSocial.TabIndex = 23;
             // 
             // label8
             // 
@@ -136,38 +124,37 @@
             this.label8.TabIndex = 22;
             this.label8.Text = "Razão Social:";
             // 
-            // textBox4
+            // txtTelefone
             // 
-            this.textBox4.Location = new System.Drawing.Point(128, 164);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(114, 26);
-            this.textBox4.TabIndex = 21;
+            this.txtTelefone.Location = new System.Drawing.Point(119, 166);
+            this.txtTelefone.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTelefone.Name = "txtTelefone";
+            this.txtTelefone.Size = new System.Drawing.Size(114, 26);
+            this.txtTelefone.TabIndex = 21;
             // 
-            // textBox3
+            // txtEmail
             // 
-            this.textBox3.Location = new System.Drawing.Point(394, 129);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(226, 26);
-            this.textBox3.TabIndex = 20;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.txtEmail.Location = new System.Drawing.Point(338, 166);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(226, 26);
+            this.txtEmail.TabIndex = 20;
             // 
-            // textBox2
+            // txtCnpj
             // 
-            this.textBox2.Location = new System.Drawing.Point(128, 129);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(188, 26);
-            this.textBox2.TabIndex = 19;
+            this.txtCnpj.Location = new System.Drawing.Point(119, 129);
+            this.txtCnpj.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCnpj.Name = "txtCnpj";
+            this.txtCnpj.Size = new System.Drawing.Size(301, 26);
+            this.txtCnpj.TabIndex = 19;
             // 
-            // textBox1
+            // txtNome
             // 
-            this.textBox1.Location = new System.Drawing.Point(128, 61);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(301, 26);
-            this.textBox1.TabIndex = 18;
+            this.txtNome.Location = new System.Drawing.Point(119, 61);
+            this.txtNome.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(301, 26);
+            this.txtNome.TabIndex = 18;
             // 
             // label7
             // 
@@ -192,7 +179,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(334, 132);
+            this.label5.Location = new System.Drawing.Point(277, 171);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(57, 20);
@@ -209,15 +196,15 @@
             this.label2.TabIndex = 14;
             this.label2.Text = "Telefone:";
             // 
-            // button1
+            // btnLocalizacao
             // 
-            this.button1.Location = new System.Drawing.Point(469, 79);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 24);
-            this.button1.TabIndex = 26;
-            this.button1.Text = "Endereço";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnLocalizacao.Location = new System.Drawing.Point(531, 22);
+            this.btnLocalizacao.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLocalizacao.Name = "btnLocalizacao";
+            this.btnLocalizacao.Size = new System.Drawing.Size(120, 31);
+            this.btnLocalizacao.TabIndex = 26;
+            this.btnLocalizacao.Text = "Localização";
+            this.btnLocalizacao.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -257,6 +244,54 @@
             this.dgvCNPJ.Name = "dgvCNPJ";
             this.dgvCNPJ.Width = 239;
             // 
+            // dgvPessoaJuridica
+            // 
+            this.dgvPessoaJuridica.AllowUserToAddRows = false;
+            this.dgvPessoaJuridica.AllowUserToDeleteRows = false;
+            this.dgvPessoaJuridica.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPessoaJuridica.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPessoaJuridica.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Nome,
+            this.RazaoSocial,
+            this.CNPJ,
+            this.Telefone,
+            this.Email});
+            this.dgvPessoaJuridica.Location = new System.Drawing.Point(8, 34);
+            this.dgvPessoaJuridica.Name = "dgvPessoaJuridica";
+            this.dgvPessoaJuridica.ReadOnly = true;
+            this.dgvPessoaJuridica.Size = new System.Drawing.Size(760, 218);
+            this.dgvPessoaJuridica.TabIndex = 0;
+            // 
+            // Nome
+            // 
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            // 
+            // RazaoSocial
+            // 
+            this.RazaoSocial.HeaderText = "RazaoSocial";
+            this.RazaoSocial.Name = "RazaoSocial";
+            this.RazaoSocial.ReadOnly = true;
+            // 
+            // CNPJ
+            // 
+            this.CNPJ.HeaderText = "CNPJ";
+            this.CNPJ.Name = "CNPJ";
+            this.CNPJ.ReadOnly = true;
+            // 
+            // Telefone
+            // 
+            this.Telefone.HeaderText = "Telefone";
+            this.Telefone.Name = "Telefone";
+            this.Telefone.ReadOnly = true;
+            // 
+            // Email
+            // 
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            // 
             // PessoaJuridica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -265,30 +300,35 @@
             this.Text = "Cadastro Pessoa Juridica";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPessoaJuridica)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtRazaoSocial;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTelefone;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtCnpj;
+        private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnLocalizacao;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvID;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvNome;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvRazaoSocial;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvCNPJ;
+        private System.Windows.Forms.DataGridView dgvPessoaJuridica;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RazaoSocial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CNPJ;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Telefone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
     }
 }

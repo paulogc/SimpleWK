@@ -52,6 +52,12 @@
     <Compile Include="BuscaModal.Designer.cs">
       <DependentUpon>BuscaModal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Endereco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Endereco.Designer.cs">
+      <DependentUpon>Endereco.cs</DependentUpon>
+    </Compile>
     <Compile Include="Insumo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="BuscaModal.resx">
       <DependentUpon>BuscaModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Endereco.resx">
+      <DependentUpon>Endereco.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Insumo.resx">
       <DependentUpon>Insumo.cs</DependentUpon>
