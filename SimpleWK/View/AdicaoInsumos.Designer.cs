@@ -123,9 +123,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(169, 24);
+            this.label1.Size = new System.Drawing.Size(180, 24);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Isumos disponíveis";
+            this.label1.Text = "Insumos disponíveis";
             // 
             // label2
             // 
@@ -133,9 +133,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(532, 18);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(167, 24);
+            this.label2.Size = new System.Drawing.Size(178, 24);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Isumos do produto";
+            this.label2.Text = "Insumos do produto";
             // 
             // btnAdd
             // 
@@ -181,7 +181,7 @@
             this.Controls.Add(this.dgvIsumoPF);
             this.Controls.Add(this.dtgInsumos);
             this.Name = "AdicaoInsumos";
-            this.Text = "Adicionar Isumos";
+            this.Text = "Adicionar Insumos";
             ((System.ComponentModel.ISupportInitialize)(this.dtgInsumos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIsumoPF)).EndInit();
             this.ResumeLayout(false);
