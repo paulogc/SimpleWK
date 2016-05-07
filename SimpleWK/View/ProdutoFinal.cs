@@ -14,5 +14,10 @@ namespace View
         {
             InitializeComponent();
         }
+
+        private void btnAddInsumo_Click(object sender, EventArgs e) {
+            AdicaoInsumos addInsumo = new AdicaoInsumos();
+            addInsumo.Show();
+        }
     }
 }

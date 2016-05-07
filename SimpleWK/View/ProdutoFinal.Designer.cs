@@ -47,6 +47,7 @@
             this.Decricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAddInsumo = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -75,6 +76,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnAddInsumo);
             this.groupBox1.Controls.Add(this.txtValor);
             this.groupBox1.Controls.Add(this.txtQuantidade);
             this.groupBox1.Controls.Add(this.txtDescricao);
@@ -92,6 +94,7 @@
             this.groupBox1.Controls.SetChildIndex(this.txtDescricao, 0);
             this.groupBox1.Controls.SetChildIndex(this.txtQuantidade, 0);
             this.groupBox1.Controls.SetChildIndex(this.txtValor, 0);
+            this.groupBox1.Controls.SetChildIndex(this.btnAddInsumo, 0);
             // 
             // groupBox2
             // 
@@ -251,6 +254,16 @@
             this.Valor.Name = "Valor";
             this.Valor.ReadOnly = true;
             // 
+            // btnAddInsumo
+            // 
+            this.btnAddInsumo.Location = new System.Drawing.Point(535, 25);
+            this.btnAddInsumo.Name = "btnAddInsumo";
+            this.btnAddInsumo.Size = new System.Drawing.Size(112, 30);
+            this.btnAddInsumo.TabIndex = 10;
+            this.btnAddInsumo.Text = "Add Insumos";
+            this.btnAddInsumo.UseVisualStyleBackColor = true;
+            this.btnAddInsumo.Click += new System.EventHandler(this.btnAddInsumo_Click);
+            // 
             // ProdutoFinal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -287,5 +300,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Decricao;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
+        private System.Windows.Forms.Button btnAddInsumo;
     }
 }
