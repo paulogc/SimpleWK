@@ -58,11 +58,23 @@
     <Compile Include="BuscaModal.Designer.cs">
       <DependentUpon>BuscaModal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Compra.cs">
+    <Compile Include="CadastroCompra.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Compra.Designer.cs">
-      <DependentUpon>Compra.cs</DependentUpon>
+    <Compile Include="CadastroCompra.Designer.cs">
+      <DependentUpon>CadastroCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastroVenda.Designer.cs">
+      <DependentUpon>CadastroVenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModeloCadastroCompraVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModeloCadastroCompraVenda.Designer.cs">
+      <DependentUpon>ModeloCadastroCompraVenda.cs</DependentUpon>
     </Compile>
     <Compile Include="Endereco.cs">
       <SubType>Form</SubType>
@@ -132,8 +144,14 @@
     <EmbeddedResource Include="BuscaModal.resx">
       <DependentUpon>BuscaModal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Compra.resx">
-      <DependentUpon>Compra.cs</DependentUpon>
+    <EmbeddedResource Include="CadastroCompra.resx">
+      <DependentUpon>CadastroCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastroVenda.resx">
+      <DependentUpon>CadastroVenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModeloCadastroCompraVenda.resx">
+      <DependentUpon>ModeloCadastroCompraVenda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Endereco.resx">
       <DependentUpon>Endereco.cs</DependentUpon>

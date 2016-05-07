@@ -44,7 +44,7 @@ namespace View {
 
         private void comprarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Compra cp = new Compra();
+            CadastroCompra cp = new CadastroCompra();
             cp.ShowDialog();
             cp.Dispose();
         }
@@ -52,6 +52,13 @@ namespace View {
         private void sobreToolStripMenuItem_Click(object sender, EventArgs e) {
             Sobre sobre = new Sobre();
             sobre.ShowDialog();
+        }
+
+        private void venderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CadastroVenda cv = new CadastroVenda();
+            cv.ShowDialog();
+            cv.Dispose();
         }
     }
 }
