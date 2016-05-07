@@ -17,25 +17,36 @@ namespace View {
         private void insumosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Insumo i = new Insumo();
-            i.Show();
+            i.ShowDialog();
+            i.Dispose();
         }
 
         private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ProdutoFinal pf = new ProdutoFinal();
-            pf.Show();
+            pf.ShowDialog();
+            pf.Dispose();
         }
 
         private void pessoaFisicaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PessoaFisica pf = new PessoaFisica();
-            pf.Show();
+            pf.ShowDialog();
+            pf.Dispose();
         }
 
         private void pessoaJuridicaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PessoaJuridica pj = new PessoaJuridica();
-            pj.Show();
+            pj.ShowDialog();
+            pj.Dispose();
+        }
+
+        private void comprarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Compra cp = new Compra();
+            cp.ShowDialog();
+            cp.Dispose();
         }
     }
 }
