@@ -180,7 +180,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvIsumoPF);
             this.Controls.Add(this.dtgInsumos);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "AdicaoInsumos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Adicionar Isumos";
             ((System.ComponentModel.ISupportInitialize)(this.dtgInsumos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIsumoPF)).EndInit();

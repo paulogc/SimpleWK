@@ -263,6 +263,16 @@
             this.Valor.Name = "Valor";
             this.Valor.ReadOnly = true;
             // 
+            // btnAddInsumo
+            // 
+            this.btnAddInsumo.Location = new System.Drawing.Point(535, 25);
+            this.btnAddInsumo.Name = "btnAddInsumo";
+            this.btnAddInsumo.Size = new System.Drawing.Size(112, 30);
+            this.btnAddInsumo.TabIndex = 10;
+            this.btnAddInsumo.Text = "Add Insumos";
+            this.btnAddInsumo.UseVisualStyleBackColor = true;
+            this.btnAddInsumo.Click += new System.EventHandler(this.btnAddInsumo_Click);
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -281,15 +291,6 @@
             this.txtValorFinal.Enter += new System.EventHandler(this.txtValorFinal_Enter);
             this.txtValorFinal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtValorFinal_KeyDown);
             this.txtValorFinal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValorKeyPress);
-            // 
-            // btnAddInsumo
-            // 
-            this.btnAddInsumo.Location = new System.Drawing.Point(535, 25);
-            this.btnAddInsumo.Name = "btnAddInsumo";
-            this.btnAddInsumo.Size = new System.Drawing.Size(112, 30);
-            this.btnAddInsumo.TabIndex = 10;
-            this.btnAddInsumo.Text = "Add Insumos";
-            this.btnAddInsumo.UseVisualStyleBackColor = true;
             // 
             // ProdutoFinal
             // 

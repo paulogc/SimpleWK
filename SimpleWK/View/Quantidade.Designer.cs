@@ -30,14 +30,14 @@
             // 
             // txtQuantidade
             // 
-            this.txtQuantidade.Location = new System.Drawing.Point(67, 22);
+            this.txtQuantidade.Location = new System.Drawing.Point(12, 23);
             this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.Size = new System.Drawing.Size(153, 20);
+            this.txtQuantidade.Size = new System.Drawing.Size(109, 20);
             this.txtQuantidade.TabIndex = 0;
             // 
             // btnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(108, 62);
+            this.btnOk.Location = new System.Drawing.Point(139, 21);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(75, 23);
             this.btnOk.TabIndex = 1;
@@ -49,10 +49,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 97);
+            this.ClientSize = new System.Drawing.Size(228, 65);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.txtQuantidade);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Quantidade";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quantidade";
             this.ResumeLayout(false);
             this.PerformLayout();
