@@ -28,5 +28,9 @@ namespace View {
             MessageBox.Show("Tem certeza que deseja excluir este item?", "Atenção!",
                 MessageBoxButtons.YesNoCancel, MessageBoxIcon.Exclamation);
         }
+
+        private void btnSalvar_Click(object sender, EventArgs e) {
+            Close();
+        }
     }
 }

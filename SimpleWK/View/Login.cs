@@ -29,7 +29,7 @@ namespace View
                 Dispose(); // Libera recurso Login e fecha apliacação
             }
             else {
-                MessageBox.Show("Usuario e/ou senha incorretos!");
+                MessageBox.Show("Usuario e/ou senha incorretos!", "Falha no login", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 tbUsuario.Text = tbSenha.Text = "";
                 tbUsuario.Focus();
             }
