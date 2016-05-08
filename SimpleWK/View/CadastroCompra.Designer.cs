@@ -34,12 +34,13 @@
             // 
             // txtCPFCNPJ
             // 
-            this.txtCPFCNPJ.Location = new System.Drawing.Point(114, 100);
-            this.txtCPFCNPJ.Size = new System.Drawing.Size(200, 24);
+            this.txtCPFCNPJ.Location = new System.Drawing.Point(116, 79);
+            this.txtCPFCNPJ.Size = new System.Drawing.Size(151, 21);
             // 
             // label9
             // 
-            this.label9.Size = new System.Drawing.Size(52, 18);
+            this.label9.Location = new System.Drawing.Point(72, 82);
+            this.label9.Size = new System.Drawing.Size(41, 15);
             this.label9.Text = "CNPJ:";
             // 
             // groupBox1
@@ -48,67 +49,68 @@
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(223, 70);
-            this.label4.Size = new System.Drawing.Size(134, 18);
+            this.label4.Location = new System.Drawing.Point(4, 54);
+            this.label4.Size = new System.Drawing.Size(110, 15);
             this.label4.Text = "Nome Fornecedor:";
-            // 
-            // label3
-            // 
-            this.label3.Location = new System.Drawing.Point(5, 66);
-            this.label3.Size = new System.Drawing.Size(107, 18);
-            this.label3.Text = "ID Fornecedor:";
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(224, 29);
-            // 
-            // label1
-            // 
-            this.label1.Location = new System.Drawing.Point(5, 30);
+            this.label2.Location = new System.Drawing.Point(340, 21);
             // 
             // txtNomeFornecedor
             // 
-            this.txtNomeFornecedor.Location = new System.Drawing.Point(364, 67);
-            this.txtNomeFornecedor.Size = new System.Drawing.Size(300, 24);
+            this.txtNomeFornecedor.Location = new System.Drawing.Point(117, 51);
+            this.txtNomeFornecedor.Size = new System.Drawing.Size(226, 21);
             this.txtNomeFornecedor.TextChanged += new System.EventHandler(this.txtNomeFornecedor_TextChanged);
-            // 
-            // txtIDFornecedor
-            // 
-            this.txtIDFornecedor.Location = new System.Drawing.Point(118, 64);
-            this.txtIDFornecedor.Size = new System.Drawing.Size(100, 24);
             // 
             // txtDataNF
             // 
-            this.txtDataNF.Location = new System.Drawing.Point(270, 26);
-            this.txtDataNF.Size = new System.Drawing.Size(100, 24);
+            this.txtDataNF.Location = new System.Drawing.Point(379, 18);
+            this.txtDataNF.Size = new System.Drawing.Size(99, 21);
             // 
             // txtNumNF
             // 
-            this.txtNumNF.Location = new System.Drawing.Point(115, 27);
-            this.txtNumNF.Size = new System.Drawing.Size(100, 24);
+            this.txtNumNF.Location = new System.Drawing.Point(117, 21);
+            this.txtNumNF.Size = new System.Drawing.Size(150, 21);
             // 
             // txtNomeItem
             // 
-            this.txtNomeItem.Location = new System.Drawing.Point(305, 29);
+            this.txtNomeItem.Location = new System.Drawing.Point(271, 22);
+            // 
+            // label6
+            // 
+            this.label6.Location = new System.Drawing.Point(197, 24);
+            // 
+            // txtIDItem
+            // 
+            this.txtIDItem.Location = new System.Drawing.Point(88, 22);
             // 
             // label5
             // 
-            this.label5.Location = new System.Drawing.Point(4, 27);
+            this.label5.Location = new System.Drawing.Point(36, 25);
             // 
             // btnLocalizarFornecedor
             // 
             this.btnLocalizarFornecedor.FlatAppearance.BorderSize = 0;
-            this.btnLocalizarFornecedor.Location = new System.Drawing.Point(672, 62);
+            this.btnLocalizarFornecedor.Location = new System.Drawing.Point(347, 51);
             this.btnLocalizarFornecedor.Text = "/";
             this.btnLocalizarFornecedor.Click += new System.EventHandler(this.btnLocalizarFornecedor_Click);
             // 
             // txtItemValorUnitario
             // 
-            this.txtItemValorUnitario.Location = new System.Drawing.Point(319, 66);
+            this.txtItemValorUnitario.Location = new System.Drawing.Point(271, 50);
+            // 
+            // label8
+            // 
+            this.label8.Location = new System.Drawing.Point(186, 52);
+            // 
+            // txtItemQuantidade
+            // 
+            this.txtItemQuantidade.Location = new System.Drawing.Point(88, 49);
             // 
             // label7
             // 
-            this.label7.Location = new System.Drawing.Point(4, 65);
+            this.label7.Location = new System.Drawing.Point(11, 51);
             // 
             // groupBox3
             // 
@@ -117,6 +119,7 @@
             // btnLocalizarItem
             // 
             this.btnLocalizarItem.FlatAppearance.BorderSize = 0;
+            this.btnLocalizarItem.Location = new System.Drawing.Point(501, 17);
             // 
             // btnDeletar
             // 
@@ -136,8 +139,8 @@
             // 
             // CadastroCompra
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.ClientSize = new System.Drawing.Size(1059, 644);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.ClientSize = new System.Drawing.Size(794, 523);
             this.Name = "CadastroCompra";
             this.Text = "Cadastro de Compra";
             this.groupBox1.ResumeLayout(false);

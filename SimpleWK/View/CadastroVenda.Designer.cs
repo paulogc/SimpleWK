@@ -32,24 +32,38 @@
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
+            // txtCPFCNPJ
+            // 
+            this.txtCPFCNPJ.Location = new System.Drawing.Point(95, 79);
+            // 
+            // label9
+            // 
+            this.label9.Location = new System.Drawing.Point(25, 82);
+            // 
             // label4
             // 
-            this.label4.Size = new System.Drawing.Size(96, 17);
+            this.label4.Location = new System.Drawing.Point(7, 53);
+            this.label4.Size = new System.Drawing.Size(85, 15);
             this.label4.Text = "Nome Cliente:";
-            // 
-            // label3
-            // 
-            this.label3.Size = new System.Drawing.Size(72, 17);
-            this.label3.Text = "ID Cliente:";
             // 
             // label1
             // 
-            this.label1.Size = new System.Drawing.Size(75, 17);
+            this.label1.Location = new System.Drawing.Point(26, 24);
+            this.label1.Size = new System.Drawing.Size(65, 15);
             this.label1.Text = "Nº Pedido:";
+            // 
+            // txtNomeFornecedor
+            // 
+            this.txtNomeFornecedor.Location = new System.Drawing.Point(95, 50);
+            // 
+            // txtNumNF
+            // 
+            this.txtNumNF.Location = new System.Drawing.Point(95, 22);
             // 
             // btnLocalizarFornecedor
             // 
             this.btnLocalizarFornecedor.FlatAppearance.BorderSize = 0;
+            this.btnLocalizarFornecedor.Location = new System.Drawing.Point(344, 50);
             // 
             // btnLocalizarItem
             // 
@@ -73,8 +87,8 @@
             // 
             // CadastroVenda
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.ClientSize = new System.Drawing.Size(1059, 644);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.ClientSize = new System.Drawing.Size(794, 523);
             this.Name = "CadastroVenda";
             this.Text = "Cadastro Venda";
             this.groupBox1.ResumeLayout(false);
