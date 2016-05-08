@@ -132,6 +132,7 @@
             // btnCancelar
             // 
             this.btnCancelar.Text = "Cancelar Compra";
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnFinalizar
             // 

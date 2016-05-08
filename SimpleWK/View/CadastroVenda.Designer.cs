@@ -60,10 +60,22 @@
             // 
             this.txtNumNF.Location = new System.Drawing.Point(95, 22);
             // 
+            // txtIDItem
+            // 
+            this.txtIDItem.Location = new System.Drawing.Point(79, 22);
+            // 
+            // label5
+            // 
+            this.label5.Location = new System.Drawing.Point(27, 24);
+            // 
             // btnLocalizarFornecedor
             // 
             this.btnLocalizarFornecedor.FlatAppearance.BorderSize = 0;
             this.btnLocalizarFornecedor.Location = new System.Drawing.Point(344, 50);
+            // 
+            // txtItemQuantidade
+            // 
+            this.txtItemQuantidade.Size = new System.Drawing.Size(84, 20);
             // 
             // btnLocalizarItem
             // 
@@ -80,6 +92,7 @@
             // btnCancelar
             // 
             this.btnCancelar.Text = "Cancelar Venda";
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnFinalizar
             // 
