@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Model {
-    class Juridica : Pessoa {
+    public class Juridica : Pessoa {
         private String cnpj;
         private String razaoSocial;
         

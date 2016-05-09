@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Model {
-    class Pessoa {
+   public class Pessoa {
         private long id;
         private String nome;
         private String email;

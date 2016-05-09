@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
+
 namespace View
 {
     public partial class PessoaFisica : View.ModeloCadastroGeral
@@ -41,6 +42,10 @@ namespace View
             BuscaModal busca = new BuscaModal();
             busca.ShowDialog();
             busca.Dispose();
+        }
+
+        private void btnAdicionar_Click(object sender, EventArgs e) {
+            
         }
     }
 }
