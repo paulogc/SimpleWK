@@ -47,6 +47,7 @@
             // 
             this.lblBusca.AutoSize = true;
             this.lblBusca.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBusca.Location = new System.Drawing.Point(35, 86);
             this.lblBusca.Location = new System.Drawing.Point(68, 111);
             this.lblBusca.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBusca.Name = "lblBusca";

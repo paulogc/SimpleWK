@@ -51,6 +51,7 @@
             // 
             // btnFechar
             // 
+            this.btnFechar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnFechar.Location = new System.Drawing.Point(265, 85);
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(75, 23);
@@ -63,6 +64,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnFechar;
             this.ClientSize = new System.Drawing.Size(368, 131);
             this.Controls.Add(this.btnFechar);
             this.Controls.Add(this.label2);
