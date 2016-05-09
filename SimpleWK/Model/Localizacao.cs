@@ -13,7 +13,7 @@ namespace Model {
         private String bairro;
         private String cep;
         private String cidade;
-        private String estado;
+        private String uf;
         private String pais;
         private String complemento;
 
@@ -25,7 +25,7 @@ namespace Model {
         public String Bairro { get; set; }
         public String Cep { get; set; }
         public String Cidade { get; set; }
-        public String Estado { get; set; }
+        public String Uf { get; set; }
         public String Pais { get; set; }
         public String Complemento { get; set; }
     }

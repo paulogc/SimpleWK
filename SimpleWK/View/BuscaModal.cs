@@ -24,7 +24,7 @@ namespace View {
         }
 
         private void btnBuscar_Click(object sender, EventArgs e) {
-
+            Close();
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e) {

@@ -36,7 +36,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(77, 39);
+            this.label1.Location = new System.Drawing.Point(64, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 15);
             this.label1.TabIndex = 1;
@@ -46,7 +46,7 @@
             // 
             this.lblBusca.AutoSize = true;
             this.lblBusca.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBusca.Location = new System.Drawing.Point(71, 90);
+            this.lblBusca.Location = new System.Drawing.Point(38, 83);
             this.lblBusca.Name = "lblBusca";
             this.lblBusca.Size = new System.Drawing.Size(74, 15);
             this.lblBusca.TabIndex = 3;
@@ -61,7 +61,7 @@
             "Item de busca 3",
             "Item de busca 4",
             "Item de busca 5"});
-            this.cbBuscar.Location = new System.Drawing.Point(149, 36);
+            this.cbBuscar.Location = new System.Drawing.Point(136, 29);
             this.cbBuscar.Name = "cbBuscar";
             this.cbBuscar.Size = new System.Drawing.Size(183, 21);
             this.cbBuscar.TabIndex = 2;
@@ -70,7 +70,7 @@
             // txtBuscar
             // 
             this.txtBuscar.Enabled = false;
-            this.txtBuscar.Location = new System.Drawing.Point(149, 88);
+            this.txtBuscar.Location = new System.Drawing.Point(136, 81);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(183, 20);
             this.txtBuscar.TabIndex = 4;
@@ -78,29 +78,33 @@
             // 
             // btnBuscar
             // 
+            this.btnBuscar.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnBuscar.Enabled = false;
-            this.btnBuscar.Location = new System.Drawing.Point(234, 126);
+            this.btnBuscar.Location = new System.Drawing.Point(221, 121);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 36);
-            this.btnBuscar.TabIndex = 5;
+            this.btnBuscar.TabIndex = 6;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(79, 126);
+            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancelar.Location = new System.Drawing.Point(68, 121);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 36);
-            this.btnCancelar.TabIndex = 6;
+            this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // BuscaModal
             // 
+            this.AcceptButton = this.btnBuscar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(362, 174);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnBuscar);
@@ -112,7 +116,7 @@
             this.MaximizeBox = false;
             this.Name = "BuscaModal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Buscar";
+            this.Text = "Busca";
             this.ResumeLayout(false);
             this.PerformLayout();
 

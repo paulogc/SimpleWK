@@ -29,12 +29,11 @@
         private void InitializeComponent()
         {
             this.gbEndereco = new System.Windows.Forms.GroupBox();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.txtPais = new System.Windows.Forms.TextBox();
-            this.txtEstado = new System.Windows.Forms.TextBox();
             this.txtCidade = new System.Windows.Forms.TextBox();
-            this.txtCEP = new System.Windows.Forms.TextBox();
             this.txtBairro = new System.Windows.Forms.TextBox();
             this.txtNum = new System.Windows.Forms.TextBox();
             this.txtLogradouro = new System.Windows.Forms.TextBox();
@@ -45,17 +44,18 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.gbEndereco.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbEndereco
             // 
+            this.gbEndereco.Controls.Add(this.comboBox1);
+            this.gbEndereco.Controls.Add(this.maskedTextBox1);
             this.gbEndereco.Controls.Add(this.btnCancelar);
             this.gbEndereco.Controls.Add(this.btnSalvar);
             this.gbEndereco.Controls.Add(this.txtPais);
-            this.gbEndereco.Controls.Add(this.txtEstado);
             this.gbEndereco.Controls.Add(this.txtCidade);
-            this.gbEndereco.Controls.Add(this.txtCEP);
             this.gbEndereco.Controls.Add(this.txtBairro);
             this.gbEndereco.Controls.Add(this.txtNum);
             this.gbEndereco.Controls.Add(this.txtLogradouro);
@@ -74,7 +74,15 @@
             this.gbEndereco.Size = new System.Drawing.Size(577, 205);
             this.gbEndereco.TabIndex = 0;
             this.gbEndereco.TabStop = false;
-            this.gbEndereco.Text = "Dados da localização:";
+            this.gbEndereco.Text = "Dados da localização";
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Location = new System.Drawing.Point(462, 67);
+            this.maskedTextBox1.Mask = "00000-000";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(102, 21);
+            this.maskedTextBox1.TabIndex = 10;
             // 
             // btnCancelar
             // 
@@ -82,10 +90,10 @@
             this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnCancelar.FlatAppearance.BorderSize = 0;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Location = new System.Drawing.Point(472, 144);
+            this.btnCancelar.Location = new System.Drawing.Point(483, 144);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(92, 41);
+            this.btnCancelar.Size = new System.Drawing.Size(81, 41);
             this.btnCancelar.TabIndex = 15;
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -99,42 +107,28 @@
             this.btnSalvar.Location = new System.Drawing.Point(386, 144);
             this.btnSalvar.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(92, 41);
+            this.btnSalvar.Size = new System.Drawing.Size(82, 41);
             this.btnSalvar.TabIndex = 14;
             this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnSalvar.UseVisualStyleBackColor = true;
             // 
             // txtPais
             // 
-            this.txtPais.Location = new System.Drawing.Point(418, 101);
+            this.txtPais.Enabled = false;
+            this.txtPais.Location = new System.Drawing.Point(461, 101);
             this.txtPais.Margin = new System.Windows.Forms.Padding(2);
             this.txtPais.Name = "txtPais";
-            this.txtPais.Size = new System.Drawing.Size(146, 21);
+            this.txtPais.Size = new System.Drawing.Size(103, 21);
             this.txtPais.TabIndex = 13;
-            // 
-            // txtEstado
-            // 
-            this.txtEstado.Location = new System.Drawing.Point(273, 101);
-            this.txtEstado.Margin = new System.Windows.Forms.Padding(2);
-            this.txtEstado.Name = "txtEstado";
-            this.txtEstado.Size = new System.Drawing.Size(95, 21);
-            this.txtEstado.TabIndex = 12;
+            this.txtPais.Text = "Brasil";
             // 
             // txtCidade
             // 
             this.txtCidade.Location = new System.Drawing.Point(83, 101);
             this.txtCidade.Margin = new System.Windows.Forms.Padding(2);
             this.txtCidade.Name = "txtCidade";
-            this.txtCidade.Size = new System.Drawing.Size(123, 21);
+            this.txtCidade.Size = new System.Drawing.Size(213, 21);
             this.txtCidade.TabIndex = 11;
-            // 
-            // txtCEP
-            // 
-            this.txtCEP.Location = new System.Drawing.Point(458, 67);
-            this.txtCEP.Margin = new System.Windows.Forms.Padding(2);
-            this.txtCEP.Name = "txtCEP";
-            this.txtCEP.Size = new System.Drawing.Size(106, 21);
-            this.txtCEP.TabIndex = 10;
             // 
             // txtBairro
             // 
@@ -164,7 +158,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(382, 104);
+            this.label7.Location = new System.Drawing.Point(425, 104);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(34, 15);
@@ -175,7 +169,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(223, 104);
+            this.label6.Location = new System.Drawing.Point(300, 104);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(48, 15);
@@ -237,6 +231,42 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Logradouro:";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "AC",
+            "AL",
+            "AP",
+            "AM",
+            "BA",
+            "CE",
+            "DF",
+            "ES",
+            "GO",
+            "MA",
+            "MT",
+            "MS",
+            "MG",
+            "PR",
+            "PB",
+            "PA",
+            "PE",
+            "PI",
+            "RJ",
+            "RN",
+            "RS",
+            "RO",
+            "RR",
+            "SC",
+            "SE",
+            "SP",
+            "TO"});
+            this.comboBox1.Location = new System.Drawing.Point(350, 101);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(65, 23);
+            this.comboBox1.TabIndex = 16;
+            // 
             // Endereco
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -269,10 +299,10 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.TextBox txtPais;
-        private System.Windows.Forms.TextBox txtEstado;
         private System.Windows.Forms.TextBox txtCidade;
-        private System.Windows.Forms.TextBox txtCEP;
         private System.Windows.Forms.TextBox txtBairro;
         private System.Windows.Forms.TextBox txtNum;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

@@ -268,8 +268,8 @@
             this.btnAddInsumo.Location = new System.Drawing.Point(535, 25);
             this.btnAddInsumo.Name = "btnAddInsumo";
             this.btnAddInsumo.Size = new System.Drawing.Size(112, 30);
-            this.btnAddInsumo.TabIndex = 10;
-            this.btnAddInsumo.Text = "Add Insumos";
+            this.btnAddInsumo.TabIndex = 11;
+            this.btnAddInsumo.Text = "Lista de Insumos";
             this.btnAddInsumo.UseVisualStyleBackColor = true;
             this.btnAddInsumo.Click += new System.EventHandler(this.btnAddInsumo_Click);
             // 
@@ -287,7 +287,7 @@
             this.txtValorFinal.Location = new System.Drawing.Point(340, 195);
             this.txtValorFinal.Name = "txtValorFinal";
             this.txtValorFinal.Size = new System.Drawing.Size(115, 21);
-            this.txtValorFinal.TabIndex = 11;
+            this.txtValorFinal.TabIndex = 10;
             this.txtValorFinal.Enter += new System.EventHandler(this.txtValorFinal_Enter);
             this.txtValorFinal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtValorFinal_KeyDown);
             this.txtValorFinal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValorKeyPress);

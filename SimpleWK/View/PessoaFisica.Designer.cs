@@ -52,6 +52,8 @@
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -80,6 +82,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.maskedTextBox3);
+            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.maskedTextBox2);
             this.groupBox1.Controls.Add(this.maskedTextBox1);
             this.groupBox1.Controls.Add(this.btnLocalizacao);
@@ -103,6 +107,8 @@
             this.groupBox1.Controls.SetChildIndex(this.btnLocalizacao, 0);
             this.groupBox1.Controls.SetChildIndex(this.maskedTextBox1, 0);
             this.groupBox1.Controls.SetChildIndex(this.maskedTextBox2, 0);
+            this.groupBox1.Controls.SetChildIndex(this.label9, 0);
+            this.groupBox1.Controls.SetChildIndex(this.maskedTextBox3, 0);
             // 
             // groupBox2
             // 
@@ -111,17 +117,17 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(45, 179);
+            this.label2.Location = new System.Drawing.Point(24, 163);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 15);
+            this.label2.Size = new System.Drawing.Size(80, 15);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Telefone:";
+            this.label2.Text = "Telefone fixo:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(270, 179);
+            this.label5.Location = new System.Drawing.Point(58, 196);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(46, 15);
@@ -131,7 +137,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(59, 78);
+            this.label6.Location = new System.Drawing.Point(59, 71);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(44, 15);
@@ -141,7 +147,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(70, 145);
+            this.label7.Location = new System.Drawing.Point(71, 132);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(33, 15);
@@ -151,24 +157,24 @@
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(106, 75);
+            this.txtNome.Location = new System.Drawing.Point(106, 68);
             this.txtNome.Margin = new System.Windows.Forms.Padding(2);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(301, 21);
-            this.txtNome.TabIndex = 6;
+            this.txtNome.Size = new System.Drawing.Size(324, 21);
+            this.txtNome.TabIndex = 1;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(319, 176);
+            this.txtEmail.Location = new System.Drawing.Point(106, 193);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(226, 21);
-            this.txtEmail.TabIndex = 8;
+            this.txtEmail.Size = new System.Drawing.Size(219, 21);
+            this.txtEmail.TabIndex = 6;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(28, 112);
+            this.label8.Location = new System.Drawing.Point(28, 102);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(75, 15);
@@ -178,11 +184,11 @@
             // 
             // txtSobrenome
             // 
-            this.txtSobrenome.Location = new System.Drawing.Point(106, 109);
+            this.txtSobrenome.Location = new System.Drawing.Point(106, 99);
             this.txtSobrenome.Margin = new System.Windows.Forms.Padding(2);
             this.txtSobrenome.Name = "txtSobrenome";
-            this.txtSobrenome.Size = new System.Drawing.Size(301, 21);
-            this.txtSobrenome.TabIndex = 11;
+            this.txtSobrenome.Size = new System.Drawing.Size(324, 21);
+            this.txtSobrenome.TabIndex = 2;
             // 
             // btnLocalizacao
             // 
@@ -190,7 +196,7 @@
             this.btnLocalizacao.Margin = new System.Windows.Forms.Padding(2);
             this.btnLocalizacao.Name = "btnLocalizacao";
             this.btnLocalizacao.Size = new System.Drawing.Size(114, 34);
-            this.btnLocalizacao.TabIndex = 14;
+            this.btnLocalizacao.TabIndex = 7;
             this.btnLocalizacao.Text = "Localização";
             this.btnLocalizacao.UseVisualStyleBackColor = true;
             this.btnLocalizacao.Click += new System.EventHandler(this.btnLocalizacao_Click);
@@ -293,19 +299,36 @@
             // 
             // maskedTextBox1
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(106, 176);
-            this.maskedTextBox1.Mask = "(__) ____-____";
+            this.maskedTextBox1.Location = new System.Drawing.Point(106, 160);
+            this.maskedTextBox1.Mask = "(00) 0000-0000";
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(102, 21);
-            this.maskedTextBox1.TabIndex = 15;
+            this.maskedTextBox1.TabIndex = 4;
             // 
             // maskedTextBox2
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(106, 142);
-            this.maskedTextBox2.Mask = "___,___,___-__";
+            this.maskedTextBox2.Location = new System.Drawing.Point(106, 129);
+            this.maskedTextBox2.Mask = "000,000,000-00";
             this.maskedTextBox2.Name = "maskedTextBox2";
             this.maskedTextBox2.Size = new System.Drawing.Size(102, 21);
-            this.maskedTextBox2.TabIndex = 16;
+            this.maskedTextBox2.TabIndex = 3;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(221, 163);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(94, 15);
+            this.label9.TabIndex = 12;
+            this.label9.Text = "Telefone móvel:";
+            // 
+            // maskedTextBox3
+            // 
+            this.maskedTextBox3.Location = new System.Drawing.Point(318, 160);
+            this.maskedTextBox3.Mask = "(00) 00000-0000";
+            this.maskedTextBox3.Name = "maskedTextBox3";
+            this.maskedTextBox3.Size = new System.Drawing.Size(112, 21);
+            this.maskedTextBox3.TabIndex = 5;
             // 
             // PessoaFisica
             // 
@@ -348,5 +371,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.MaskedTextBox maskedTextBox2;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
+        private System.Windows.Forms.Label label9;
     }
 }
