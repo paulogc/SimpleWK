@@ -97,7 +97,7 @@
             this.btnDeletar.Margin = new System.Windows.Forms.Padding(2);
             this.btnDeletar.Name = "btnDeletar";
             this.btnDeletar.Size = new System.Drawing.Size(92, 41);
-            this.btnDeletar.TabIndex = 10;
+            this.btnDeletar.TabIndex = 8;
             this.btnDeletar.UseVisualStyleBackColor = true;
             // 
             // btnAdicionar
@@ -110,7 +110,7 @@
             this.btnAdicionar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(92, 41);
-            this.btnAdicionar.TabIndex = 9;
+            this.btnAdicionar.TabIndex = 7;
             this.btnAdicionar.UseVisualStyleBackColor = true;
             this.btnAdicionar.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -120,11 +120,11 @@
             this.btnLocalizarItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnLocalizarItem.FlatAppearance.BorderSize = 0;
             this.btnLocalizarItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLocalizarItem.Location = new System.Drawing.Point(510, 22);
+            this.btnLocalizarItem.Location = new System.Drawing.Point(497, 15);
             this.btnLocalizarItem.Margin = new System.Windows.Forms.Padding(2);
             this.btnLocalizarItem.Name = "btnLocalizarItem";
             this.btnLocalizarItem.Size = new System.Drawing.Size(30, 32);
-            this.btnLocalizarItem.TabIndex = 8;
+            this.btnLocalizarItem.TabIndex = 4;
             this.btnLocalizarItem.UseVisualStyleBackColor = true;
             this.btnLocalizarItem.Click += new System.EventHandler(this.btnLocalizarItem_Click);
             // 
@@ -134,7 +134,7 @@
             this.txtItemValorUnitario.Margin = new System.Windows.Forms.Padding(2);
             this.txtItemValorUnitario.Name = "txtItemValorUnitario";
             this.txtItemValorUnitario.Size = new System.Drawing.Size(76, 20);
-            this.txtItemValorUnitario.TabIndex = 7;
+            this.txtItemValorUnitario.TabIndex = 6;
             // 
             // label8
             // 
@@ -152,7 +152,7 @@
             this.txtItemQuantidade.Location = new System.Drawing.Point(79, 48);
             this.txtItemQuantidade.Margin = new System.Windows.Forms.Padding(2);
             this.txtItemQuantidade.Name = "txtItemQuantidade";
-            this.txtItemQuantidade.Size = new System.Drawing.Size(76, 20);
+            this.txtItemQuantidade.Size = new System.Drawing.Size(84, 20);
             this.txtItemQuantidade.TabIndex = 5;
             // 
             // label7
@@ -293,7 +293,7 @@
             this.txtCPFCNPJ.Margin = new System.Windows.Forms.Padding(2);
             this.txtCPFCNPJ.Name = "txtCPFCNPJ";
             this.txtCPFCNPJ.Size = new System.Drawing.Size(107, 20);
-            this.txtCPFCNPJ.TabIndex = 10;
+            this.txtCPFCNPJ.TabIndex = 8;
             // 
             // label9
             // 
@@ -312,11 +312,11 @@
             this.btnLocalizarFornecedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnLocalizarFornecedor.FlatAppearance.BorderSize = 0;
             this.btnLocalizarFornecedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLocalizarFornecedor.Location = new System.Drawing.Point(356, 50);
+            this.btnLocalizarFornecedor.Location = new System.Drawing.Point(352, 47);
             this.btnLocalizarFornecedor.Margin = new System.Windows.Forms.Padding(2);
             this.btnLocalizarFornecedor.Name = "btnLocalizarFornecedor";
             this.btnLocalizarFornecedor.Size = new System.Drawing.Size(30, 32);
-            this.btnLocalizarFornecedor.TabIndex = 8;
+            this.btnLocalizarFornecedor.TabIndex = 7;
             this.btnLocalizarFornecedor.UseVisualStyleBackColor = true;
             // 
             // txtNomeFornecedor
@@ -325,7 +325,7 @@
             this.txtNomeFornecedor.Margin = new System.Windows.Forms.Padding(2);
             this.txtNomeFornecedor.Name = "txtNomeFornecedor";
             this.txtNomeFornecedor.Size = new System.Drawing.Size(235, 20);
-            this.txtNomeFornecedor.TabIndex = 7;
+            this.txtNomeFornecedor.TabIndex = 6;
             // 
             // txtDataNF
             // 
@@ -385,7 +385,7 @@
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(92, 41);
-            this.btnCancelar.TabIndex = 3;
+            this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -398,7 +398,7 @@
             this.btnFinalizar.Margin = new System.Windows.Forms.Padding(2);
             this.btnFinalizar.Name = "btnFinalizar";
             this.btnFinalizar.Size = new System.Drawing.Size(92, 41);
-            this.btnFinalizar.TabIndex = 4;
+            this.btnFinalizar.TabIndex = 10;
             this.btnFinalizar.Text = "Finalizar";
             this.btnFinalizar.UseVisualStyleBackColor = true;
             // 
@@ -419,6 +419,7 @@
             this.Name = "ModeloCompraVenda";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ModeloCompraVenda";
+            this.Load += new System.EventHandler(this.ModeloCompraVenda_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);

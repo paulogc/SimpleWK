@@ -144,7 +144,7 @@
             this.btnAdd.Location = new System.Drawing.Point(436, 97);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 57);
-            this.btnAdd.TabIndex = 4;
+            this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = ">";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -155,7 +155,7 @@
             this.btnRemover.Location = new System.Drawing.Point(436, 182);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(75, 57);
-            this.btnRemover.TabIndex = 5;
+            this.btnRemover.TabIndex = 2;
             this.btnRemover.Text = "<";
             this.btnRemover.UseVisualStyleBackColor = true;
             this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
@@ -166,7 +166,7 @@
             this.btnCancel.Location = new System.Drawing.Point(436, 375);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 53);
-            this.btnCancel.TabIndex = 6;
+            this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "Cancelar";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -176,7 +176,7 @@
             this.btnSalvar.Location = new System.Drawing.Point(436, 316);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 53);
-            this.btnSalvar.TabIndex = 7;
+            this.btnSalvar.TabIndex = 3;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);

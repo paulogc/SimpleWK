@@ -88,6 +88,7 @@
             // 
             this.btnCancelar.BackgroundImage = global::View.Properties.Resources.cancel;
             this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancelar.FlatAppearance.BorderSize = 0;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Location = new System.Drawing.Point(483, 144);
@@ -102,6 +103,7 @@
             // 
             this.btnSalvar.BackgroundImage = global::View.Properties.Resources.save;
             this.btnSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnSalvar.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnSalvar.FlatAppearance.BorderSize = 0;
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvar.Location = new System.Drawing.Point(386, 144);
@@ -265,12 +267,14 @@
             this.comboBox1.Location = new System.Drawing.Point(350, 101);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(65, 23);
-            this.comboBox1.TabIndex = 16;
+            this.comboBox1.TabIndex = 12;
             // 
             // Endereco
             // 
+            this.AcceptButton = this.btnSalvar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(595, 225);
             this.Controls.Add(this.gbEndereco);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
