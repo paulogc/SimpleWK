@@ -59,5 +59,12 @@ namespace View
         private void tbValor_KeyPress(object sender, KeyPressEventArgs e) {
             e.Handled = true;
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            BuscaModal busca = new BuscaModal();
+            busca.ShowDialog();
+            busca.Dispose();
+        }
     }
 }

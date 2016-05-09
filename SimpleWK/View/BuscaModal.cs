@@ -41,5 +41,10 @@ namespace View {
         private void btnCancelar_Click(object sender, EventArgs e) {
             Close();
         }
+
+        private void BuscaModal_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

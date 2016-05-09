@@ -20,5 +20,12 @@ namespace View
             end.ShowDialog();
             end.Dispose();
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            BuscaModal busca = new BuscaModal();
+            busca.ShowDialog();
+            busca.Dispose();
+        }
     }
 }

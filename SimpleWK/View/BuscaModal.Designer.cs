@@ -36,9 +36,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(64, 32);
+            this.label1.Location = new System.Drawing.Point(85, 39);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 15);
+            this.label1.Size = new System.Drawing.Size(85, 18);
             this.label1.TabIndex = 1;
             this.label1.Text = "Buscar por:";
             // 
@@ -46,9 +47,10 @@
             // 
             this.lblBusca.AutoSize = true;
             this.lblBusca.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBusca.Location = new System.Drawing.Point(51, 90);
+            this.lblBusca.Location = new System.Drawing.Point(68, 111);
+            this.lblBusca.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBusca.Name = "lblBusca";
-            this.lblBusca.Size = new System.Drawing.Size(74, 15);
+            this.lblBusca.Size = new System.Drawing.Size(87, 18);
             this.lblBusca.TabIndex = 3;
             this.lblBusca.Text = "Aguardando";
             // 
@@ -61,18 +63,20 @@
             "Item de busca 3",
             "Item de busca 4",
             "Item de busca 5"});
-            this.cbBuscar.Location = new System.Drawing.Point(136, 29);
+            this.cbBuscar.Location = new System.Drawing.Point(181, 36);
+            this.cbBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbBuscar.Name = "cbBuscar";
-            this.cbBuscar.Size = new System.Drawing.Size(183, 21);
+            this.cbBuscar.Size = new System.Drawing.Size(243, 24);
             this.cbBuscar.TabIndex = 2;
             this.cbBuscar.SelectedIndexChanged += new System.EventHandler(this.cbBuscar_SelectedIndexChanged);
             // 
             // txtBuscar
             // 
             this.txtBuscar.Enabled = false;
-            this.txtBuscar.Location = new System.Drawing.Point(136, 81);
+            this.txtBuscar.Location = new System.Drawing.Point(181, 100);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(183, 20);
+            this.txtBuscar.Size = new System.Drawing.Size(243, 22);
             this.txtBuscar.TabIndex = 4;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
@@ -80,9 +84,10 @@
             // 
             this.btnBuscar.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnBuscar.Enabled = false;
-            this.btnBuscar.Location = new System.Drawing.Point(221, 121);
+            this.btnBuscar.Location = new System.Drawing.Point(295, 149);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 36);
+            this.btnBuscar.Size = new System.Drawing.Size(100, 44);
             this.btnBuscar.TabIndex = 6;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -91,9 +96,10 @@
             // btnCancelar
             // 
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancelar.Location = new System.Drawing.Point(68, 121);
+            this.btnCancelar.Location = new System.Drawing.Point(91, 149);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 36);
+            this.btnCancelar.Size = new System.Drawing.Size(100, 44);
             this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -102,10 +108,10 @@
             // BuscaModal
             // 
             this.AcceptButton = this.btnBuscar;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancelar;
-            this.ClientSize = new System.Drawing.Size(362, 174);
+            this.ClientSize = new System.Drawing.Size(483, 214);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtBuscar);
@@ -113,10 +119,12 @@
             this.Controls.Add(this.cbBuscar);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "BuscaModal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Busca";
+            this.Load += new System.EventHandler(this.BuscaModal_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
