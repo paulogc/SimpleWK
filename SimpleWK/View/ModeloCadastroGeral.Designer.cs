@@ -117,6 +117,7 @@
             this.btnCancelar.BackColor = System.Drawing.SystemColors.Control;
             this.btnCancelar.BackgroundImage = global::View.Properties.Resources.cancel;
             this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancelar.FlatAppearance.BorderSize = 0;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Location = new System.Drawing.Point(693, 154);
@@ -175,6 +176,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(794, 523);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnBuscar);

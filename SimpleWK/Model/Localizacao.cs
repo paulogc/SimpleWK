@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Model {
-    class Localizacao {
+    public class Localizacao {
         private long id;
         private long idPessoa;
         private String rua;
