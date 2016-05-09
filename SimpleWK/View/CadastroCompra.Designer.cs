@@ -34,8 +34,8 @@
             // 
             // txtCPFCNPJ
             // 
-            this.txtCPFCNPJ.Location = new System.Drawing.Point(116, 79);
-            this.txtCPFCNPJ.Size = new System.Drawing.Size(151, 21);
+            this.txtCPFCNPJ.Location = new System.Drawing.Point(117, 79);
+            this.txtCPFCNPJ.Size = new System.Drawing.Size(150, 21);
             // 
             // label9
             // 
@@ -92,7 +92,7 @@
             // btnLocalizarFornecedor
             // 
             this.btnLocalizarFornecedor.FlatAppearance.BorderSize = 0;
-            this.btnLocalizarFornecedor.Location = new System.Drawing.Point(347, 51);
+            this.btnLocalizarFornecedor.Location = new System.Drawing.Point(344, 45);
             this.btnLocalizarFornecedor.Text = "/";
             this.btnLocalizarFornecedor.Click += new System.EventHandler(this.btnLocalizarFornecedor_Click);
             // 
@@ -119,7 +119,7 @@
             // btnLocalizarItem
             // 
             this.btnLocalizarItem.FlatAppearance.BorderSize = 0;
-            this.btnLocalizarItem.Location = new System.Drawing.Point(501, 17);
+            this.btnLocalizarItem.Location = new System.Drawing.Point(498, 16);
             // 
             // btnDeletar
             // 

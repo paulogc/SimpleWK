@@ -25,5 +25,9 @@ namespace View
         private void btnLocalizarItem_Click(object sender, EventArgs e) {
 
         }
+
+        private void ModeloCompraVenda_Load(object sender, EventArgs e) {
+
+        }
     }
 }
