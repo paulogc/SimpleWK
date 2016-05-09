@@ -121,7 +121,7 @@
             this.btnLocalizarItem.FlatAppearance.BorderSize = 0;
             this.btnLocalizarItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLocalizarItem.Location = new System.Drawing.Point(510, 22);
-            this.btnLocalizarItem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLocalizarItem.Margin = new System.Windows.Forms.Padding(2);
             this.btnLocalizarItem.Name = "btnLocalizarItem";
             this.btnLocalizarItem.Size = new System.Drawing.Size(30, 32);
             this.btnLocalizarItem.TabIndex = 8;
@@ -131,7 +131,7 @@
             // txtItemValorUnitario
             // 
             this.txtItemValorUnitario.Location = new System.Drawing.Point(270, 49);
-            this.txtItemValorUnitario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtItemValorUnitario.Margin = new System.Windows.Forms.Padding(2);
             this.txtItemValorUnitario.Name = "txtItemValorUnitario";
             this.txtItemValorUnitario.Size = new System.Drawing.Size(76, 20);
             this.txtItemValorUnitario.TabIndex = 7;
@@ -150,7 +150,7 @@
             // txtItemQuantidade
             // 
             this.txtItemQuantidade.Location = new System.Drawing.Point(79, 48);
-            this.txtItemQuantidade.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtItemQuantidade.Margin = new System.Windows.Forms.Padding(2);
             this.txtItemQuantidade.Name = "txtItemQuantidade";
             this.txtItemQuantidade.Size = new System.Drawing.Size(76, 20);
             this.txtItemQuantidade.TabIndex = 5;
@@ -169,7 +169,7 @@
             // txtNomeItem
             // 
             this.txtNomeItem.Location = new System.Drawing.Point(270, 22);
-            this.txtNomeItem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNomeItem.Margin = new System.Windows.Forms.Padding(2);
             this.txtNomeItem.Name = "txtNomeItem";
             this.txtNomeItem.Size = new System.Drawing.Size(226, 20);
             this.txtNomeItem.TabIndex = 3;
@@ -290,7 +290,7 @@
             // txtCPFCNPJ
             // 
             this.txtCPFCNPJ.Location = new System.Drawing.Point(117, 82);
-            this.txtCPFCNPJ.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCPFCNPJ.Margin = new System.Windows.Forms.Padding(2);
             this.txtCPFCNPJ.Name = "txtCPFCNPJ";
             this.txtCPFCNPJ.Size = new System.Drawing.Size(107, 20);
             this.txtCPFCNPJ.TabIndex = 10;
@@ -313,7 +313,7 @@
             this.btnLocalizarFornecedor.FlatAppearance.BorderSize = 0;
             this.btnLocalizarFornecedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLocalizarFornecedor.Location = new System.Drawing.Point(356, 50);
-            this.btnLocalizarFornecedor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLocalizarFornecedor.Margin = new System.Windows.Forms.Padding(2);
             this.btnLocalizarFornecedor.Name = "btnLocalizarFornecedor";
             this.btnLocalizarFornecedor.Size = new System.Drawing.Size(30, 32);
             this.btnLocalizarFornecedor.TabIndex = 8;
@@ -322,7 +322,7 @@
             // txtNomeFornecedor
             // 
             this.txtNomeFornecedor.Location = new System.Drawing.Point(117, 54);
-            this.txtNomeFornecedor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNomeFornecedor.Margin = new System.Windows.Forms.Padding(2);
             this.txtNomeFornecedor.Name = "txtNomeFornecedor";
             this.txtNomeFornecedor.Size = new System.Drawing.Size(235, 20);
             this.txtNomeFornecedor.TabIndex = 7;
@@ -330,7 +330,7 @@
             // txtDataNF
             // 
             this.txtDataNF.Location = new System.Drawing.Point(395, 22);
-            this.txtDataNF.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDataNF.Margin = new System.Windows.Forms.Padding(2);
             this.txtDataNF.Name = "txtDataNF";
             this.txtDataNF.Size = new System.Drawing.Size(76, 20);
             this.txtDataNF.TabIndex = 5;
@@ -338,7 +338,7 @@
             // txtNumNF
             // 
             this.txtNumNF.Location = new System.Drawing.Point(117, 22);
-            this.txtNumNF.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNumNF.Margin = new System.Windows.Forms.Padding(2);
             this.txtNumNF.Name = "txtNumNF";
             this.txtNumNF.Size = new System.Drawing.Size(235, 20);
             this.txtNumNF.TabIndex = 4;
@@ -378,15 +378,17 @@
             // 
             // btnCancelar
             // 
+            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Location = new System.Drawing.Point(693, 425);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(92, 41);
             this.btnCancelar.TabIndex = 3;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnFinalizar
             // 
@@ -404,6 +406,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(794, 523);
             this.Controls.Add(this.btnFinalizar);
             this.Controls.Add(this.btnCancelar);
@@ -411,7 +414,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "ModeloCompraVenda";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
