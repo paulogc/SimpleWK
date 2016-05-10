@@ -66,5 +66,9 @@ namespace View
             busca.ShowDialog();
             busca.Dispose();
         }
+
+        private void btnAdicionar_Click(object sender, EventArgs e) {
+            
+        }
     }
 }

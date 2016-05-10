@@ -71,9 +71,14 @@
             this.btnLocalizarFornecedor.FlatAppearance.BorderSize = 0;
             this.btnLocalizarFornecedor.Location = new System.Drawing.Point(472, 43);
             // 
+            // txtItemValorUnitario
+            // 
+            this.txtItemValorUnitario.Enabled = false;
+            // 
             // btnLocalizarItem
             // 
             this.btnLocalizarItem.FlatAppearance.BorderSize = 0;
+            this.btnLocalizarItem.Click += new System.EventHandler(this.btnLocalizarItem_Click);
             // 
             // btnDeletar
             // 

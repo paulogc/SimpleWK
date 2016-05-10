@@ -27,7 +27,7 @@ namespace View
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Cadastrado com sucesso!");
         }
 
         private void btnBuscar_Click(object sender, EventArgs e) {

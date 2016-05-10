@@ -64,6 +64,12 @@
     <Compile Include="BuscarCompraVende.Designer.cs">
       <DependentUpon>BuscarCompraVende.cs</DependentUpon>
     </Compile>
+    <Compile Include="BuscarProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuscarProduto.Designer.cs">
+      <DependentUpon>BuscarProduto.cs</DependentUpon>
+    </Compile>
     <Compile Include="CadastroCompra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BuscarCompraVende.resx">
       <DependentUpon>BuscarCompraVende.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BuscarProduto.resx">
+      <DependentUpon>BuscarProduto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CadastroCompra.resx">
       <DependentUpon>CadastroCompra.cs</DependentUpon>

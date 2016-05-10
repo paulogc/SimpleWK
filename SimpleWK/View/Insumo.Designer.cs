@@ -61,6 +61,7 @@
             // btnAdicionar
             // 
             this.btnAdicionar.FlatAppearance.BorderSize = 0;
+            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
             // btnEditar
             // 
@@ -72,7 +73,6 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancelar.FlatAppearance.BorderSize = 0;
             // 
             // btnBuscar
@@ -171,7 +171,7 @@
             // tbNome
             // 
             this.tbNome.Location = new System.Drawing.Point(100, 75);
-            this.tbNome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbNome.Margin = new System.Windows.Forms.Padding(2);
             this.tbNome.Name = "tbNome";
             this.tbNome.Size = new System.Drawing.Size(151, 21);
             this.tbNome.TabIndex = 7;
@@ -179,7 +179,7 @@
             // tbDescricao
             // 
             this.tbDescricao.Location = new System.Drawing.Point(100, 111);
-            this.tbDescricao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbDescricao.Margin = new System.Windows.Forms.Padding(2);
             this.tbDescricao.Name = "tbDescricao";
             this.tbDescricao.Size = new System.Drawing.Size(151, 21);
             this.tbDescricao.TabIndex = 8;
@@ -187,7 +187,7 @@
             // tbCategoria
             // 
             this.tbCategoria.Location = new System.Drawing.Point(100, 145);
-            this.tbCategoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbCategoria.Margin = new System.Windows.Forms.Padding(2);
             this.tbCategoria.Name = "tbCategoria";
             this.tbCategoria.Size = new System.Drawing.Size(151, 21);
             this.tbCategoria.TabIndex = 9;
@@ -195,7 +195,7 @@
             // tbQuantidade
             // 
             this.tbQuantidade.Location = new System.Drawing.Point(430, 74);
-            this.tbQuantidade.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbQuantidade.Margin = new System.Windows.Forms.Padding(2);
             this.tbQuantidade.Name = "tbQuantidade";
             this.tbQuantidade.Size = new System.Drawing.Size(114, 21);
             this.tbQuantidade.TabIndex = 10;
@@ -203,7 +203,7 @@
             // tbValor
             // 
             this.tbValor.Location = new System.Drawing.Point(430, 111);
-            this.tbValor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbValor.Margin = new System.Windows.Forms.Padding(2);
             this.tbValor.Name = "tbValor";
             this.tbValor.Size = new System.Drawing.Size(114, 21);
             this.tbValor.TabIndex = 11;
@@ -308,7 +308,6 @@
             // Insumo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(794, 523);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Insumo";

@@ -111,6 +111,7 @@
             // 
             // txtItemValorUnitario
             // 
+            this.txtItemValorUnitario.Enabled = false;
             this.txtItemValorUnitario.Location = new System.Drawing.Point(271, 50);
             this.txtItemValorUnitario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             // 
@@ -138,6 +139,7 @@
             this.btnLocalizarItem.FlatAppearance.BorderSize = 0;
             this.btnLocalizarItem.Location = new System.Drawing.Point(498, 16);
             this.btnLocalizarItem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLocalizarItem.Click += new System.EventHandler(this.btnLocalizarItem_Click);
             // 
             // btnDeletar
             // 

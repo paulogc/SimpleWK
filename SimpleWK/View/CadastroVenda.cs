@@ -23,5 +23,10 @@ namespace View
             MessageBox.Show("Venda finalizada!");
             Close();
         }
+
+        private void btnLocalizarItem_Click(object sender, EventArgs e) {
+            BuscarProduto bp = new BuscarProduto();
+            bp.ShowDialog();
+        }
     }
 }
