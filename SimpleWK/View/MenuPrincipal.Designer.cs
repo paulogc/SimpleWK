@@ -139,8 +139,8 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::View.Properties.Resources.SimpleWK1;
-            this.pictureBox1.Location = new System.Drawing.Point(319, 211);
+            this.pictureBox1.Image = global::View.Properties.Resources.SimpleWKa;
+            this.pictureBox1.Location = new System.Drawing.Point(340, 221);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(678, 247);
@@ -152,7 +152,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1284, 661);
+            this.ClientSize = new System.Drawing.Size(1284, 662);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

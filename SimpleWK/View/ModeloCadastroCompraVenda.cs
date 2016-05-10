@@ -29,5 +29,11 @@ namespace View
         private void btnCancelar_Click(object sender, EventArgs e) {
             Close();
         }
+
+        private void btnLocalizarFornecedor_Click(object sender, EventArgs e) {
+            BuscarCompraVende bcv = new BuscarCompraVende();
+            bcv.ShowDialog();
+            bcv.Dispose();
+        }
     }
 }

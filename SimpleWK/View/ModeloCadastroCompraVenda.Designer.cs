@@ -318,6 +318,7 @@
             this.btnLocalizarFornecedor.Size = new System.Drawing.Size(30, 32);
             this.btnLocalizarFornecedor.TabIndex = 7;
             this.btnLocalizarFornecedor.UseVisualStyleBackColor = true;
+            this.btnLocalizarFornecedor.Click += new System.EventHandler(this.btnLocalizarFornecedor_Click);
             // 
             // txtNomeFornecedor
             // 

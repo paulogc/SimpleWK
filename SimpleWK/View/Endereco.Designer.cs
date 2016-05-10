@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.gbEndereco = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
@@ -44,7 +45,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.gbEndereco.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,6 +76,42 @@
             this.gbEndereco.TabStop = false;
             this.gbEndereco.Text = "Dados da localização";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "AC",
+            "AL",
+            "AP",
+            "AM",
+            "BA",
+            "CE",
+            "DF",
+            "ES",
+            "GO",
+            "MA",
+            "MT",
+            "MS",
+            "MG",
+            "PR",
+            "PB",
+            "PA",
+            "PE",
+            "PI",
+            "RJ",
+            "RN",
+            "RS",
+            "RO",
+            "RR",
+            "SC",
+            "SE",
+            "SP",
+            "TO"});
+            this.comboBox1.Location = new System.Drawing.Point(350, 101);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(65, 23);
+            this.comboBox1.TabIndex = 12;
+            // 
             // maskedTextBox1
             // 
             this.maskedTextBox1.Location = new System.Drawing.Point(462, 67);
@@ -89,6 +125,7 @@
             this.btnCancelar.BackgroundImage = global::View.Properties.Resources.cancel;
             this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnCancelar.FlatAppearance.BorderSize = 0;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Location = new System.Drawing.Point(483, 144);
@@ -104,6 +141,7 @@
             this.btnSalvar.BackgroundImage = global::View.Properties.Resources.save;
             this.btnSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnSalvar.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnSalvar.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnSalvar.FlatAppearance.BorderSize = 0;
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvar.Location = new System.Drawing.Point(386, 144);
@@ -232,42 +270,6 @@
             this.label1.Size = new System.Drawing.Size(74, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Logradouro:";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "AC",
-            "AL",
-            "AP",
-            "AM",
-            "BA",
-            "CE",
-            "DF",
-            "ES",
-            "GO",
-            "MA",
-            "MT",
-            "MS",
-            "MG",
-            "PR",
-            "PB",
-            "PA",
-            "PE",
-            "PI",
-            "RJ",
-            "RN",
-            "RS",
-            "RO",
-            "RR",
-            "SC",
-            "SE",
-            "SP",
-            "TO"});
-            this.comboBox1.Location = new System.Drawing.Point(350, 101);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(65, 23);
-            this.comboBox1.TabIndex = 12;
             // 
             // Endereco
             // 

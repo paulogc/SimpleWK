@@ -28,11 +28,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnOk = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tbUsuario
             // 
-            this.tbUsuario.Location = new System.Drawing.Point(60, 38);
+            this.tbUsuario.Location = new System.Drawing.Point(60, 95);
             this.tbUsuario.Name = "tbUsuario";
             this.tbUsuario.Size = new System.Drawing.Size(155, 20);
             this.tbUsuario.TabIndex = 0;
@@ -40,7 +42,7 @@
             // 
             // tbSenha
             // 
-            this.tbSenha.Location = new System.Drawing.Point(60, 89);
+            this.tbSenha.Location = new System.Drawing.Point(60, 146);
             this.tbSenha.Name = "tbSenha";
             this.tbSenha.Size = new System.Drawing.Size(155, 20);
             this.tbSenha.TabIndex = 1;
@@ -50,7 +52,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(116, 19);
+            this.label1.Location = new System.Drawing.Point(116, 76);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 2;
@@ -59,7 +61,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(118, 73);
+            this.label2.Location = new System.Drawing.Point(118, 130);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 3;
@@ -67,7 +69,7 @@
             // 
             // btnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(100, 123);
+            this.btnOk.Location = new System.Drawing.Point(100, 180);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(75, 23);
             this.btnOk.TabIndex = 4;
@@ -75,11 +77,22 @@
             this.btnOk.UseVisualStyleBackColor = true;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox1.Image = global::View.Properties.Resources.SimpleWKsmall;
+            this.pictureBox1.Location = new System.Drawing.Point(66, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(144, 50);
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(281, 171);
+            this.ClientSize = new System.Drawing.Size(281, 223);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -89,6 +102,7 @@
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -101,6 +115,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnOk;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

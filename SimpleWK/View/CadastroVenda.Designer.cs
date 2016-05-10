@@ -54,15 +54,13 @@
             // 
             // txtNomeFornecedor
             // 
+            this.txtNomeFornecedor.Enabled = false;
             this.txtNomeFornecedor.Location = new System.Drawing.Point(95, 50);
+            this.txtNomeFornecedor.Size = new System.Drawing.Size(376, 20);
             // 
             // txtNumNF
             // 
             this.txtNumNF.Location = new System.Drawing.Point(95, 22);
-            // 
-            // txtIDItem
-            // 
-            this.txtIDItem.Location = new System.Drawing.Point(79, 22);
             // 
             // label5
             // 
@@ -71,11 +69,7 @@
             // btnLocalizarFornecedor
             // 
             this.btnLocalizarFornecedor.FlatAppearance.BorderSize = 0;
-            this.btnLocalizarFornecedor.Location = new System.Drawing.Point(344, 50);
-            // 
-            // txtItemQuantidade
-            // 
-            this.txtItemQuantidade.Size = new System.Drawing.Size(84, 20);
+            this.btnLocalizarFornecedor.Location = new System.Drawing.Point(472, 43);
             // 
             // btnLocalizarItem
             // 
