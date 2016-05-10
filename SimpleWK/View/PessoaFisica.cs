@@ -1,11 +1,11 @@
-﻿using Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Model;
 
 
 namespace View
@@ -46,7 +46,6 @@ namespace View
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e) {
-            Fisica olatudobem = new Fisica();
         }
     }
 }

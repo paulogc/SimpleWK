@@ -58,6 +58,12 @@
     <Compile Include="BuscaModal.Designer.cs">
       <DependentUpon>BuscaModal.cs</DependentUpon>
     </Compile>
+    <Compile Include="BuscarCompraVende.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuscarCompraVende.Designer.cs">
+      <DependentUpon>BuscarCompraVende.cs</DependentUpon>
+    </Compile>
     <Compile Include="CadastroCompra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BuscaModal.resx">
       <DependentUpon>BuscaModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BuscarCompraVende.resx">
+      <DependentUpon>BuscarCompraVende.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CadastroCompra.resx">
       <DependentUpon>CadastroCompra.cs</DependentUpon>
@@ -247,6 +256,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\SimpleWK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Controller\Controller.csproj">
