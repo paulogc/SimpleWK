@@ -18,5 +18,10 @@ namespace View
         private void btnCancelar_Click(object sender, EventArgs e) {
             Close();
         }
+
+        private void btnFinalizar_Click(object sender, EventArgs e) {
+            MessageBox.Show("Venda finalizada!");
+            Close();
+        }
     }
 }

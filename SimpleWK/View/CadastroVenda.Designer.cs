@@ -91,6 +91,7 @@
             // btnFinalizar
             // 
             this.btnFinalizar.Text = "Finalizar Venda";
+            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
             // 
             // CadastroVenda
             // 
