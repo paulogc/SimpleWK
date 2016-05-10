@@ -155,20 +155,20 @@
             this.label7.Size = new System.Drawing.Size(33, 15);
             this.label7.TabIndex = 5;
             this.label7.Text = "CPF:";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // txtNome
             // 
             this.txtNome.Location = new System.Drawing.Point(106, 68);
-            this.txtNome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNome.Margin = new System.Windows.Forms.Padding(2);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(324, 21);
             this.txtNome.TabIndex = 1;
+            this.txtNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNome_KeyPress);
             // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(106, 193);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(219, 21);
             this.txtEmail.TabIndex = 6;
@@ -182,12 +182,11 @@
             this.label8.Size = new System.Drawing.Size(75, 15);
             this.label8.TabIndex = 10;
             this.label8.Text = "Sobrenome:";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // txtSobrenome
             // 
             this.txtSobrenome.Location = new System.Drawing.Point(106, 99);
-            this.txtSobrenome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSobrenome.Margin = new System.Windows.Forms.Padding(2);
             this.txtSobrenome.Name = "txtSobrenome";
             this.txtSobrenome.Size = new System.Drawing.Size(324, 21);
             this.txtSobrenome.TabIndex = 2;
@@ -195,7 +194,7 @@
             // btnLocalizacao
             // 
             this.btnLocalizacao.Location = new System.Drawing.Point(539, 26);
-            this.btnLocalizacao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLocalizacao.Margin = new System.Windows.Forms.Padding(2);
             this.btnLocalizacao.Name = "btnLocalizacao";
             this.btnLocalizacao.Size = new System.Drawing.Size(114, 34);
             this.btnLocalizacao.TabIndex = 7;
