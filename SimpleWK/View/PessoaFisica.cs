@@ -46,11 +46,7 @@ namespace View
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e) {
-            if(Validacao.validaNome(txtNome.Text)) {
-                txtNome.ForeColor = Color.Aqua;
-            }
-            else
-                txtNome.ForeColor = Color.Red;
+            
         }
 
         private void txtNome_KeyPress(object sender, KeyPressEventArgs e) {
