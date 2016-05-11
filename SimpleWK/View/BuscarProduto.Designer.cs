@@ -100,7 +100,7 @@
             this.MaximizeBox = false;
             this.Name = "BuscarProduto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "BuscarProduto";
+            this.Text = "Buscar Produto";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

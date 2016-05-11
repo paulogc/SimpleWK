@@ -165,7 +165,7 @@
             this.ClientSize = new System.Drawing.Size(794, 523);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "CadastroCompra";
-            this.Text = "Cadastro de Compra";
+            this.Text = "Compra";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

@@ -311,7 +311,7 @@
             this.ClientSize = new System.Drawing.Size(794, 523);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Insumo";
-            this.Text = "Cadastro Insumo";
+            this.Text = "Cadastro de Insumo";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

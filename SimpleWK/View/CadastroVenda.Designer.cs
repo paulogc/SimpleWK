@@ -103,7 +103,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(794, 523);
             this.Name = "CadastroVenda";
-            this.Text = "Cadastro Venda";
+            this.Text = "Venda";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

@@ -17,8 +17,12 @@ namespace View
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e) {
+        private void btnOK_Click(object sender, EventArgs e) {
             Close();
+        }
+
+        private void btnCadastrar_Click(object sender, EventArgs e) {
+            
         }
     }
 }
