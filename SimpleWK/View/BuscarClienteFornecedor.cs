@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace View
 {
-    public partial class BuscarCompraVende : Form
+    public partial class BuscarClienteFornecedor : Form
     {
-        public BuscarCompraVende()
+        public BuscarClienteFornecedor()
         {
             InitializeComponent();
         }

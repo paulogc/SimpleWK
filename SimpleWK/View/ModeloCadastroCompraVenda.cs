@@ -31,7 +31,7 @@ namespace View
         }
 
         private void btnLocalizarFornecedor_Click(object sender, EventArgs e) {
-            BuscarCompraVende bcv = new BuscarCompraVende();
+            BuscarClienteFornecedor bcv = new BuscarClienteFornecedor();
             bcv.ShowDialog();
             bcv.Dispose();
         }

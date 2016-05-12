@@ -58,17 +58,17 @@
     <Compile Include="BuscaModal.Designer.cs">
       <DependentUpon>BuscaModal.cs</DependentUpon>
     </Compile>
-    <Compile Include="BuscarCompraVende.cs">
+    <Compile Include="BuscaProduto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BuscarCompraVende.Designer.cs">
-      <DependentUpon>BuscarCompraVende.cs</DependentUpon>
+    <Compile Include="BuscaProduto.Designer.cs">
+      <DependentUpon>BuscaProduto.cs</DependentUpon>
     </Compile>
-    <Compile Include="BuscarProduto.cs">
+    <Compile Include="BuscarClienteFornecedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BuscarProduto.Designer.cs">
-      <DependentUpon>BuscarProduto.cs</DependentUpon>
+    <Compile Include="BuscarClienteFornecedor.Designer.cs">
+      <DependentUpon>BuscarClienteFornecedor.cs</DependentUpon>
     </Compile>
     <Compile Include="CadastroCompra.cs">
       <SubType>Form</SubType>
@@ -156,11 +156,11 @@
     <EmbeddedResource Include="BuscaModal.resx">
       <DependentUpon>BuscaModal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BuscarCompraVende.resx">
-      <DependentUpon>BuscarCompraVende.cs</DependentUpon>
+    <EmbeddedResource Include="BuscaProduto.resx">
+      <DependentUpon>BuscaProduto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BuscarProduto.resx">
-      <DependentUpon>BuscarProduto.cs</DependentUpon>
+    <EmbeddedResource Include="BuscarClienteFornecedor.resx">
+      <DependentUpon>BuscarClienteFornecedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CadastroCompra.resx">
       <DependentUpon>CadastroCompra.cs</DependentUpon>
@@ -270,6 +270,12 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\SimpleWKsmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SimpleWKa.png" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\Controller\Controller.csproj">
       <Project>{ed790cdd-eed6-46d4-8b41-7eee699ec796}</Project>
       <Name>Controller</Name>
@@ -278,12 +284,6 @@
       <Project>{191d6a45-37b9-4057-861f-0593c129b2f7}</Project>
       <Name>Model</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\SimpleWKsmall.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\SimpleWKa.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

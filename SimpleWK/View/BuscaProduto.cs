@@ -9,17 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace View {
-    public partial class BuscarProduto : Form {
-        public BuscarProduto() {
+    public partial class BuscaProduto : Form {
+        public BuscaProduto() {
             InitializeComponent();
-        }
-
-        private void btnInserir_Click(object sender, EventArgs e) {
-            Close();
-        }
-
-        private void btnCancelar_Click(object sender, EventArgs e) {
-            Close();
         }
     }
 }

@@ -35,8 +35,7 @@ namespace View
         }
 
         private void btnLocalizarItem_Click(object sender, EventArgs e) {
-            BuscarProduto bp = new BuscarProduto();
-            bp.ShowDialog();
+            
         }
     }
 }
