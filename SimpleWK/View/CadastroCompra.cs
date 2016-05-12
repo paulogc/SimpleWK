@@ -22,7 +22,8 @@ namespace View
 
         private void btnLocalizarFornecedor_Click(object sender, EventArgs e)
         {
-
+            BuscarClienteFornecedor buscaCF = new BuscarClienteFornecedor();
+            buscaCF.ShowDialog();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e) {
@@ -35,7 +36,8 @@ namespace View
         }
 
         private void btnLocalizarItem_Click(object sender, EventArgs e) {
-            
+            BuscaProduto buscaP = new BuscaProduto();
+            buscaP.ShowDialog();
         }
     }
 }

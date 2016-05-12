@@ -174,7 +174,7 @@
             // btnCancelar
             // 
             this.btnCancelar.Enabled = false;
-            this.btnCancelar.Location = new System.Drawing.Point(688, 444);
+            this.btnCancelar.Location = new System.Drawing.Point(688, 466);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 43);
@@ -185,7 +185,7 @@
             // 
             // btnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(688, 365);
+            this.btnOk.Location = new System.Drawing.Point(688, 406);
             this.btnOk.Margin = new System.Windows.Forms.Padding(2);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(75, 43);

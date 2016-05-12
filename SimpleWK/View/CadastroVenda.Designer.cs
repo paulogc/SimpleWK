@@ -70,6 +70,7 @@
             // 
             this.btnLocalizarFornecedor.FlatAppearance.BorderSize = 0;
             this.btnLocalizarFornecedor.Location = new System.Drawing.Point(472, 43);
+            this.btnLocalizarFornecedor.Click += new System.EventHandler(this.btnLocalizarFornecedor_Click);
             // 
             // txtItemValorUnitario
             // 

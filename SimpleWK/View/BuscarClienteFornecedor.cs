@@ -22,7 +22,7 @@ namespace View
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e) {
-            
+            Close();
         }
     }
 }

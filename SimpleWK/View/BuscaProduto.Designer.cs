@@ -114,7 +114,7 @@
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(688, 365);
+            this.btnOK.Location = new System.Drawing.Point(685, 405);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 43);
             this.btnOK.TabIndex = 2;
@@ -123,12 +123,13 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(688, 444);
+            this.btnCancelar.Location = new System.Drawing.Point(685, 465);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 43);
             this.btnCancelar.TabIndex = 3;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // dgvProdutos
             // 

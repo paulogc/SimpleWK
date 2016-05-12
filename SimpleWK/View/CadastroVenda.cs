@@ -25,7 +25,13 @@ namespace View
         }
 
         private void btnLocalizarItem_Click(object sender, EventArgs e) {
-           
+            BuscaProduto buscaP = new BuscaProduto();
+            buscaP.ShowDialog();
+        }
+
+        private void btnLocalizarFornecedor_Click(object sender, EventArgs e) {
+            BuscarClienteFornecedor buscaCF = new BuscarClienteFornecedor();
+            buscaCF.ShowDialog();
         }
     }
 }
