@@ -12,6 +12,7 @@ namespace View
 {
     public partial class ModeloCadastroGeral : Form
     {
+
         public ModeloCadastroGeral()
         {
             InitializeComponent();
@@ -31,9 +32,7 @@ namespace View
         }
 
         private void btnBuscar_Click(object sender, EventArgs e) {
-            BuscaModal busca = new BuscaModal();
-            busca.Show();
-            busca.Dispose();
+            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e) {

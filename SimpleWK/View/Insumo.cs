@@ -8,11 +8,16 @@ using System.Windows.Forms;
 
 namespace View
 {
-    public partial class Insumo : ModeloCadastroGeral
-    {
+    public partial class Insumo : ModeloCadastroGeral {
+        String[] cbPropriedades = {"nome", "descricao", "categoria", "quantidade", "valor"};
+        
         public Insumo()
         {
             InitializeComponent();
+            foreach (String prop in cbPropriedades)
+            {
+                cbCampo.Items.Add(prop);
+            }
         }
 
         private void tbValor_TextChanged(object sender, EventArgs e) {
@@ -62,9 +67,6 @@ namespace View
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            BuscaModal busca = new BuscaModal();
-            busca.ShowDialog();
-            busca.Dispose();
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e) {

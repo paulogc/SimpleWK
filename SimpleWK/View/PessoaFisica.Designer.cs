@@ -77,11 +77,6 @@
             // 
             this.btnCancelar.FlatAppearance.BorderSize = 0;
             // 
-            // btnBuscar
-            // 
-            this.btnBuscar.FlatAppearance.BorderSize = 0;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.maskedTextBox3);
@@ -115,6 +110,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dgvPessoaFisica);
+            this.groupBox2.Controls.SetChildIndex(this.dgvPessoaFisica, 0);
             // 
             // label2
             // 
@@ -256,10 +252,10 @@
             this.CPF,
             this.Telefone,
             this.Email});
-            this.dgvPessoaFisica.Location = new System.Drawing.Point(8, 34);
+            this.dgvPessoaFisica.Location = new System.Drawing.Point(8, 61);
             this.dgvPessoaFisica.Name = "dgvPessoaFisica";
             this.dgvPessoaFisica.ReadOnly = true;
-            this.dgvPessoaFisica.Size = new System.Drawing.Size(760, 218);
+            this.dgvPessoaFisica.Size = new System.Drawing.Size(760, 206);
             this.dgvPessoaFisica.TabIndex = 0;
             // 
             // ID
@@ -341,6 +337,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPessoaFisica)).EndInit();
             this.ResumeLayout(false);

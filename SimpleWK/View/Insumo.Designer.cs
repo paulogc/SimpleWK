@@ -75,11 +75,6 @@
             // 
             this.btnCancelar.FlatAppearance.BorderSize = 0;
             // 
-            // btnBuscar
-            // 
-            this.btnBuscar.FlatAppearance.BorderSize = 0;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.tbValor);
@@ -107,6 +102,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dgvInsumo);
+            this.groupBox2.Controls.SetChildIndex(this.dgvInsumo, 0);
             // 
             // button1
             // 
@@ -269,10 +265,10 @@
             this.Categoria,
             this.Quantidade,
             this.Valor});
-            this.dgvInsumo.Location = new System.Drawing.Point(8, 34);
+            this.dgvInsumo.Location = new System.Drawing.Point(8, 61);
             this.dgvInsumo.Name = "dgvInsumo";
             this.dgvInsumo.ReadOnly = true;
-            this.dgvInsumo.Size = new System.Drawing.Size(760, 218);
+            this.dgvInsumo.Size = new System.Drawing.Size(760, 206);
             this.dgvInsumo.TabIndex = 0;
             // 
             // ID
@@ -315,6 +311,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInsumo)).EndInit();
             this.ResumeLayout(false);

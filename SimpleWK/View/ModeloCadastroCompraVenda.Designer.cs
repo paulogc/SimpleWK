@@ -59,6 +59,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnFinalizar = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtBusca = new System.Windows.Forms.TextBox();
+            this.cbCampo = new System.Windows.Forms.ComboBox();
+            this.btnBusca = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -206,6 +211,11 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btnBusca);
+            this.groupBox3.Controls.Add(this.cbCampo);
+            this.groupBox3.Controls.Add(this.txtBusca);
+            this.groupBox3.Controls.Add(this.label10);
+            this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.dataGridView1);
             this.groupBox3.Location = new System.Drawing.Point(9, 265);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
@@ -228,12 +238,12 @@
             this.dgvQuantidade,
             this.dgvValorUnitario,
             this.dgvValorTotal});
-            this.dataGridView1.Location = new System.Drawing.Point(4, 17);
+            this.dataGridView1.Location = new System.Drawing.Point(4, 60);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(669, 226);
+            this.dataGridView1.Size = new System.Drawing.Size(669, 183);
             this.dataGridView1.TabIndex = 0;
             // 
             // dgvID
@@ -403,6 +413,50 @@
             this.btnFinalizar.Text = "Finalizar";
             this.btnFinalizar.UseVisualStyleBackColor = true;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(7, 29);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(40, 13);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Busca:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(393, 28);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(43, 13);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "Campo:";
+            // 
+            // txtBusca
+            // 
+            this.txtBusca.Location = new System.Drawing.Point(51, 25);
+            this.txtBusca.Name = "txtBusca";
+            this.txtBusca.Size = new System.Drawing.Size(336, 20);
+            this.txtBusca.TabIndex = 3;
+            // 
+            // cbCampo
+            // 
+            this.cbCampo.FormattingEnabled = true;
+            this.cbCampo.Location = new System.Drawing.Point(439, 24);
+            this.cbCampo.Name = "cbCampo";
+            this.cbCampo.Size = new System.Drawing.Size(149, 21);
+            this.cbCampo.TabIndex = 4;
+            // 
+            // btnBusca
+            // 
+            this.btnBusca.FlatAppearance.BorderSize = 0;
+            this.btnBusca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBusca.Image = global::View.Properties.Resources.search2;
+            this.btnBusca.Location = new System.Drawing.Point(594, 24);
+            this.btnBusca.Name = "btnBusca";
+            this.btnBusca.Size = new System.Drawing.Size(48, 23);
+            this.btnBusca.TabIndex = 5;
+            this.btnBusca.UseVisualStyleBackColor = true;
+            // 
             // ModeloCompraVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -423,6 +477,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -462,5 +517,10 @@
         protected System.Windows.Forms.Button btnAdicionar;
         protected System.Windows.Forms.Button btnCancelar;
         protected System.Windows.Forms.Button btnFinalizar;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label3;
+        protected System.Windows.Forms.Button btnBusca;
+        protected System.Windows.Forms.ComboBox cbCampo;
+        protected System.Windows.Forms.TextBox txtBusca;
     }
 }

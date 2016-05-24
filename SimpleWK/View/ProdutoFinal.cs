@@ -10,9 +10,14 @@ namespace View
 {
     public partial class ProdutoFinal : View.ModeloCadastroGeral
     {
+        String[] cbPropriedades = {"nome","descricao", "quantidade", "valor_final", "valor_custo"};
         public ProdutoFinal()
         {
             InitializeComponent();
+            foreach (String prop in cbPropriedades)
+            {
+                cbCampo.Items.Add(prop);
+            }
         }
 
         string str;
@@ -81,9 +86,11 @@ namespace View
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            BuscaModal busca = new BuscaModal();
-            busca.ShowDialog();
-            busca.Dispose();
+            
+        }
+
+        private void btnAdicionar_Click(object sender, EventArgs e) {
+
         }
     }
 }

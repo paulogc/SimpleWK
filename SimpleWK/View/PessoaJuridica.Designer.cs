@@ -74,11 +74,6 @@
             // 
             this.btnCancelar.FlatAppearance.BorderSize = 0;
             // 
-            // btnBuscar
-            // 
-            this.btnBuscar.FlatAppearance.BorderSize = 0;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.maskedTextBox3);
@@ -112,11 +107,12 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dgvPessoaJuridica);
+            this.groupBox2.Controls.SetChildIndex(this.dgvPessoaJuridica, 0);
             // 
             // txtRazaoSocial
             // 
             this.txtRazaoSocial.Location = new System.Drawing.Point(119, 92);
-            this.txtRazaoSocial.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtRazaoSocial.Margin = new System.Windows.Forms.Padding(2);
             this.txtRazaoSocial.Name = "txtRazaoSocial";
             this.txtRazaoSocial.Size = new System.Drawing.Size(312, 21);
             this.txtRazaoSocial.TabIndex = 19;
@@ -134,7 +130,7 @@
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(119, 192);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(226, 21);
             this.txtEmail.TabIndex = 23;
@@ -142,7 +138,7 @@
             // txtNome
             // 
             this.txtNome.Location = new System.Drawing.Point(119, 61);
-            this.txtNome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNome.Margin = new System.Windows.Forms.Padding(2);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(312, 21);
             this.txtNome.TabIndex = 18;
@@ -190,7 +186,7 @@
             // btnLocalizacao
             // 
             this.btnLocalizacao.Location = new System.Drawing.Point(531, 22);
-            this.btnLocalizacao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLocalizacao.Margin = new System.Windows.Forms.Padding(2);
             this.btnLocalizacao.Name = "btnLocalizacao";
             this.btnLocalizacao.Size = new System.Drawing.Size(120, 31);
             this.btnLocalizacao.TabIndex = 24;
@@ -248,10 +244,10 @@
             this.CNPJ,
             this.Telefone,
             this.Email});
-            this.dgvPessoaJuridica.Location = new System.Drawing.Point(8, 34);
+            this.dgvPessoaJuridica.Location = new System.Drawing.Point(8, 61);
             this.dgvPessoaJuridica.Name = "dgvPessoaJuridica";
             this.dgvPessoaJuridica.ReadOnly = true;
-            this.dgvPessoaJuridica.Size = new System.Drawing.Size(760, 218);
+            this.dgvPessoaJuridica.Size = new System.Drawing.Size(760, 206);
             this.dgvPessoaJuridica.TabIndex = 0;
             // 
             // Nome
@@ -327,6 +323,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPessoaJuridica)).EndInit();
             this.ResumeLayout(false);

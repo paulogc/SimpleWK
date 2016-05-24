@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 namespace Model {
     public class Localizacao {
         private long id;
-        private long idPessoa;
-        private String rua;
+        private String logradouro;
         private int numero;
         private String bairro;
         private String cep;

@@ -24,5 +24,9 @@ namespace View
         private void btnCadastrar_Click(object sender, EventArgs e) {
             Close();
         }
+
+        private void btnBusca_Click(object sender, EventArgs e) {
+
+        }
     }
 }

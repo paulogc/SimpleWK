@@ -33,12 +33,17 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnAdicionar = new System.Windows.Forms.Button();
+            this.txtBusca = new System.Windows.Forms.TextBox();
+            this.cbCampo = new System.Windows.Forms.ComboBox();
+            this.btnBusca = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -51,7 +56,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(668, 229);
+            this.groupBox1.Size = new System.Drawing.Size(668, 225);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Propriedades";
@@ -87,36 +92,26 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.btnBusca);
+            this.groupBox2.Controls.Add(this.cbCampo);
+            this.groupBox2.Controls.Add(this.txtBusca);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(10, 245);
+            this.groupBox2.Location = new System.Drawing.Point(10, 240);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(775, 267);
+            this.groupBox2.Size = new System.Drawing.Size(775, 272);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cadastros";
             // 
-            // btnBuscar
-            // 
-            this.btnBuscar.BackColor = System.Drawing.SystemColors.Control;
-            this.btnBuscar.BackgroundImage = global::View.Properties.Resources.search;
-            this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnBuscar.FlatAppearance.BorderSize = 0;
-            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.Location = new System.Drawing.Point(693, 200);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(92, 41);
-            this.btnBuscar.TabIndex = 5;
-            this.btnBuscar.UseVisualStyleBackColor = false;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.SystemColors.Control;
-            this.btnCancelar.BackgroundImage = global::View.Properties.Resources.cancel;
-            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnCancelar.BackgroundImage = global::View.Properties.Resources._1464063579_CloseCancelSquare;
+            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancelar.FlatAppearance.BorderSize = 0;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -172,6 +167,51 @@
             this.btnAdicionar.UseVisualStyleBackColor = false;
             this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
+            // txtBusca
+            // 
+            this.txtBusca.Location = new System.Drawing.Point(55, 32);
+            this.txtBusca.Name = "txtBusca";
+            this.txtBusca.Size = new System.Drawing.Size(371, 21);
+            this.txtBusca.TabIndex = 0;
+            // 
+            // cbCampo
+            // 
+            this.cbCampo.FormattingEnabled = true;
+            this.cbCampo.Location = new System.Drawing.Point(485, 32);
+            this.cbCampo.Name = "cbCampo";
+            this.cbCampo.Size = new System.Drawing.Size(145, 23);
+            this.cbCampo.TabIndex = 1;
+            // 
+            // btnBusca
+            // 
+            this.btnBusca.FlatAppearance.BorderSize = 0;
+            this.btnBusca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBusca.Image = global::View.Properties.Resources.search2;
+            this.btnBusca.Location = new System.Drawing.Point(661, 32);
+            this.btnBusca.Name = "btnBusca";
+            this.btnBusca.Size = new System.Drawing.Size(34, 23);
+            this.btnBusca.TabIndex = 2;
+            this.btnBusca.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBusca.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(5, 32);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 15);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Busca:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(432, 32);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(47, 15);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Campo";
+            // 
             // ModeloCadastroGeral
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -179,7 +219,6 @@
             this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(794, 523);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnEditar);
@@ -194,6 +233,8 @@
             this.Load += new System.EventHandler(this.ModeloCadastroGeral_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -205,9 +246,13 @@
         protected System.Windows.Forms.Button btnEditar;
         protected System.Windows.Forms.Button btnExcluir;
         protected System.Windows.Forms.Button btnCancelar;
-        protected System.Windows.Forms.Button btnBuscar;
         protected System.Windows.Forms.GroupBox groupBox1;
         protected System.Windows.Forms.GroupBox groupBox2;
         protected System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label2;
+        protected System.Windows.Forms.Button btnBusca;
+        protected System.Windows.Forms.ComboBox cbCampo;
+        protected System.Windows.Forms.TextBox txtBusca;
     }
 }

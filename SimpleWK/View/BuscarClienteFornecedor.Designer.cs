@@ -72,6 +72,7 @@
             this.btnBusca.TabIndex = 4;
             this.btnBusca.Text = "Buscar";
             this.btnBusca.UseVisualStyleBackColor = true;
+            this.btnBusca.Click += new System.EventHandler(this.btnBusca_Click);
             // 
             // txtCnpjCpf
             // 
