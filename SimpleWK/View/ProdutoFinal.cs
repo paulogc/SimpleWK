@@ -5,19 +5,27 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Controller;
 
 namespace View
 {
     public partial class ProdutoFinal : View.ModeloCadastroGeral
     {
-        String[] cbPropriedades = {"nome","descricao", "quantidade", "valor_final", "valor_custo"};
+       
+        public void inserirCB() {
+            String[] cbValues = { "Nome", "Descrição", "Quantidade", "Valor final", "Valor custo" };
+            
+
+            foreach(String valor in cbValues)
+            {
+                cbCampo.Items.Add(valor);
+            }
+        }        
+
         public ProdutoFinal()
         {
             InitializeComponent();
-            foreach (String prop in cbPropriedades)
-            {
-                cbCampo.Items.Add(prop);
-            }
+            inserirCB();
         }
 
         string str;
