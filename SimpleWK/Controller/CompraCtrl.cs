@@ -5,8 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Controller {
-    public class ProdutoFinalCtrl {
-
+    public class CompraCtrl {
         public String getValorBusca(String valor) {
             return valor;
         }
@@ -16,25 +15,18 @@ namespace Controller {
 
             switch (coluna)
             {
-                case "Nome":
-                    nomeColuna = "nome";
+                case "Nota fiscal":
+                    nomeColuna = "nota_fiscal";
                     break;
-                case "Descrição":
-                    nomeColuna = "descricao";
+                case "CPF/CNPJ":
+                    nomeColuna = "cpf";
                     break;
-                case "Quantidade":
-                    nomeColuna = "quantidade";
-                    break;
-                case "Valor final":
-                    nomeColuna = "valor_final";
-                    break;
-                case "Valor Custo":
-                    nomeColuna = "valor_custo";
+                case "Data":
+                    nomeColuna = "data";
                     break;
             }
 
             return nomeColuna;
         }
-
     }
 }

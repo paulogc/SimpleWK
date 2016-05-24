@@ -30,6 +30,7 @@
         {
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtCPFCNPJ
@@ -99,6 +100,11 @@
             this.btnFinalizar.Text = "Finalizar Venda";
             this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
             // 
+            // btnBusca
+            // 
+            this.btnBusca.FlatAppearance.BorderSize = 0;
+            this.btnBusca.Click += new System.EventHandler(this.btnBusca_Click);
+            // 
             // CadastroVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -109,6 +115,8 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }

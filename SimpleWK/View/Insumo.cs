@@ -5,19 +5,24 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Controller;
 
 namespace View
 {
     public partial class Insumo : ModeloCadastroGeral {
-        String[] cbPropriedades = {"nome", "descricao", "categoria", "quantidade", "valor"};
-        
-        public Insumo()
-        {
-            InitializeComponent();
+        InsumoCtrl insumeCtrl = new InsumoCtrl();
+        public void InserirCB(){
+            String[] cbPropriedades = { "Nome", "Descrição", "Categoria", "Quantidade", "Valor" };
             foreach (String prop in cbPropriedades)
             {
                 cbCampo.Items.Add(prop);
             }
+        }
+        
+        public Insumo()
+        {
+            InitializeComponent();
+            InserirCB();                        
         }
 
         private void tbValor_TextChanged(object sender, EventArgs e) {
@@ -71,6 +76,11 @@ namespace View
 
         private void btnAdicionar_Click(object sender, EventArgs e) {
             
+        }
+
+        private void btnBusca_Click(object sender, EventArgs e) {
+            insumeCtrl.getNomeColuna(cbCampo.Text);
+            insumeCtrl.getValorBusca(txtBusca.Text);
         }
     }
 }
