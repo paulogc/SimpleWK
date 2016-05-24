@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model {
     class Item {
-        private long id;
+        private int id;
         private String nome;
         private String descricao;
         private double valor;

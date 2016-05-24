@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model {
     class Acao {
-        private long id;
+        private int id;
         private String notaFiscal;
         private String cpf;
         private String cnpj;

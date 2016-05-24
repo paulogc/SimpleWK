@@ -12,8 +12,8 @@ namespace Controller
         {
             get
             {
-                return " ";
-            }
+                return "";
+            }  
         }
     }
 }

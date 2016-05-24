@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model {
     public class Pessoa {
-        private long id;
+        private int id;
         private String nome;
         private String email;
         private String telefoneFixo;

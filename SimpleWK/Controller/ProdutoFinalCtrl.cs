@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Controller {
-    class ProdutoFinalCtrl {
+    public class ProdutoFinalCtrl {
 
         public String getColumnName(String valor) {
             String nomeColuna = "";
