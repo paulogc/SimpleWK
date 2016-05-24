@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace Model {
     class ProdutoFinal : Item {
-        private double custo;
         private double precoVenda;
         private List<Item> itens = new List<Item>();
 
