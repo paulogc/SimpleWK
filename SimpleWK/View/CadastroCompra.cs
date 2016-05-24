@@ -5,14 +5,26 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Controller;
 
 namespace View
 {
     public partial class CadastroCompra : View.ModeloCompraVenda
     {
+        CompraCtrl compraCtrl = new CompraCtrl();
+
+        public void InserirCB() {
+            String[] cbPropriedades = { "Nota fiscal", "Data", "CPF/CNPJ" };
+            foreach (String prop in cbPropriedades)
+            {
+                cbCampo.Items.Add(prop);
+            }
+        }
+
         public CadastroCompra()
         {
             InitializeComponent();
+            InserirCB();
         }
 
         private void txtNomeFornecedor_TextChanged(object sender, EventArgs e)
@@ -36,6 +48,11 @@ namespace View
 
         private void btnLocalizarItem_Click(object sender, EventArgs e) {
             
+        }
+
+        private void btnBusca_Click(object sender, EventArgs e) {
+            compraCtrl.getNomeColuna(cbCampo.Text);
+            compraCtrl.getValorBusca(txtBusca.Text);
         }
     }
 }

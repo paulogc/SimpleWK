@@ -102,7 +102,15 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dgvInsumo);
+            this.groupBox2.Controls.SetChildIndex(this.txtBusca, 0);
+            this.groupBox2.Controls.SetChildIndex(this.cbCampo, 0);
+            this.groupBox2.Controls.SetChildIndex(this.btnBusca, 0);
             this.groupBox2.Controls.SetChildIndex(this.dgvInsumo, 0);
+            // 
+            // btnBusca
+            // 
+            this.btnBusca.FlatAppearance.BorderSize = 0;
+            this.btnBusca.Click += new System.EventHandler(this.btnBusca_Click);
             // 
             // button1
             // 

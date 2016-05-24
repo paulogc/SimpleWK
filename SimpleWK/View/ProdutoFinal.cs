@@ -10,9 +10,11 @@ namespace View
 {
     public partial class ProdutoFinal : View.ModeloCadastroGeral
     {
+        ProdutoFinalCtrl pfCtrl = new ProdutoFinalCtrl();
        
-        public void inserirCB() {
+        public void InserirCB() {
             String[] cbValues = { "Nome", "Descrição", "Quantidade", "Valor final", "Valor custo" };
+            foreach (String valor in cbValues)
 
             foreach(String valor in cbValues)
             {
@@ -23,7 +25,7 @@ namespace View
         public ProdutoFinal()
         {
             InitializeComponent();
-            inserirCB();
+            InserirCB();
         }
 
         string str;
@@ -97,6 +99,11 @@ namespace View
 
         private void btnAdicionar_Click(object sender, EventArgs e) {
 
+        }
+
+        private void btnBusca_Click(object sender, EventArgs e) {
+            pfCtrl.getNomeColuna(cbCampo.Text);
+            pfCtrl.getValorBusca(txtBusca.Text);
         }
     }
 }

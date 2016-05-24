@@ -40,10 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CompraCtrl.cs" />
+    <Compile Include="InsumoCtrl.cs" />
+    <Compile Include="PessoaFisicaCtrl.cs" />
+    <Compile Include="PessoaJuridicaCtrl.cs" />
     <Compile Include="Conexao.cs" />
     <Compile Include="DadosDaConexao.cs" />
     <Compile Include="ProdutoFinalCtrl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VendaCtrl.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Model\Model.csproj">

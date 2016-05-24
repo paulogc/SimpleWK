@@ -110,7 +110,15 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dgvPessoaFisica);
+            this.groupBox2.Controls.SetChildIndex(this.txtBusca, 0);
+            this.groupBox2.Controls.SetChildIndex(this.cbCampo, 0);
+            this.groupBox2.Controls.SetChildIndex(this.btnBusca, 0);
             this.groupBox2.Controls.SetChildIndex(this.dgvPessoaFisica, 0);
+            // 
+            // btnBusca
+            // 
+            this.btnBusca.FlatAppearance.BorderSize = 0;
+            this.btnBusca.Click += new System.EventHandler(this.btnBusca_Click);
             // 
             // label2
             // 

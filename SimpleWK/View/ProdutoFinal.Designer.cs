@@ -110,6 +110,7 @@
             // btnBusca
             // 
             this.btnBusca.FlatAppearance.BorderSize = 0;
+            this.btnBusca.Click += new System.EventHandler(this.btnBusca_Click);
             // 
             // label2
             // 

@@ -5,8 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Controller {
-    public class ProdutoFinalCtrl {
-
+    public class InsumoCtrl {
         public String getValorBusca(String valor) {
             return valor;
         }
@@ -25,16 +24,12 @@ namespace Controller {
                 case "Quantidade":
                     nomeColuna = "quantidade";
                     break;
-                case "Valor final":
-                    nomeColuna = "valor_final";
-                    break;
-                case "Valor Custo":
-                    nomeColuna = "valor_custo";
+                case "Valor":
+                    nomeColuna = "valor";
                     break;
             }
 
             return nomeColuna;
         }
-
     }
 }
