@@ -29,7 +29,7 @@ namespace Controller
         {
             conexao.Open();
         }
-        public Desconectar()
+        public void Desconectar()
         {
             conexao.Close();
         }

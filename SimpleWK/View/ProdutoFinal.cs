@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Controller;
 
 namespace View
 {
@@ -14,7 +15,6 @@ namespace View
        
         public void InserirCB() {
             String[] cbValues = { "Nome", "Descrição", "Quantidade", "Valor final", "Valor custo" };
-            foreach (String valor in cbValues)
 
             foreach(String valor in cbValues)
             {

@@ -9,14 +9,14 @@ namespace Model {
         private int id;
         private String nome;
         private String descricao;
-        private double valor;
-        private long quantidade;
+        private double valorCusto;
+        private int quantidade;
 
         public long Id { get; set; }
         public String Nome { get; set; }
         public String Descricao { get; set; }
-        public double Valor { get; set; }
-        public long Quantidade { get; set; }
+        public double ValorCusto { get; set; }
+        public int Quantidade { get; set; }
 
     }
 }
