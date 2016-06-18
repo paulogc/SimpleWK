@@ -33,15 +33,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cbCampo = new System.Windows.Forms.ComboBox();
+            this.txtBusca = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnBusca = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnAdicionar = new System.Windows.Forms.Button();
-            this.txtBusca = new System.Windows.Forms.TextBox();
-            this.cbCampo = new System.Windows.Forms.ComboBox();
-            this.btnBusca = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -107,15 +107,48 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cadastros";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(473, 36);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(50, 15);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Campo:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(11, 36);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 15);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Busca:";
+            // 
+            // cbCampo
+            // 
+            this.cbCampo.FormattingEnabled = true;
+            this.cbCampo.Location = new System.Drawing.Point(529, 33);
+            this.cbCampo.Name = "cbCampo";
+            this.cbCampo.Size = new System.Drawing.Size(201, 23);
+            this.cbCampo.TabIndex = 1;
+            // 
+            // txtBusca
+            // 
+            this.txtBusca.Location = new System.Drawing.Point(55, 33);
+            this.txtBusca.Name = "txtBusca";
+            this.txtBusca.Size = new System.Drawing.Size(412, 21);
+            this.txtBusca.TabIndex = 0;
+            // 
             // btnCancelar
             // 
-            this.btnCancelar.BackColor = System.Drawing.SystemColors.Control;
-            this.btnCancelar.BackgroundImage = global::View.Properties.Resources._1464063579_CloseCancelSquare;
-            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCancelar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCancelar.BackgroundImage = global::View.Properties.Resources.cancel1;
+            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancelar.FlatAppearance.BorderSize = 0;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Location = new System.Drawing.Point(693, 154);
+            this.btnCancelar.Location = new System.Drawing.Point(693, 189);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(92, 41);
@@ -123,14 +156,26 @@
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // btnBusca
+            // 
+            this.btnBusca.FlatAppearance.BorderSize = 0;
+            this.btnBusca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBusca.Image = global::View.Properties.Resources.search2;
+            this.btnBusca.Location = new System.Drawing.Point(736, 33);
+            this.btnBusca.Name = "btnBusca";
+            this.btnBusca.Size = new System.Drawing.Size(34, 23);
+            this.btnBusca.TabIndex = 2;
+            this.btnBusca.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBusca.UseVisualStyleBackColor = true;
+            // 
             // btnExcluir
             // 
-            this.btnExcluir.BackColor = System.Drawing.SystemColors.Control;
+            this.btnExcluir.BackColor = System.Drawing.Color.Transparent;
             this.btnExcluir.BackgroundImage = global::View.Properties.Resources.delete;
             this.btnExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnExcluir.FlatAppearance.BorderSize = 0;
             this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcluir.Location = new System.Drawing.Point(693, 109);
+            this.btnExcluir.Location = new System.Drawing.Point(693, 133);
             this.btnExcluir.Margin = new System.Windows.Forms.Padding(2);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(92, 41);
@@ -139,12 +184,12 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.BackColor = System.Drawing.SystemColors.Control;
+            this.btnEditar.BackColor = System.Drawing.Color.Transparent;
             this.btnEditar.BackgroundImage = global::View.Properties.Resources.edit;
             this.btnEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnEditar.FlatAppearance.BorderSize = 0;
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Location = new System.Drawing.Point(693, 63);
+            this.btnEditar.Location = new System.Drawing.Point(693, 77);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(92, 41);
@@ -159,58 +204,13 @@
             this.btnAdicionar.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnAdicionar.FlatAppearance.BorderSize = 0;
             this.btnAdicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdicionar.Location = new System.Drawing.Point(693, 18);
+            this.btnAdicionar.Location = new System.Drawing.Point(693, 21);
             this.btnAdicionar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(92, 41);
             this.btnAdicionar.TabIndex = 1;
             this.btnAdicionar.UseVisualStyleBackColor = false;
             this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
-            // 
-            // txtBusca
-            // 
-            this.txtBusca.Location = new System.Drawing.Point(55, 32);
-            this.txtBusca.Name = "txtBusca";
-            this.txtBusca.Size = new System.Drawing.Size(371, 21);
-            this.txtBusca.TabIndex = 0;
-            // 
-            // cbCampo
-            // 
-            this.cbCampo.FormattingEnabled = true;
-            this.cbCampo.Location = new System.Drawing.Point(485, 32);
-            this.cbCampo.Name = "cbCampo";
-            this.cbCampo.Size = new System.Drawing.Size(145, 23);
-            this.cbCampo.TabIndex = 1;
-            // 
-            // btnBusca
-            // 
-            this.btnBusca.FlatAppearance.BorderSize = 0;
-            this.btnBusca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBusca.Image = global::View.Properties.Resources.search2;
-            this.btnBusca.Location = new System.Drawing.Point(661, 32);
-            this.btnBusca.Name = "btnBusca";
-            this.btnBusca.Size = new System.Drawing.Size(34, 23);
-            this.btnBusca.TabIndex = 2;
-            this.btnBusca.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBusca.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(5, 32);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 15);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Busca:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(432, 32);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 15);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Campo";
             // 
             // ModeloCadastroGeral
             // 
