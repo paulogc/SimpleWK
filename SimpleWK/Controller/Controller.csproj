@@ -45,13 +45,16 @@
     <Compile Include="InsumoCtrl.cs" />
     <Compile Include="PessoaFisicaCtrl.cs" />
     <Compile Include="PessoaJuridicaCtrl.cs" />
-    <Compile Include="Conexao.cs" />
     <Compile Include="DadosDaConexao.cs" />
     <Compile Include="ProdutoFinalCtrl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VendaCtrl.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DAO\DAO.csproj">
+      <Project>{29680b7c-2a1d-4aa9-b1f2-d7375e0eafe0}</Project>
+      <Name>DAO</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{191d6a45-37b9-4057-861f-0593c129b2f7}</Project>
       <Name>Model</Name>

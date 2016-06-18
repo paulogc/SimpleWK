@@ -5,14 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Model {
-    class Compra : Acao{
+    public class Compra : Acao{
         private List<Insumo> insumos = new List<Insumo>();
 
-        public void AddInsumo(Insumo insumo) {
+        private void AddInsumo(Insumo insumo) {
             insumos.Add(insumo);
         }
 
-        public void RemoveIsumo(Insumo insumo) {
+        private void RemoveIsumo(Insumo insumo) {
             insumos.Remove(insumo);
         }
     }
