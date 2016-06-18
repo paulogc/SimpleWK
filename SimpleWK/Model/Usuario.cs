@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Model {
-    class Usuario : Fisica {
+    public class Usuario : Fisica {
         private String login;
         private String senha;
 

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Model {
-    class Insumo : Item{
+    public class Insumo : Item{
         private int idInsumo;
 
         public int IdInsumo { get; set; }

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Model {
-    class ProdutoFinal : Item {
+    public class ProdutoFinal : Item {
         private int idProdutoFinal;
         private double precoVenda;
         private List<Item> itens = new List<Item>();
