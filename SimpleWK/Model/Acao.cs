@@ -11,7 +11,7 @@ namespace Model {
         private double valor;
         public Pessoa pessoaFJ;
 
-        public long Id { get; set; }
+        public int Id { get; set; }
         public String NotaFiscal { get; set; }
         public double Valor { get; set; }
     }

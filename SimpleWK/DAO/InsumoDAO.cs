@@ -49,6 +49,7 @@ namespace DAO
 
             dbSWK.ExecuteSQL(qry);
         }
+
         public void Delete(Insumo insumo)
         {
             Database dbSWK = Database.GetInstance();

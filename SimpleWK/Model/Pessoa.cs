@@ -13,7 +13,7 @@ namespace Model {
         private String telefoneMovel;
         private Localizacao endereco;
 
-        public long Id { get; set; }
+        public int Id { get; set; }
         public String Nome { get; set; }
         public String Email { get; set; }
         public String TelefoneFixo { get; set; }

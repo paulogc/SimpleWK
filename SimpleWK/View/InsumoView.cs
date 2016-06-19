@@ -95,5 +95,32 @@ namespace View
 
             return insumo;
         }
+
+        private void btnEditar_Click(object sender, EventArgs e) {
+            String message = "Você deve selecionar um Insumo na tabela!";
+            
+            Insumo insumo = new Insumo();
+            foreach (DataGridViewRow row in dgvInsumo.Rows)
+            {
+                if (row.Selected)
+                {
+                    insumo.Id = Int32.Parse(row.Cells[0].Value.ToString());
+                    insumo.Nome = row.Cells[1].Value.ToString();
+                    insumo.Descricao = row.Cells[2].Value.ToString();
+                    insumo.Quantidade = Int32.Parse(row.Cells[3].Value.ToString());
+                    insumo.ValorCusto = Double.Parse(row.Cells[4].Value.ToString());
+                    message = "";
+                }
+            }
+            if(message != "")
+            {
+                MessageBox.Show(message);
+            }
+            else
+            {
+                InsumoDAO iDAO = new InsumoDAO();
+                iDAO.Update(insumo);
+            }
+        }
     }
 }

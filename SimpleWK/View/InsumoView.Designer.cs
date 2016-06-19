@@ -45,11 +45,6 @@
             this.dvgQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dvgValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvInsumo = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descrição = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -64,6 +59,7 @@
             // btnEditar
             // 
             this.btnEditar.FlatAppearance.BorderSize = 0;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnExcluir
             // 
@@ -241,54 +237,18 @@
             this.dgvInsumo.AllowUserToDeleteRows = false;
             this.dgvInsumo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvInsumo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInsumo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.Descrição,
-            this.Categoria,
-            this.Quantidade,
-            this.Valor});
             this.dgvInsumo.Location = new System.Drawing.Point(8, 61);
             this.dgvInsumo.Name = "dgvInsumo";
             this.dgvInsumo.ReadOnly = true;
             this.dgvInsumo.Size = new System.Drawing.Size(760, 206);
             this.dgvInsumo.TabIndex = 0;
             // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // Descrição
-            // 
-            this.Descrição.HeaderText = "Descrição";
-            this.Descrição.Name = "Descrição";
-            this.Descrição.ReadOnly = true;
-            // 
-            // Categoria
-            // 
-            this.Categoria.HeaderText = "Categoria";
-            this.Categoria.Name = "Categoria";
-            this.Categoria.ReadOnly = true;
-            // 
-            // Quantidade
-            // 
-            this.Quantidade.HeaderText = "Quantidade";
-            this.Quantidade.Name = "Quantidade";
-            this.Quantidade.ReadOnly = true;
-            // 
-            // Valor
-            // 
-            this.Valor.HeaderText = "Valor";
-            this.Valor.Name = "Valor";
-            this.Valor.ReadOnly = true;
-            // 
-            // Insumo
+            // InsumoView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(794, 523);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "Insumo";
+            this.Name = "InsumoView";
             this.Text = "Cadastro de Insumo";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -319,10 +279,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dvgQuantidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn dvgValor;
         private System.Windows.Forms.DataGridView dgvInsumo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descrição;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
     }
 }
