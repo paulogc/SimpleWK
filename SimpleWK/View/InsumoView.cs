@@ -94,7 +94,7 @@ namespace View
             insumo.Descricao = tbDescricao.Text;
             insumo.Quantidade = int.Parse(tbQuantidade.Text);
             insumo.ValorCusto = decimal.Parse(tbValor.Text);
-            return insumo;
+            return insumo; 
         }
 
         private void InsumoView_Load(object sender, EventArgs e) {
