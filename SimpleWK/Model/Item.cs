@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Model {
-    class Item {
+    public class Item {
         private int id;
         private String nome;
         private String descricao;
