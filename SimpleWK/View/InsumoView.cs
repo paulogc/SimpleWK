@@ -74,7 +74,15 @@ namespace View
             {
                 Insumo insumo = CreateInsumo();
                 InsumoDAO iDAO = new InsumoDAO();
-                iDAO.Create(insumo);
+                if(insumo.Id != 0)
+                {
+                    iDAO.Update(insumo);
+                }
+                else
+                {
+                    iDAO.Create(insumo);
+                }
+                
             }
             catch(Exception p)
             {
@@ -88,6 +96,10 @@ namespace View
 
         private Insumo CreateInsumo() {
             Insumo insumo = new Insumo();
+            if(lbID.ToString() != "")
+            {
+                insumo.Id = Int32.Parse(lbID.ToString());
+            }
             insumo.Nome = tbNome.Text;
             insumo.Descricao = tbDescricao.Text;
             insumo.Quantidade = Int32.Parse(tbQuantidade.Text);
@@ -118,8 +130,11 @@ namespace View
             }
             else
             {
-                InsumoDAO iDAO = new InsumoDAO();
-                iDAO.Update(insumo);
+                lbID.Text = insumo.Id.ToString();
+                tbNome.Text = insumo.Nome;
+                tbDescricao.Text = insumo.Descricao;
+                tbQuantidade.Text = insumo.Quantidade.ToString();
+                tbValor.Text = insumo.ValorCusto.ToString(); 
             }
         }
     }

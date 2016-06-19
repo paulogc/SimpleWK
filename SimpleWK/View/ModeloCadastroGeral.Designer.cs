@@ -31,14 +31,14 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbID = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnBusca = new System.Windows.Forms.Button();
             this.cbCampo = new System.Windows.Forms.ComboBox();
             this.txtBusca = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnBusca = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnAdicionar = new System.Windows.Forms.Button();
@@ -50,7 +50,7 @@
             // 
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.lbID);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(9, 11);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
@@ -81,14 +81,14 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "ID:";
             // 
-            // label1
+            // lbID
             // 
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label1.Location = new System.Drawing.Point(44, 33);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 22);
-            this.label1.TabIndex = 1;
+            this.lbID.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lbID.Location = new System.Drawing.Point(44, 33);
+            this.lbID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbID.Name = "lbID";
+            this.lbID.Size = new System.Drawing.Size(71, 22);
+            this.lbID.TabIndex = 1;
             // 
             // groupBox2
             // 
@@ -125,6 +125,18 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Busca:";
             // 
+            // btnBusca
+            // 
+            this.btnBusca.FlatAppearance.BorderSize = 0;
+            this.btnBusca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBusca.Image = global::View.Properties.Resources.search2;
+            this.btnBusca.Location = new System.Drawing.Point(736, 33);
+            this.btnBusca.Name = "btnBusca";
+            this.btnBusca.Size = new System.Drawing.Size(34, 23);
+            this.btnBusca.TabIndex = 2;
+            this.btnBusca.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBusca.UseVisualStyleBackColor = true;
+            // 
             // cbCampo
             // 
             this.cbCampo.FormattingEnabled = true;
@@ -155,18 +167,6 @@
             this.btnCancelar.TabIndex = 4;
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // btnBusca
-            // 
-            this.btnBusca.FlatAppearance.BorderSize = 0;
-            this.btnBusca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBusca.Image = global::View.Properties.Resources.search2;
-            this.btnBusca.Location = new System.Drawing.Point(736, 33);
-            this.btnBusca.Name = "btnBusca";
-            this.btnBusca.Size = new System.Drawing.Size(34, 23);
-            this.btnBusca.TabIndex = 2;
-            this.btnBusca.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBusca.UseVisualStyleBackColor = true;
             // 
             // btnExcluir
             // 
@@ -248,11 +248,11 @@
         protected System.Windows.Forms.Button btnCancelar;
         protected System.Windows.Forms.GroupBox groupBox1;
         protected System.Windows.Forms.GroupBox groupBox2;
-        protected System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
         protected System.Windows.Forms.Button btnBusca;
         protected System.Windows.Forms.ComboBox cbCampo;
         protected System.Windows.Forms.TextBox txtBusca;
+        public System.Windows.Forms.Label lbID;
     }
 }
