@@ -57,12 +57,6 @@
     <Compile Include="AdicaoInsumos.Designer.cs">
       <DependentUpon>AdicaoInsumos.cs</DependentUpon>
     </Compile>
-    <Compile Include="BuscaModal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BuscaModal.Designer.cs">
-      <DependentUpon>BuscaModal.cs</DependentUpon>
-    </Compile>
     <Compile Include="BuscaProduto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,17 +69,17 @@
     <Compile Include="BuscarClienteFornecedor.Designer.cs">
       <DependentUpon>BuscarClienteFornecedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="CadastroCompra.cs">
+    <Compile Include="CompraView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CadastroCompra.Designer.cs">
-      <DependentUpon>CadastroCompra.cs</DependentUpon>
+    <Compile Include="CompraView.Designer.cs">
+      <DependentUpon>CompraView.cs</DependentUpon>
     </Compile>
-    <Compile Include="CadastroVenda.cs">
+    <Compile Include="VendaView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CadastroVenda.Designer.cs">
-      <DependentUpon>CadastroVenda.cs</DependentUpon>
+    <Compile Include="VendaView.Designer.cs">
+      <DependentUpon>VendaView.cs</DependentUpon>
     </Compile>
     <Compile Include="dsFisica.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -98,29 +92,29 @@
     <Compile Include="ModeloCadastroCompraVenda.Designer.cs">
       <DependentUpon>ModeloCadastroCompraVenda.cs</DependentUpon>
     </Compile>
-    <Compile Include="Endereco.cs">
+    <Compile Include="EnderecoView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Endereco.Designer.cs">
-      <DependentUpon>Endereco.cs</DependentUpon>
+    <Compile Include="EnderecoView.Designer.cs">
+      <DependentUpon>EnderecoView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Insumo.cs">
+    <Compile Include="InsumoView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Insumo.Designer.cs">
-      <DependentUpon>Insumo.cs</DependentUpon>
+    <Compile Include="InsumoView.Designer.cs">
+      <DependentUpon>InsumoView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="LoginView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="LoginView.Designer.cs">
+      <DependentUpon>LoginView.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuPrincipal.cs">
+    <Compile Include="MenuPrincipalView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuPrincipal.Designer.cs">
-      <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    <Compile Include="MenuPrincipalView.Designer.cs">
+      <DependentUpon>MenuPrincipalView.cs</DependentUpon>
     </Compile>
     <Compile Include="ModeloCadastroGeral.cs">
       <SubType>Form</SubType>
@@ -128,43 +122,40 @@
     <Compile Include="ModeloCadastroGeral.Designer.cs">
       <DependentUpon>ModeloCadastroGeral.cs</DependentUpon>
     </Compile>
-    <Compile Include="PessoaFisica.cs">
+    <Compile Include="PessoaFisicaView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PessoaFisica.Designer.cs">
-      <DependentUpon>PessoaFisica.cs</DependentUpon>
+    <Compile Include="PessoaFisicaView.Designer.cs">
+      <DependentUpon>PessoaFisicaView.cs</DependentUpon>
     </Compile>
-    <Compile Include="PessoaJuridica.cs">
+    <Compile Include="PessoaJuridicaView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PessoaJuridica.Designer.cs">
-      <DependentUpon>PessoaJuridica.cs</DependentUpon>
+    <Compile Include="PessoaJuridicaView.Designer.cs">
+      <DependentUpon>PessoaJuridicaView.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProdutoFinal.cs">
+    <Compile Include="ProdutoFinalView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProdutoFinal.Designer.cs">
-      <DependentUpon>ProdutoFinal.cs</DependentUpon>
+    <Compile Include="ProdutoFinalView.Designer.cs">
+      <DependentUpon>ProdutoFinalView.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Quantidade.cs">
+    <Compile Include="QuantidadeView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Quantidade.Designer.cs">
-      <DependentUpon>Quantidade.cs</DependentUpon>
+    <Compile Include="QuantidadeView.Designer.cs">
+      <DependentUpon>QuantidadeView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sobre.cs">
+    <Compile Include="SobreView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sobre.Designer.cs">
-      <DependentUpon>Sobre.cs</DependentUpon>
+    <Compile Include="SobreView.Designer.cs">
+      <DependentUpon>SobreView.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AdicaoInsumos.resx">
       <DependentUpon>AdicaoInsumos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BuscaModal.resx">
-      <DependentUpon>BuscaModal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BuscaProduto.resx">
       <DependentUpon>BuscaProduto.cs</DependentUpon>
@@ -172,38 +163,38 @@
     <EmbeddedResource Include="BuscarClienteFornecedor.resx">
       <DependentUpon>BuscarClienteFornecedor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CadastroCompra.resx">
-      <DependentUpon>CadastroCompra.cs</DependentUpon>
+    <EmbeddedResource Include="CompraView.resx">
+      <DependentUpon>CompraView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CadastroVenda.resx">
-      <DependentUpon>CadastroVenda.cs</DependentUpon>
+    <EmbeddedResource Include="VendaView.resx">
+      <DependentUpon>VendaView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModeloCadastroCompraVenda.resx">
       <DependentUpon>ModeloCadastroCompraVenda.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Endereco.resx">
-      <DependentUpon>Endereco.cs</DependentUpon>
+    <EmbeddedResource Include="EnderecoView.resx">
+      <DependentUpon>EnderecoView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Insumo.resx">
-      <DependentUpon>Insumo.cs</DependentUpon>
+    <EmbeddedResource Include="InsumoView.resx">
+      <DependentUpon>InsumoView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="LoginView.resx">
+      <DependentUpon>LoginView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuPrincipal.resx">
-      <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    <EmbeddedResource Include="MenuPrincipalView.resx">
+      <DependentUpon>MenuPrincipalView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModeloCadastroGeral.resx">
       <DependentUpon>ModeloCadastroGeral.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PessoaFisica.resx">
-      <DependentUpon>PessoaFisica.cs</DependentUpon>
+    <EmbeddedResource Include="PessoaFisicaView.resx">
+      <DependentUpon>PessoaFisicaView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PessoaJuridica.resx">
-      <DependentUpon>PessoaJuridica.cs</DependentUpon>
+    <EmbeddedResource Include="PessoaJuridicaView.resx">
+      <DependentUpon>PessoaJuridicaView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProdutoFinal.resx">
-      <DependentUpon>ProdutoFinal.cs</DependentUpon>
+    <EmbeddedResource Include="ProdutoFinalView.resx">
+      <DependentUpon>ProdutoFinalView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -215,11 +206,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Quantidade.resx">
-      <DependentUpon>Quantidade.cs</DependentUpon>
+    <EmbeddedResource Include="QuantidadeView.resx">
+      <DependentUpon>QuantidadeView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sobre.resx">
-      <DependentUpon>Sobre.cs</DependentUpon>
+    <EmbeddedResource Include="SobreView.resx">
+      <DependentUpon>SobreView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="dsFisica.xsc">
       <DependentUpon>dsFisica.xsd</DependentUpon>
@@ -297,6 +288,10 @@
     <None Include="Resources\SimpleWKa.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DAO\DAO.csproj">
+      <Project>{29680b7c-2a1d-4aa9-b1f2-d7375e0eafe0}</Project>
+      <Name>DAO</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{191d6a45-37b9-4057-861f-0593c129b2f7}</Project>
       <Name>Model</Name>

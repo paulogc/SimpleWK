@@ -6,8 +6,6 @@ using System.Threading.Tasks;
 
 namespace Model {
     public class Insumo : Item{
-        private int idInsumo;
 
-        public int IdInsumo { get; set; }
     }
 }

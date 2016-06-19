@@ -14,12 +14,19 @@ namespace DAO
         {
             Database dbSWK = Database.GetInstance();
 
-            string qryInsumo = string.Format("INSERT INTO item (nome, descricao, valor_custo, quantidade)" +
+            string qryItem = string.Format("INSERT INTO item (nome, descricao, valor_custo, quantidade)" +
                 "VALUES('{0}','{1}','{2}','{3}');",
                 insumo.Nome, insumo.Descricao, insumo.ValorCusto, insumo.Quantidade);
 
+            dbSWK.ExecuteSQL(qryItem);
+
+            int idItem = dbSWK.GetId();
+
+            string qryInsumo = string.Format("INSERT INTO insumo (id_item) VALUES('{0}');", idItem);
+
             dbSWK.ExecuteSQL(qryInsumo);
         }
+
         public Insumo Read(String buscarPor, String BuscaValor)
         {
             Insumo insumo = new Insumo();

@@ -25,9 +25,13 @@ namespace DAO
         }
 
         public int GetId() {
-            MySqlCommand cmd = new MySqlCommand();
-            cmd.CommandText = "select last_insert_id();";
+            if (connection.State != System.Data.ConnectionState.Open)
+                connection.Open();
+
+            string sql = "select last_insert_id();";
+            MySqlCommand cmd = new MySqlCommand(sql, connection);
             int idRetorno = Convert.ToInt32(cmd.ExecuteScalar().ToString());
+            connection.Close();
 
             return idRetorno;
         }

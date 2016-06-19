@@ -16,7 +16,7 @@ namespace View {
         }
 
         private void btnAdd_Click(object sender, EventArgs e) {
-            Quantidade qtd = new Quantidade();
+            QuantidadeView qtd = new QuantidadeView();
             qtd.Show();
         }
 

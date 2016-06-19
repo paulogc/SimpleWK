@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model {
     public class ProdutoFinal : Item {
-        private int idProdutoFinal;
+
         private double precoVenda;
         private List<Item> itens = new List<Item>();
         public void AddItem(Item item) {
@@ -15,7 +15,7 @@ namespace Model {
         public void RemoveItem(Item item) {
             itens.Remove(item);
         }
-        public int IdProdutoFinal { get; set; }
+
         public double PrecoVenda { get; set; }
     }
 }
