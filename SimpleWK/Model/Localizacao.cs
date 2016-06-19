@@ -17,8 +17,8 @@ namespace Model {
         private String complemento;
 
 
-        public long Id { get; set; }
-        public long IdPessoa { get; set; }
+        public int Id { get; set; }
+        public int IdPessoa { get; set; }
         public String Rua { get; set; }
         public int Numero { get; set; }
         public String Bairro { get; set; }
