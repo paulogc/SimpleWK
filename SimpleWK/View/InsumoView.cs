@@ -74,7 +74,7 @@ namespace View
             {
                 Insumo insumo = CreateInsumo();
                 InsumoDAO iDAO = new InsumoDAO();
-                if (insumo.Id != null)
+                if (insumo.Id != 0)
                 {
                     iDAO.Update(insumo);
                 }
@@ -89,7 +89,7 @@ namespace View
             }
             catch(Exception p)
             {
-                MessageBox.Show(p.Message);
+                MessageBox.Show(p.ToString());
             }
         }
 
@@ -99,14 +99,14 @@ namespace View
 
         private Insumo CreateInsumo() {
             Insumo insumo = new Insumo();
-            if (lbID.ToString() != "")
+            if (lbID.Text != "")
             {
-                insumo.Id = Int32.Parse(lbID.ToString());
+                insumo.Id = Int32.Parse(lbID.Text);
             }
             insumo.Nome = tbNome.Text;
             insumo.Descricao = tbDescricao.Text;
             insumo.Quantidade = Int32.Parse(tbQuantidade.Text);
-            insumo.ValorCusto = Double.Parse(tbValor.Text);
+            insumo.ValorCusto = Decimal.Parse(tbValor.Text);
 
             return insumo;
         }
@@ -133,7 +133,7 @@ namespace View
                     insumo.Nome = row.Cells[1].Value.ToString();
                     insumo.Descricao = row.Cells[2].Value.ToString();
                     insumo.Quantidade = Int32.Parse(row.Cells[3].Value.ToString());
-                    insumo.ValorCusto = Double.Parse(row.Cells[4].Value.ToString());
+                    insumo.ValorCusto = Decimal.Parse(row.Cells[4].Value.ToString());
                     message = "";
                 }
             }
