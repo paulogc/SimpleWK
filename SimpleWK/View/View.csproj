@@ -75,6 +75,14 @@
     <Compile Include="CompraView.Designer.cs">
       <DependentUpon>CompraView.cs</DependentUpon>
     </Compile>
+    <Compile Include="dsInsumo.cs">
+      <DependentUpon>dsInsumo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsInsumo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsInsumo.xsd</DependentUpon>
+    </Compile>
     <Compile Include="VendaView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,6 +230,17 @@
     </None>
     <None Include="dsFisica.xss">
       <DependentUpon>dsFisica.xsd</DependentUpon>
+    </None>
+    <None Include="dsInsumo.xsc">
+      <DependentUpon>dsInsumo.xsd</DependentUpon>
+    </None>
+    <None Include="dsInsumo.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsInsumo.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsInsumo.xss">
+      <DependentUpon>dsInsumo.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

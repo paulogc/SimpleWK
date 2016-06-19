@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -45,15 +46,20 @@
             this.dvgQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dvgValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvInsumo = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descrição = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dsInsumo = new View.dsInsumo();
+            this.itemBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.itemTableAdapter = new View.dsInsumoTableAdapters.itemTableAdapter();
+            this.iditemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descricaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorcustoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInsumo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsInsumo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAdicionar
@@ -239,63 +245,87 @@
             // 
             this.dgvInsumo.AllowUserToAddRows = false;
             this.dgvInsumo.AllowUserToDeleteRows = false;
+            this.dgvInsumo.AutoGenerateColumns = false;
             this.dgvInsumo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvInsumo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInsumo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.Descrição,
-            this.Categoria,
-            this.Quantidade,
-            this.Valor});
+            this.iditemDataGridViewTextBoxColumn,
+            this.nomeDataGridViewTextBoxColumn,
+            this.descricaoDataGridViewTextBoxColumn,
+            this.valorcustoDataGridViewTextBoxColumn,
+            this.quantidadeDataGridViewTextBoxColumn});
+            this.dgvInsumo.DataSource = this.itemBindingSource;
             this.dgvInsumo.Location = new System.Drawing.Point(8, 61);
             this.dgvInsumo.Name = "dgvInsumo";
             this.dgvInsumo.ReadOnly = true;
             this.dgvInsumo.Size = new System.Drawing.Size(760, 206);
             this.dgvInsumo.TabIndex = 0;
             // 
-            // ID
+            // dsInsumo
             // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
+            this.dsInsumo.DataSetName = "dsInsumo";
+            this.dsInsumo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // Descrição
+            // itemBindingSource
             // 
-            this.Descrição.HeaderText = "Descrição";
-            this.Descrição.Name = "Descrição";
-            this.Descrição.ReadOnly = true;
+            this.itemBindingSource.DataMember = "item";
+            this.itemBindingSource.DataSource = this.dsInsumo;
             // 
-            // Categoria
+            // itemTableAdapter
             // 
-            this.Categoria.HeaderText = "Categoria";
-            this.Categoria.Name = "Categoria";
-            this.Categoria.ReadOnly = true;
+            this.itemTableAdapter.ClearBeforeFill = true;
             // 
-            // Quantidade
+            // iditemDataGridViewTextBoxColumn
             // 
-            this.Quantidade.HeaderText = "Quantidade";
-            this.Quantidade.Name = "Quantidade";
-            this.Quantidade.ReadOnly = true;
+            this.iditemDataGridViewTextBoxColumn.DataPropertyName = "id_item";
+            this.iditemDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iditemDataGridViewTextBoxColumn.Name = "iditemDataGridViewTextBoxColumn";
+            this.iditemDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // Valor
+            // nomeDataGridViewTextBoxColumn
             // 
-            this.Valor.HeaderText = "Valor";
-            this.Valor.Name = "Valor";
-            this.Valor.ReadOnly = true;
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "nome";
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // Insumo
+            // descricaoDataGridViewTextBoxColumn
+            // 
+            this.descricaoDataGridViewTextBoxColumn.DataPropertyName = "descricao";
+            this.descricaoDataGridViewTextBoxColumn.HeaderText = "Descrição";
+            this.descricaoDataGridViewTextBoxColumn.Name = "descricaoDataGridViewTextBoxColumn";
+            this.descricaoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // valorcustoDataGridViewTextBoxColumn
+            // 
+            this.valorcustoDataGridViewTextBoxColumn.DataPropertyName = "valor_custo";
+            this.valorcustoDataGridViewTextBoxColumn.HeaderText = "Valor de Custo";
+            this.valorcustoDataGridViewTextBoxColumn.Name = "valorcustoDataGridViewTextBoxColumn";
+            this.valorcustoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // quantidadeDataGridViewTextBoxColumn
+            // 
+            this.quantidadeDataGridViewTextBoxColumn.DataPropertyName = "quantidade";
+            this.quantidadeDataGridViewTextBoxColumn.HeaderText = "Quantidade";
+            this.quantidadeDataGridViewTextBoxColumn.Name = "quantidadeDataGridViewTextBoxColumn";
+            this.quantidadeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // InsumoView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(794, 523);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "Insumo";
+            this.Name = "InsumoView";
             this.Text = "Cadastro de Insumo";
+            this.Load += new System.EventHandler(this.InsumoView_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInsumo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsInsumo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -319,10 +349,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dvgQuantidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn dvgValor;
         private System.Windows.Forms.DataGridView dgvInsumo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descrição;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
+        private dsInsumo dsInsumo;
+        private System.Windows.Forms.BindingSource itemBindingSource;
+        private dsInsumoTableAdapters.itemTableAdapter itemTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iditemDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descricaoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valorcustoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantidadeDataGridViewTextBoxColumn;
     }
 }

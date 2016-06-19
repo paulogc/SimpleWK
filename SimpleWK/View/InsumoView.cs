@@ -75,6 +75,8 @@ namespace View
                 Insumo insumo = CreateInsumo();
                 InsumoDAO iDAO = new InsumoDAO();
                 iDAO.Create(insumo);
+                this.itemTableAdapter.Fill(this.dsInsumo.item);
+                LimparCampos();
             }
             catch(Exception p)
             {
@@ -90,10 +92,19 @@ namespace View
             Insumo insumo = new Insumo();
             insumo.Nome = tbNome.Text;
             insumo.Descricao = tbDescricao.Text;
-            insumo.Quantidade = Int32.Parse(tbQuantidade.Text);
-            insumo.ValorCusto = Double.Parse( tbValor.Text);
-
+            insumo.Quantidade = int.Parse(tbQuantidade.Text);
+            insumo.ValorCusto = decimal.Parse(tbValor.Text);
             return insumo;
+        }
+
+        private void InsumoView_Load(object sender, EventArgs e) {
+            // TODO: esta linha de código carrega dados na tabela 'dsInsumo.item'. Você pode movê-la ou removê-la conforme necessário.
+            this.itemTableAdapter.Fill(this.dsInsumo.item);
+
+        }
+        
+        private void LimparCampos() {
+            tbNome.Text = tbDescricao.Text = tbQuantidade.Text = tbValor.Text = "";
         }
     }
 }

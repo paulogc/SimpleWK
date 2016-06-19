@@ -9,13 +9,13 @@ namespace Model {
         private int id;
         private String nome;
         private String descricao;
-        private double valorCusto;
+        private decimal valorCusto;
         private int quantidade;
 
-        public long Id { get; set; }
+        public int Id { get; set; }
         public String Nome { get; set; }
         public String Descricao { get; set; }
-        public double ValorCusto { get; set; }
+        public decimal ValorCusto { get; set; }
         public int Quantidade { get; set; }
 
     }
