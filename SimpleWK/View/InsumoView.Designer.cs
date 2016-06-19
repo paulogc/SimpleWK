@@ -46,20 +46,20 @@
             this.dvgQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dvgValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvInsumo = new System.Windows.Forms.DataGridView();
-            this.dsInsumo = new View.dsInsumo();
-            this.itemBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.itemTableAdapter = new View.dsInsumoTableAdapters.itemTableAdapter();
             this.iditemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descricaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valorcustoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itemBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsInsumo = new View.dsInsumo();
+            this.itemTableAdapter = new View.dsInsumoTableAdapters.itemTableAdapter();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInsumo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsInsumo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsInsumo)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAdicionar
@@ -262,20 +262,6 @@
             this.dgvInsumo.Size = new System.Drawing.Size(760, 206);
             this.dgvInsumo.TabIndex = 0;
             // 
-            // dsInsumo
-            // 
-            this.dsInsumo.DataSetName = "dsInsumo";
-            this.dsInsumo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // itemBindingSource
-            // 
-            this.itemBindingSource.DataMember = "item";
-            this.itemBindingSource.DataSource = this.dsInsumo;
-            // 
-            // itemTableAdapter
-            // 
-            this.itemTableAdapter.ClearBeforeFill = true;
-            // 
             // iditemDataGridViewTextBoxColumn
             // 
             this.iditemDataGridViewTextBoxColumn.DataPropertyName = "id_item";
@@ -311,6 +297,20 @@
             this.quantidadeDataGridViewTextBoxColumn.Name = "quantidadeDataGridViewTextBoxColumn";
             this.quantidadeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // itemBindingSource
+            // 
+            this.itemBindingSource.DataMember = "item";
+            this.itemBindingSource.DataSource = this.dsInsumo;
+            // 
+            // dsInsumo
+            // 
+            this.dsInsumo.DataSetName = "dsInsumo";
+            this.dsInsumo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // itemTableAdapter
+            // 
+            this.itemTableAdapter.ClearBeforeFill = true;
+            // 
             // InsumoView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -325,8 +325,8 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInsumo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsInsumo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsInsumo)).EndInit();
             this.ResumeLayout(false);
 
         }
