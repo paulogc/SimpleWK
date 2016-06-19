@@ -42,10 +42,10 @@ namespace DAO
         {
             Database dbSWK = Database.GetInstance();
 
-            String qry = "UPDATE item SET" +
-                "nome = " + insumo.Nome + ", descricao = " + insumo.Descricao +
-                ", valor_custo = " + insumo.ValorCusto + "quantidade = " + insumo.Quantidade + 
-                "WHERE id_item = " + insumo.Id + ";";
+            String qry = "UPDATE item SET " +
+                "nome = '" + insumo.Nome + "', descricao = '" + insumo.Descricao +
+                "', valor_custo = " + insumo.ValorCusto + ", quantidade = " + insumo.Quantidade + 
+                " WHERE id_item = " + insumo.Id + ";";
 
             dbSWK.ExecuteSQL(qry);
         }
@@ -54,7 +54,9 @@ namespace DAO
         {
             Database dbSWK = Database.GetInstance();
 
-            String qry = "DELETE FROM acao WHERE id_item = " + insumo.Id;
+            String qry = "DELETE FROM item WHERE id_item = " + insumo.Id;
+            dbSWK.ExecuteSQL(qry);
+            qry = "DELETE FROM insumo WHERE id_item = " + insumo.Id;
             dbSWK.ExecuteSQL(qry);
         }
     }
