@@ -74,9 +74,18 @@ namespace View
             {
                 Insumo insumo = CreateInsumo();
                 InsumoDAO iDAO = new InsumoDAO();
-                iDAO.Create(insumo);
+                if (insumo.Id != null)
+                {
+                    iDAO.Update(insumo);
+                }
+                else
+                {
+                    iDAO.Create(insumo);
+                }
                 this.itemTableAdapter.Fill(this.dsInsumo.item);
                 LimparCampos();
+
+
             }
             catch(Exception p)
             {
@@ -90,11 +99,16 @@ namespace View
 
         private Insumo CreateInsumo() {
             Insumo insumo = new Insumo();
+            if (lbID.ToString() != "")
+            {
+                insumo.Id = Int32.Parse(lbID.ToString());
+            }
             insumo.Nome = tbNome.Text;
             insumo.Descricao = tbDescricao.Text;
-            insumo.Quantidade = int.Parse(tbQuantidade.Text);
-            insumo.ValorCusto = decimal.Parse(tbValor.Text);
-            return insumo; 
+            insumo.Quantidade = Int32.Parse(tbQuantidade.Text);
+            insumo.ValorCusto = Double.Parse(tbValor.Text);
+
+            return insumo;
         }
 
         private void InsumoView_Load(object sender, EventArgs e) {
@@ -105,6 +119,36 @@ namespace View
         
         private void LimparCampos() {
             tbNome.Text = tbDescricao.Text = tbQuantidade.Text = tbValor.Text = "";
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e) {
+            String message = "Você deve selecionar um Insumo na tabela!";
+
+            Insumo insumo = new Insumo();
+            foreach (DataGridViewRow row in dgvInsumo.Rows)
+            {
+                if (row.Selected)
+                {
+                    insumo.Id = Int32.Parse(row.Cells[0].Value.ToString());
+                    insumo.Nome = row.Cells[1].Value.ToString();
+                    insumo.Descricao = row.Cells[2].Value.ToString();
+                    insumo.Quantidade = Int32.Parse(row.Cells[3].Value.ToString());
+                    insumo.ValorCusto = Double.Parse(row.Cells[4].Value.ToString());
+                    message = "";
+                }
+            }
+            if (message != "")
+            {
+                MessageBox.Show(message);
+            }
+            else
+            {
+                lbID.Text = insumo.Id.ToString();
+                tbNome.Text = insumo.Nome;
+                tbDescricao.Text = insumo.Descricao;
+                tbQuantidade.Text = insumo.Quantidade.ToString();
+                tbValor.Text = insumo.ValorCusto.ToString();
+            }
         }
     }
 }
