@@ -54,9 +54,10 @@ namespace DAO
         {
             Database dbSWK = Database.GetInstance();
 
-            String qry = "DELETE FROM item WHERE id_item = " + insumo.Id;
+            String qry = "DELETE FROM insumo WHERE id_item = " + insumo.Id;
             dbSWK.ExecuteSQL(qry);
-            qry = "DELETE FROM insumo WHERE id_item = " + insumo.Id;
+
+            qry = "DELETE FROM item WHERE id_item = " + insumo.Id;
             dbSWK.ExecuteSQL(qry);
         }
     }

@@ -150,5 +150,46 @@ namespace View
                 tbValor.Text = insumo.ValorCusto.ToString();
             }
         }
+
+        private void btnExcluir_Click(object sender, EventArgs e) {
+            String message = "Você deve selecionar um Insumo na tabela!";
+
+            Insumo insumo = new Insumo();
+            foreach (DataGridViewRow row in dgvInsumo.Rows)
+            {
+                if (row.Selected)
+                {
+                    insumo.Id = Int32.Parse(row.Cells[0].Value.ToString());
+                    insumo.Nome = row.Cells[1].Value.ToString();
+                    insumo.Descricao = row.Cells[2].Value.ToString();
+                    insumo.Quantidade = Int32.Parse(row.Cells[3].Value.ToString());
+                    insumo.ValorCusto = Decimal.Parse(row.Cells[4].Value.ToString());
+                    message = "";
+                }
+            }
+            if (message != "")
+            {
+                MessageBox.Show(message);
+            }
+            else
+            {
+                try
+                {
+                    if (insumo != null) {
+                        DialogResult di = MessageBox.Show("Deseja realmente o item selecionado?", "Excluir",
+                            MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                        if (di == DialogResult.Yes) { 
+                            InsumoDAO iDao = new InsumoDAO();
+                            iDao.Delete(insumo);
+                            this.itemTableAdapter.Fill(this.dsInsumo.item);                            
+                        }
+                    }
+                }
+                catch (Exception p)
+                {
+                    MessageBox.Show(p.ToString());
+                }
+            }
+        }    
     }
 }
