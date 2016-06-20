@@ -24,10 +24,8 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             this.dtgInsumos = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvIsumoPF = new System.Windows.Forms.DataGridView();
             this.IDpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,43 +37,27 @@
             this.btnRemover = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
+            this.dsInsumo = new View.dsInsumo();
+            this.dsInsumoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dtgInsumos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIsumoPF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsInsumo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsInsumoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dtgInsumos
             // 
             this.dtgInsumos.AllowUserToAddRows = false;
             this.dtgInsumos.AllowUserToDeleteRows = false;
+            this.dtgInsumos.AutoGenerateColumns = false;
             this.dtgInsumos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgInsumos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgInsumos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.Nome,
-            this.Descricao});
+            this.dtgInsumos.DataSource = this.dsInsumoBindingSource;
             this.dtgInsumos.Location = new System.Drawing.Point(12, 44);
             this.dtgInsumos.Name = "dtgInsumos";
             this.dtgInsumos.ReadOnly = true;
             this.dtgInsumos.Size = new System.Drawing.Size(394, 384);
             this.dtgInsumos.TabIndex = 0;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // Nome
-            // 
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            this.Nome.ReadOnly = true;
-            // 
-            // Descricao
-            // 
-            this.Descricao.HeaderText = "Descrição";
-            this.Descricao.Name = "Descricao";
-            this.Descricao.ReadOnly = true;
             // 
             // dgvIsumoPF
             // 
@@ -181,6 +163,16 @@
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
+            // dsInsumo
+            // 
+            this.dsInsumo.DataSetName = "dsInsumo";
+            this.dsInsumo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dsInsumoBindingSource
+            // 
+            this.dsInsumoBindingSource.DataSource = this.dsInsumo;
+            this.dsInsumoBindingSource.Position = 0;
+            // 
             // AdicaoInsumos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -202,6 +194,8 @@
             this.Text = "Adicionar Isumos";
             ((System.ComponentModel.ISupportInitialize)(this.dtgInsumos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIsumoPF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsInsumo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsInsumoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -210,9 +204,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dtgInsumos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
         private System.Windows.Forms.DataGridView dgvIsumoPF;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDpf;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
@@ -224,5 +215,7 @@
         private System.Windows.Forms.Button btnRemover;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.BindingSource dsInsumoBindingSource;
+        private dsInsumo dsInsumo;
     }
 }

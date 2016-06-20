@@ -7,15 +7,22 @@ using System.Threading.Tasks;
 namespace Model {
     public class ProdutoFinal : Item {
 
-        private double precoVenda;
-        private List<Item> itens = new List<Item>();
-        public void AddItem(Item item) {
-            itens.Add(item);
-        }
-        public void RemoveItem(Item item) {
-            itens.Remove(item);
+        private Decimal precoVenda;
+        private List<Insumo> insumos = new List<Insumo>();
+
+        public int InsumosLenght() {
+            int qtd = insumos.Count();
+            return qtd;
         }
 
-        public double PrecoVenda { get; set; }
+        public void AddItem(Insumo Insumo) {
+            insumos.Add(Insumo);
+        }
+        public void RemoveItem(Insumo Insumo) {
+            insumos.Remove(Insumo);
+        }
+
+        public Decimal PrecoVenda { get; set; }
+        public List<Item> Insumos { get; set; }
     }
 }

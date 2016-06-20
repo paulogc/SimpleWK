@@ -35,7 +35,6 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.txtQuantidade = new System.Windows.Forms.TextBox();
-            this.txtValorCusto = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dvgID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dvgNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,7 +48,8 @@
             this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAddInsumo = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtValorFinal = new System.Windows.Forms.TextBox();
+            this.txtValorCusto = new System.Windows.Forms.Label();
+            this.txtValorVenda = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -75,9 +75,9 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtValorFinal);
-            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.txtValorVenda);
             this.groupBox1.Controls.Add(this.txtValorCusto);
+            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.btnAddInsumo);
             this.groupBox1.Controls.Add(this.txtQuantidade);
             this.groupBox1.Controls.Add(this.txtDescricao);
@@ -95,9 +95,9 @@
             this.groupBox1.Controls.SetChildIndex(this.txtDescricao, 0);
             this.groupBox1.Controls.SetChildIndex(this.txtQuantidade, 0);
             this.groupBox1.Controls.SetChildIndex(this.btnAddInsumo, 0);
-            this.groupBox1.Controls.SetChildIndex(this.txtValorCusto, 0);
             this.groupBox1.Controls.SetChildIndex(this.label8, 0);
-            this.groupBox1.Controls.SetChildIndex(this.txtValorFinal, 0);
+            this.groupBox1.Controls.SetChildIndex(this.txtValorCusto, 0);
+            this.groupBox1.Controls.SetChildIndex(this.txtValorVenda, 0);
             // 
             // groupBox2
             // 
@@ -145,7 +145,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(46, 198);
+            this.label7.Location = new System.Drawing.Point(47, 199);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(70, 15);
@@ -175,17 +175,6 @@
             this.txtQuantidade.Name = "txtQuantidade";
             this.txtQuantidade.Size = new System.Drawing.Size(114, 21);
             this.txtQuantidade.TabIndex = 8;
-            // 
-            // txtValorCusto
-            // 
-            this.txtValorCusto.Location = new System.Drawing.Point(119, 195);
-            this.txtValorCusto.Margin = new System.Windows.Forms.Padding(2);
-            this.txtValorCusto.Name = "txtValorCusto";
-            this.txtValorCusto.Size = new System.Drawing.Size(114, 21);
-            this.txtValorCusto.TabIndex = 9;
-            this.txtValorCusto.Enter += new System.EventHandler(this.txtValorCusto_Enter);
-            this.txtValorCusto.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtValorCusto_KeyDown);
-            this.txtValorCusto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValorKeyPress);
             // 
             // dataGridView1
             // 
@@ -282,28 +271,34 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(273, 198);
+            this.label8.Location = new System.Drawing.Point(265, 198);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(64, 15);
+            this.label8.Size = new System.Drawing.Size(74, 15);
             this.label8.TabIndex = 10;
-            this.label8.Text = "Valor final:";
+            this.label8.Text = "Valor venda:";
             // 
-            // txtValorFinal
+            // txtValorCusto
             // 
-            this.txtValorFinal.Location = new System.Drawing.Point(340, 195);
-            this.txtValorFinal.Name = "txtValorFinal";
-            this.txtValorFinal.Size = new System.Drawing.Size(115, 21);
-            this.txtValorFinal.TabIndex = 10;
-            this.txtValorFinal.Enter += new System.EventHandler(this.txtValorFinal_Enter);
-            this.txtValorFinal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtValorFinal_KeyDown);
-            this.txtValorFinal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValorKeyPress);
+            this.txtValorCusto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.txtValorCusto.Location = new System.Drawing.Point(121, 196);
+            this.txtValorCusto.Name = "txtValorCusto";
+            this.txtValorCusto.Size = new System.Drawing.Size(112, 23);
+            this.txtValorCusto.TabIndex = 12;
             // 
-            // ProdutoFinal
+            // txtValorVenda
+            // 
+            this.txtValorVenda.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.txtValorVenda.Location = new System.Drawing.Point(343, 196);
+            this.txtValorVenda.Name = "txtValorVenda";
+            this.txtValorVenda.Size = new System.Drawing.Size(112, 21);
+            this.txtValorVenda.TabIndex = 13;
+            // 
+            // ProdutoFinalView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(794, 523);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "ProdutoFinal";
+            this.Name = "ProdutoFinalView";
             this.Text = "Cadastro de Produto Final";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -318,7 +313,6 @@
         #endregion
 
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtValorCusto;
         private System.Windows.Forms.TextBox txtQuantidade;
         private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.TextBox txtNome;
@@ -336,8 +330,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Decricao;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
-        private System.Windows.Forms.TextBox txtValorFinal;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnAddInsumo;
+        private System.Windows.Forms.Label txtValorCusto;
+        private System.Windows.Forms.Label txtValorVenda;
     }
 }

@@ -8,10 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.VisualBasic;
+using Model; 
 
 namespace View {
     public partial class AdicaoInsumos : Form {
-        public AdicaoInsumos() {
+        public AdicaoInsumos(ProdutoFinal produtof) {
             InitializeComponent();
         }
 
