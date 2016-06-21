@@ -118,7 +118,7 @@ namespace View
         }
         
         private void LimparCampos() {
-            tbNome.Text = tbDescricao.Text = tbQuantidade.Text = tbValor.Text = "";
+            lbID.Text = tbNome.Text = tbDescricao.Text = tbQuantidade.Text = tbValor.Text = "";
         }
 
         private void btnEditar_Click(object sender, EventArgs e) {
