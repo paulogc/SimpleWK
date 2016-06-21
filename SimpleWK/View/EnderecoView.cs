@@ -13,8 +13,10 @@ namespace View
 {
     public partial class EnderecoView : Form
     {
+        Localizacao localizacao = new Localizacao();
         public EnderecoView(Localizacao end)
         {
+            localizacao = end;
             InitializeComponent();
         }
 
@@ -28,21 +30,18 @@ namespace View
         }
 
         private void btnSalvar_Click(object sender, EventArgs e) {
-
+            CriarObjeto();
         }
 
-        private Localizacao CriarObjeto() {
-            Localizacao end = new Localizacao();
-            end.Logradouro = txtLogradouro.Text;
-            end.Numero = Int32.Parse(txtNum.Text);
-            end.Complemento = txtComplemento.Text;
-            end.Bairro = txtBairro.Text;
-            end.Cep = txtCep.Text;
-            end.Cidade = txtCidade.Text;
-            end.Uf = cbUf.Text;
-            end.Pais = txtPais.Text;
-
-            return end;
+        private void CriarObjeto() {
+            localizacao.Logradouro = txtLogradouro.Text;
+            localizacao.Numero = Int32.Parse(txtNum.Text);
+            localizacao.Complemento = txtComplemento.Text;
+            localizacao.Bairro = txtBairro.Text;
+            localizacao.Cep = txtCep.Text;
+            localizacao.Cidade = txtCidade.Text;
+            localizacao.Uf = cbUf.Text;
+            localizacao.Pais = txtPais.Text;
         }
     }
 }
