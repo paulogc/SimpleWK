@@ -8,6 +8,6 @@ namespace DAO {
     class PessoaFisicaDAO {
         Database dbSWK = Database.GetInstance();
 
-        string qryItem = string.Format("INSERT I")
+        string qryItem = string.Format("INSERT I");
     }
 }

@@ -48,10 +48,10 @@
             this.CNPJ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.txtTelefoneFixo = new System.Windows.Forms.MaskedTextBox();
+            this.txtCnpj = new System.Windows.Forms.MaskedTextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
+            this.txtTelefoneMovel = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -61,6 +61,7 @@
             // btnAdicionar
             // 
             this.btnAdicionar.FlatAppearance.BorderSize = 0;
+            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
             // btnEditar
             // 
@@ -76,10 +77,10 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.maskedTextBox3);
+            this.groupBox1.Controls.Add(this.txtTelefoneMovel);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.maskedTextBox2);
-            this.groupBox1.Controls.Add(this.maskedTextBox1);
+            this.groupBox1.Controls.Add(this.txtCnpj);
+            this.groupBox1.Controls.Add(this.txtTelefoneFixo);
             this.groupBox1.Controls.Add(this.btnLocalizacao);
             this.groupBox1.Controls.Add(this.txtRazaoSocial);
             this.groupBox1.Controls.Add(this.label8);
@@ -99,10 +100,10 @@
             this.groupBox1.Controls.SetChildIndex(this.label8, 0);
             this.groupBox1.Controls.SetChildIndex(this.txtRazaoSocial, 0);
             this.groupBox1.Controls.SetChildIndex(this.btnLocalizacao, 0);
-            this.groupBox1.Controls.SetChildIndex(this.maskedTextBox1, 0);
-            this.groupBox1.Controls.SetChildIndex(this.maskedTextBox2, 0);
+            this.groupBox1.Controls.SetChildIndex(this.txtTelefoneFixo, 0);
+            this.groupBox1.Controls.SetChildIndex(this.txtCnpj, 0);
             this.groupBox1.Controls.SetChildIndex(this.label9, 0);
-            this.groupBox1.Controls.SetChildIndex(this.maskedTextBox3, 0);
+            this.groupBox1.Controls.SetChildIndex(this.txtTelefoneMovel, 0);
             // 
             // groupBox2
             // 
@@ -288,21 +289,21 @@
             this.Email.Name = "Email";
             this.Email.ReadOnly = true;
             // 
-            // maskedTextBox1
+            // txtTelefoneFixo
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(119, 157);
-            this.maskedTextBox1.Mask = "(__) ____-____";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(101, 21);
-            this.maskedTextBox1.TabIndex = 21;
+            this.txtTelefoneFixo.Location = new System.Drawing.Point(119, 157);
+            this.txtTelefoneFixo.Mask = "(__) ____-____";
+            this.txtTelefoneFixo.Name = "txtTelefoneFixo";
+            this.txtTelefoneFixo.Size = new System.Drawing.Size(101, 21);
+            this.txtTelefoneFixo.TabIndex = 21;
             // 
-            // maskedTextBox2
+            // txtCnpj
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(119, 124);
-            this.maskedTextBox2.Mask = "__,___,___/____-__";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(123, 21);
-            this.maskedTextBox2.TabIndex = 20;
+            this.txtCnpj.Location = new System.Drawing.Point(119, 124);
+            this.txtCnpj.Mask = "__,___,___/____-__";
+            this.txtCnpj.Name = "txtCnpj";
+            this.txtCnpj.Size = new System.Drawing.Size(123, 21);
+            this.txtCnpj.TabIndex = 20;
             // 
             // label9
             // 
@@ -313,20 +314,20 @@
             this.label9.TabIndex = 29;
             this.label9.Text = "Telefone Móvel:";
             // 
-            // maskedTextBox3
+            // txtTelefoneMovel
             // 
-            this.maskedTextBox3.Location = new System.Drawing.Point(331, 157);
-            this.maskedTextBox3.Mask = "(00) 00000-0000";
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(100, 21);
-            this.maskedTextBox3.TabIndex = 22;
+            this.txtTelefoneMovel.Location = new System.Drawing.Point(331, 157);
+            this.txtTelefoneMovel.Mask = "(00) 00000-0000";
+            this.txtTelefoneMovel.Name = "txtTelefoneMovel";
+            this.txtTelefoneMovel.Size = new System.Drawing.Size(100, 21);
+            this.txtTelefoneMovel.TabIndex = 22;
             // 
-            // PessoaJuridica
+            // PessoaJuridicaView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(794, 523);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "PessoaJuridica";
+            this.Name = "PessoaJuridicaView";
             this.Text = "Cadastro Pessoa Juridica";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -359,9 +360,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CNPJ;
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefone;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox txtCnpj;
+        private System.Windows.Forms.MaskedTextBox txtTelefoneFixo;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
+        private System.Windows.Forms.MaskedTextBox txtTelefoneMovel;
     }
 }

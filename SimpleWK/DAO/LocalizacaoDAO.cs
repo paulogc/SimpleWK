@@ -18,11 +18,11 @@ namespace DAO {
             dbSWK.ExecuteSQL(qryLocalizacao);
         }
 
-        public Localizacao Read(Pessoa p) {
+       /* public Localizacao Read(Pessoa p) {
             MySqlConnection conexao = Database.GetInstance().GetConnection();
 
             String qry = "Select ";
-        }
+        }*/
 
     }
 }
