@@ -18,8 +18,7 @@ namespace Model {
 
 
         public int Id { get; set; }
-        public int IdPessoa { get; set; }
-        public String Rua { get; set; }
+        public String Logradouro { get; set; }
         public int Numero { get; set; }
         public String Bairro { get; set; }
         public String Cep { get; set; }
