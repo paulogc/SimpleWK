@@ -9,10 +9,14 @@ namespace Model {
         private int id;
         private String notaFiscal;
         private double valor;
-        public Pessoa pessoaFJ;
+        private Pessoa pessoaFJ;
+        private DateTime dataHora;
 
         public int Id { get; set; }
         public String NotaFiscal { get; set; }
         public double Valor { get; set; }
+        public Pessoa PessoaFJ { get; set; }
+        public DateTime DataHora { get; set;}
+        }
     }
 }
