@@ -13,7 +13,7 @@ namespace DAO {
 
             string qryAcao = string.Format("INSERT INTO acao (nota_fiscal, valor, fk_id_pessoa)" +
                 "VALUES('{0}','{1}','{2}');",
-                venda.NotaFiscal, venda.Valor, venda.pessoaFJ.Id);
+                venda.NotaFiscal, venda.Valor, venda.PessoaFJ.Id);
 
             dbSWK.ExecuteSQL(qryAcao);
 
@@ -39,7 +39,7 @@ namespace DAO {
 
             String qry = "UPDATE acao SET" +
                 "nota_fiscal = " + venda.NotaFiscal + ", valor = " + venda.Valor + 
-                ", fk_id_pessoa = " + venda.pessoaFJ.Id + "WHERE id_acao = " + venda.acao.Id + ";";
+                ", fk_id_pessoa = " + venda.PessoaFJ.Id + "WHERE id_acao = " + venda.acao.Id + ";";
 
             dbSWK.ExecuteSQL(qry);               
         }
