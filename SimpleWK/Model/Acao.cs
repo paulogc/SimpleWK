@@ -18,5 +18,5 @@ namespace Model {
         public Pessoa PessoaFJ { get; set; }
         public DateTime DataHora { get; set;}
         }
-    }
+    
 }

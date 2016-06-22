@@ -53,7 +53,6 @@
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cpfDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sobrenomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.datanascimentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fkidpessoaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fisicaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsFisica = new View.dsFisica();
@@ -273,7 +272,6 @@
             this.Email,
             this.cpfDataGridViewTextBoxColumn,
             this.sobrenomeDataGridViewTextBoxColumn,
-            this.datanascimentoDataGridViewTextBoxColumn,
             this.fkidpessoaDataGridViewTextBoxColumn});
             this.dgvPessoaFisica.DataSource = this.fisicaBindingSource;
             this.dgvPessoaFisica.Location = new System.Drawing.Point(8, 61);
@@ -331,13 +329,6 @@
             this.sobrenomeDataGridViewTextBoxColumn.HeaderText = "sobrenome";
             this.sobrenomeDataGridViewTextBoxColumn.Name = "sobrenomeDataGridViewTextBoxColumn";
             this.sobrenomeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // datanascimentoDataGridViewTextBoxColumn
-            // 
-            this.datanascimentoDataGridViewTextBoxColumn.DataPropertyName = "data_nascimento";
-            this.datanascimentoDataGridViewTextBoxColumn.HeaderText = "data_nascimento";
-            this.datanascimentoDataGridViewTextBoxColumn.Name = "datanascimentoDataGridViewTextBoxColumn";
-            this.datanascimentoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // fkidpessoaDataGridViewTextBoxColumn
             // 
