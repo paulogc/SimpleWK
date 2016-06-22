@@ -18,5 +18,30 @@ namespace DAO {
             dbSWK.ExecuteSQL(qryLocalizacao);
         }
 
+        public void Update(Localizacao end) {
+            Database dbSWK = Database.GetInstance();
+
+            String qry = "UPDATE localizacao SET logradouro ='" + 
+                end.Logradouro + "', numero = " + 
+                end.Numero + ", bairro = '" +
+                end.Bairro + "', cep = '" +
+                end.Cep + "', cidade = '" +
+                end.Cidade + "', uf = '" +
+                end.Uf + "', pais = '" +
+                end.Pais + "', complemento = '" +
+                end.Complemento + "' WHERE id_localizacao = " +
+                end.Id + ";";
+
+            dbSWK.ExecuteSQL(qry);
+        }
+
+        public void Delete(Localizacao end) {
+            Database dbSWK = Database.GetInstance();
+
+            String qry = "DELETE FROM localizacao WHERE id_localizacao = " + end.Id;
+            dbSWK.ExecuteSQL(qry);
+            
+        }
+
     }
 }

@@ -28,5 +28,32 @@ namespace DAO {
 
             dbSWK.ExecuteSQL(qryFisica);        
         }
+
+        public void Update(Fisica pessoa) {
+            Database dbSWK = Database.GetInstance();
+
+            String qryPes = "UPDATE pessoa SET nome = '" + 
+                pessoa.Nome + "', email = '" +
+                pessoa.Email + "', telefone_fixo = '" +
+                pessoa.TelefoneFixo + "', telefone_movel = '" +
+                pessoa.TelefoneMovel + "' WHERE id_pessoa = " +
+                pessoa.Id + ";";
+            dbSWK.ExecuteSQL(qryPes);
+
+            String qryFis = "UPDATE fisica SET sobrenome = '" +
+                pessoa.Sobrenome + "', cpf = '" +
+                pessoa.Cpf + "' WHERE fk_id_pessoa = " +
+                pessoa.Id + ";";
+            dbSWK.ExecuteSQL(qryFis);
+        }
+
+        public void Delete(Fisica pessoa) {
+            Database dbSWK = Database.GetInstance();
+
+            String qryFis = "DELETE FROM fisica WHERE fk_id_pesso = " + pessoa.Id + ";";
+            dbSWK.ExecuteSQL(qryFis);
+
+            String qryPes = "DELETE FROM pessoa WHERE id_pessoa = " + pessoa.Id + ";";
+        }
     }
 }

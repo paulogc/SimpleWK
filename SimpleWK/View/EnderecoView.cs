@@ -15,8 +15,12 @@ namespace View
     {
         Localizacao localizacao = new Localizacao();
         public EnderecoView(Localizacao end)
-        {
+        {            
             localizacao = end;
+            if(localizacao.Logradouro != null) {
+                FillText(localizacao);
+            }
+            
             InitializeComponent();
         }
 
@@ -42,6 +46,16 @@ namespace View
             localizacao.Cidade = txtCidade.Text;
             localizacao.Uf = cbUf.Text;
             localizacao.Pais = txtPais.Text;
+        }
+
+        private void FillText(Localizacao local) {
+            txtLogradouro.Text = local.Logradouro;
+            txtBairro.Text = local.Bairro;
+            txtNum.Text = local.Numero.ToString();
+            txtCidade.Text = local.Cidade;
+            txtCep.Text = local.Cep;
+            txtPais.Text = local.Pais;
+            cbUf.Text = local.Uf;                       
         }
     }
 }
