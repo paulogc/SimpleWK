@@ -11,8 +11,8 @@ namespace DAO {
         public void Create(Localizacao end) {
             Database dbSWK = Database.GetInstance();
             
-            string qryLocalizacao = string.Format("INSERT INTO localizacao (logradouro, numero, bairro, cep, cidade, uf, pais, complemento" +
-                "VALUES('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}');",
+            string qryLocalizacao = string.Format("INSERT INTO localizacao (logradouro, numero, bairro, cep, cidade, uf, pais, complemento)" +
+                "VALUES('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}');",
                 end.Logradouro, end.Numero, end.Bairro, end.Cep, end.Cidade, end.Uf, end.Pais, end.Complemento);
 
             dbSWK.ExecuteSQL(qryLocalizacao);

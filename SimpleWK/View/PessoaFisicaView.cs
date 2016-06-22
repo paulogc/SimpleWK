@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Model;
+using DAO;
 
 
 namespace View
@@ -45,14 +46,31 @@ namespace View
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e) {
-            Fisica pessoaFisica = new Fisica();
-            if(localizacao.Bairro != null)
+            try
             {
-                MessageBox.Show(localizacao.Bairro);
-                createPessoaFisica(pessoaFisica);
-            }else
+                Fisica pessoaFisica = new Fisica();
+                if (localizacao.Bairro != null)
+                {
+                    pessoaFisica.Endereco = localizacao;
+                    createPessoaFisica(pessoaFisica);
+
+                    LocalizacaoDAO locDao = new LocalizacaoDAO();
+                    locDao.Create(pessoaFisica.Endereco);
+                    int idEnd = Database.GetInstance().GetId();
+                    pessoaFisica.Endereco.Id = idEnd;
+
+                    PessoaFisicaDAO pfDao = new PessoaFisicaDAO();
+
+                    pfDao.Create(pessoaFisica);
+
+                }
+                else
+                {
+                    MessageBox.Show("Você precisa cadastrar um endereço antes!");
+                }
+            }catch(Exception p)
             {
-                MessageBox.Show("Você precisa cadastrar um endereço antes!");
+                MessageBox.Show(p.ToString());
             }
 
         }
