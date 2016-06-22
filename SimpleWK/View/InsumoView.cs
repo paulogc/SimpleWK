@@ -24,7 +24,7 @@ namespace View
 
         }
 
-        /*string str;
+        string str;
 
         private bool IsNumeric(int Val) {
             return ((Val >= 48 && Val <= 57) || (Val == 8) || (Val == 46));
@@ -47,7 +47,7 @@ namespace View
                 str = str + Convert.ToChar(KeyCode);
             }
             if(str.Length == 0) {
-                tbValor.Text = "R$";
+                tbValor.Text = "R$ ";
             }
             if(str.Length == 1) {
                 tbValor.Text = "R$ 0,0" + str;
@@ -63,7 +63,7 @@ namespace View
 
         private void tbValor_KeyPress(object sender, KeyPressEventArgs e) {
             e.Handled = true;
-        }*/
+        }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {

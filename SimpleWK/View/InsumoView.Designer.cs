@@ -195,6 +195,8 @@
             this.tbValor.Name = "tbValor";
             this.tbValor.Size = new System.Drawing.Size(114, 21);
             this.tbValor.TabIndex = 11;
+            this.tbValor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbValor_KeyDown);
+            this.tbValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbValor_KeyPress);
             // 
             // dataGridView1
             // 
