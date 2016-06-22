@@ -357,7 +357,6 @@
             // 
             // txtCpf
             // 
-            this.txtCpf.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.txtCpf.Location = new System.Drawing.Point(106, 129);
             this.txtCpf.Mask = "000,000,000-00";
             this.txtCpf.Name = "txtCpf";

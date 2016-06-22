@@ -8,10 +8,8 @@ namespace Model {
     public class Fisica : Pessoa {
         private String sobrenome;
         private String cpf;
-        private String dataNascimento;
 
         public String Sobrenome { get; set; }
         public String Cpf { get; set; }
-        public String DataNascimento { get; set; }
     }
 }
