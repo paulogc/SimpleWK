@@ -42,6 +42,7 @@ namespace DAO
         {
             Database dbSWK = Database.GetInstance();
 
+
             String qry = "UPDATE item SET " +
                 "nome = '" + insumo.Nome + "', descricao = '" + insumo.Descricao +
                 "', valor_custo = " + insumo.ValorCusto + ", quantidade = " + insumo.Quantidade + 
