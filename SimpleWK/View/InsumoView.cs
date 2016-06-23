@@ -50,13 +50,13 @@ namespace View
                 tbValor.Text = "";
             }
             if(str.Length == 1) {
-                tbValor.Text = "0,0" + str;
+                tbValor.Text = "0.0" + str;
             }
             else if(str.Length == 2) {
-                tbValor.Text = "0," + str;
+                tbValor.Text = "0." + str;
             }
             else if(str.Length > 2) {
-                tbValor.Text = "" + str.Substring(0, str.Length - 2) + "," +
+                tbValor.Text = "" + str.Substring(0, str.Length - 2) + "." +
                                 str.Substring(str.Length - 2);
             }
         }

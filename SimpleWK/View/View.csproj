@@ -89,11 +89,6 @@
     <Compile Include="VendaView.Designer.cs">
       <DependentUpon>VendaView.cs</DependentUpon>
     </Compile>
-    <Compile Include="dsFisica.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsFisica.xsd</DependentUpon>
-    </Compile>
     <Compile Include="ModeloCadastroCompraVenda.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -220,17 +215,6 @@
     <EmbeddedResource Include="SobreView.resx">
       <DependentUpon>SobreView.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="dsFisica.xsc">
-      <DependentUpon>dsFisica.xsd</DependentUpon>
-    </None>
-    <None Include="dsFisica.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsFisica.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="dsFisica.xss">
-      <DependentUpon>dsFisica.xsd</DependentUpon>
-    </None>
     <None Include="dsInsumo.xsc">
       <DependentUpon>dsInsumo.xsd</DependentUpon>
     </None>

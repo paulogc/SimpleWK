@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -51,22 +50,14 @@
             this.CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cpfDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sobrenomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fkidpessoaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fisicaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsFisica = new View.dsFisica();
             this.txtTelefoneFixo = new System.Windows.Forms.MaskedTextBox();
             this.txtCpf = new System.Windows.Forms.MaskedTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtTelefoneMovel = new System.Windows.Forms.MaskedTextBox();
-            this.fisicaTableAdapter = new View.dsFisicaTableAdapters.fisicaTableAdapter();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPessoaFisica)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fisicaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsFisica)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAdicionar
@@ -260,7 +251,6 @@
             // 
             this.dgvPessoaFisica.AllowUserToAddRows = false;
             this.dgvPessoaFisica.AllowUserToDeleteRows = false;
-            this.dgvPessoaFisica.AutoGenerateColumns = false;
             this.dgvPessoaFisica.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPessoaFisica.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPessoaFisica.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -269,11 +259,7 @@
             this.Sobrenome,
             this.CPF,
             this.Telefone,
-            this.Email,
-            this.cpfDataGridViewTextBoxColumn,
-            this.sobrenomeDataGridViewTextBoxColumn,
-            this.fkidpessoaDataGridViewTextBoxColumn});
-            this.dgvPessoaFisica.DataSource = this.fisicaBindingSource;
+            this.Email});
             this.dgvPessoaFisica.Location = new System.Drawing.Point(8, 61);
             this.dgvPessoaFisica.Name = "dgvPessoaFisica";
             this.dgvPessoaFisica.ReadOnly = true;
@@ -316,37 +302,6 @@
             this.Email.Name = "Email";
             this.Email.ReadOnly = true;
             // 
-            // cpfDataGridViewTextBoxColumn
-            // 
-            this.cpfDataGridViewTextBoxColumn.DataPropertyName = "cpf";
-            this.cpfDataGridViewTextBoxColumn.HeaderText = "cpf";
-            this.cpfDataGridViewTextBoxColumn.Name = "cpfDataGridViewTextBoxColumn";
-            this.cpfDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sobrenomeDataGridViewTextBoxColumn
-            // 
-            this.sobrenomeDataGridViewTextBoxColumn.DataPropertyName = "sobrenome";
-            this.sobrenomeDataGridViewTextBoxColumn.HeaderText = "sobrenome";
-            this.sobrenomeDataGridViewTextBoxColumn.Name = "sobrenomeDataGridViewTextBoxColumn";
-            this.sobrenomeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fkidpessoaDataGridViewTextBoxColumn
-            // 
-            this.fkidpessoaDataGridViewTextBoxColumn.DataPropertyName = "fk_id_pessoa";
-            this.fkidpessoaDataGridViewTextBoxColumn.HeaderText = "fk_id_pessoa";
-            this.fkidpessoaDataGridViewTextBoxColumn.Name = "fkidpessoaDataGridViewTextBoxColumn";
-            this.fkidpessoaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fisicaBindingSource
-            // 
-            this.fisicaBindingSource.DataMember = "fisica";
-            this.fisicaBindingSource.DataSource = this.dsFisica;
-            // 
-            // dsFisica
-            // 
-            this.dsFisica.DataSetName = "dsFisica";
-            this.dsFisica.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // txtTelefoneFixo
             // 
             this.txtTelefoneFixo.Location = new System.Drawing.Point(106, 160);
@@ -380,10 +335,6 @@
             this.txtTelefoneMovel.Size = new System.Drawing.Size(112, 21);
             this.txtTelefoneMovel.TabIndex = 5;
             // 
-            // fisicaTableAdapter
-            // 
-            this.fisicaTableAdapter.ClearBeforeFill = true;
-            // 
             // PessoaFisicaView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -398,8 +349,6 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPessoaFisica)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fisicaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsFisica)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -432,12 +381,6 @@
         private System.Windows.Forms.MaskedTextBox txtTelefoneFixo;
         private System.Windows.Forms.MaskedTextBox txtTelefoneMovel;
         private System.Windows.Forms.Label label9;
-        private dsFisica dsFisica;
-        private System.Windows.Forms.BindingSource fisicaBindingSource;
-        private dsFisicaTableAdapters.fisicaTableAdapter fisicaTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cpfDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sobrenomeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn datanascimentoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fkidpessoaDataGridViewTextBoxColumn;
     }
 }

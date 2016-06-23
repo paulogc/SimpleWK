@@ -70,7 +70,6 @@ namespace View
 
         private void PessoaFisica_Load(object sender, EventArgs e) {
             // TODO: esta linha de código carrega dados na tabela 'dsFisica.fisica'. Você pode movê-la ou removê-la conforme necessário.
-            this.fisicaTableAdapter.Fill(this.dsFisica.fisica);
 
         }
 
