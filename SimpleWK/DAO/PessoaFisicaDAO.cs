@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Model;
+using MySql.Data.MySqlClient;
 
 namespace DAO {
     public class PessoaFisicaDAO {
@@ -54,6 +55,37 @@ namespace DAO {
             dbSWK.ExecuteSQL(qryFis);
 
             String qryPes = "DELETE FROM pessoa WHERE id_pessoa = " + pessoa.Id + ";";
+        }
+
+        public Fisica Read(int id, int idEndereco) {
+            Fisica pessoa = new Fisica();
+
+            MySqlConnection conexao = Database.GetInstance().GetConnection();
+
+            String qry = "SELECT p.id_pessoa, p.nome, p.email, p.telefone_fixo, " +
+                "p.telefone_movel, p.id_endereco, pf.cpf, pf.sobrenome" + 
+                " FROM pessoa p, fisica pf WHERE p.id_pessoa = pf.fk_id_pessoa" + 
+                " AND id_pessoa  = " + id + ";";
+
+            if (conexao.State != System.Data.ConnectionState.Open)
+                conexao.Open();
+
+            MySqlCommand comm = new MySqlCommand(qry, conexao);
+            MySqlDataReader dr = comm.ExecuteReader();
+
+            if (dr.Read())
+            {
+                pessoa.Id = dr.GetInt32("p.id_pessoa");
+                pessoa.Nome = dr.GetString("p.nome");
+                pessoa.Email = dr.GetString("p.email");
+                pessoa.TelefoneFixo = dr.GetString("p.telefone_fixo");
+                pessoa.TelefoneMovel = dr.GetString("p.telefone_movel");
+                pessoa.Cpf = dr.GetString("pf.cpf");
+                pessoa.Sobrenome = dr.GetString("pf.sobrenome");
+                idEndereco = dr.GetInt32("p.id_endereco");
+            }
+
+            return pessoa;
         }
     }
 }

@@ -43,5 +43,36 @@ namespace DAO {
             
         }
 
+        public Localizacao Read(int id) {
+            Localizacao local = new Localizacao(); 
+
+            MySqlConnection conexao = Database.GetInstance().GetConnection();
+
+            String qry = "SELECT logradouro, numero, bairro, cep, cidade," +
+                " uf, pais, complemento FROM localizacao WHERE  id_localizacao = " + id + ";";
+
+            if (conexao.State != System.Data.ConnectionState.Open)
+                conexao.Open();
+
+            MySqlCommand comm = new MySqlCommand(qry, conexao);
+            MySqlDataReader dr = comm.ExecuteReader();
+
+            if (dr.Read())
+            {                
+                local.Id = dr.GetInt32("id_localizacao");
+                local.Logradouro = dr.GetString("logradouro");
+                local.Numero = dr.GetInt32("numero");
+                local.Bairro = dr.GetString("bairro");
+                local.Cidade = dr.GetString("cidade");
+                local.Cep = dr.GetString("cep");
+                local.Uf = dr.GetString("uf");
+                local.Complemento = dr.GetString("complemento");
+            }
+
+            conexao.Close();
+
+            return local;
+        }
+
     }
 }
