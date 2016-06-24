@@ -97,5 +97,40 @@ namespace View
             txtTelefoneFixo.Text = "";
             txtTelefoneMovel.Text = "";
         }
+
+        private void btnEditar_Click(object sender, EventArgs e) {
+            String message = "Você deve selecionar um Insumo na tabela!";
+
+            Fisica pessoaFisica = new Fisica();
+            foreach (DataGridViewRow row in dgvPessoaFisica.Rows)
+            {
+                if (row.Selected)
+                {
+                    pessoaFisica.Id = Int32.Parse(row.Cells[0].Value.ToString());
+
+                    PessoaFisicaDAO pfDao = new PessoaFisicaDAO();
+                    int idLocalizacao = 0;
+                    pessoaFisica = pfDao.Read(pessoaFisica.Id, idLocalizacao);
+                    LocalizacaoDAO localDao = new LocalizacaoDAO();
+                    pessoaFisica.Endereco = localDao.Read(idLocalizacao);
+                                        
+                    message = "";
+                }
+            }
+            if (message != "")
+            {
+                MessageBox.Show(message);
+            }
+            else
+            {
+                lbID.Text = pessoaFisica.Id.ToString();
+                txtNome.Text = pessoaFisica.Nome;
+                txtSobrenome.Text = pessoaFisica.Sobrenome;
+                txtCpf.Text = pessoaFisica.Cpf;
+                txtEmail.Text = pessoaFisica.Email;
+                txtTelefoneFixo.Text = pessoaFisica.TelefoneFixo;
+                txtTelefoneMovel.Text = pessoaFisica.TelefoneMovel;
+            }
+        }
     }
 }

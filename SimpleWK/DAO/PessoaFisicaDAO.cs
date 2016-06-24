@@ -76,14 +76,14 @@ namespace DAO {
 
             if (dr.Read())
             {
-                pessoa.Id = dr.GetInt32("p.id_pessoa");
-                pessoa.Nome = dr.GetString("p.nome");
-                pessoa.Email = dr.GetString("p.email");
-                pessoa.TelefoneFixo = dr.GetString("p.telefone_fixo");
-                pessoa.TelefoneMovel = dr.GetString("p.telefone_movel");
-                pessoa.Cpf = dr.GetString("pf.cpf");
-                pessoa.Sobrenome = dr.GetString("pf.sobrenome");
-                idEndereco = dr.GetInt32("p.id_endereco");
+                pessoa.Id = dr.GetInt32("id_pessoa");
+                pessoa.Nome = dr.GetString("nome");
+                pessoa.Email = dr.GetString("email");
+                pessoa.TelefoneFixo = dr.GetString("telefone_fixo");
+                pessoa.TelefoneMovel = dr.GetString("telefone_movel");
+                pessoa.Cpf = dr.GetString("cpf");
+                pessoa.Sobrenome = dr.GetString("sobrenome");
+                idEndereco = dr.GetInt32("id_endereco");
             }
 
             return pessoa;
@@ -94,7 +94,7 @@ namespace DAO {
             MySqlConnection conexao = Database.GetInstance().GetConnection();
             DataTable dtFisica = new DataTable();
 
-            string qry = "SELECT p.nome, f.sobrenome, f.cpf, p.email, p.telefone_fixo from pessoa p, fisica f where p.id_pessoa = f.fk_id_pessoa";
+            string qry = "SELECT p.id_pessoa, p.nome, f.sobrenome, f.cpf, p.email, p.telefone_fixo from pessoa p, fisica f where p.id_pessoa = f.fk_id_pessoa";
 
             if(conexao.State != System.Data.ConnectionState.Open)
                 conexao.Open();
