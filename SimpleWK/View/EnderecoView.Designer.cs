@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.gbEndereco = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtComplemento = new System.Windows.Forms.TextBox();
             this.cbUf = new System.Windows.Forms.ComboBox();
             this.txtCep = new System.Windows.Forms.MaskedTextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -45,8 +47,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtComplemento = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.gbEndereco.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,8 +80,25 @@
             this.gbEndereco.TabStop = false;
             this.gbEndereco.Text = "Dados da localização";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(5, 70);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(88, 15);
+            this.label8.TabIndex = 17;
+            this.label8.Text = "Complemento:";
+            // 
+            // txtComplemento
+            // 
+            this.txtComplemento.Location = new System.Drawing.Point(97, 67);
+            this.txtComplemento.Name = "txtComplemento";
+            this.txtComplemento.Size = new System.Drawing.Size(139, 21);
+            this.txtComplemento.TabIndex = 3;
+            // 
             // cbUf
             // 
+            this.cbUf.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbUf.FormattingEnabled = true;
             this.cbUf.Items.AddRange(new object[] {
             "AC",
@@ -114,7 +131,7 @@
             this.cbUf.Location = new System.Drawing.Point(350, 101);
             this.cbUf.Name = "cbUf";
             this.cbUf.Size = new System.Drawing.Size(65, 23);
-            this.cbUf.TabIndex = 12;
+            this.cbUf.TabIndex = 7;
             // 
             // txtCep
             // 
@@ -122,7 +139,7 @@
             this.txtCep.Mask = "00000-000";
             this.txtCep.Name = "txtCep";
             this.txtCep.Size = new System.Drawing.Size(102, 21);
-            this.txtCep.TabIndex = 10;
+            this.txtCep.TabIndex = 5;
             // 
             // btnCancelar
             // 
@@ -136,7 +153,7 @@
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(81, 41);
-            this.btnCancelar.TabIndex = 15;
+            this.btnCancelar.TabIndex = 10;
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
@@ -164,7 +181,7 @@
             this.txtPais.Margin = new System.Windows.Forms.Padding(2);
             this.txtPais.Name = "txtPais";
             this.txtPais.Size = new System.Drawing.Size(103, 21);
-            this.txtPais.TabIndex = 13;
+            this.txtPais.TabIndex = 8;
             this.txtPais.Text = "Brasil";
             // 
             // txtCidade
@@ -173,7 +190,7 @@
             this.txtCidade.Margin = new System.Windows.Forms.Padding(2);
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(199, 21);
-            this.txtCidade.TabIndex = 11;
+            this.txtCidade.TabIndex = 6;
             // 
             // txtBairro
             // 
@@ -181,7 +198,7 @@
             this.txtBairro.Margin = new System.Windows.Forms.Padding(2);
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(124, 21);
-            this.txtBairro.TabIndex = 9;
+            this.txtBairro.TabIndex = 4;
             // 
             // txtNum
             // 
@@ -189,7 +206,7 @@
             this.txtNum.Margin = new System.Windows.Forms.Padding(2);
             this.txtNum.Name = "txtNum";
             this.txtNum.Size = new System.Drawing.Size(81, 21);
-            this.txtNum.TabIndex = 8;
+            this.txtNum.TabIndex = 2;
             // 
             // txtLogradouro
             // 
@@ -197,7 +214,7 @@
             this.txtLogradouro.Margin = new System.Windows.Forms.Padding(2);
             this.txtLogradouro.Name = "txtLogradouro";
             this.txtLogradouro.Size = new System.Drawing.Size(352, 21);
-            this.txtLogradouro.TabIndex = 7;
+            this.txtLogradouro.TabIndex = 1;
             // 
             // label7
             // 
@@ -275,22 +292,6 @@
             this.label1.Size = new System.Drawing.Size(74, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Logradouro:";
-            // 
-            // txtComplemento
-            // 
-            this.txtComplemento.Location = new System.Drawing.Point(97, 67);
-            this.txtComplemento.Name = "txtComplemento";
-            this.txtComplemento.Size = new System.Drawing.Size(139, 21);
-            this.txtComplemento.TabIndex = 16;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(5, 70);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(88, 15);
-            this.label8.TabIndex = 17;
-            this.label8.Text = "Complemento:";
             // 
             // EnderecoView
             // 

@@ -44,12 +44,6 @@
             this.dvgCPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dvgEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvPessoaFisica = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sobrenome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtTelefoneFixo = new System.Windows.Forms.MaskedTextBox();
             this.txtCpf = new System.Windows.Forms.MaskedTextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -253,54 +247,11 @@
             this.dgvPessoaFisica.AllowUserToDeleteRows = false;
             this.dgvPessoaFisica.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPessoaFisica.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPessoaFisica.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.Nome,
-            this.Sobrenome,
-            this.CPF,
-            this.Telefone,
-            this.Email});
             this.dgvPessoaFisica.Location = new System.Drawing.Point(8, 61);
             this.dgvPessoaFisica.Name = "dgvPessoaFisica";
             this.dgvPessoaFisica.ReadOnly = true;
             this.dgvPessoaFisica.Size = new System.Drawing.Size(760, 206);
             this.dgvPessoaFisica.TabIndex = 0;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // Nome
-            // 
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            this.Nome.ReadOnly = true;
-            // 
-            // Sobrenome
-            // 
-            this.Sobrenome.HeaderText = "Sobrenome";
-            this.Sobrenome.Name = "Sobrenome";
-            this.Sobrenome.ReadOnly = true;
-            // 
-            // CPF
-            // 
-            this.CPF.HeaderText = "CPF";
-            this.CPF.Name = "CPF";
-            this.CPF.ReadOnly = true;
-            // 
-            // Telefone
-            // 
-            this.Telefone.HeaderText = "Telefone";
-            this.Telefone.Name = "Telefone";
-            this.Telefone.ReadOnly = true;
-            // 
-            // Email
-            // 
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
             // 
             // txtTelefoneFixo
             // 
@@ -371,12 +322,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dvgCPF;
         private System.Windows.Forms.DataGridViewTextBoxColumn dvgEmail;
         private System.Windows.Forms.DataGridView dgvPessoaFisica;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sobrenome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CPF;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Telefone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.MaskedTextBox txtCpf;
         private System.Windows.Forms.MaskedTextBox txtTelefoneFixo;
         private System.Windows.Forms.MaskedTextBox txtTelefoneMovel;

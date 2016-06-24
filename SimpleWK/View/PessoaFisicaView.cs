@@ -48,6 +48,8 @@ namespace View
                     PessoaFisicaDAO pfDao = new PessoaFisicaDAO();
 
                     pfDao.Create(pessoaFisica);
+                    AtualizarGrid();
+                    LimparCampos();
 
                 }
                 else
@@ -70,7 +72,12 @@ namespace View
 
         private void PessoaFisica_Load(object sender, EventArgs e) {
             // TODO: esta linha de código carrega dados na tabela 'dsFisica.fisica'. Você pode movê-la ou removê-la conforme necessário.
+            AtualizarGrid();
+        }
 
+        private void AtualizarGrid() {
+            PessoaFisicaDAO pdao = new PessoaFisicaDAO();
+            dgvPessoaFisica.DataSource = pdao.ListAllFisica();
         }
 
         private void createPessoaFisica(Fisica pessoaFisica) {
@@ -80,6 +87,15 @@ namespace View
             pessoaFisica.TelefoneMovel = txtTelefoneMovel.Text;
             pessoaFisica.Cpf = txtCpf.Text;
             pessoaFisica.Email = txtEmail.Text;
+        }
+
+        private void LimparCampos() {
+            txtCpf.Text = "";
+            txtEmail.Text = "";
+            txtNome.Text = "";
+            txtSobrenome.Text = "";
+            txtTelefoneFixo.Text = "";
+            txtTelefoneMovel.Text = "";
         }
     }
 }

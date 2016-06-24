@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Model;
 using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace DAO {
     public class PessoaFisicaDAO {
@@ -51,7 +52,7 @@ namespace DAO {
         public void Delete(Fisica pessoa) {
             Database dbSWK = Database.GetInstance();
 
-            String qryFis = "DELETE FROM fisica WHERE fk_id_pesso = " + pessoa.Id + ";";
+            String qryFis = "DELETE FROM fisica WHERE fk_id_pessoa = " + pessoa.Id + ";";
             dbSWK.ExecuteSQL(qryFis);
 
             String qryPes = "DELETE FROM pessoa WHERE id_pessoa = " + pessoa.Id + ";";
@@ -86,6 +87,23 @@ namespace DAO {
             }
 
             return pessoa;
+        }
+
+        public DataTable ListAllFisica() {
+
+            MySqlConnection conexao = Database.GetInstance().GetConnection();
+            DataTable dtFisica = new DataTable();
+
+            string qry = "SELECT p.nome, f.sobrenome, f.cpf, p.email, p.telefone_fixo from pessoa p, fisica f where p.id_pessoa = f.fk_id_pessoa";
+
+            if(conexao.State != System.Data.ConnectionState.Open)
+                conexao.Open();
+
+            MySqlDataAdapter objAdapter = new MySqlDataAdapter(qry, conexao);
+            objAdapter.Fill(dtFisica);
+
+            conexao.Close();
+            return dtFisica;
         }
     }
 }
