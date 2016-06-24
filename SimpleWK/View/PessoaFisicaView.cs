@@ -90,6 +90,7 @@ namespace View
         }
 
         private void LimparCampos() {
+            lbID.Text = "";
             txtCpf.Text = "";
             txtEmail.Text = "";
             txtNome.Text = "";
@@ -109,10 +110,7 @@ namespace View
                     pessoaFisica.Id = Int32.Parse(row.Cells[0].Value.ToString());
 
                     PessoaFisicaDAO pfDao = new PessoaFisicaDAO();
-                    int idLocalizacao = 0;
-                    pessoaFisica = pfDao.Read(pessoaFisica.Id, idLocalizacao);
-                    LocalizacaoDAO localDao = new LocalizacaoDAO();
-                    pessoaFisica.Endereco = localDao.Read(idLocalizacao);
+                    pessoaFisica = pfDao.Read(pessoaFisica.Id);
                                         
                     message = "";
                 }

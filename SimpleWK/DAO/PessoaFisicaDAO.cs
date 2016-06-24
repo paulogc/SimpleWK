@@ -58,7 +58,7 @@ namespace DAO {
             String qryPes = "DELETE FROM pessoa WHERE id_pessoa = " + pessoa.Id + ";";
         }
 
-        public Fisica Read(int id, int idEndereco) {
+        public Fisica Read(int id) {
             Fisica pessoa = new Fisica();
 
             MySqlConnection conexao = Database.GetInstance().GetConnection();
@@ -84,6 +84,15 @@ namespace DAO {
                 pessoa.Cpf = dr.GetString("cpf");
                 pessoa.Sobrenome = dr.GetString("sobrenome");
                 idEndereco = dr.GetInt32("id_endereco");
+            }
+
+            conexao.Close();
+
+
+            if (idEndereco > 0)
+            {
+                LocalizacaoDAO local = new LocalizacaoDAO();
+                pessoa.Endereco = local.ReadById(idEndereco);
             }
 
             return pessoa;

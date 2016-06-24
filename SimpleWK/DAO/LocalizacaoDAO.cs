@@ -43,12 +43,12 @@ namespace DAO {
             
         }
 
-        public Localizacao Read(int id) {
-            Localizacao local = new Localizacao(); 
-
+        public Localizacao ReadById(int id) {
+            Localizacao local = new Localizacao();
+            
             MySqlConnection conexao = Database.GetInstance().GetConnection();
 
-            String qry = "SELECT logradouro, numero, bairro, cep, cidade," +
+            String qry = "SELECT id_localizacao, logradouro, numero, bairro, cep, cidade," +
                 " uf, pais, complemento FROM localizacao WHERE  id_localizacao = " + id + ";";
 
             if (conexao.State != System.Data.ConnectionState.Open)
