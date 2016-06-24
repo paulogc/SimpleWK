@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Model;
 using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace DAO
 {
@@ -61,6 +62,56 @@ namespace DAO
 
             String qryPes = "DELETE FROM pessoa WHERE id_pessoa = " + pessoa.Id + ";";
             dbSWK.ExecuteSQL(qryPes);
+        }
+
+        public Juridica Read(int id, int idEndereco)
+        {
+            Juridica pessoa = new Juridica();
+
+            MySqlConnection conexao = Database.GetInstance().GetConnection();
+
+            String qry = "SELECT p.id_pessoa, p.nome, p.email, p.telefone_fixo, " +
+                "p.telefone_movel, p.id_endereco, pj.cnpj, pj.sobrenome" +
+                " FROM pessoa p, juridica pj WHERE p.id_pessoa = pj.fk_id_pessoa" +
+                " AND id_pessoa  = " + id + ";";
+
+            if (conexao.State != System.Data.ConnectionState.Open)
+                conexao.Open();
+
+            MySqlCommand comm = new MySqlCommand(qry, conexao);
+            MySqlDataReader dr = comm.ExecuteReader();
+
+            if (dr.Read())
+            {
+                pessoa.Id = dr.GetInt32("p.id_pessoa");
+                pessoa.Nome = dr.GetString("p.nome");
+                pessoa.Email = dr.GetString("p.email");
+                pessoa.TelefoneFixo = dr.GetString("p.telefone_fixo");
+                pessoa.TelefoneMovel = dr.GetString("p.telefone_movel");
+                pessoa.Cnpj = dr.GetString("pj.cpf");
+                pessoa.RazaoSocial = dr.GetString("pj.razao_social");
+                idEndereco = dr.GetInt32("p.id_endereco");
+            }
+
+            return pessoa;
+        }
+
+        public DataTable ListAllJuridica()
+        {
+
+            MySqlConnection conexao = Database.GetInstance().GetConnection();
+            DataTable dtJuridica = new DataTable();
+
+            string qry = "SELECT p.nome, j.razao_social, j.cnpj, p.email, p.telefone_fixo from pessoa p, juridica j where p.id_pessoa = j.fk_id_pessoa";
+
+            if (conexao.State != System.Data.ConnectionState.Open)
+                conexao.Open();
+
+            MySqlDataAdapter objAdapter = new MySqlDataAdapter(qry, conexao);
+            objAdapter.Fill(dtJuridica);
+
+            conexao.Close();
+            return dtJuridica;
         }
     }
 }
