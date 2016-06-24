@@ -60,7 +60,7 @@ namespace DAO {
 
         public Fisica Read(int id) {
             Fisica pessoa = new Fisica();
-
+            int idEndereco = 0;
             MySqlConnection conexao = Database.GetInstance().GetConnection();
 
             String qry = "SELECT p.id_pessoa, p.nome, p.email, p.telefone_fixo, " +
