@@ -86,6 +86,7 @@ namespace View
                 AdicaoInsumos add = new AdicaoInsumos(produtoFinal.Id);
                 add.Show();
                 add.Dispose();
+
             }
             
             
