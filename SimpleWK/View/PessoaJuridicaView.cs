@@ -43,15 +43,22 @@ namespace View
                     createPessoaJuridica(pessoaJuridica);
 
                     LocalizacaoDAO locDao = new LocalizacaoDAO();
-                    locDao.Create(pessoaJuridica.Endereco);
-                    int idEnd = Database.GetInstance().GetId();
-                    pessoaJuridica.Endereco.Id = idEnd;
-
                     PessoaJuridicaDAO pjDao = new PessoaJuridicaDAO();
 
-                    pjDao.Create(pessoaJuridica);
+                    if (pessoaJuridica.Id > 0)
+                    {
+                        pjDao.Update(pessoaJuridica);
+                        locDao.Update(pessoaJuridica.Endereco);
+                    }
+                    else
+                    {
+                        pjDao.Create(pessoaJuridica);
+                        int idEnd = Database.GetInstance().GetId();
+                        pessoaJuridica.Endereco.Id = idEnd;
+                        locDao.Create(pessoaJuridica.Endereco);
+                    }
+                    AtualizarGrid();
                     LimparCampos();
-
                 }
                 else
                 {
@@ -133,6 +140,7 @@ namespace View
                 txtEmail.Text = pessoaJuridica.Email;
                 txtTelefoneFixo.Text = pessoaJuridica.TelefoneFixo;
                 txtTelefoneMovel.Text = pessoaJuridica.TelefoneMovel;
+                localizacao = pessoaJuridica.Endereco;
             }
         }
     }
