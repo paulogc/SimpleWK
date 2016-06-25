@@ -41,13 +41,21 @@ namespace View
                     createPessoaFisica(pessoaFisica);
 
                     LocalizacaoDAO locDao = new LocalizacaoDAO();
-                    locDao.Create(pessoaFisica.Endereco);
-                    int idEnd = Database.GetInstance().GetId();
-                    pessoaFisica.Endereco.Id = idEnd;
-
                     PessoaFisicaDAO pfDao = new PessoaFisicaDAO();
 
-                    pfDao.Create(pessoaFisica);
+                    if(pessoaFisica.Id > 0)
+                    {
+                        pfDao.Update(pessoaFisica);
+                        locDao.Update(pessoaFisica.Endereco);
+                    }
+                    else
+                    {
+                        pfDao.Create(pessoaFisica);
+                        int idEnd = Database.GetInstance().GetId();
+                        pessoaFisica.Endereco.Id = idEnd;
+                        locDao.Create(pessoaFisica.Endereco);
+                    }
+                    
                     AtualizarGrid();
                     LimparCampos();
 
@@ -81,6 +89,10 @@ namespace View
         }
 
         private void createPessoaFisica(Fisica pessoaFisica) {
+            if(lbID.Text != "")
+            {
+                pessoaFisica.Id = Int32.Parse(lbID.Text);
+            }
             pessoaFisica.Nome = txtNome.Text;
             pessoaFisica.Sobrenome = txtSobrenome.Text;
             pessoaFisica.TelefoneFixo = txtTelefoneFixo.Text;
@@ -128,6 +140,7 @@ namespace View
                 txtEmail.Text = pessoaFisica.Email;
                 txtTelefoneFixo.Text = pessoaFisica.TelefoneFixo;
                 txtTelefoneMovel.Text = pessoaFisica.TelefoneMovel;
+                localizacao = pessoaFisica.Endereco;
             }
         }
     }
