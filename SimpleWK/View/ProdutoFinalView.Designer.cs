@@ -42,10 +42,6 @@
             this.dvgQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dvgValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtgProdutoFinal = new System.Windows.Forms.DataGridView();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Decricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAddInsumo = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.txtValorCusto = new System.Windows.Forms.Label();
@@ -223,40 +219,11 @@
             this.dtgProdutoFinal.AllowUserToDeleteRows = false;
             this.dtgProdutoFinal.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgProdutoFinal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgProdutoFinal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Nome,
-            this.Decricao,
-            this.Quantidade,
-            this.Valor});
             this.dtgProdutoFinal.Location = new System.Drawing.Point(8, 61);
             this.dtgProdutoFinal.Name = "dtgProdutoFinal";
             this.dtgProdutoFinal.ReadOnly = true;
             this.dtgProdutoFinal.Size = new System.Drawing.Size(760, 206);
             this.dtgProdutoFinal.TabIndex = 0;
-            // 
-            // Nome
-            // 
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            this.Nome.ReadOnly = true;
-            // 
-            // Decricao
-            // 
-            this.Decricao.HeaderText = "Decrição";
-            this.Decricao.Name = "Decricao";
-            this.Decricao.ReadOnly = true;
-            // 
-            // Quantidade
-            // 
-            this.Quantidade.HeaderText = "Quantidade";
-            this.Quantidade.Name = "Quantidade";
-            this.Quantidade.ReadOnly = true;
-            // 
-            // Valor
-            // 
-            this.Valor.HeaderText = "Valor";
-            this.Valor.Name = "Valor";
-            this.Valor.ReadOnly = true;
             // 
             // btnAddInsumo
             // 
@@ -326,10 +293,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dvgQuantidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn dvgValor;
         private System.Windows.Forms.DataGridView dtgProdutoFinal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Decricao;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnAddInsumo;
         private System.Windows.Forms.Label txtValorCusto;

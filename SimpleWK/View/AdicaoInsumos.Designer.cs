@@ -32,6 +32,8 @@
             this.btnRemover = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtQtd = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInsumos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInsumoPF)).BeginInit();
             this.SuspendLayout();
@@ -83,7 +85,7 @@
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(436, 97);
+            this.btnAdd.Location = new System.Drawing.Point(436, 107);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 57);
             this.btnAdd.TabIndex = 1;
@@ -123,12 +125,30 @@
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(438, 50);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(62, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Quantidade";
+            // 
+            // txtQtd
+            // 
+            this.txtQtd.Location = new System.Drawing.Point(436, 66);
+            this.txtQtd.Name = "txtQtd";
+            this.txtQtd.Size = new System.Drawing.Size(75, 20);
+            this.txtQtd.TabIndex = 6;
+            // 
             // AdicaoInsumos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(942, 440);
+            this.Controls.Add(this.txtQtd);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnRemover);
@@ -160,5 +180,7 @@
         private System.Windows.Forms.Button btnRemover;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtQtd;
     }
 }

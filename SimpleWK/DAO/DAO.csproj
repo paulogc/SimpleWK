@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Database.cs" />
     <Compile Include="InsumoDAO.cs" />
+    <Compile Include="ListaInsumoPFDAO.cs" />
     <Compile Include="LocalizacaoDAO.cs" />
     <Compile Include="PessoaFisicaDAO.cs" />
     <Compile Include="PessoaJuridicaDAO.cs" />

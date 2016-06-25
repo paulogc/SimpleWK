@@ -24,8 +24,7 @@ namespace View {
 
 
         private void btnOk_Click(object sender, EventArgs e) {
-            quantidade = int.Parse(txtQuantidade.Text);
-            this.Dispose();          
+            quantidade = int.Parse(txtQuantidade.Text);        
         }
     }
 }

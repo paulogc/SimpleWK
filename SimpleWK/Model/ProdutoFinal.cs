@@ -56,5 +56,9 @@ namespace Model {
                 qtdeItem = value;
             }
         }
+
+        
+
+
     }
 }

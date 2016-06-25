@@ -11,7 +11,7 @@ namespace View
 {
     public partial class ProdutoFinalView : View.ModeloCadastroGeral
     {
-        ProdutoFinal produtoLista = new ProdutoFinal();
+        ProdutoFinal produtoFinal = new ProdutoFinal();
 
         public ProdutoFinalView()
         {
@@ -42,16 +42,16 @@ namespace View
                 str = str + Convert.ToChar(KeyCode);
             }
             if(str.Length == 0) {
-                ((TextBox)x).Text = "R$";
+                ((TextBox)x).Text = "";
             }
             if(str.Length == 1) {
-                ((TextBox)x).Text = "R$ 0,0" + str;
+                ((TextBox)x).Text = "0.0" + str;
             }
             else if(str.Length == 2) {
-                ((TextBox)x).Text = "R$ 0," + str;
+                ((TextBox)x).Text = "0." + str;
             }
             else if(str.Length > 2) {
-                ((TextBox)x).Text = "R$ " + str.Substring(0, str.Length - 2) + "," +
+                ((TextBox)x).Text = "" + str.Substring(0, str.Length - 2) + "." +
                                 str.Substring(str.Length - 2);
             }
         }
@@ -76,15 +76,19 @@ namespace View
             str = "";
         }
 
-        private void btnAddInsumo_Click(object sender, EventArgs e) {            
-            AdicaoInsumos add = new AdicaoInsumos(produtoLista);
-            add.ShowDialog();
-            add.Dispose();
-            if(produtoLista.InsumosLenght() > 0) { 
-                Decimal custoTotal = somaCusto(produtoLista);
-                txtValorCusto.Text = custoTotal.ToString();
-                txtValorVenda.Text = (custoTotal + (custoTotal * (30 / 100))).ToString();
+        private void btnAddInsumo_Click(object sender, EventArgs e) {
+            if(produtoFinal.Id == null)
+            {
+                MessageBox.Show("Você deve antes cadastrar o produto!");
             }
+            else
+            {
+                AdicaoInsumos add = new AdicaoInsumos(produtoFinal.Id);
+                add.Show();
+                add.Dispose();
+            }
+            
+            
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -95,7 +99,7 @@ namespace View
         private void btnAdicionar_Click(object sender, EventArgs e) {
             try
             {
-                ProdutoFinal produtof = produtoLista;               
+                ProdutoFinal produtof = produtoFinal;               
                 ProdutofCreate(produtof);
 
             }
@@ -119,7 +123,7 @@ namespace View
 
         private void ProdutofCreate(ProdutoFinal produtof) {
             
-            if (produtof.InsumosLenght() > 0) { 
+            if (produtof.CountItem() > 0) { 
                 produtof.Nome = txtNome.Text;
                 produtof.Descricao = txtDescricao.Text;
                 produtof.PrecoVenda = Decimal.Parse(txtValorVenda.Text);
