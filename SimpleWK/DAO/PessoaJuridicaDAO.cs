@@ -64,14 +64,15 @@ namespace DAO
             dbSWK.ExecuteSQL(qryPes);
         }
 
-        public Juridica Read(int id, int idEndereco)
+        public Juridica Read(int id)
         {
             Juridica pessoa = new Juridica();
+            int idEndereco = 0;
 
             MySqlConnection conexao = Database.GetInstance().GetConnection();
 
             String qry = "SELECT p.id_pessoa, p.nome, p.email, p.telefone_fixo, " +
-                "p.telefone_movel, p.id_endereco, pj.cnpj, pj.sobrenome" +
+                "p.telefone_movel, p.id_endereco, pj.cnpj, pj.razao_social" +
                 " FROM pessoa p, juridica pj WHERE p.id_pessoa = pj.fk_id_pessoa" +
                 " AND id_pessoa  = " + id + ";";
 
@@ -83,14 +84,22 @@ namespace DAO
 
             if (dr.Read())
             {
-                pessoa.Id = dr.GetInt32("p.id_pessoa");
-                pessoa.Nome = dr.GetString("p.nome");
-                pessoa.Email = dr.GetString("p.email");
-                pessoa.TelefoneFixo = dr.GetString("p.telefone_fixo");
-                pessoa.TelefoneMovel = dr.GetString("p.telefone_movel");
-                pessoa.Cnpj = dr.GetString("pj.cpf");
-                pessoa.RazaoSocial = dr.GetString("pj.razao_social");
-                idEndereco = dr.GetInt32("p.id_endereco");
+                pessoa.Id = dr.GetInt32("id_pessoa");
+                pessoa.Nome = dr.GetString("nome");
+                pessoa.Email = dr.GetString("email");
+                pessoa.TelefoneFixo = dr.GetString("telefone_fixo");
+                pessoa.TelefoneMovel = dr.GetString("telefone_movel");
+                pessoa.Cnpj = dr.GetString("cnpj");
+                pessoa.RazaoSocial = dr.GetString("razao_social");
+                idEndereco = dr.GetInt32("id_endereco");
+            }
+            conexao.Close();
+
+
+            if (idEndereco > 0)
+            {
+                LocalizacaoDAO local = new LocalizacaoDAO();
+                pessoa.Endereco = local.ReadById(idEndereco);
             }
 
             return pessoa;
@@ -102,7 +111,7 @@ namespace DAO
             MySqlConnection conexao = Database.GetInstance().GetConnection();
             DataTable dtJuridica = new DataTable();
 
-            string qry = "SELECT p.nome, j.razao_social, j.cnpj, p.email, p.telefone_fixo from pessoa p, juridica j where p.id_pessoa = j.fk_id_pessoa";
+            string qry = "SELECT p.id_pessoa, p.nome, j.razao_social, j.cnpj, p.email, p.telefone_fixo from pessoa p, juridica j where p.id_pessoa = j.fk_id_pessoa";
 
             if (conexao.State != System.Data.ConnectionState.Open)
                 conexao.Open();

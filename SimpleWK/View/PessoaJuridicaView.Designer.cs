@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtRazaoSocial = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -43,19 +44,21 @@
             this.dgvRazaoSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvCNPJ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvPessoaJuridica = new System.Windows.Forms.DataGridView();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RazaoSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CNPJ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtTelefoneFixo = new System.Windows.Forms.MaskedTextBox();
             this.txtCnpj = new System.Windows.Forms.MaskedTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtTelefoneMovel = new System.Windows.Forms.MaskedTextBox();
+            this.dsInsumo = new View.dsInsumo();
+            this.dsInsumoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.itemBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.itemTableAdapter = new View.dsInsumoTableAdapters.itemTableAdapter();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPessoaJuridica)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsInsumo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsInsumoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAdicionar
@@ -66,10 +69,12 @@
             // btnEditar
             // 
             this.btnEditar.FlatAppearance.BorderSize = 0;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnExcluir
             // 
             this.btnExcluir.FlatAppearance.BorderSize = 0;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnCancelar
             // 
@@ -120,7 +125,7 @@
             // 
             // txtBusca
             // 
-            this.txtBusca.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtBusca.Margin = new System.Windows.Forms.Padding(5);
             // 
             // txtRazaoSocial
             // 
@@ -246,53 +251,17 @@
             this.dgvPessoaJuridica.AllowUserToDeleteRows = false;
             this.dgvPessoaJuridica.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPessoaJuridica.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPessoaJuridica.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Nome,
-            this.RazaoSocial,
-            this.CNPJ,
-            this.Telefone,
-            this.Email});
             this.dgvPessoaJuridica.Location = new System.Drawing.Point(11, 75);
-            this.dgvPessoaJuridica.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvPessoaJuridica.Margin = new System.Windows.Forms.Padding(4);
             this.dgvPessoaJuridica.Name = "dgvPessoaJuridica";
             this.dgvPessoaJuridica.ReadOnly = true;
             this.dgvPessoaJuridica.Size = new System.Drawing.Size(1013, 254);
             this.dgvPessoaJuridica.TabIndex = 0;
             // 
-            // Nome
-            // 
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            this.Nome.ReadOnly = true;
-            // 
-            // RazaoSocial
-            // 
-            this.RazaoSocial.HeaderText = "RazaoSocial";
-            this.RazaoSocial.Name = "RazaoSocial";
-            this.RazaoSocial.ReadOnly = true;
-            // 
-            // CNPJ
-            // 
-            this.CNPJ.HeaderText = "CNPJ";
-            this.CNPJ.Name = "CNPJ";
-            this.CNPJ.ReadOnly = true;
-            // 
-            // Telefone
-            // 
-            this.Telefone.HeaderText = "Telefone";
-            this.Telefone.Name = "Telefone";
-            this.Telefone.ReadOnly = true;
-            // 
-            // Email
-            // 
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
-            // 
             // txtTelefoneFixo
             // 
             this.txtTelefoneFixo.Location = new System.Drawing.Point(159, 193);
-            this.txtTelefoneFixo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTelefoneFixo.Margin = new System.Windows.Forms.Padding(4);
             this.txtTelefoneFixo.Mask = "(00) 0000-0000";
             this.txtTelefoneFixo.Name = "txtTelefoneFixo";
             this.txtTelefoneFixo.Size = new System.Drawing.Size(133, 24);
@@ -301,7 +270,7 @@
             // txtCnpj
             // 
             this.txtCnpj.Location = new System.Drawing.Point(159, 153);
-            this.txtCnpj.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCnpj.Margin = new System.Windows.Forms.Padding(4);
             this.txtCnpj.Mask = "00,000,000/0000-00";
             this.txtCnpj.Name = "txtCnpj";
             this.txtCnpj.Size = new System.Drawing.Size(163, 24);
@@ -320,11 +289,30 @@
             // txtTelefoneMovel
             // 
             this.txtTelefoneMovel.Location = new System.Drawing.Point(441, 193);
-            this.txtTelefoneMovel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTelefoneMovel.Margin = new System.Windows.Forms.Padding(4);
             this.txtTelefoneMovel.Mask = "(00) 00000-0000";
             this.txtTelefoneMovel.Name = "txtTelefoneMovel";
             this.txtTelefoneMovel.Size = new System.Drawing.Size(132, 24);
             this.txtTelefoneMovel.TabIndex = 22;
+            // 
+            // dsInsumo
+            // 
+            this.dsInsumo.DataSetName = "dsInsumo";
+            this.dsInsumo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dsInsumoBindingSource
+            // 
+            this.dsInsumoBindingSource.DataSource = this.dsInsumo;
+            this.dsInsumoBindingSource.Position = 0;
+            // 
+            // itemBindingSource
+            // 
+            this.itemBindingSource.DataMember = "item";
+            this.itemBindingSource.DataSource = this.dsInsumoBindingSource;
+            // 
+            // itemTableAdapter
+            // 
+            this.itemTableAdapter.ClearBeforeFill = true;
             // 
             // PessoaJuridicaView
             // 
@@ -333,12 +321,16 @@
             this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Name = "PessoaJuridicaView";
             this.Text = "Cadastro Pessoa Juridica";
+            this.Load += new System.EventHandler(this.PessoaJuridicaView_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPessoaJuridica)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsInsumo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsInsumoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -359,14 +351,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvRazaoSocial;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvCNPJ;
         private System.Windows.Forms.DataGridView dgvPessoaJuridica;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RazaoSocial;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CNPJ;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Telefone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.MaskedTextBox txtCnpj;
         private System.Windows.Forms.MaskedTextBox txtTelefoneFixo;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.MaskedTextBox txtTelefoneMovel;
+        private System.Windows.Forms.BindingSource dsInsumoBindingSource;
+        private dsInsumo dsInsumo;
+        private System.Windows.Forms.BindingSource itemBindingSource;
+        private dsInsumoTableAdapters.itemTableAdapter itemTableAdapter;
     }
 }

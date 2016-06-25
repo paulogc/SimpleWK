@@ -71,13 +71,18 @@ namespace View
         }
 
         private void PessoaFisica_Load(object sender, EventArgs e) {
-            // TODO: esta linha de código carrega dados na tabela 'dsFisica.fisica'. Você pode movê-la ou removê-la conforme necessário.
             AtualizarGrid();
         }
 
         private void AtualizarGrid() {
             PessoaFisicaDAO pdao = new PessoaFisicaDAO();
             dgvPessoaFisica.DataSource = pdao.ListAllFisica();
+            dgvPessoaFisica.Columns[0].HeaderText = "ID";
+            dgvPessoaFisica.Columns[1].HeaderText = "Nome";
+            dgvPessoaFisica.Columns[2].HeaderText = "Sobrenome";
+            dgvPessoaFisica.Columns[3].HeaderText = "CPF";
+            dgvPessoaFisica.Columns[4].HeaderText = "E-mail";
+            dgvPessoaFisica.Columns[5].HeaderText = "Telefone";
         }
 
         private void createPessoaFisica(Fisica pessoaFisica) {
