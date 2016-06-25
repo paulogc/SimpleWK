@@ -49,13 +49,15 @@ namespace View
                     {
                         pjDao.Update(pessoaJuridica);
                         locDao.Update(pessoaJuridica.Endereco);
+                        localizacao = new Localizacao();
                     }
                     else
                     {
-                        pjDao.Create(pessoaJuridica);
+                        locDao.Create(pessoaJuridica.Endereco);
                         int idEnd = Database.GetInstance().GetId();
                         pessoaJuridica.Endereco.Id = idEnd;
-                        locDao.Create(pessoaJuridica.Endereco);
+                        pjDao.Create(pessoaJuridica);
+                        pessoaJuridica.Endereco.Id = idEnd;
                     }
                     AtualizarGrid();
                     LimparCampos();
