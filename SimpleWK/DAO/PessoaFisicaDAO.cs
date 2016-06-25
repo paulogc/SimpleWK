@@ -56,6 +56,7 @@ namespace DAO {
             dbSWK.ExecuteSQL(qryFis);
 
             String qryPes = "DELETE FROM pessoa WHERE id_pessoa = " + pessoa.Id + ";";
+            dbSWK.ExecuteSQL(qryPes);
         }
 
         public Fisica Read(int id) {

@@ -70,12 +70,70 @@ namespace View
 
         private void createPessoaJuridica(Juridica juridica)
         {
+            if ( lbID.Text !="")
+            {
+                juridica.Id = int.Parse(lbID.Text);
+            }
             juridica.Nome = txtNome.Text;
             juridica.RazaoSocial = txtRazaoSocial.Text;
             juridica.Cnpj = txtCnpj.Text;
             juridica.TelefoneFixo = txtTelefoneFixo.Text;
             juridica.TelefoneMovel = txtTelefoneMovel.Text;
             juridica.Email = txtEmail.Text;
+        }
+
+        private void PessoaJuridicaView_Load(object sender, EventArgs e)
+        {
+            AtualizarGrid();
+        }
+        private void AtualizarGrid()
+        {
+            PessoaJuridicaDAO pdao = new PessoaJuridicaDAO();
+            dgvPessoaJuridica.DataSource = pdao.ListAllJuridica();
+            dgvPessoaJuridica.Columns[0].HeaderText = "ID";
+            dgvPessoaJuridica.Columns[1].HeaderText = "Nome";
+            dgvPessoaJuridica.Columns[2].HeaderText = "Razão Social";
+            dgvPessoaJuridica.Columns[3].HeaderText = "CNPJ";
+            dgvPessoaJuridica.Columns[4].HeaderText = "E-mail";
+            dgvPessoaJuridica.Columns[5].HeaderText = "Telefone";
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            String message = "Você deve selecionar um Insumo na tabela!";
+
+            Juridica pessoaJuridica = new Juridica();
+            foreach (DataGridViewRow row in dgvPessoaJuridica.Rows)
+            {
+                if (row.Selected)
+                {
+                    pessoaJuridica.Id = Int32.Parse(row.Cells[0].Value.ToString());
+
+                    PessoaJuridicaDAO pjDao = new PessoaJuridicaDAO();
+                    pessoaJuridica = pjDao.Read(pessoaJuridica.Id);
+
+                    message = "";
+                }
+            }
+            if (message != "")
+            {
+                MessageBox.Show(message);
+            }
+            else
+            {
+                lbID.Text = pessoaJuridica.Id.ToString();
+                txtNome.Text = pessoaJuridica.Nome;
+                txtRazaoSocial.Text = pessoaJuridica.RazaoSocial;
+                txtCnpj.Text = pessoaJuridica.Cnpj;
+                txtEmail.Text = pessoaJuridica.Email;
+                txtTelefoneFixo.Text = pessoaJuridica.TelefoneFixo;
+                txtTelefoneMovel.Text = pessoaJuridica.TelefoneMovel;
+            }
         }
     }
 }
