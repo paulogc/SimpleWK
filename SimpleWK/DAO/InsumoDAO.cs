@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Model;
 using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace DAO
 {
@@ -61,5 +62,23 @@ namespace DAO
             qry = "DELETE FROM item WHERE id_item = " + insumo.Id;
             dbSWK.ExecuteSQL(qry);
         }
+
+        public DataTable ListAllInsumo() {
+
+            MySqlConnection conexao = Database.GetInstance().GetConnection();
+            DataTable dtInsumo = new DataTable();
+
+            string qry = "SELECT i.id_item, i.nome, i.descricao FROM item i, insumo n WHERE i.id_item = n.id_item;";
+
+            if(conexao.State != System.Data.ConnectionState.Open)
+                conexao.Open();
+
+            MySqlDataAdapter objAdapter = new MySqlDataAdapter(qry, conexao);
+            objAdapter.Fill(dtInsumo);
+
+            conexao.Close();
+            return dtInsumo;
+        }
+
     }
 }
