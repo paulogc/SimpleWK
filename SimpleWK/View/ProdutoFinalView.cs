@@ -80,7 +80,7 @@ namespace View
             AdicaoInsumos add = new AdicaoInsumos(produtoLista);
             add.ShowDialog();
             add.Dispose();
-            if(produtoLista.InsumosLenght() > 0) { 
+            if(produtoLista.CountItem() > 0) { 
                 Decimal custoTotal = somaCusto(produtoLista);
                 txtValorCusto.Text = custoTotal.ToString();
                 txtValorVenda.Text = (custoTotal + (custoTotal * (30 / 100))).ToString();
