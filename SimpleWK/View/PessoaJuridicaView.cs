@@ -107,12 +107,49 @@ namespace View
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
+            String message = "Você deve selecionar um Fornecedor na tabela!";
 
+            Juridica pessoaJuridica = new Juridica();
+            PessoaJuridicaDAO pjDao = new PessoaJuridicaDAO();
+
+            foreach (DataGridViewRow row in dgvPessoaJuridica.Rows)
+            {
+                if (row.Selected)
+                {
+                    pessoaJuridica.Id = Int32.Parse(row.Cells[0].Value.ToString());
+                    pessoaJuridica = pjDao.Read(pessoaJuridica.Id);
+                    message = "";
+                }
+            }
+            if (message != "")
+            {
+                MessageBox.Show(message);
+            }
+            else
+            {
+                lbID.Text = pessoaJuridica.Id.ToString();
+                txtNome.Text = pessoaJuridica.Nome;
+                txtRazaoSocial.Text = pessoaJuridica.RazaoSocial;
+                txtCnpj.Text = pessoaJuridica.Cnpj;
+                txtEmail.Text = pessoaJuridica.Email;
+                txtTelefoneFixo.Text = pessoaJuridica.TelefoneFixo;
+                txtTelefoneMovel.Text = pessoaJuridica.TelefoneMovel;
+                localizacao = pessoaJuridica.Endereco;
+
+                DialogResult confirm = MessageBox.Show("Deseja excluir o fornecedor?", "Confirmar exclusão",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+
+                if (confirm.ToString().ToUpper() == "YES")
+                {
+                    pjDao.Delete(pessoaJuridica);
+                    LimparCampos();
+                    AtualizarGrid();
+                }
+            }
         }
-
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            String message = "Você deve selecionar um Insumo na tabela!";
+            String message = "Você deve selecionar um Fornecedor na tabela!";
 
             Juridica pessoaJuridica = new Juridica();
             foreach (DataGridViewRow row in dgvPessoaJuridica.Rows)

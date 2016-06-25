@@ -147,5 +147,48 @@ namespace View
                 localizacao = pessoaFisica.Endereco;
             }
         }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            String message = "Você deve selecionar uma Pessoa na tabela!";
+
+            Fisica pessoaFisica = new Fisica();
+            PessoaFisicaDAO pfDao = new PessoaFisicaDAO();
+
+            foreach (DataGridViewRow row in dgvPessoaFisica.Rows)
+            {
+                if (row.Selected)
+                {
+                    pessoaFisica.Id = Int32.Parse(row.Cells[0].Value.ToString());
+                    pessoaFisica = pfDao.Read(pessoaFisica.Id);
+                    message = "";
+                }
+            }
+            if (message != "")
+            {
+                MessageBox.Show(message);
+            }
+            else
+            {
+                lbID.Text = pessoaFisica.Id.ToString();
+                txtNome.Text = pessoaFisica.Nome;
+                txtSobrenome.Text = pessoaFisica.Sobrenome;
+                txtCpf.Text = pessoaFisica.Cpf;
+                txtEmail.Text = pessoaFisica.Email;
+                txtTelefoneFixo.Text = pessoaFisica.TelefoneFixo;
+                txtTelefoneMovel.Text = pessoaFisica.TelefoneMovel;
+                localizacao = pessoaFisica.Endereco;
+
+                DialogResult confirm = MessageBox.Show("Deseja excluir essa pessoa?", "Confirmar exclusão",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+
+                if (confirm.ToString().ToUpper() == "YES")
+                {
+                    pfDao.Delete(pessoaFisica);
+                    LimparCampos();
+                    AtualizarGrid();
+                }
+            }
+        }
     }
 }
