@@ -83,6 +83,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsInsumo.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ListaFornecedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaFornecedores.Designer.cs">
+      <DependentUpon>ListaFornecedores.cs</DependentUpon>
+    </Compile>
     <Compile Include="VendaView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CompraView.resx">
       <DependentUpon>CompraView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaFornecedores.resx">
+      <DependentUpon>ListaFornecedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VendaView.resx">
       <DependentUpon>VendaView.cs</DependentUpon>

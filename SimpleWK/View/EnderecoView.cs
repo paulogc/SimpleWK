@@ -8,20 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Model;
+using DAO;
 
 namespace View
 {
     public partial class EnderecoView : Form
     {
-        Localizacao localizacao = new Localizacao();
-        public EnderecoView(Localizacao end)
-        {            
-            localizacao = end;
-            if(localizacao.Logradouro != null) {
-                FillText(localizacao);
-            }
-            
+        Localizacao novo = new Localizacao();
+        public EnderecoView(int idLocalizacao, Localizacao endAtual)
+        {
             InitializeComponent();
+            LocalizacaoDAO localDao = new LocalizacaoDAO();
+            Localizacao localizacao = new Localizacao();
+            localizacao = localDao.ReadById(idLocalizacao);
+            FillText(localizacao);
+            novo = endAtual;           
         }
 
         public EnderecoView() {
@@ -38,14 +39,14 @@ namespace View
         }
 
         private void CriarObjeto() {
-            localizacao.Logradouro = txtLogradouro.Text;
-            localizacao.Numero = Int32.Parse(txtNum.Text);
-            localizacao.Complemento = txtComplemento.Text;
-            localizacao.Bairro = txtBairro.Text;
-            localizacao.Cep = txtCep.Text;
-            localizacao.Cidade = txtCidade.Text;
-            localizacao.Uf = cbUf.Text;
-            localizacao.Pais = txtPais.Text;
+            novo.Logradouro = txtLogradouro.Text;
+            novo.Numero = Int32.Parse(txtNum.Text);
+            novo.Complemento = txtComplemento.Text;
+            novo.Bairro = txtBairro.Text;
+            novo.Cep = txtCep.Text;
+            novo.Cidade = txtCidade.Text;
+            novo.Uf = cbUf.Text;
+            novo.Pais = txtPais.Text;
         }
 
         private void FillText(Localizacao local) {
@@ -53,8 +54,8 @@ namespace View
             txtBairro.Text = local.Bairro;
             txtNum.Text = local.Numero.ToString();
             txtCidade.Text = local.Cidade;
+            txtComplemento.Text = local.Complemento;
             txtCep.Text = local.Cep;
-            txtPais.Text = local.Pais;
             cbUf.Text = local.Uf;                       
         }
     }

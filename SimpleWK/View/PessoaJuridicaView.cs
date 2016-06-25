@@ -21,7 +21,7 @@ namespace View
         //chama a tela de cadastro de endereço
         private void btnLocalizacao_Click(object sender, EventArgs e)
         {
-            EnderecoView end = new EnderecoView(localizacao);
+            EnderecoView end = new EnderecoView(localizacao.Id, localizacao);
             end.ShowDialog();
             end.Dispose();
         }

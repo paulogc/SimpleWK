@@ -21,7 +21,7 @@ namespace View
 
         //Chama a tela para cadastro de endereço
         private void btnLocalizacao_Click(object sender, EventArgs e) {            
-            EnderecoView end = new EnderecoView(localizacao);
+            EnderecoView end = new EnderecoView(localizacao.Id, localizacao);
             end.ShowDialog();
             end.Dispose();
         }
@@ -47,13 +47,15 @@ namespace View
                     {
                         pfDao.Update(pessoaFisica);
                         locDao.Update(pessoaFisica.Endereco);
+                        localizacao = new Localizacao();
                     }
                     else
-                    {
-                        pfDao.Create(pessoaFisica);
+                    {                       
+                        locDao.Create(pessoaFisica.Endereco);
                         int idEnd = Database.GetInstance().GetId();
                         pessoaFisica.Endereco.Id = idEnd;
-                        locDao.Create(pessoaFisica.Endereco);
+                        pfDao.Create(pessoaFisica);
+                        localizacao = new Localizacao();
                     }
                     
                     AtualizarGrid();
