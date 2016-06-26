@@ -6,13 +6,14 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Model;
+using DAO;
 
 namespace View
 {
     public partial class ProdutoFinalView : View.ModeloCadastroGeral
     {
-        ProdutoFinal produtoFinal = new ProdutoFinal();
 
+        List<InsumoProdutoFinal> listaInsumos = new List<InsumoProdutoFinal>();
         public ProdutoFinalView()
         {
             InitializeComponent();
@@ -77,19 +78,10 @@ namespace View
         }
 
         private void btnAddInsumo_Click(object sender, EventArgs e) {
-            if(produtoFinal.Id == null)
-            {
-                MessageBox.Show("Você deve antes cadastrar o produto!");
-            }
-            else
-            {
-                AdicaoInsumos add = new AdicaoInsumos(produtoFinal.Id);
-                add.Show();
-                add.Dispose();
-
-            }
-            
-            
+            AdicaoInsumos add = new AdicaoInsumos(listaInsumos);
+            add.ShowDialog();
+            txtValorVenda.Text = (somaPrecoVenda(listaInsumos)).ToString();
+            txtValorCusto.Text = (somaCusto(listaInsumos)).ToString();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -98,43 +90,64 @@ namespace View
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e) {
-            try
-            {
-                ProdutoFinal produtof = produtoFinal;               
-                ProdutofCreate(produtof);
+            ProdutoFinal produtoFinal = new ProdutoFinal();
+            produtoFinal.Insumos = listaInsumos;            
 
-            }
-            catch (Exception p)
+            if(produtoFinal.Insumos.Count > 0)
             {
-                MessageBox.Show(p.ToString());
+                ProdutofCreate(produtoFinal);
+                ProdutoFinalDAO pfDAO = new ProdutoFinalDAO();
+                pfDAO.Create(produtoFinal);
+                dgvProdutoFinal.DataSource = pfDAO.ListAllProdutoFinal();
+            }
+            else
+            {
+                MessageBox.Show("Você precisa inserir um insumo antes!");
             }
         }
 
         private void btnBusca_Click(object sender, EventArgs e) {
         }
 
-        private Decimal somaCusto(ProdutoFinal produtof) {
-            Decimal somaCusto = 0;
-            foreach (Item item in produtof.Insumos)
-            {
-                somaCusto += item.ValorCusto;
+        private Decimal somaPrecoVenda(List<InsumoProdutoFinal> listaPF) {
+            Decimal soma = 0;
+            foreach(InsumoProdutoFinal insumo in listaPF){
+                soma += insumo.ValorCusto * insumo.QuantidadeInsumo;
             }
-            return somaCusto;
+            soma = soma + (soma * (40/100));
+            return soma;
+        }
+
+        private Decimal somaCusto(List<InsumoProdutoFinal> listaPF) {
+            Decimal soma = 0;
+            foreach (InsumoProdutoFinal insumo in listaPF)
+                {
+                    soma += insumo.ValorCusto * insumo.QuantidadeInsumo;
+                }
+            return soma;
         }
 
         private void ProdutofCreate(ProdutoFinal produtof) {
+
+            if (lbID.Text != "") {
+                produtof.Id = Int32.Parse(lbID.Text);
+            } 
+            produtof.Nome = txtNome.Text;
+            produtof.Descricao = txtDescricao.Text;
+            produtof.PrecoVenda = Decimal.Parse(txtValorVenda.Text);
+            produtof.Quantidade = Int32.Parse(txtQuantidade.Text);
+            produtof.ValorCusto = Decimal.Parse(txtValorCusto.Text);
             
-            if (produtof.CountItem() > 0) { 
-                produtof.Nome = txtNome.Text;
-                produtof.Descricao = txtDescricao.Text;
-                produtof.PrecoVenda = Decimal.Parse(txtValorVenda.Text);
-                produtof.Quantidade = Int32.Parse(txtQuantidade.Text);
-                produtof.ValorCusto = Decimal.Parse(txtValorCusto.Text);
-            }
-            else
-            {
-                MessageBox.Show("Para Inserir um Produdo ele precisa no mínimo de um Insumo cadastrado na 'Lista de insumos'");
-            }
+        }
+
+        private void ProdutoFinalView_Load(object sender, EventArgs e) {
+            ProdutoFinalDAO pfDAO = new ProdutoFinalDAO();
+            dgvProdutoFinal.DataSource = pfDAO.ListAllProdutoFinal();
+            dgvProdutoFinal.Columns[0].HeaderText = "ID";
+            dgvProdutoFinal.Columns[1].HeaderText = "Nome";
+            dgvProdutoFinal.Columns[2].HeaderText = "Descrição";
+            dgvProdutoFinal.Columns[3].HeaderText = "Valor Venda";
+            dgvProdutoFinal.Columns[4].HeaderText = "Quantidade";
         }
     }
 }
