@@ -122,5 +122,24 @@ namespace DAO
             conexao.Close();
             return dtJuridica;
         }
+
+        public DataTable BuscaJuridica(string busca, string campo) {
+
+            MySqlConnection conexao = Database.GetInstance().GetConnection();
+            DataTable dtJuridica = new DataTable();
+
+            string qry = "SELECT p.id_pessoa, p.nome, j.razao_social, j.cnpj, p.email, p.telefone_fixo from pessoa p, juridica j where p.id_pessoa = j.fk_id_pessoa AND "
+                + campo + " like '%" + busca + "%';";
+
+            if(conexao.State != System.Data.ConnectionState.Open)
+                conexao.Open();
+
+            MySqlDataAdapter objAdapter = new MySqlDataAdapter(qry, conexao);
+            objAdapter.Fill(dtJuridica);
+
+            conexao.Close();
+            return dtJuridica;
+        }
+
     }
 }

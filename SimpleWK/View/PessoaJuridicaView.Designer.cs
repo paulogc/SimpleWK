@@ -123,85 +123,99 @@
             this.btnBusca.FlatAppearance.BorderSize = 0;
             this.btnBusca.Click += new System.EventHandler(this.btnBusca_Click);
             // 
+            // cbCampo
+            // 
+            this.cbCampo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCampo.Items.AddRange(new object[] {
+            "Nome",
+            "Razão Social",
+            "CNPJ",
+            "E-mail"});
+            // 
             // txtBusca
             // 
-            this.txtBusca.Margin = new System.Windows.Forms.Padding(5);
+            this.txtBusca.Margin = new System.Windows.Forms.Padding(4);
             // 
             // txtRazaoSocial
             // 
-            this.txtRazaoSocial.Location = new System.Drawing.Point(159, 113);
-            this.txtRazaoSocial.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtRazaoSocial.Location = new System.Drawing.Point(119, 92);
+            this.txtRazaoSocial.Margin = new System.Windows.Forms.Padding(2);
             this.txtRazaoSocial.Name = "txtRazaoSocial";
-            this.txtRazaoSocial.Size = new System.Drawing.Size(415, 24);
+            this.txtRazaoSocial.Size = new System.Drawing.Size(312, 21);
             this.txtRazaoSocial.TabIndex = 19;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(44, 117);
+            this.label8.Location = new System.Drawing.Point(33, 95);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(101, 18);
+            this.label8.Size = new System.Drawing.Size(83, 15);
             this.label8.TabIndex = 22;
             this.label8.Text = "Razão Social:";
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(159, 236);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtEmail.Location = new System.Drawing.Point(119, 192);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(300, 24);
+            this.txtEmail.Size = new System.Drawing.Size(226, 21);
             this.txtEmail.TabIndex = 23;
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(159, 75);
-            this.txtNome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNome.Location = new System.Drawing.Point(119, 61);
+            this.txtNome.Margin = new System.Windows.Forms.Padding(2);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(415, 24);
+            this.txtNome.Size = new System.Drawing.Size(312, 21);
             this.txtNome.TabIndex = 18;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(100, 156);
+            this.label7.Location = new System.Drawing.Point(75, 127);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(52, 18);
+            this.label7.Size = new System.Drawing.Size(41, 15);
             this.label7.TabIndex = 17;
             this.label7.Text = "CNPJ:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(96, 79);
+            this.label6.Location = new System.Drawing.Point(72, 64);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 18);
+            this.label6.Size = new System.Drawing.Size(44, 15);
             this.label6.TabIndex = 16;
             this.label6.Text = "Nome:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(93, 240);
+            this.label5.Location = new System.Drawing.Point(70, 195);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 18);
+            this.label5.Size = new System.Drawing.Size(46, 15);
             this.label5.TabIndex = 15;
             this.label5.Text = "E-mail:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(51, 197);
+            this.label2.Location = new System.Drawing.Point(38, 160);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 18);
+            this.label2.Size = new System.Drawing.Size(80, 15);
             this.label2.TabIndex = 14;
             this.label2.Text = "Telefone fixo:";
             // 
             // btnLocalizacao
             // 
-            this.btnLocalizacao.Location = new System.Drawing.Point(708, 27);
-            this.btnLocalizacao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLocalizacao.Location = new System.Drawing.Point(531, 22);
+            this.btnLocalizacao.Margin = new System.Windows.Forms.Padding(2);
             this.btnLocalizacao.Name = "btnLocalizacao";
-            this.btnLocalizacao.Size = new System.Drawing.Size(160, 38);
+            this.btnLocalizacao.Size = new System.Drawing.Size(120, 31);
             this.btnLocalizacao.TabIndex = 24;
             this.btnLocalizacao.Text = "Localização";
             this.btnLocalizacao.UseVisualStyleBackColor = true;
@@ -251,48 +265,43 @@
             this.dgvPessoaJuridica.AllowUserToDeleteRows = false;
             this.dgvPessoaJuridica.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPessoaJuridica.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPessoaJuridica.Location = new System.Drawing.Point(11, 75);
-            this.dgvPessoaJuridica.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvPessoaJuridica.Location = new System.Drawing.Point(8, 61);
             this.dgvPessoaJuridica.Name = "dgvPessoaJuridica";
             this.dgvPessoaJuridica.ReadOnly = true;
-            this.dgvPessoaJuridica.Size = new System.Drawing.Size(1013, 254);
+            this.dgvPessoaJuridica.Size = new System.Drawing.Size(760, 206);
             this.dgvPessoaJuridica.TabIndex = 0;
             // 
             // txtTelefoneFixo
             // 
-            this.txtTelefoneFixo.Location = new System.Drawing.Point(159, 193);
-            this.txtTelefoneFixo.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTelefoneFixo.Location = new System.Drawing.Point(119, 157);
             this.txtTelefoneFixo.Mask = "(00) 0000-0000";
             this.txtTelefoneFixo.Name = "txtTelefoneFixo";
-            this.txtTelefoneFixo.Size = new System.Drawing.Size(133, 24);
+            this.txtTelefoneFixo.Size = new System.Drawing.Size(101, 21);
             this.txtTelefoneFixo.TabIndex = 21;
             // 
             // txtCnpj
             // 
-            this.txtCnpj.Location = new System.Drawing.Point(159, 153);
-            this.txtCnpj.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCnpj.Location = new System.Drawing.Point(119, 124);
             this.txtCnpj.Mask = "00,000,000/0000-00";
             this.txtCnpj.Name = "txtCnpj";
-            this.txtCnpj.Size = new System.Drawing.Size(163, 24);
+            this.txtCnpj.Size = new System.Drawing.Size(123, 21);
             this.txtCnpj.TabIndex = 20;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(307, 198);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(230, 161);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(113, 18);
+            this.label9.Size = new System.Drawing.Size(94, 15);
             this.label9.TabIndex = 29;
             this.label9.Text = "Telefone Móvel:";
             // 
             // txtTelefoneMovel
             // 
-            this.txtTelefoneMovel.Location = new System.Drawing.Point(441, 193);
-            this.txtTelefoneMovel.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTelefoneMovel.Location = new System.Drawing.Point(331, 157);
             this.txtTelefoneMovel.Mask = "(00) 00000-0000";
             this.txtTelefoneMovel.Name = "txtTelefoneMovel";
-            this.txtTelefoneMovel.Size = new System.Drawing.Size(132, 24);
+            this.txtTelefoneMovel.Size = new System.Drawing.Size(100, 21);
             this.txtTelefoneMovel.TabIndex = 22;
             // 
             // dsInsumo
@@ -316,9 +325,9 @@
             // 
             // PessoaJuridicaView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.ClientSize = new System.Drawing.Size(1059, 644);
-            this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.ClientSize = new System.Drawing.Size(794, 523);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "PessoaJuridicaView";
             this.Text = "Cadastro Pessoa Juridica";
             this.Load += new System.EventHandler(this.PessoaJuridicaView_Load);

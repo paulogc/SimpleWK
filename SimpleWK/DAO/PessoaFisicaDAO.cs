@@ -115,5 +115,24 @@ namespace DAO {
             conexao.Close();
             return dtFisica;
         }
+
+        public DataTable BuscaFisica(string busca, string campo) {
+
+            MySqlConnection conexao = Database.GetInstance().GetConnection();
+            DataTable dtFisica = new DataTable();
+
+            string qry = "SELECT p.id_pessoa, p.nome, f.sobrenome, f.cpf, p.email, p.telefone_fixo FROM pessoa p, fisica f WHERE p.id_pessoa = f.fk_id_pessoa AND "
+                + campo + " like '%" + busca + "%';";
+
+            if(conexao.State != System.Data.ConnectionState.Open)
+                conexao.Open();
+
+            MySqlDataAdapter objAdapter = new MySqlDataAdapter(qry, conexao);
+            objAdapter.Fill(dtFisica);
+
+            conexao.Close();
+            return dtFisica;
+        }
+
     }
 }

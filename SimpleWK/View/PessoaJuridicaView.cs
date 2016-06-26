@@ -29,7 +29,26 @@ namespace View
 
         private void btnBusca_Click(object sender, EventArgs e)
         {
+            string busca = txtBusca.Text;
+            string campo = null;
 
+            switch(cbCampo.Text) {
+                case "Nome":
+                    campo = "p.nome";
+                    break;
+                case "CNPJ":
+                    campo = "j.cnpj";
+                    break;
+                case "E-mail":
+                    campo = "p.email";
+                    break;
+                case "Razão Social":
+                    campo = "j.razao_social";
+                    break;
+            }
+
+            PessoaJuridicaDAO pdao = new PessoaJuridicaDAO();
+            dgvPessoaJuridica.DataSource = pdao.BuscaJuridica(busca, campo);
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)

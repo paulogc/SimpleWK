@@ -77,6 +77,27 @@ namespace View
         }
 
         private void btnBusca_Click(object sender, EventArgs e) {
+            string busca = txtBusca.Text;
+            string campo = null;
+
+            switch(cbCampo.Text) {
+                case "Nome":
+                    campo = "p.nome";
+                    break;
+                case "CPF":
+                    campo = "f.cpf";
+                    break;
+                case "E-mail":
+                    campo = "p.email";
+                    break;
+                case "Sobrenome":
+                    campo = "f.sobrenome";
+                    break;
+            }
+
+            PessoaFisicaDAO pdao = new PessoaFisicaDAO();
+            dgvPessoaFisica.DataSource = pdao.BuscaFisica(busca, campo);
+
         }
 
         private void PessoaFisica_Load(object sender, EventArgs e) {
