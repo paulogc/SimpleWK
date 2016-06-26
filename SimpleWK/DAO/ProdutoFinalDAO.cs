@@ -86,8 +86,13 @@ namespace DAO {
                 insumo.QuantidadeInsumo = dr.GetInt32("quantidade");
                 lista.Add(insumo);
             }
+            conexao.Close();
+
             foreach(InsumoProdutoFinal insu in lista)
             {
+                if (conexao.State != System.Data.ConnectionState.Open)
+                    conexao.Open();
+
                 String qryItem = "SELECT nome, descricao, valor_custo FROM item WHERE id_item = " + insu.Id + ";";
                 comm = new MySqlCommand(qryItem, conexao);
                 dr = comm.ExecuteReader();
@@ -98,8 +103,9 @@ namespace DAO {
                     insu.Descricao = dr.GetString("descricao");
                     insu.ValorCusto = dr.GetDecimal("valor_custo");
                 }
+                conexao.Close();
             }
-
+            
             return lista;
         }
 
@@ -111,48 +117,26 @@ namespace DAO {
                 " WHERE id_item = " + pFinal.Id + ";";
             dbSWK.ExecuteSQL(qry);
 
-            List<InsumoProdutoFinal> listaBanco = new List<InsumoProdutoFinal>();
-            listaBanco = ListarInsumos(pFinal.Id);
-            List<InsumoProdutoFinal> listaController = pFinal.Insumos;
+            qry = "DELETE FROM lista_itens_produto_final WHERE id_produto_final = " + pFinal.Id + ";";
+            dbSWK.ExecuteSQL(qry);
 
-            listaBanco = listaBanco.OrderBy(prod => prod.Id).ToList<InsumoProdutoFinal>();
-            listaController = listaController.OrderBy(prod => prod.Id).ToList<InsumoProdutoFinal>();
+            int idItem = pFinal.Id;
 
-            List<InsumoProdutoFinal> mergeList = new List<InsumoProdutoFinal>();
-
-            foreach (InsumoProdutoFinal insumo in listaController)
+            foreach (InsumoProdutoFinal insumoPF in pFinal.Insumos)
             {
-                if (!listaBanco.Contains(insumo))
-                {
-                    Incerir(insumo, pFinal.Id);
-                }
-            }
-            foreach(InsumoProdutoFinal insumo in listaBanco)
-            {
-                if (!listaController.Contains(insumo))
-                {
-                    Remover(insumo);
-                }
+                String qryLista = "INSERT INTO lista_itens_produto_final (id_insumo, id_produto_final, quantidade) " +
+                    "VALUES(" + insumoPF.Id + ", " + idItem + ", " + insumoPF.QuantidadeInsumo + ");";
+                dbSWK.ExecuteSQL(qryLista);
             }
 
-        }
 
-        private void Remover(InsumoProdutoFinal insumo) {
-            String qry = "DELETE FROM lista_itens_produto_final WHERE id_insumo = " + insumo.Id + ";";
-            Database.GetInstance().ExecuteSQL(qry);
-        }
-
-        private void Incerir(InsumoProdutoFinal insumo, int idProdutoFinal) {
-            String qry = "INSERT INTO lista_itens_produto_final (id_produto_final, id_insumo, quantidade) " +
-                "VALUES(" + idProdutoFinal + ", " + insumo.Id + ", " + insumo.QuantidadeInsumo + ");";
-        }
-
-        
+        }        
 
         public void Delete(ProdutoFinal pFinal) {
             Database dbSWK = Database.GetInstance();
 
             String qry = "DELETE FROM lista_itens_produto_final WHERE id_produto_final = " + pFinal.Id + ";";
+            dbSWK.ExecuteSQL(qry);
 
             qry = "DELETE FROM produto_final WHERE id_item = " + pFinal.Id;
             dbSWK.ExecuteSQL(qry);

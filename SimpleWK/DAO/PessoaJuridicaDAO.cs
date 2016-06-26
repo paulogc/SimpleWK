@@ -111,7 +111,25 @@ namespace DAO
             MySqlConnection conexao = Database.GetInstance().GetConnection();
             DataTable dtJuridica = new DataTable();
 
-            string qry = "SELECT p.id_pessoa, p.nome, j.razao_social, j.cnpj, p.email, p.telefone_fixo from pessoa p, juridica j where p.id_pessoa = j.fk_id_pessoa";
+            string qry = "SELECT p.id_pessoa, p.nome, j.razao_social, j.cnpj, p.email, p.telefone_fixo FROM pessoa p, juridica j WHERE p.id_pessoa = j.fk_id_pessoa";
+
+            if (conexao.State != System.Data.ConnectionState.Open)
+                conexao.Open();
+
+            MySqlDataAdapter objAdapter = new MySqlDataAdapter(qry, conexao);
+            objAdapter.Fill(dtJuridica);
+
+            conexao.Close();
+            return dtJuridica;
+        }
+
+        public DataTable ListAllJuridica(String buscarPor) {
+
+            MySqlConnection conexao = Database.GetInstance().GetConnection();
+            DataTable dtJuridica = new DataTable();
+
+            string qry = "SELECT p.id_pessoa, p.nome, j.razao_social, j.cnpj, p.email, p.telefone_fixo FROM" +
+                "pessoa p, juridica j WHERE p.id_pessoa = j.fk_id_pessoa AND p.nome LIKE '%" + buscarPor + "%';";
 
             if (conexao.State != System.Data.ConnectionState.Open)
                 conexao.Open();

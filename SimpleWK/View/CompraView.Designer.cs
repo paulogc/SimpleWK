@@ -28,13 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.dgvItensInseridos = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItensInseridos)).BeginInit();
             this.SuspendLayout();
             // 
             // txtCPFCNPJ
             // 
+            this.txtCPFCNPJ.Enabled = false;
             this.txtCPFCNPJ.Location = new System.Drawing.Point(117, 79);
             this.txtCPFCNPJ.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCPFCNPJ.Size = new System.Drawing.Size(150, 21);
@@ -64,7 +67,6 @@
             // 
             // txtNomeFornecedor
             // 
-            this.txtNomeFornecedor.Enabled = false;
             this.txtNomeFornecedor.Location = new System.Drawing.Point(117, 51);
             this.txtNomeFornecedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNomeFornecedor.Size = new System.Drawing.Size(361, 21);
@@ -133,7 +135,12 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.dgvItensInseridos);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Controls.SetChildIndex(this.txtBusca, 0);
+            this.groupBox3.Controls.SetChildIndex(this.cbCampo, 0);
+            this.groupBox3.Controls.SetChildIndex(this.btnBusca, 0);
+            this.groupBox3.Controls.SetChildIndex(this.dgvItensInseridos, 0);
             // 
             // btnLocalizarItem
             // 
@@ -173,12 +180,23 @@
             // 
             this.txtBusca.Size = new System.Drawing.Size(336, 21);
             // 
-            // CadastroCompra
+            // dgvItensInseridos
+            // 
+            this.dgvItensInseridos.AllowUserToAddRows = false;
+            this.dgvItensInseridos.AllowUserToDeleteRows = false;
+            this.dgvItensInseridos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvItensInseridos.Location = new System.Drawing.Point(15, 53);
+            this.dgvItensInseridos.Name = "dgvItensInseridos";
+            this.dgvItensInseridos.ReadOnly = true;
+            this.dgvItensInseridos.Size = new System.Drawing.Size(650, 191);
+            this.dgvItensInseridos.TabIndex = 6;
+            // 
+            // CompraView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(794, 523);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "CadastroCompra";
+            this.Name = "CompraView";
             this.Text = "Compra";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -186,10 +204,13 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItensInseridos)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView dgvItensInseridos;
     }
 }

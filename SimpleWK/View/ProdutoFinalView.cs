@@ -133,8 +133,21 @@ namespace View
                 {
                     ProdutofCreate(produtoFinal);
                     ProdutoFinalDAO pfDAO = new ProdutoFinalDAO();
-                    pfDAO.Create(produtoFinal);
-                    dgvProdutoFinal.DataSource = pfDAO.ListAllProdutoFinal();
+
+                    if(produtoFinal.Id > 0)
+                    {
+                        pfDAO.Update(produtoFinal);
+                        dgvProdutoFinal.DataSource = pfDAO.ListAllProdutoFinal();
+                        LimparCampos();                        
+                    }
+                    else
+                    {
+                        pfDAO.Create(produtoFinal);
+                        dgvProdutoFinal.DataSource = pfDAO.ListAllProdutoFinal();
+                        LimparCampos();
+                    }
+
+                    
                 }
                 catch(Exception p)
                 {
@@ -226,11 +239,71 @@ namespace View
                 {
                     ProdutoFinalDAO pfDAO = new ProdutoFinalDAO();
                     produtof = pfDAO.Read(produtof.Id);
+                    FillFields(produtof);
+                    listaInsumos = produtof.Insumos;
                 }
                 catch(Exception p)
                 {
                     MessageBox.Show(p.ToString());
                 }
+            }
+        }
+
+        public void LimparCampos() {
+            lbID.Text = "";
+            txtNome.Text = "";
+            txtDescricao.Text = "";
+            txtQuantidade.Text = "";
+            txtValorCusto.Text = "";
+            txtValorVenda.Text = "";
+        }
+
+        public void FillFields(ProdutoFinal produtoF) {
+            if(produtoF.Id > 0)
+            {
+                lbID.Text = produtoF.Id.ToString();
+            }
+            txtNome.Text = produtoF.Nome;
+            txtDescricao.Text = produtoF.Descricao;
+            txtQuantidade.Text = produtoF.Quantidade.ToString();
+            txtValorCusto.Text = produtoF.ValorCusto.ToString();
+            txtValorVenda.Text = produtoF.PrecoVenda.ToString();
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e) {
+            String message = "Você deve selecionar um Insumo na tabela!";
+
+            ProdutoFinal produtof = new ProdutoFinal();
+            foreach (DataGridViewRow row in dgvProdutoFinal.Rows)
+            {
+                if (row.Selected)
+                {
+                    produtof.Id = Int32.Parse(row.Cells[0].Value.ToString());
+                    message = "";
+                }
+            }
+
+            if (message != "")
+            {
+                MessageBox.Show(message.ToString());
+            }
+            else
+            {
+                ProdutoFinalDAO pfDAO = new ProdutoFinalDAO();
+                produtof = pfDAO.Read(produtof.Id);
+
+                FillFields(produtof);
+
+                DialogResult confirm = MessageBox.Show("Deseja excluir essa pessoa?", "Confirmar exclusão",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+
+                if (confirm.ToString().ToUpper() == "YES")
+                {                    
+                    pfDAO.Delete(produtof);
+                    dgvProdutoFinal.DataSource = pfDAO.ListAllProdutoFinal();
+                    LimparCampos();
+                }
+                
             }
         }
     }
