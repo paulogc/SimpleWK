@@ -15,9 +15,11 @@ namespace View {
     public partial class AdicaoInsumos : Form {
 
         List<InsumoProdutoFinal> listaPF = new List<InsumoProdutoFinal>();
+        List<InsumoProdutoFinal> listaCancel = new List<InsumoProdutoFinal>();
         public AdicaoInsumos(List<InsumoProdutoFinal> lista) {
             InitializeComponent();
             listaPF = lista;
+            PrenecherListaCancel(lista);
         }
 
         private void btnAdd_Click(object sender, EventArgs e) {
@@ -79,6 +81,7 @@ namespace View {
         }
 
         private void btnCancel_Click(object sender, EventArgs e) {
+            listaPF = listaCancel;
             Close();
         }
 
@@ -125,6 +128,13 @@ namespace View {
                     insumoPF.Descricao.ToString(),
                     insumoPF.ValorCusto.ToString(),
                     insumoPF.QuantidadeInsumo.ToString());
+            }
+        }
+
+        private void PrenecherListaCancel(List<InsumoProdutoFinal> lista) {
+            foreach(InsumoProdutoFinal insumo in lista)
+            {
+                listaCancel.Add(insumo);
             }
         }
     }

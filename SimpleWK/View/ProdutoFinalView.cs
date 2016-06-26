@@ -19,7 +19,7 @@ namespace View
             InitializeComponent();
         }
 
-        string str;
+        /*string str;
 
         private bool IsNumeric(int Val) {
             return ((Val >= 48 && Val <= 57) || (Val == 8) || (Val == 46));
@@ -75,7 +75,7 @@ namespace View
 
         private void txtValorFinal_Enter(object sender, EventArgs e) {
             str = "";
-        }
+        }*/
 
         private void btnAddInsumo_Click(object sender, EventArgs e) {
             AdicaoInsumos add = new AdicaoInsumos(listaInsumos);
@@ -95,10 +95,17 @@ namespace View
 
             if(produtoFinal.Insumos.Count > 0)
             {
-                ProdutofCreate(produtoFinal);
-                ProdutoFinalDAO pfDAO = new ProdutoFinalDAO();
-                pfDAO.Create(produtoFinal);
-                dgvProdutoFinal.DataSource = pfDAO.ListAllProdutoFinal();
+                try
+                {
+                    ProdutofCreate(produtoFinal);
+                    ProdutoFinalDAO pfDAO = new ProdutoFinalDAO();
+                    pfDAO.Create(produtoFinal);
+                    dgvProdutoFinal.DataSource = pfDAO.ListAllProdutoFinal();
+                }
+                catch(Exception p)
+                {
+                    MessageBox.Show(p.ToString());
+                }
             }
             else
             {
@@ -148,6 +155,49 @@ namespace View
             dgvProdutoFinal.Columns[2].HeaderText = "Descrição";
             dgvProdutoFinal.Columns[3].HeaderText = "Valor Venda";
             dgvProdutoFinal.Columns[4].HeaderText = "Quantidade";
+        }
+
+        private void FillProdutoFinal(ProdutoFinal produto) {
+            if(produto.Id > 0)
+            {
+                lbID.Text = produto.Id.ToString();
+            }
+            txtNome.Text = produto.Nome;
+            txtDescricao.Text = produto.Descricao;
+            txtValorVenda.Text = produto.PrecoVenda.ToString();
+            txtQuantidade.Text = produto.Quantidade.ToString();
+            txtValorCusto.Text = somaCusto(produto.Insumos).ToString();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e) {
+            String message = "Você deve selecionar um Insumo na tabela!";
+
+            ProdutoFinal produtof = new ProdutoFinal();
+            foreach (DataGridViewRow row in dgvProdutoFinal.Rows)
+            {
+                if (row.Selected)
+                {
+                    produtof.Id = Int32.Parse(row.Cells[0].Value.ToString());
+                    message = "";
+                }
+            }
+
+            if(message != "")
+            {
+                MessageBox.Show(message.ToString());
+            }
+            else
+            {
+                try
+                {
+                    ProdutoFinalDAO pfDAO = new ProdutoFinalDAO();
+                    produtof = pfDAO.Read(produtof.Id);
+                }
+                catch(Exception p)
+                {
+                    MessageBox.Show(p.ToString());
+                }
+            }
         }
     }
 }

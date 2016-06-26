@@ -60,6 +60,7 @@
             // btnEditar
             // 
             this.btnEditar.FlatAppearance.BorderSize = 0;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnExcluir
             // 
