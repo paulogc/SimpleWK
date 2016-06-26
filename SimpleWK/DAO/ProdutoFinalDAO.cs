@@ -13,15 +13,18 @@ namespace DAO {
         public void Create(ProdutoFinal pFinal) {
             Database dbSWK = Database.GetInstance();
 
-            String qryItem = string.Format("INSERT INTO item (nome, descricao, valor_custo, quantidade) " +
-                "VALUES('{0}','{1}','{2}','{3}');",
-                pFinal.Nome, pFinal.Descricao, pFinal.ValorCusto, pFinal.Quantidade);
+            String qryItem = "INSERT INTO item (nome, descricao, valor_custo, quantidade) " +
+                "VALUES('" + pFinal.Nome + "', '" 
+                + pFinal.Descricao + "', '"
+                + pFinal.ValorCusto + "', '" 
+                + pFinal.Quantidade + "');";
+
             dbSWK.ExecuteSQL(qryItem);
 
             int idItem = dbSWK.GetId();
 
-            String qryProduto = string.Format("INSERT INTO produto_final (id_item, preco_venda) " +
-                "VALUES('{0}','{1}');", idItem, pFinal.PrecoVenda);
+            String qryProduto = "INSERT INTO produto_final (id_item, preco_venda) " +
+                "VALUES(" + idItem + ", " + pFinal.PrecoVenda + ");";
             dbSWK.ExecuteSQL(qryProduto);
 
             foreach(InsumoProdutoFinal insumoPF in pFinal.Insumos)
@@ -83,8 +86,13 @@ namespace DAO {
                 insumo.QuantidadeInsumo = dr.GetInt32("quantidade");
                 lista.Add(insumo);
             }
+            conexao.Close();
+
             foreach(InsumoProdutoFinal insu in lista)
             {
+                if (conexao.State != System.Data.ConnectionState.Open)
+                    conexao.Open();
+
                 String qryItem = "SELECT nome, descricao, valor_custo FROM item WHERE id_item = " + insu.Id + ";";
                 comm = new MySqlCommand(qryItem, conexao);
                 dr = comm.ExecuteReader();
@@ -95,8 +103,9 @@ namespace DAO {
                     insu.Descricao = dr.GetString("descricao");
                     insu.ValorCusto = dr.GetDecimal("valor_custo");
                 }
+                conexao.Close();
             }
-
+            
             return lista;
         }
 
@@ -108,19 +117,28 @@ namespace DAO {
                 " WHERE id_item = " + pFinal.Id + ";";
             dbSWK.ExecuteSQL(qry);
 
-            List<InsumoProdutoFinal> listaBanco = new List<InsumoProdutoFinal>();
-            listaBanco = ListarInsumos(pFinal.Id);
+            qry = "DELETE FROM lista_itens_produto_final WHERE id_produto_final = " + pFinal.Id + ";";
+            dbSWK.ExecuteSQL(qry);
+
+            int idItem = pFinal.Id;
+
+            foreach (InsumoProdutoFinal insumoPF in pFinal.Insumos)
+            {
+                String qryLista = "INSERT INTO lista_itens_produto_final (id_insumo, id_produto_final, quantidade) " +
+                    "VALUES(" + insumoPF.Id + ", " + idItem + ", " + insumoPF.QuantidadeInsumo + ");";
+                dbSWK.ExecuteSQL(qryLista);
+            }
 
 
-
-        }
-
-        
+        }        
 
         public void Delete(ProdutoFinal pFinal) {
             Database dbSWK = Database.GetInstance();
 
-            String qry = "DELETE FROM produto_final WHERE id_item = " + pFinal.Id;
+            String qry = "DELETE FROM lista_itens_produto_final WHERE id_produto_final = " + pFinal.Id + ";";
+            dbSWK.ExecuteSQL(qry);
+
+            qry = "DELETE FROM produto_final WHERE id_item = " + pFinal.Id;
             dbSWK.ExecuteSQL(qry);
 
             qry = "DELETE FROM item WHERE id_item = " + pFinal.Id;

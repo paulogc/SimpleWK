@@ -44,8 +44,8 @@
             this.dgvProdutoFinal = new System.Windows.Forms.DataGridView();
             this.btnAddInsumo = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtValorCusto = new System.Windows.Forms.Label();
-            this.txtValorVenda = new System.Windows.Forms.Label();
+            this.txtValorCusto = new System.Windows.Forms.TextBox();
+            this.txtValorVenda = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -65,6 +65,7 @@
             // btnExcluir
             // 
             this.btnExcluir.FlatAppearance.BorderSize = 0;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnCancelar
             // 
@@ -247,18 +248,16 @@
             // 
             // txtValorCusto
             // 
-            this.txtValorCusto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.txtValorCusto.Location = new System.Drawing.Point(121, 196);
+            this.txtValorCusto.Location = new System.Drawing.Point(119, 195);
             this.txtValorCusto.Name = "txtValorCusto";
-            this.txtValorCusto.Size = new System.Drawing.Size(112, 23);
+            this.txtValorCusto.Size = new System.Drawing.Size(114, 21);
             this.txtValorCusto.TabIndex = 12;
             // 
             // txtValorVenda
             // 
-            this.txtValorVenda.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.txtValorVenda.Location = new System.Drawing.Point(343, 196);
+            this.txtValorVenda.Location = new System.Drawing.Point(345, 196);
             this.txtValorVenda.Name = "txtValorVenda";
-            this.txtValorVenda.Size = new System.Drawing.Size(112, 21);
+            this.txtValorVenda.Size = new System.Drawing.Size(110, 21);
             this.txtValorVenda.TabIndex = 13;
             // 
             // ProdutoFinalView
@@ -297,7 +296,7 @@
         private System.Windows.Forms.DataGridView dgvProdutoFinal;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnAddInsumo;
-        private System.Windows.Forms.Label txtValorCusto;
-        private System.Windows.Forms.Label txtValorVenda;
+        private System.Windows.Forms.TextBox txtValorVenda;
+        private System.Windows.Forms.TextBox txtValorCusto;
     }
 }
