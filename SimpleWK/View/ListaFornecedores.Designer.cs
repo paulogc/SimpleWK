@@ -37,6 +37,7 @@
             this.btnSelecionar.TabIndex = 0;
             this.btnSelecionar.Text = "Selecionar";
             this.btnSelecionar.UseVisualStyleBackColor = true;
+            this.btnSelecionar.Click += new System.EventHandler(this.btnSelecionar_Click);
             // 
             // dgvFornecedor
             // 
@@ -61,7 +62,6 @@
             this.MaximizeBox = false;
             this.Name = "ListaFornecedores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ListaFornecedores";
             this.Load += new System.EventHandler(this.ListaFornecedores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedor)).EndInit();
             this.ResumeLayout(false);
