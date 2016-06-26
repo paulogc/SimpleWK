@@ -85,7 +85,40 @@ namespace View {
             Close();
         }
 
-        private void btnRemover_Click(object sender, EventArgs e) { 
+        private void btnRemover_Click(object sender, EventArgs e) {
+            String message = "Você deve selecionar um Insumo na tabela!";
+            int idInsumo = 0;
+
+            foreach(DataGridViewRow row in dgvInsumoPF.Rows)
+            {
+                if (row.Selected)
+                {
+                    idInsumo = Int32.Parse(row.Cells[0].Value.ToString());
+                    dgvInsumoPF.Rows.Remove(row);
+                    message = "";
+                }
+            }
+
+            if(message != "")
+            {
+                MessageBox.Show(message.ToString());
+            }
+            else
+            {
+                InsumoProdutoFinal ins;
+                for(int i = 0; i < listaPF.Count; i++)
+                {
+                    if(listaPF[i].Id == idInsumo)
+                    {
+                        ins = listaPF[i];
+                        listaPF.Remove(ins);
+                        AtualizaGridInsumoPF(listaPF);
+                        AtualizarGridAllInsumos();
+                                                               
+                    }
+                }               
+            }
+
 
         }
 
@@ -120,8 +153,9 @@ namespace View {
             }
         }
 
-        private void AtualizaGridInsumoPF(List<InsumoProdutoFinal> lista) {          
-            foreach(InsumoProdutoFinal insumoPF in lista)
+        private void AtualizaGridInsumoPF(List<InsumoProdutoFinal> lista) {
+            dgvInsumoPF.Rows.Clear();
+            foreach (InsumoProdutoFinal insumoPF in lista)
             {
                 dgvInsumoPF.Rows.Add(insumoPF.Id.ToString(),
                     insumoPF.Nome.ToString(),
