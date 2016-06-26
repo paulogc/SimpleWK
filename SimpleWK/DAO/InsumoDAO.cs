@@ -80,5 +80,23 @@ namespace DAO
             return dtInsumo;
         }
 
+        public DataTable BuscaInsumo(string busca, string campo) {
+
+            MySqlConnection conexao = Database.GetInstance().GetConnection();
+            DataTable dtInsumo = new DataTable();
+
+            string qry = "SELECT i.id_item, i.nome, i.descricao, i.valor_custo, i.quantidade FROM item i, insumo n WHERE i.id_item = n.id_item AND "
+                + campo + " like '%" + busca + "%';";
+
+            if(conexao.State != System.Data.ConnectionState.Open)
+                conexao.Open();
+
+            MySqlDataAdapter objAdapter = new MySqlDataAdapter(qry, conexao);
+            objAdapter.Fill(dtInsumo);
+
+            conexao.Close();
+            return dtInsumo;
+        }
+
     }
 }
