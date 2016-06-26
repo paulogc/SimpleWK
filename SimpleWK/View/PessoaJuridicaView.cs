@@ -57,7 +57,7 @@ namespace View
                         int idEnd = Database.GetInstance().GetId();
                         pessoaJuridica.Endereco.Id = idEnd;
                         pjDao.Create(pessoaJuridica);
-                        pessoaJuridica.Endereco.Id = idEnd;
+                        localizacao = new Localizacao();
                     }
                     AtualizarGrid();
                     LimparCampos();
