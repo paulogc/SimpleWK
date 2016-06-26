@@ -30,14 +30,27 @@ namespace View
                 String buscarPor = txtNomeFornecedor.Text;
                 ListaFornecedores fornecedores = new ListaFornecedores(buscarPor, idFornecedor, "Fornecedores");
                 fornecedores.ShowDialog();
+                PreencherDadosBusca();
             }
             else
             {
                 ListaFornecedores fornecedores = new ListaFornecedores(idFornecedor, "Fornecedores");
                 fornecedores.ShowDialog();
+                PreencherDadosBusca();
             }
             
 
+        }
+
+        public void PreencherDadosBusca() {
+            Juridica pessoJuridica = new Juridica();
+            if(idFornecedor > 0)
+            {
+                PessoaJuridicaDAO pjDAO = new PessoaJuridicaDAO();
+                pessoJuridica = pjDAO.Read(idFornecedor);
+                txtCPFCNPJ.Text = pessoJuridica.Cnpj.ToString();
+                txtNomeFornecedor.Text = pessoJuridica.Nome + " " + pessoJuridica.RazaoSocial;
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e) {

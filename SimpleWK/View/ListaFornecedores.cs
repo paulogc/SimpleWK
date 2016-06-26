@@ -14,7 +14,6 @@ namespace View {
     public partial class ListaFornecedores : Form {
         Juridica pessoaJuridica = new Juridica();
         int idPJ = 0;
-        String thisNomeForm;
 
         public ListaFornecedores(int idFornecedor, String nomeForm) {
             InitializeComponent();
@@ -27,7 +26,6 @@ namespace View {
             {
                 PreencherGridPF();
             }
-
             idFornecedor = idPJ;
         }
 
@@ -42,7 +40,6 @@ namespace View {
             {
                 PreencherGridPF(buscarPor);
             }
-            PreencherGridPJ(buscarPor);
             idFornecedor = idPJ;
         }
 
