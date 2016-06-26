@@ -124,17 +124,17 @@ namespace View
 
         private void ProdutofCreate(ProdutoFinal produtof) {
             
-            if (produtof.CountItem() > 0) { 
+            //if (produtof.CountItem() > 0) { 
                 produtof.Nome = txtNome.Text;
                 produtof.Descricao = txtDescricao.Text;
                 produtof.PrecoVenda = Decimal.Parse(txtValorVenda.Text);
                 produtof.Quantidade = Int32.Parse(txtQuantidade.Text);
                 produtof.ValorCusto = Decimal.Parse(txtValorCusto.Text);
-            }
-            else
-            {
-                MessageBox.Show("Para Inserir um Produdo ele precisa no mínimo de um Insumo cadastrado na 'Lista de insumos'");
-            }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Para Inserir um Produdo ele precisa no mínimo de um Insumo cadastrado na 'Lista de insumos'");
+            //}
         }
     }
 }
