@@ -12,7 +12,7 @@ namespace View
 {
     public partial class CompraView : View.ModeloCompraVenda
     {
-        int idFornecedor = 0;
+        Juridica pessoaJuridica = new Juridica();
         public CompraView()
         {
             InitializeComponent();
@@ -28,13 +28,13 @@ namespace View
             if(txtNomeFornecedor.Text != "")
             {
                 String buscarPor = txtNomeFornecedor.Text;
-                ListaFornecedores fornecedores = new ListaFornecedores(buscarPor, idFornecedor, "Fornecedores");
+                ListaFornecedores fornecedores = new ListaFornecedores(buscarPor, pessoaJuridica, "Fornecedores");
                 fornecedores.ShowDialog();
                 PreencherDadosBusca();
             }
             else
             {
-                ListaFornecedores fornecedores = new ListaFornecedores(idFornecedor, "Fornecedores");
+                ListaFornecedores fornecedores = new ListaFornecedores(pessoaJuridica, "Fornecedores");
                 fornecedores.ShowDialog();
                 PreencherDadosBusca();
             }
@@ -42,14 +42,14 @@ namespace View
 
         }
 
-        public void PreencherDadosBusca() {
-            Juridica pessoJuridica = new Juridica();
-            if(idFornecedor > 0)
+        public void PreencherDadosBusca() { 
+            
+            if(pessoaJuridica.Id > 0)
             {
                 PessoaJuridicaDAO pjDAO = new PessoaJuridicaDAO();
-                pessoJuridica = pjDAO.Read(idFornecedor);
-                txtCPFCNPJ.Text = pessoJuridica.Cnpj.ToString();
-                txtNomeFornecedor.Text = pessoJuridica.Nome + " " + pessoJuridica.RazaoSocial;
+                pessoaJuridica = pjDAO.Read(pessoaJuridica.Id);
+                txtCPFCNPJ.Text = pessoaJuridica.Cnpj.ToString();
+                txtNomeFornecedor.Text = pessoaJuridica.Nome + " " + pessoaJuridica.RazaoSocial;
             }
         }
 

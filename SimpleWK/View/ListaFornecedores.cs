@@ -12,35 +12,35 @@ using DAO;
 
 namespace View {
     public partial class ListaFornecedores : Form {
-        Juridica pessoaJuridica = new Juridica();
-        int idPJ = 0;
+        Juridica pessoaJuridicaLista = new Juridica();
+        
 
-        public ListaFornecedores(int idFornecedor, String nomeForm) {
+        public ListaFornecedores(Juridica pessoaJuridica, String nomeForm) {
             InitializeComponent();
             this.Text = nomeForm;
-            if(nomeForm == "Fornecedor")
+            if(nomeForm == "Fornecedores")
             {
                 PreencherGridPJ();
             }
-            if (nomeForm == "Cliente")
+            if (nomeForm == "Clientes")
             {
                 PreencherGridPF();
             }
-            idFornecedor = idPJ;
+            pessoaJuridicaLista = pessoaJuridica;
         }
 
-        public ListaFornecedores(String buscarPor, int idFornecedor, String nomeForm) {
+        public ListaFornecedores(String buscarPor, Juridica pessoaJuridica, String nomeForm) {
             InitializeComponent();
             this.Text = nomeForm;
-            if (nomeForm == "Fornecedor")
+            if (nomeForm == "Fornecedores")
             {
                 PreencherGridPJ(buscarPor);
             }
-            if (nomeForm == "Cliente")
+            if (nomeForm == "Clientes")
             {
                 PreencherGridPF(buscarPor);
             }
-            idFornecedor = idPJ;
+            pessoaJuridicaLista = pessoaJuridica;
         }
 
         private void PreencherGridPJ() {
@@ -96,7 +96,7 @@ namespace View {
             {
                 if (row.Selected)
                 {
-                    idPJ = Int32.Parse(row.Cells[0].Value.ToString());
+                    pessoaJuridicaLista.Id = Int32.Parse(row.Cells[0].Value.ToString());
                     menssagem = "";
                 }
             }
@@ -105,6 +105,11 @@ namespace View {
             {
                 MessageBox.Show(menssagem);
             }
+            else
+            {
+                Close();
+            }
+            
         }
     }
 }
