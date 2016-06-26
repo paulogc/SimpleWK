@@ -128,7 +128,7 @@ namespace DAO
             MySqlConnection conexao = Database.GetInstance().GetConnection();
             DataTable dtJuridica = new DataTable();
 
-            string qry = "SELECT p.id_pessoa, p.nome, j.razao_social, j.cnpj, p.email, p.telefone_fixo FROM" +
+            string qry = "SELECT p.id_pessoa, p.nome, j.razao_social, j.cnpj, p.email, p.telefone_fixo FROM " +
                 "pessoa p, juridica j WHERE p.id_pessoa = j.fk_id_pessoa AND p.nome LIKE '%" + buscarPor + "%';";
 
             if (conexao.State != System.Data.ConnectionState.Open)

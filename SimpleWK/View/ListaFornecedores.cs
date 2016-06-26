@@ -13,30 +13,64 @@ using DAO;
 namespace View {
     public partial class ListaFornecedores : Form {
         Juridica pessoaJuridica = new Juridica();
+        int idPJ = 0;
+        String thisNomeForm;
 
-        public ListaFornecedores() {
+        public ListaFornecedores(int idFornecedor, String nomeForm) {
             InitializeComponent();
-            PreencherGrid();
+            this.Text = nomeForm;
+            if(nomeForm == "Fornecedor")
+            {
+                PreencherGridPJ();
+            }
+            if (nomeForm == "Cliente")
+            {
+                PreencherGridPF();
+            }
+
+            idFornecedor = idPJ;
         }
 
-        public ListaFornecedores(String buscarPor) {
+        public ListaFornecedores(String buscarPor, int idFornecedor, String nomeForm) {
             InitializeComponent();
-            PreencherGrid(buscarPor);
+            this.Text = nomeForm;
+            if (nomeForm == "Fornecedor")
+            {
+                PreencherGridPJ(buscarPor);
+            }
+            if (nomeForm == "Cliente")
+            {
+                PreencherGridPF(buscarPor);
+            }
+            PreencherGridPJ(buscarPor);
+            idFornecedor = idPJ;
         }
 
-        private void PreencherGrid() {
+        private void PreencherGridPJ() {
             PessoaJuridicaDAO pjDao = new PessoaJuridicaDAO();
             dgvFornecedor.DataSource = pjDao.ListAllJuridica();
-            DefinirHeader();
+            DefinirHeaderPJ();
         }
 
-        private void PreencherGrid(String buscar) {
+        private void PreencherGridPJ(String buscar) {
             PessoaJuridicaDAO pjDao = new PessoaJuridicaDAO();
             dgvFornecedor.DataSource = pjDao.ListAllJuridica(buscar);
-            DefinirHeader();
+            DefinirHeaderPJ();
         }
 
-        private void DefinirHeader() {            
+        private void PreencherGridPF() {
+            PessoaFisicaDAO pfDao = new PessoaFisicaDAO();
+            dgvFornecedor.DataSource = pfDao.ListAllFisica();
+            DefinirHeaderPF();
+        }
+
+        private void PreencherGridPF(String buscar) {
+            PessoaFisicaDAO pfDao = new PessoaFisicaDAO();
+            dgvFornecedor.DataSource = pfDao.ListAllFisica(buscar);
+            DefinirHeaderPF();
+        }
+
+        private void DefinirHeaderPJ() {            
             dgvFornecedor.Columns [0].HeaderText = "ID";
             dgvFornecedor.Columns [1].HeaderText = "Nome";
             dgvFornecedor.Columns [2].HeaderText = "Razão Social";
@@ -45,8 +79,35 @@ namespace View {
             dgvFornecedor.Columns [5].HeaderText = "Telefone";
         }
 
+        private void DefinirHeaderPF() {
+            dgvFornecedor.Columns[0].HeaderText = "ID";
+            dgvFornecedor.Columns[1].HeaderText = "Nome";
+            dgvFornecedor.Columns[2].HeaderText = "Sobrenome";
+            dgvFornecedor.Columns[3].HeaderText = "CPF";
+            dgvFornecedor.Columns[4].HeaderText = "E-mail";
+            dgvFornecedor.Columns[5].HeaderText = "Telefone";
+        }
+
         private void ListaFornecedores_Load(object sender, EventArgs e) {            
 
+        }
+
+        private void btnSelecionar_Click(object sender, EventArgs e) {
+            String menssagem = "Você deve selecionar um intem na tabela antes!";
+
+            foreach(DataGridViewRow row in dgvFornecedor.Rows)
+            {
+                if (row.Selected)
+                {
+                    idPJ = Int32.Parse(row.Cells[0].Value.ToString());
+                    menssagem = "";
+                }
+            }
+
+            if(menssagem != "")
+            {
+                MessageBox.Show(menssagem);
+            }
         }
     }
 }

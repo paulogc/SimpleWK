@@ -12,7 +12,7 @@ namespace View
 {
     public partial class CompraView : View.ModeloCompraVenda
     {
-
+        int idFornecedor = 0;
         public CompraView()
         {
             InitializeComponent();
@@ -28,12 +28,12 @@ namespace View
             if(txtNomeFornecedor.Text != "")
             {
                 String buscarPor = txtNomeFornecedor.Text;
-                ListaFornecedores fornecedores = new ListaFornecedores(buscarPor);
+                ListaFornecedores fornecedores = new ListaFornecedores(buscarPor, idFornecedor, "Fornecedores");
                 fornecedores.ShowDialog();
             }
             else
             {
-                ListaFornecedores fornecedores = new ListaFornecedores();
+                ListaFornecedores fornecedores = new ListaFornecedores(idFornecedor, "Fornecedores");
                 fornecedores.ShowDialog();
             }
             
