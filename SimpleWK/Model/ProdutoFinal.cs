@@ -8,57 +8,17 @@ namespace Model {
     public class ProdutoFinal : Item {
 
         private Decimal precoVenda;
-        private List<Insumo> insumos = new List<Insumo>();
-        private List<int> qtdeItem = new List<int>();
+        private List<InsumoProdutoFinal> insumos = new List<InsumoProdutoFinal>();
 
-        public void AddItem(Insumo insumo) {
-            insumos.Add(insumo);
+        public void AddInsumo(InsumoProdutoFinal insumoProdutoFinal) {
+            insumos.Add(insumoProdutoFinal);
         }
 
-        public void RemoveItem(Insumo insumo) {
-            insumos.Remove(insumo);
+        public void RemoveInsumo(InsumoProdutoFinal insumoProdutoFinal) {
+            insumos.Remove(insumoProdutoFinal);
         }
 
-        public void AddQtd(int qtd) {
-            qtdeItem.Add(qtd);
-        }
-
-        public void RemoveQtd(int qtd) {
-            qtdeItem.Remove(qtd);
-        }
-
-        public int CountItem() {
-            return insumos.Count;
-        }
-
-        public int CountQtd() {
-            return qtdeItem.Count;
-        }
-
+        public List<InsumoProdutoFinal> Insumos { get; set; }
         public Decimal PrecoVenda { get; set; }
-
-        public List<Insumo> Insumos {
-            get {
-                return insumos;
-            }
-
-            set {
-                insumos = value;
-            }
-        }
-
-        public List<int> QtdeItem {
-            get {
-                return qtdeItem;
-            }
-
-            set {
-                qtdeItem = value;
-            }
-        }
-
-        
-
-
     }
 }

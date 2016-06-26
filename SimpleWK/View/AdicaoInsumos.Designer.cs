@@ -34,6 +34,11 @@
             this.btnSalvar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txtQtd = new System.Windows.Forms.TextBox();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInsumos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInsumoPF)).BeginInit();
             this.SuspendLayout();
@@ -56,6 +61,12 @@
             this.dgvInsumoPF.AllowUserToDeleteRows = false;
             this.dgvInsumoPF.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvInsumoPF.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInsumoPF.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5});
             this.dgvInsumoPF.Location = new System.Drawing.Point(536, 44);
             this.dgvInsumoPF.Name = "dgvInsumoPF";
             this.dgvInsumoPF.ReadOnly = true;
@@ -141,6 +152,36 @@
             this.txtQtd.Size = new System.Drawing.Size(75, 20);
             this.txtQtd.TabIndex = 6;
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "ID";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Nome";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Descrição";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Custo";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Quantidade";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
             // AdicaoInsumos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -182,5 +223,10 @@
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtQtd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }

@@ -41,7 +41,7 @@
             this.dvgDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dvgQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dvgValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dtgProdutoFinal = new System.Windows.Forms.DataGridView();
+            this.dgvProdutoFinal = new System.Windows.Forms.DataGridView();
             this.btnAddInsumo = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.txtValorCusto = new System.Windows.Forms.Label();
@@ -49,7 +49,7 @@
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgProdutoFinal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProdutoFinal)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAdicionar
@@ -60,6 +60,7 @@
             // btnEditar
             // 
             this.btnEditar.FlatAppearance.BorderSize = 0;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnExcluir
             // 
@@ -97,11 +98,11 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dtgProdutoFinal);
+            this.groupBox2.Controls.Add(this.dgvProdutoFinal);
             this.groupBox2.Controls.SetChildIndex(this.txtBusca, 0);
             this.groupBox2.Controls.SetChildIndex(this.cbCampo, 0);
             this.groupBox2.Controls.SetChildIndex(this.btnBusca, 0);
-            this.groupBox2.Controls.SetChildIndex(this.dtgProdutoFinal, 0);
+            this.groupBox2.Controls.SetChildIndex(this.dgvProdutoFinal, 0);
             // 
             // btnBusca
             // 
@@ -213,17 +214,17 @@
             this.dvgValor.HeaderText = "Valor";
             this.dvgValor.Name = "dvgValor";
             // 
-            // dtgProdutoFinal
+            // dgvProdutoFinal
             // 
-            this.dtgProdutoFinal.AllowUserToAddRows = false;
-            this.dtgProdutoFinal.AllowUserToDeleteRows = false;
-            this.dtgProdutoFinal.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgProdutoFinal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgProdutoFinal.Location = new System.Drawing.Point(8, 61);
-            this.dtgProdutoFinal.Name = "dtgProdutoFinal";
-            this.dtgProdutoFinal.ReadOnly = true;
-            this.dtgProdutoFinal.Size = new System.Drawing.Size(760, 206);
-            this.dtgProdutoFinal.TabIndex = 0;
+            this.dgvProdutoFinal.AllowUserToAddRows = false;
+            this.dgvProdutoFinal.AllowUserToDeleteRows = false;
+            this.dgvProdutoFinal.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvProdutoFinal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProdutoFinal.Location = new System.Drawing.Point(8, 61);
+            this.dgvProdutoFinal.Name = "dgvProdutoFinal";
+            this.dgvProdutoFinal.ReadOnly = true;
+            this.dgvProdutoFinal.Size = new System.Drawing.Size(760, 206);
+            this.dgvProdutoFinal.TabIndex = 0;
             // 
             // btnAddInsumo
             // 
@@ -267,12 +268,13 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ProdutoFinalView";
             this.Text = "Cadastro de Produto Final";
+            this.Load += new System.EventHandler(this.ProdutoFinalView_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgProdutoFinal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProdutoFinal)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -292,7 +294,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dvgDescricao;
         private System.Windows.Forms.DataGridViewTextBoxColumn dvgQuantidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn dvgValor;
-        private System.Windows.Forms.DataGridView dtgProdutoFinal;
+        private System.Windows.Forms.DataGridView dgvProdutoFinal;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnAddInsumo;
         private System.Windows.Forms.Label txtValorCusto;
