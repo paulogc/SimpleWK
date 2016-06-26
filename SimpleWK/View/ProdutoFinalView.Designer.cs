@@ -110,6 +110,15 @@
             this.btnBusca.FlatAppearance.BorderSize = 0;
             this.btnBusca.Click += new System.EventHandler(this.btnBusca_Click);
             // 
+            // cbCampo
+            // 
+            this.cbCampo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbCampo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbCampo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCampo.Items.AddRange(new object[] {
+            "Nome",
+            "Descrição"});
+            // 
             // label2
             // 
             this.label2.AutoSize = true;

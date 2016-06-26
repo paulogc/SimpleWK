@@ -113,6 +113,7 @@ namespace View
         private void PessoaJuridicaView_Load(object sender, EventArgs e)
         {
             AtualizarGrid();
+            cbCampo.SelectedIndex = 0;
         }
         private void AtualizarGrid()
         {

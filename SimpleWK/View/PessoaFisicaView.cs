@@ -104,6 +104,7 @@ namespace View
 
         private void PessoaFisica_Load(object sender, EventArgs e) {
             AtualizarGrid();
+            cbCampo.SelectedIndex = 0;
         }
 
         private void AtualizarGrid() {

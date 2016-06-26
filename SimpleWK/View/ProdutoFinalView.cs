@@ -161,6 +161,19 @@ namespace View
         }
 
         private void btnBusca_Click(object sender, EventArgs e) {
+            string busca = txtBusca.Text;
+            string campo = null;
+
+            switch(cbCampo.Text) {
+                case "Nome":
+                    campo = "i.nome";
+                    break;
+                case "Descrição":
+                    campo = "i.descricao";
+                    break;
+            }
+            ProdutoFinalDAO idao = new ProdutoFinalDAO();
+            dgvProdutoFinal.DataSource = idao.BuscaProdutoFinal(busca, campo);
         }
 
         private Decimal somaPrecoVenda(List<InsumoProdutoFinal> listaPF) {
@@ -195,6 +208,7 @@ namespace View
         }
 
         private void ProdutoFinalView_Load(object sender, EventArgs e) {
+            cbCampo.SelectedIndex = 0;
             ProdutoFinalDAO pfDAO = new ProdutoFinalDAO();
             dgvProdutoFinal.DataSource = pfDAO.ListAllProdutoFinal();
             dgvProdutoFinal.Columns[0].HeaderText = "ID";
