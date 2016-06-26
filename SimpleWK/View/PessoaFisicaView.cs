@@ -77,6 +77,17 @@ namespace View
         }
 
         private void btnBusca_Click(object sender, EventArgs e) {
+
+            var termo = txtBusca.Text.ToLowerInvariant();
+            bool semTermo = String.IsNullOrEmpty(termo);
+
+            foreach (DataGridViewRow linha in dgvPessoaFisica.Rows)
+            {
+                if ((linha.Cells[1].Value as string).ToLowerInvariant().Contains(termo) || semTermo)
+                    linha.Visible = true;
+                else
+                    linha.Visible = false;
+            }
         }
 
         private void PessoaFisica_Load(object sender, EventArgs e) {

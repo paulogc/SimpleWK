@@ -116,9 +116,16 @@
             this.btnBusca.FlatAppearance.BorderSize = 0;
             this.btnBusca.Click += new System.EventHandler(this.btnBusca_Click);
             // 
+            // cbCampo
+            // 
+            this.cbCampo.Items.AddRange(new object[] {
+            "Nome",
+            "Sobrenome",
+            "CPF"});
+            // 
             // txtBusca
             // 
-            this.txtBusca.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtBusca.Margin = new System.Windows.Forms.Padding(5);
             // 
             // label2
             // 
@@ -249,7 +256,7 @@
             this.dgvPessoaFisica.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPessoaFisica.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPessoaFisica.Location = new System.Drawing.Point(11, 75);
-            this.dgvPessoaFisica.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvPessoaFisica.Margin = new System.Windows.Forms.Padding(4);
             this.dgvPessoaFisica.Name = "dgvPessoaFisica";
             this.dgvPessoaFisica.ReadOnly = true;
             this.dgvPessoaFisica.Size = new System.Drawing.Size(1013, 254);
@@ -258,7 +265,7 @@
             // txtTelefoneFixo
             // 
             this.txtTelefoneFixo.Location = new System.Drawing.Point(141, 197);
-            this.txtTelefoneFixo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTelefoneFixo.Margin = new System.Windows.Forms.Padding(4);
             this.txtTelefoneFixo.Mask = "(00) 0000-0000";
             this.txtTelefoneFixo.Name = "txtTelefoneFixo";
             this.txtTelefoneFixo.Size = new System.Drawing.Size(135, 24);
@@ -267,7 +274,7 @@
             // txtCpf
             // 
             this.txtCpf.Location = new System.Drawing.Point(141, 159);
-            this.txtCpf.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCpf.Margin = new System.Windows.Forms.Padding(4);
             this.txtCpf.Mask = "000,000,000-00";
             this.txtCpf.Name = "txtCpf";
             this.txtCpf.Size = new System.Drawing.Size(135, 24);
@@ -286,7 +293,7 @@
             // txtTelefoneMovel
             // 
             this.txtTelefoneMovel.Location = new System.Drawing.Point(424, 197);
-            this.txtTelefoneMovel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTelefoneMovel.Margin = new System.Windows.Forms.Padding(4);
             this.txtTelefoneMovel.Mask = "(00) 00000-0000";
             this.txtTelefoneMovel.Name = "txtTelefoneMovel";
             this.txtTelefoneMovel.Size = new System.Drawing.Size(148, 24);

@@ -7,8 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using Model;
 using DAO;
-
-
+using System.Globalization;
 
 namespace View
 {
@@ -19,11 +18,11 @@ namespace View
         {
             InitializeComponent();                    
         }
-
+        
         private void tbValor_TextChanged(object sender, EventArgs e) {
 
         }
-
+        /*
         string str;
 
         private bool IsNumeric(int Val) {
@@ -63,7 +62,7 @@ namespace View
 
         private void tbValor_KeyPress(object sender, KeyPressEventArgs e) {
             e.Handled = true;
-        }
+        }*/
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
@@ -99,6 +98,8 @@ namespace View
 
         private Insumo CreateInsumo() {
             Insumo insumo = new Insumo();
+            string valor;
+            decimal teste;
             if (lbID.Text != "")
             {
                 insumo.Id = Int32.Parse(lbID.Text);
@@ -106,7 +107,7 @@ namespace View
             insumo.Nome = tbNome.Text;
             insumo.Descricao = tbDescricao.Text;
             insumo.Quantidade = Int32.Parse(tbQuantidade.Text);
-            insumo.ValorCusto = Decimal.Parse(tbValor.Text);
+            insumo.ValorCusto = Convert.ToDecimal((tbValor.Text.Replace(",", ".")), new CultureInfo("en-US"));
 
             return insumo;
         }
@@ -190,6 +191,34 @@ namespace View
                     MessageBox.Show(p.ToString());
                 }
             }
-        }    
+        }
+
+        public void Moeda (ref TextBox txt)
+        {
+            string n = string.Empty;
+            double v = 0;
+
+            try
+            {
+                n = txt.Text.Replace(",", "");
+                if (n.Equals(""))
+                    n = "";
+                n = n.PadLeft(3, '0');
+                if(n.Length > 3 & n.Substring (0,1) == "0")
+                    n = n.Substring(1, n.Length - 1);
+                v = Convert.ToDouble(n) / 100;
+                txt.Text = string.Format("{0:N}", v);
+                txt.SelectionStart = txt.Text.Length;
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void tbValor_TextChanged_2(object sender, EventArgs e)
+        {
+            Moeda(ref tbValor);
+        }
     }
 }

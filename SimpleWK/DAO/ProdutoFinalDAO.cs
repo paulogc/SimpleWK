@@ -32,7 +32,7 @@ namespace DAO {
             }
         }
 
-        public ProdutoFinal Read(String buscarPor) {
+        public ProdutoFinal Read(int buscarPor) {
             ProdutoFinal pFinal = new ProdutoFinal();
             MySqlConnection conexao = Database.GetInstance().GetConnection();
 
@@ -50,7 +50,7 @@ namespace DAO {
                 pFinal.Id = dr.GetInt32("id_item");
                 pFinal.Nome = dr.GetString("nome");
                 pFinal.Descricao = dr.GetString("descricao");
-                pFinal.ValorCusto = dr.GetDecimal("valor_custo");
+                //pFinal.ValorCusto = dr.GetDecimal("valor_custo");
                 pFinal.Quantidade = dr.GetInt32("quantidade");
             }
 
