@@ -76,6 +76,7 @@ namespace View
             
         }
 
+
         private void btnBusca_Click(object sender, EventArgs e) {
             string busca = txtBusca.Text;
             string campo = null;
@@ -97,8 +98,9 @@ namespace View
 
             PessoaFisicaDAO pdao = new PessoaFisicaDAO();
             dgvPessoaFisica.DataSource = pdao.BuscaFisica(busca, campo);
-
         }
+
+
 
         private void PessoaFisica_Load(object sender, EventArgs e) {
             AtualizarGrid();

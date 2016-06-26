@@ -116,6 +116,7 @@ namespace DAO {
             return dtFisica;
         }
 
+
         public DataTable BuscaFisica(string busca, string campo) {
 
             MySqlConnection conexao = Database.GetInstance().GetConnection();
@@ -133,6 +134,7 @@ namespace DAO {
             conexao.Close();
             return dtFisica;
         }
+
 
     }
 }

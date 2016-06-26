@@ -41,12 +41,11 @@
             this.txtIDItem = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dgvID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvValorUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvValorTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnBusca = new System.Windows.Forms.Button();
+            this.cbCampo = new System.Windows.Forms.ComboBox();
+            this.txtBusca = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtCPFCNPJ = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -59,14 +58,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnFinalizar = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtBusca = new System.Windows.Forms.TextBox();
-            this.cbCampo = new System.Windows.Forms.ComboBox();
-            this.btnBusca = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -216,7 +209,6 @@
             this.groupBox3.Controls.Add(this.txtBusca);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Controls.Add(this.dataGridView1);
             this.groupBox3.Location = new System.Drawing.Point(9, 265);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
@@ -226,56 +218,49 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Itens inseridos";
             // 
-            // dataGridView1
+            // btnBusca
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dgvID,
-            this.dgvNome,
-            this.dgvQuantidade,
-            this.dgvValorUnitario,
-            this.dgvValorTotal});
-            this.dataGridView1.Location = new System.Drawing.Point(4, 60);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(669, 183);
-            this.dataGridView1.TabIndex = 0;
+            this.btnBusca.FlatAppearance.BorderSize = 0;
+            this.btnBusca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBusca.Image = global::View.Properties.Resources.search2;
+            this.btnBusca.Location = new System.Drawing.Point(594, 24);
+            this.btnBusca.Name = "btnBusca";
+            this.btnBusca.Size = new System.Drawing.Size(48, 23);
+            this.btnBusca.TabIndex = 5;
+            this.btnBusca.UseVisualStyleBackColor = true;
             // 
-            // dgvID
+            // cbCampo
             // 
-            this.dgvID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvID.HeaderText = "ID";
-            this.dgvID.Name = "dgvID";
-            this.dgvID.ReadOnly = true;
+            this.cbCampo.FormattingEnabled = true;
+            this.cbCampo.Location = new System.Drawing.Point(439, 24);
+            this.cbCampo.Name = "cbCampo";
+            this.cbCampo.Size = new System.Drawing.Size(149, 21);
+            this.cbCampo.TabIndex = 4;
             // 
-            // dgvNome
+            // txtBusca
             // 
-            this.dgvNome.HeaderText = "Nome";
-            this.dgvNome.Name = "dgvNome";
-            this.dgvNome.ReadOnly = true;
+            this.txtBusca.Location = new System.Drawing.Point(51, 25);
+            this.txtBusca.Name = "txtBusca";
+            this.txtBusca.Size = new System.Drawing.Size(336, 20);
+            this.txtBusca.TabIndex = 3;
             // 
-            // dgvQuantidade
+            // label10
             // 
-            this.dgvQuantidade.HeaderText = "Quantidade";
-            this.dgvQuantidade.Name = "dgvQuantidade";
-            this.dgvQuantidade.ReadOnly = true;
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(393, 28);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(43, 13);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "Campo:";
             // 
-            // dgvValorUnitario
+            // label3
             // 
-            this.dgvValorUnitario.HeaderText = "Valor Unitário";
-            this.dgvValorUnitario.Name = "dgvValorUnitario";
-            this.dgvValorUnitario.ReadOnly = true;
-            // 
-            // dgvValorTotal
-            // 
-            this.dgvValorTotal.HeaderText = "Valor Total";
-            this.dgvValorTotal.Name = "dgvValorTotal";
-            this.dgvValorTotal.ReadOnly = true;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(7, 29);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(40, 13);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Busca:";
             // 
             // groupBox1
             // 
@@ -413,50 +398,6 @@
             this.btnFinalizar.Text = "Finalizar";
             this.btnFinalizar.UseVisualStyleBackColor = true;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 29);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 13);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Busca:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(393, 28);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(43, 13);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "Campo:";
-            // 
-            // txtBusca
-            // 
-            this.txtBusca.Location = new System.Drawing.Point(51, 25);
-            this.txtBusca.Name = "txtBusca";
-            this.txtBusca.Size = new System.Drawing.Size(336, 20);
-            this.txtBusca.TabIndex = 3;
-            // 
-            // cbCampo
-            // 
-            this.cbCampo.FormattingEnabled = true;
-            this.cbCampo.Location = new System.Drawing.Point(439, 24);
-            this.cbCampo.Name = "cbCampo";
-            this.cbCampo.Size = new System.Drawing.Size(149, 21);
-            this.cbCampo.TabIndex = 4;
-            // 
-            // btnBusca
-            // 
-            this.btnBusca.FlatAppearance.BorderSize = 0;
-            this.btnBusca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBusca.Image = global::View.Properties.Resources.search2;
-            this.btnBusca.Location = new System.Drawing.Point(594, 24);
-            this.btnBusca.Name = "btnBusca";
-            this.btnBusca.Size = new System.Drawing.Size(48, 23);
-            this.btnBusca.TabIndex = 5;
-            this.btnBusca.UseVisualStyleBackColor = true;
-            // 
             // ModeloCompraVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -478,7 +419,6 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -486,11 +426,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvNome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvQuantidade;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvValorUnitario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvValorTotal;
         protected System.Windows.Forms.TextBox txtCPFCNPJ;
         protected System.Windows.Forms.Label label9;
         protected System.Windows.Forms.GroupBox groupBox1;
@@ -511,7 +446,6 @@
         protected System.Windows.Forms.TextBox txtItemQuantidade;
         protected System.Windows.Forms.Label label7;
         protected System.Windows.Forms.GroupBox groupBox3;
-        protected System.Windows.Forms.DataGridView dataGridView1;
         protected System.Windows.Forms.Button btnLocalizarItem;
         protected System.Windows.Forms.Button btnDeletar;
         protected System.Windows.Forms.Button btnAdicionar;

@@ -118,6 +118,7 @@
             // 
             // cbCampo
             // 
+
             this.cbCampo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCampo.Items.AddRange(new object[] {
             "Nome",
@@ -128,6 +129,7 @@
             // txtBusca
             // 
             this.txtBusca.Margin = new System.Windows.Forms.Padding(4);
+
             // 
             // label2
             // 
@@ -262,6 +264,7 @@
             this.dgvPessoaFisica.AllowUserToDeleteRows = false;
             this.dgvPessoaFisica.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPessoaFisica.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+
             this.dgvPessoaFisica.Location = new System.Drawing.Point(8, 61);
             this.dgvPessoaFisica.Name = "dgvPessoaFisica";
             this.dgvPessoaFisica.ReadOnly = true;
@@ -270,6 +273,7 @@
             // 
             // txtTelefoneFixo
             // 
+
             this.txtTelefoneFixo.Location = new System.Drawing.Point(106, 160);
             this.txtTelefoneFixo.Mask = "(00) 0000-0000";
             this.txtTelefoneFixo.Name = "txtTelefoneFixo";
@@ -278,6 +282,7 @@
             // 
             // txtCpf
             // 
+
             this.txtCpf.Location = new System.Drawing.Point(106, 129);
             this.txtCpf.Mask = "000,000,000-00";
             this.txtCpf.Name = "txtCpf";
@@ -295,6 +300,7 @@
             // 
             // txtTelefoneMovel
             // 
+
             this.txtTelefoneMovel.Location = new System.Drawing.Point(318, 160);
             this.txtTelefoneMovel.Mask = "(00) 00000-0000";
             this.txtTelefoneMovel.Name = "txtTelefoneMovel";
