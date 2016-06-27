@@ -8,14 +8,14 @@ namespace Model {
     public class Acao {
         private int id;
         private String notaFiscal;
-        private double valor;
-        private Pessoa pessoaFJ;
+        private decimal valor;
+        private Juridica pessoaFJ;
         private DateTime dataHora;
 
         public int Id { get; set; }
         public String NotaFiscal { get; set; }
-        public double Valor { get; set; }
-        public Pessoa PessoaFJ { get; set; }
+        public decimal Valor { get; set; }
+        public Juridica PessoaFJ { get; set; }
         public DateTime DataHora { get; set;}
         }
     

@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CompraDAO.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="InsumoDAO.cs" />
     <Compile Include="LocalizacaoDAO.cs" />

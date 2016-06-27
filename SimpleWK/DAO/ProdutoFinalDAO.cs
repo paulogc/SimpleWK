@@ -27,7 +27,7 @@ namespace DAO {
                 "VALUES(" + idItem + ", " + pFinal.PrecoVenda + ");";
             dbSWK.ExecuteSQL(qryProduto);
 
-            foreach(InsumoProdutoFinal insumoPF in pFinal.Insumos)
+            foreach(InsumoAcao insumoPF in pFinal.Insumos)
             {
                 String qryLista = "INSERT INTO lista_itens_produto_final (id_insumo, id_produto_final, quantidade) " +
                     "VALUES(" + insumoPF.Id + ", " + idItem + ", " + insumoPF.QuantidadeInsumo + ");";
@@ -64,9 +64,9 @@ namespace DAO {
             return pFinal;
         }
 
-        private List<InsumoProdutoFinal> ListarInsumos(int idProdutoFinal) {
-            List<InsumoProdutoFinal> lista = new List<InsumoProdutoFinal>();
-            InsumoProdutoFinal insumo;
+        private List<InsumoAcao> ListarInsumos(int idProdutoFinal) {
+            List<InsumoAcao> lista = new List<InsumoAcao>();
+            InsumoAcao insumo;
 
             MySqlConnection conexao = Database.GetInstance().GetConnection();
             
@@ -81,14 +81,14 @@ namespace DAO {
 
             while (dr.Read())
             {
-                insumo = new InsumoProdutoFinal();
+                insumo = new InsumoAcao();
                 insumo.Id = dr.GetInt32("id_insumo");
                 insumo.QuantidadeInsumo = dr.GetInt32("quantidade");
                 lista.Add(insumo);
             }
             conexao.Close();
 
-            foreach(InsumoProdutoFinal insu in lista)
+            foreach(InsumoAcao insu in lista)
             {
                 if (conexao.State != System.Data.ConnectionState.Open)
                     conexao.Open();
@@ -122,7 +122,7 @@ namespace DAO {
 
             int idItem = pFinal.Id;
 
-            foreach (InsumoProdutoFinal insumoPF in pFinal.Insumos)
+            foreach (InsumoAcao insumoPF in pFinal.Insumos)
             {
                 String qryLista = "INSERT INTO lista_itens_produto_final (id_insumo, id_produto_final, quantidade) " +
                     "VALUES(" + insumoPF.Id + ", " + idItem + ", " + insumoPF.QuantidadeInsumo + ");";

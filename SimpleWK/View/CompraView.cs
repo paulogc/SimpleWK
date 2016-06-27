@@ -16,6 +16,7 @@ namespace View
         Insumo insumo = new Insumo();
         int quantidadeTotal = 0;
         decimal totalCompra = 0;
+        List<InsumoAcao> listaInsumo = new List<InsumoAcao>();
 
         public CompraView()
         {
@@ -62,8 +63,24 @@ namespace View
         }
 
         private void btnFinalizar_Click(object sender, EventArgs e) {
-            MessageBox.Show("Compra finalizada!");
-            Close();
+            if(totalCompra > 0 && quantidadeTotal > 0)
+            {
+                Compra compra = new Compra();
+                compra.NotaFiscal = txtNumNF.Text;
+                compra.PessoaFJ.Cnpj = txtCPFCNPJ.Text;
+                compra.Valor = totalCompra;
+                compra.Insumos = listaInsumo;
+
+                CompraDAO compraDAO = new CompraDAO();
+                compraDAO.Create(compra);
+
+            }else
+            {
+                MessageBox.Show("Você precisa inserir itens para efetuar a compra");
+            }
+
+
+            MessageBox.Show("Compra finalizada!");            
         }
 
         private void btnLocalizarItem_Click(object sender, EventArgs e) {
@@ -102,7 +119,16 @@ namespace View
             txtItemValorUnitario.Text = "";
         }
 
-        private void btnAdicionar_Click(object sender, EventArgs e) {
+        private void btnAdicionar_Click(object sender, EventArgs e) {      
+
+            InsumoAcao insumoAcao = new InsumoAcao();
+            insumoAcao.Id = Int32.Parse(txtIDItem.Text);
+            insumoAcao.Nome = txtNomeItem.Text;
+            insumoAcao.QuantidadeInsumo = Int32.Parse(txtItemQuantidade.Text);
+            insumoAcao.ValorCusto = Decimal.Parse(txtItemValorUnitario.Text);
+
+            listaInsumo.Add(insumoAcao);            
+
             dgvItensInseridos.Rows.Add(insumo.Id,
                 insumo.Nome, 
                 insumo.Descricao, 

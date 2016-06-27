@@ -42,7 +42,7 @@
   <ItemGroup>
     <Compile Include="Acao.cs" />
     <Compile Include="Compra.cs" />
-    <Compile Include="InsumoProdutoFinal.cs" />
+    <Compile Include="InsumoAcao.cs" />
     <Compile Include="Localizacao.cs" />
     <Compile Include="Fisica.cs" />
     <Compile Include="Insumo.cs" />

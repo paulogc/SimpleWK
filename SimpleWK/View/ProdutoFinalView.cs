@@ -13,7 +13,7 @@ namespace View
     public partial class ProdutoFinalView : View.ModeloCadastroGeral
     {
 
-        List<InsumoProdutoFinal> listaInsumos = new List<InsumoProdutoFinal>();
+        List<InsumoAcao> listaInsumos = new List<InsumoAcao>();
         public ProdutoFinalView()
         {
             InitializeComponent();
@@ -138,12 +138,14 @@ namespace View
                     {
                         pfDAO.Update(produtoFinal);
                         dgvProdutoFinal.DataSource = pfDAO.ListAllProdutoFinal();
+                        listaInsumos = new List<InsumoAcao>();
                         LimparCampos();                        
                     }
                     else
                     {
                         pfDAO.Create(produtoFinal);
                         dgvProdutoFinal.DataSource = pfDAO.ListAllProdutoFinal();
+                        listaInsumos = new List<InsumoAcao>();
                         LimparCampos();
                     }
 
@@ -176,18 +178,18 @@ namespace View
             dgvProdutoFinal.DataSource = idao.BuscaProdutoFinal(busca, campo);
         }
 
-        private Decimal somaPrecoVenda(List<InsumoProdutoFinal> listaPF) {
+        private Decimal somaPrecoVenda(List<InsumoAcao> listaPF) {
             Decimal soma = 0;
-            foreach(InsumoProdutoFinal insumo in listaPF){
+            foreach(InsumoAcao insumo in listaPF){
                 soma += insumo.ValorCusto * insumo.QuantidadeInsumo;
             }
             soma = soma + (soma * (40/100));
             return soma;
         }
 
-        private Decimal somaCusto(List<InsumoProdutoFinal> listaPF) {
+        private Decimal somaCusto(List<InsumoAcao> listaPF) {
             Decimal soma = 0;
-            foreach (InsumoProdutoFinal insumo in listaPF)
+            foreach (InsumoAcao insumo in listaPF)
                 {
                     soma += insumo.ValorCusto * insumo.QuantidadeInsumo;
                 }

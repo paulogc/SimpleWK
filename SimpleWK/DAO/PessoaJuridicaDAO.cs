@@ -64,6 +64,31 @@ namespace DAO
             dbSWK.ExecuteSQL(qryPes);
         }
 
+        public Juridica BuscarCnpj(String cnpj) {
+            Juridica pessoa = new Juridica();
+            pessoa.Cnpj = cnpj;
+
+            MySqlConnection conexao = Database.GetInstance().GetConnection();
+
+            String qry = "SELECT id_pessoa FROM juridica WHERE cnpj = " + cnpj + ";";
+
+            if (conexao.State != System.Data.ConnectionState.Open)
+                conexao.Open();
+
+            MySqlCommand comm = new MySqlCommand(qry, conexao);
+            MySqlDataReader dr = comm.ExecuteReader();
+
+            if (dr.Read())
+            {
+                pessoa.Id = dr.GetInt32("id_pessoa");
+            }
+            conexao.Close();
+
+            pessoa = Read(pessoa.Id);
+
+            return pessoa;
+        }
+
         public Juridica Read(int id)
         {
             Juridica pessoa = new Juridica();
