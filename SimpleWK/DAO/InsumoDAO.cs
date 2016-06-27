@@ -14,18 +14,12 @@ namespace DAO
     {
         public void Create(Insumo insumo)
         {
-
             MySqlConnection con = new MySqlConnection();
             con.ConnectionString = "Server=localhost; Database=simplewk; Uid=root; Pwd=;";
             if (con.State != System.Data.ConnectionState.Open)
             con.Open();
 
             MySqlCommand cmd = new MySqlCommand("INSERT INTO item (nome, descricao, quantidade, valor_custo) Values (@nome, @descricao, @quantidade,@valor_custo);", con);
-
-            //Database dbSWK = Database.GetInstance();
-
-            //cmd.CommandText = "INSERT INTO item (nome, descricao, quantidade, valor_custo) Values (@nome, @descricao, @quantidade,@valor_custo);";
-
             cmd.Parameters.AddWithValue("@nome", insumo.Nome);
             cmd.Parameters.AddWithValue("@descricao", insumo.Descricao);
             cmd.Parameters.AddWithValue("@quantidade", insumo.Quantidade);
@@ -34,18 +28,13 @@ namespace DAO
             cmd.ExecuteNonQuery();
 
             con.Close();
-
-
-            /*string qryItem = "INSERT INTO item (nome, descricao, quantidade, valor_custo)" +
+            /*Database dbSWK = Database.GetInstance();
+            cmd.CommandText = "INSERT INTO item (nome, descricao, quantidade, valor_custo) Values (@nome, @descricao, @quantidade,@valor_custo);";
+            string qryItem = "INSERT INTO item (nome, descricao, quantidade, valor_custo)" +
                 "VALUES('" + insumo.Nome + "', '" + insumo.Descricao + "', " + insumo.Quantidade + ", '" + insumo.ValorCusto + "');";
-                
-
             dbSWK.ExecuteSQL(qryItem);
-
             int idItem = dbSWK.GetId();
-
             string qryInsumo = string.Format("INSERT INTO insumo (id_item) VALUES('{0}');", idItem);
-
             dbSWK.ExecuteSQL(qryInsumo);*/
         }
 
@@ -123,7 +112,7 @@ namespace DAO
             MySqlConnection conexao = Database.GetInstance().GetConnection();
             DataTable dtInsumo = new DataTable();
 
-            string qry = "SELECT id_item, nome, descricao, quantidade, valor_custo FROM item ;" ;
+            string qry = "SELECT id_item, nome, descricao, quantidade, valor_custo FROM item ;";
 
             if(conexao.State != System.Data.ConnectionState.Open)
                 conexao.Open();

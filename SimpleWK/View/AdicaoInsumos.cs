@@ -38,7 +38,7 @@ namespace View {
                     InsumoAcao insumoPF = new InsumoAcao();
                     if (row.Selected)
                     {
-                        if(Int32.Parse(row.Cells[4].Value.ToString()) < qtd)
+                        if(Int32.Parse(row.Cells[3].Value.ToString()) < qtd)
                         {
                             MessageBox.Show("Não há saldo suficiente em estoque!");
                             message = "";
@@ -49,7 +49,7 @@ namespace View {
                             insumoPF.Nome = row.Cells[1].Value.ToString();
                             insumoPF.Descricao = row.Cells[2].Value.ToString();
                             insumoPF.QuantidadeInsumo = qtd;
-                            insumoPF.ValorCusto = Decimal.Parse(row.Cells[3].Value.ToString());
+                            insumoPF.ValorCusto = Decimal.Parse(row.Cells[4].Value.ToString());
                             dgvInsumos.Rows.Remove(row);
                             message = "";
                             inserir = true;
@@ -136,8 +136,8 @@ namespace View {
             dgvInsumos.Columns[0].HeaderText = "ID";
             dgvInsumos.Columns[1].HeaderText = "Nome";
             dgvInsumos.Columns[2].HeaderText = "Descrição";
-            dgvInsumos.Columns[3].HeaderText = "Custo";
-            dgvInsumos.Columns[4].HeaderText = "Quantidade";
+            dgvInsumos.Columns[3].HeaderText = "Quantidade";
+            dgvInsumos.Columns[4].HeaderText = "Custo";
             if(listaPF.Count > 0)
             {
                 foreach(InsumoAcao insumo in listaPF) { 
