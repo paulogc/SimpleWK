@@ -163,6 +163,24 @@ namespace DAO {
             return dtPF;
         }
 
+        public DataTable ListAllProdutoFinal(String buscarPor) {
+
+            MySqlConnection conexao = Database.GetInstance().GetConnection();
+            DataTable dtPF = new DataTable();
+
+            string qry = "SELECT p.id_item, i.nome, i.descricao, p.preco_venda, i.quantidade FROM " +
+                "item i, produto_final p where i.id_item = p.id_item AND i.nome LIKE '%"+ buscarPor +"%';";
+
+            if (conexao.State != System.Data.ConnectionState.Open)
+                conexao.Open();
+
+            MySqlDataAdapter objAdapter = new MySqlDataAdapter(qry, conexao);
+            objAdapter.Fill(dtPF);
+
+            conexao.Close();
+            return dtPF;
+        }
+
         public DataTable BuscaProdutoFinal(string busca, string campo) {
 
             MySqlConnection conexao = Database.GetInstance().GetConnection();

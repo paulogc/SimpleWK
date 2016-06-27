@@ -1,5 +1,5 @@
 ﻿namespace View {
-    partial class ListaFornecedores {
+    partial class ListaPessoas {
         /// <summary>
         /// Required designer variable.
         /// </summary>

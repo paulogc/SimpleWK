@@ -29,6 +29,15 @@
         private void InitializeComponent()
         {
             this.dgvItensInseridos = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtTotalInsumo = new System.Windows.Forms.TextBox();
+            this.txtToralCompra = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -96,6 +105,7 @@
             // 
             // txtIDItem
             // 
+            this.txtIDItem.Enabled = false;
             this.txtIDItem.Location = new System.Drawing.Point(88, 22);
             this.txtIDItem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             // 
@@ -152,10 +162,12 @@
             // btnDeletar
             // 
             this.btnDeletar.FlatAppearance.BorderSize = 0;
+            this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click);
             // 
             // btnAdicionar
             // 
             this.btnAdicionar.FlatAppearance.BorderSize = 0;
+            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
             // btnCancelar
             // 
@@ -184,20 +196,104 @@
             // 
             this.dgvItensInseridos.AllowUserToAddRows = false;
             this.dgvItensInseridos.AllowUserToDeleteRows = false;
+            this.dgvItensInseridos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvItensInseridos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvItensInseridos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5});
             this.dgvItensInseridos.Location = new System.Drawing.Point(15, 53);
             this.dgvItensInseridos.Name = "dgvItensInseridos";
             this.dgvItensInseridos.ReadOnly = true;
             this.dgvItensInseridos.Size = new System.Drawing.Size(650, 191);
             this.dgvItensInseridos.TabIndex = 6;
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "ID";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Nome";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Descrição";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Qunatidade";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Valor Unitário";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(695, 302);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(87, 13);
+            this.label11.TabIndex = 11;
+            this.label11.Text = "Total de insumos";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(712, 352);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(54, 13);
+            this.label12.TabIndex = 12;
+            this.label12.Text = "Valor total";
+            // 
+            // txtTotalInsumo
+            // 
+            this.txtTotalInsumo.Enabled = false;
+            this.txtTotalInsumo.Location = new System.Drawing.Point(693, 318);
+            this.txtTotalInsumo.Name = "txtTotalInsumo";
+            this.txtTotalInsumo.Size = new System.Drawing.Size(92, 20);
+            this.txtTotalInsumo.TabIndex = 13;
+            // 
+            // txtToralCompra
+            // 
+            this.txtToralCompra.Enabled = false;
+            this.txtToralCompra.Location = new System.Drawing.Point(693, 368);
+            this.txtToralCompra.Name = "txtToralCompra";
+            this.txtToralCompra.Size = new System.Drawing.Size(92, 20);
+            this.txtToralCompra.TabIndex = 14;
+            // 
             // CompraView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(794, 523);
+            this.Controls.Add(this.txtToralCompra);
+            this.Controls.Add(this.txtTotalInsumo);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label11);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "CompraView";
             this.Text = "Compra";
+            this.Controls.SetChildIndex(this.groupBox1, 0);
+            this.Controls.SetChildIndex(this.groupBox2, 0);
+            this.Controls.SetChildIndex(this.groupBox3, 0);
+            this.Controls.SetChildIndex(this.btnCancelar, 0);
+            this.Controls.SetChildIndex(this.btnFinalizar, 0);
+            this.Controls.SetChildIndex(this.label11, 0);
+            this.Controls.SetChildIndex(this.label12, 0);
+            this.Controls.SetChildIndex(this.txtTotalInsumo, 0);
+            this.Controls.SetChildIndex(this.txtToralCompra, 0);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -206,11 +302,21 @@
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItensInseridos)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.DataGridView dgvItensInseridos;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtTotalInsumo;
+        private System.Windows.Forms.TextBox txtToralCompra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }

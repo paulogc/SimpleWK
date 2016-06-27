@@ -83,11 +83,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsInsumo.xsd</DependentUpon>
     </Compile>
-    <Compile Include="ListaFornecedores.cs">
+    <Compile Include="ListaItens.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ListaFornecedores.Designer.cs">
-      <DependentUpon>ListaFornecedores.cs</DependentUpon>
+    <Compile Include="ListaItens.Designer.cs">
+      <DependentUpon>ListaItens.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaPessoas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaPessoas.Designer.cs">
+      <DependentUpon>ListaPessoas.cs</DependentUpon>
     </Compile>
     <Compile Include="VendaView.cs">
       <SubType>Form</SubType>
@@ -175,8 +181,11 @@
     <EmbeddedResource Include="CompraView.resx">
       <DependentUpon>CompraView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ListaFornecedores.resx">
-      <DependentUpon>ListaFornecedores.cs</DependentUpon>
+    <EmbeddedResource Include="ListaItens.resx">
+      <DependentUpon>ListaItens.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaPessoas.resx">
+      <DependentUpon>ListaPessoas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VendaView.resx">
       <DependentUpon>VendaView.cs</DependentUpon>

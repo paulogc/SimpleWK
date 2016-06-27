@@ -28,14 +28,30 @@ namespace DAO
             dbSWK.ExecuteSQL(qryInsumo);
         }
 
-        public Insumo Read(String buscarPor, String BuscaValor)
+        public Insumo Read(int idIsumo)
         {
             Insumo insumo = new Insumo();
             MySqlConnection conexao = Database.GetInstance().GetConnection();
 
-            String qry = "SELECT i.id_item, i.nome, i.descricao, i.valor_custo, i.quantidade FROM "
-                + "item i WHERE " + buscarPor + " = " + BuscaValor + ";";
+            String qry = "SELECT id_item, nome, descricao, valor_custo, quantidade FROM "
+                + "item WHERE id_item = " + idIsumo + ";";
 
+            if (conexao.State != System.Data.ConnectionState.Open)
+                conexao.Open();
+
+            MySqlCommand comm = new MySqlCommand(qry, conexao);
+            MySqlDataReader dr = comm.ExecuteReader();
+
+            if (dr.Read())
+            {
+                insumo.Id = dr.GetInt32("id_item");
+                insumo.Nome = dr.GetString("nome");
+                insumo.Descricao = dr.GetString("descricao");
+                insumo.ValorCusto = dr.GetDecimal("valor_custo");
+                insumo.Quantidade = dr.GetInt32("quantidade");
+
+            }
+            conexao.Close();
             return insumo;
         }
 
@@ -71,6 +87,24 @@ namespace DAO
             string qry = "SELECT i.id_item, i.nome, i.descricao, i.valor_custo, i.quantidade FROM item i, insumo n WHERE i.id_item = n.id_item;";
 
             if(conexao.State != System.Data.ConnectionState.Open)
+                conexao.Open();
+
+            MySqlDataAdapter objAdapter = new MySqlDataAdapter(qry, conexao);
+            objAdapter.Fill(dtInsumo);
+
+            conexao.Close();
+            return dtInsumo;
+        }
+
+        public DataTable ListAllInsumo(String buscarPor) {
+
+            MySqlConnection conexao = Database.GetInstance().GetConnection();
+            DataTable dtInsumo = new DataTable();
+
+            string qry = "SELECT i.id_item, i.nome, i.descricao, i.valor_custo, i.quantidade FROM " +
+                "item i, insumo n WHERE i.id_item = n.id_item AND i.nome LIKE '%"+ buscarPor + "%';";
+
+            if (conexao.State != System.Data.ConnectionState.Open)
                 conexao.Open();
 
             MySqlDataAdapter objAdapter = new MySqlDataAdapter(qry, conexao);
