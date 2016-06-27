@@ -287,7 +287,7 @@ namespace View
         }
 
         private void btnExcluir_Click(object sender, EventArgs e) {
-            String message = "Você deve selecionar um Insumo na tabela!";
+            String message = "Você deve selecionar um Produto na tabela!";
 
             ProdutoFinal produtof = new ProdutoFinal();
             foreach (DataGridViewRow row in dgvProdutoFinal.Rows)
@@ -310,7 +310,7 @@ namespace View
 
                 FillFields(produtof);
 
-                DialogResult confirm = MessageBox.Show("Deseja excluir essa pessoa?", "Confirmar exclusão",
+                DialogResult confirm = MessageBox.Show("Deseja excluir esse Produto?", "Confirmar exclusão",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
 
                 if (confirm.ToString().ToUpper() == "YES")

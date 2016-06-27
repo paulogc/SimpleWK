@@ -102,6 +102,7 @@ namespace View
         }
 
         private void btnExcluir_Click(object sender, EventArgs e) {
+            
             String message = "Você deve selecionar um Insumo na tabela!";
 
             Insumo insumo = new Insumo();
@@ -128,9 +129,17 @@ namespace View
                     if (insumo != null) {
                         DialogResult di = MessageBox.Show("Deseja realmente o item selecionado?", "Excluir",
                             MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-                        if (di == DialogResult.Yes) { 
-                            InsumoDAO iDao = new InsumoDAO();
-                            iDao.Delete(insumo);
+                        if (di == DialogResult.Yes) {
+                            try {
+                                InsumoDAO iDao = new InsumoDAO();
+                                iDao.Delete(insumo);
+                            }
+                            catch(MySql.Data.MySqlClient.MySqlException p) {
+                                MessageBox.Show("Este insumo faz parte de um produto final, não é possível excluí-lo!");
+                            }
+                            catch(Exception p) {
+                                MessageBox.Show(p.ToString());
+                            }
                             this.itemTableAdapter.Fill(this.dsInsumo.item);
                             AtualizarGrid();                            
                         }
