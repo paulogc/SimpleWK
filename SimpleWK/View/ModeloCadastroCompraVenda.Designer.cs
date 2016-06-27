@@ -41,11 +41,6 @@
             this.txtIDItem = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnBusca = new System.Windows.Forms.Button();
-            this.cbCampo = new System.Windows.Forms.ComboBox();
-            this.txtBusca = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtCPFCNPJ = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -57,7 +52,6 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnFinalizar = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -202,11 +196,6 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.btnBusca);
-            this.groupBox3.Controls.Add(this.cbCampo);
-            this.groupBox3.Controls.Add(this.txtBusca);
-            this.groupBox3.Controls.Add(this.label10);
-            this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Location = new System.Drawing.Point(9, 265);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
@@ -215,50 +204,6 @@
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Itens inseridos";
-            // 
-            // btnBusca
-            // 
-            this.btnBusca.FlatAppearance.BorderSize = 0;
-            this.btnBusca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBusca.Image = global::View.Properties.Resources.search2;
-            this.btnBusca.Location = new System.Drawing.Point(594, 24);
-            this.btnBusca.Name = "btnBusca";
-            this.btnBusca.Size = new System.Drawing.Size(48, 23);
-            this.btnBusca.TabIndex = 5;
-            this.btnBusca.UseVisualStyleBackColor = true;
-            // 
-            // cbCampo
-            // 
-            this.cbCampo.FormattingEnabled = true;
-            this.cbCampo.Location = new System.Drawing.Point(439, 24);
-            this.cbCampo.Name = "cbCampo";
-            this.cbCampo.Size = new System.Drawing.Size(149, 21);
-            this.cbCampo.TabIndex = 4;
-            // 
-            // txtBusca
-            // 
-            this.txtBusca.Location = new System.Drawing.Point(51, 25);
-            this.txtBusca.Name = "txtBusca";
-            this.txtBusca.Size = new System.Drawing.Size(336, 20);
-            this.txtBusca.TabIndex = 3;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(393, 28);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(43, 13);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "Campo:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 29);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 13);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Busca:";
             // 
             // groupBox1
             // 
@@ -394,8 +339,6 @@
             this.Text = "ModeloCompraVenda";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -426,10 +369,5 @@
         protected System.Windows.Forms.Button btnAdicionar;
         protected System.Windows.Forms.Button btnCancelar;
         protected System.Windows.Forms.Button btnFinalizar;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label3;
-        protected System.Windows.Forms.Button btnBusca;
-        protected System.Windows.Forms.ComboBox cbCampo;
-        protected System.Windows.Forms.TextBox txtBusca;
     }
 }

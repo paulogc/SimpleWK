@@ -35,6 +35,7 @@
             // 
             // txtCPFCNPJ
             // 
+            this.txtCPFCNPJ.Enabled = false;
             this.txtCPFCNPJ.Location = new System.Drawing.Point(95, 79);
             // 
             // label9
@@ -62,6 +63,10 @@
             // txtNumNF
             // 
             this.txtNumNF.Location = new System.Drawing.Point(95, 22);
+            // 
+            // txtIDItem
+            // 
+            this.txtIDItem.Enabled = false;
             // 
             // label5
             // 
@@ -100,16 +105,12 @@
             this.btnFinalizar.Text = "Finalizar Venda";
             this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
             // 
-            // btnBusca
             // 
-            this.btnBusca.FlatAppearance.BorderSize = 0;
-            this.btnBusca.Click += new System.EventHandler(this.btnBusca_Click);
-            // 
-            // CadastroVenda
+            // VendaView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(794, 523);
-            this.Name = "CadastroVenda";
+            this.Name = "VendaView";
             this.Text = "Venda";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
