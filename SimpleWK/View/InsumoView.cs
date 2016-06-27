@@ -38,8 +38,6 @@ namespace View
                 this.itemTableAdapter.Fill(this.dsInsumo.item);
                 AtualizarGrid();
                 LimparCampos();
-
-
             }
             catch(Exception p)
             {

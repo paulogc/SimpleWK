@@ -111,9 +111,18 @@
             this.btnBusca.FlatAppearance.BorderSize = 0;
             this.btnBusca.Click += new System.EventHandler(this.btnBusca_Click);
             // 
+            // cbCampo
+            // 
+            this.cbCampo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbCampo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbCampo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCampo.Items.AddRange(new object[] {
+            "Nome",
+            "Descrição"});
+            // 
             // txtBusca
             // 
-            this.txtBusca.Margin = new System.Windows.Forms.Padding(5);
+            this.txtBusca.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             // 
             // button1
             // 
@@ -238,8 +247,8 @@
             this.dgvInsumo.AllowUserToDeleteRows = false;
             this.dgvInsumo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvInsumo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInsumo.Location = new System.Drawing.Point(11, 75);
-            this.dgvInsumo.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvInsumo.Location = new System.Drawing.Point(15, 92);
+            this.dgvInsumo.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.dgvInsumo.Name = "dgvInsumo";
             this.dgvInsumo.ReadOnly = true;
             this.dgvInsumo.Size = new System.Drawing.Size(1013, 254);
@@ -266,7 +275,8 @@
             // 
             // tbValor
             // 
-            this.tbValor.Location = new System.Drawing.Point(572, 140);
+            this.tbValor.Location = new System.Drawing.Point(573, 134);
+            this.tbValor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbValor.Name = "tbValor";
             this.tbValor.Size = new System.Drawing.Size(100, 24);
             this.tbValor.TabIndex = 11;

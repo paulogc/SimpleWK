@@ -64,6 +64,31 @@ namespace DAO
             dbSWK.ExecuteSQL(qryPes);
         }
 
+        public Juridica BuscarCnpj(String cnpj) {
+            Juridica pessoa = new Juridica();
+            pessoa.Cnpj = cnpj;
+
+            MySqlConnection conexao = Database.GetInstance().GetConnection();
+
+            String qry = "SELECT id_pessoa FROM juridica WHERE cnpj = " + cnpj + ";";
+
+            if (conexao.State != System.Data.ConnectionState.Open)
+                conexao.Open();
+
+            MySqlCommand comm = new MySqlCommand(qry, conexao);
+            MySqlDataReader dr = comm.ExecuteReader();
+
+            if (dr.Read())
+            {
+                pessoa.Id = dr.GetInt32("id_pessoa");
+            }
+            conexao.Close();
+
+            pessoa = Read(pessoa.Id);
+
+            return pessoa;
+        }
+
         public Juridica Read(int id)
         {
             Juridica pessoa = new Juridica();
@@ -128,7 +153,7 @@ namespace DAO
             MySqlConnection conexao = Database.GetInstance().GetConnection();
             DataTable dtJuridica = new DataTable();
 
-            string qry = "SELECT p.id_pessoa, p.nome, j.razao_social, j.cnpj, p.email, p.telefone_fixo FROM" +
+            string qry = "SELECT p.id_pessoa, p.nome, j.razao_social, j.cnpj, p.email, p.telefone_fixo FROM " +
                 "pessoa p, juridica j WHERE p.id_pessoa = j.fk_id_pessoa AND p.nome LIKE '%" + buscarPor + "%';";
 
             if (conexao.State != System.Data.ConnectionState.Open)
@@ -140,5 +165,24 @@ namespace DAO
             conexao.Close();
             return dtJuridica;
         }
+
+        public DataTable BuscaJuridica(string busca, string campo) {
+
+            MySqlConnection conexao = Database.GetInstance().GetConnection();
+            DataTable dtJuridica = new DataTable();
+
+            string qry = "SELECT p.id_pessoa, p.nome, j.razao_social, j.cnpj, p.email, p.telefone_fixo from pessoa p, juridica j where p.id_pessoa = j.fk_id_pessoa AND "
+                + campo + " like '%" + busca + "%';";
+
+            if(conexao.State != System.Data.ConnectionState.Open)
+                conexao.Open();
+
+            MySqlDataAdapter objAdapter = new MySqlDataAdapter(qry, conexao);
+            objAdapter.Fill(dtJuridica);
+
+            conexao.Close();
+            return dtJuridica;
+        }
+
     }
 }

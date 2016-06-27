@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace Model {
     public class Compra : Acao{
-        private List<Insumo> insumos = new List<Insumo>();
+        private List<InsumoAcao> insumos = new List<InsumoAcao>();
 
-        private void AddInsumo(Insumo insumo) {
+        public List<InsumoAcao> Insumos { get; set; }
+        
+        private void AddInsumo(InsumoAcao insumo) {
             insumos.Add(insumo);
         }
 
-        private void RemoveIsumo(Insumo insumo) {
+        private void RemoveIsumo(InsumoAcao insumo) {
             insumos.Remove(insumo);
         }
     }

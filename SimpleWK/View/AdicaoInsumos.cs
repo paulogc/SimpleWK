@@ -14,9 +14,9 @@ using DAO;
 namespace View {
     public partial class AdicaoInsumos : Form {
 
-        List<InsumoProdutoFinal> listaPF = new List<InsumoProdutoFinal>();
-        List<InsumoProdutoFinal> listaCancel = new List<InsumoProdutoFinal>();
-        public AdicaoInsumos(List<InsumoProdutoFinal> lista) {
+        List<InsumoAcao> listaPF = new List<InsumoAcao>();
+        List<InsumoAcao> listaCancel = new List<InsumoAcao>();
+        public AdicaoInsumos(List<InsumoAcao> lista) {
             InitializeComponent();
             listaPF = lista;
             PrenecherListaCancel(lista);
@@ -35,7 +35,7 @@ namespace View {
                 qtd = Int32.Parse(txtQtd.Text);
                 foreach (DataGridViewRow row in dgvInsumos.Rows)
                 {
-                    InsumoProdutoFinal insumoPF = new InsumoProdutoFinal();
+                    InsumoAcao insumoPF = new InsumoAcao();
                     if (row.Selected)
                     {
                         if(Int32.Parse(row.Cells[4].Value.ToString()) < qtd)
@@ -105,7 +105,7 @@ namespace View {
             }
             else
             {
-                InsumoProdutoFinal ins;
+                InsumoAcao ins;
                 for(int i = 0; i < listaPF.Count; i++)
                 {
                     if(listaPF[i].Id == idInsumo)
@@ -140,7 +140,7 @@ namespace View {
             dgvInsumos.Columns[4].HeaderText = "Quantidade";
             if(listaPF.Count > 0)
             {
-                foreach(InsumoProdutoFinal insumo in listaPF) { 
+                foreach(InsumoAcao insumo in listaPF) { 
                     foreach (DataGridViewRow row in dgvInsumos.Rows)
                     {
                         if(Int32.Parse(row.Cells[0].Value.ToString()) == insumo.Id)
@@ -153,9 +153,9 @@ namespace View {
             }
         }
 
-        private void AtualizaGridInsumoPF(List<InsumoProdutoFinal> lista) {
+        private void AtualizaGridInsumoPF(List<InsumoAcao> lista) {
             dgvInsumoPF.Rows.Clear();
-            foreach (InsumoProdutoFinal insumoPF in lista)
+            foreach (InsumoAcao insumoPF in lista)
             {
                 dgvInsumoPF.Rows.Add(insumoPF.Id.ToString(),
                     insumoPF.Nome.ToString(),
@@ -165,8 +165,8 @@ namespace View {
             }
         }
 
-        private void PrenecherListaCancel(List<InsumoProdutoFinal> lista) {
-            foreach(InsumoProdutoFinal insumo in lista)
+        private void PrenecherListaCancel(List<InsumoAcao> lista) {
+            foreach(InsumoAcao insumo in lista)
             {
                 listaCancel.Add(insumo);
             }

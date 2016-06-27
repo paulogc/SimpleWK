@@ -29,7 +29,26 @@ namespace View
 
         private void btnBusca_Click(object sender, EventArgs e)
         {
+            string busca = txtBusca.Text;
+            string campo = null;
 
+            switch(cbCampo.Text) {
+                case "Nome":
+                    campo = "p.nome";
+                    break;
+                case "CNPJ":
+                    campo = "j.cnpj";
+                    break;
+                case "E-mail":
+                    campo = "p.email";
+                    break;
+                case "Razão Social":
+                    campo = "j.razao_social";
+                    break;
+            }
+
+            PessoaJuridicaDAO pdao = new PessoaJuridicaDAO();
+            dgvPessoaJuridica.DataSource = pdao.BuscaJuridica(busca, campo);
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
@@ -57,7 +76,7 @@ namespace View
                         int idEnd = Database.GetInstance().GetId();
                         pessoaJuridica.Endereco.Id = idEnd;
                         pjDao.Create(pessoaJuridica);
-                        pessoaJuridica.Endereco.Id = idEnd;
+                        localizacao = new Localizacao();
                     }
                     AtualizarGrid();
                     LimparCampos();
@@ -94,6 +113,7 @@ namespace View
         private void PessoaJuridicaView_Load(object sender, EventArgs e)
         {
             AtualizarGrid();
+            cbCampo.SelectedIndex = 0;
         }
         private void AtualizarGrid()
         {

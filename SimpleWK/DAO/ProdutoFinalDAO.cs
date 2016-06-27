@@ -27,7 +27,7 @@ namespace DAO {
                 "VALUES(" + idItem + ", " + pFinal.PrecoVenda + ");";
             dbSWK.ExecuteSQL(qryProduto);
 
-            foreach(InsumoProdutoFinal insumoPF in pFinal.Insumos)
+            foreach(InsumoAcao insumoPF in pFinal.Insumos)
             {
                 String qryLista = "INSERT INTO lista_itens_produto_final (id_insumo, id_produto_final, quantidade) " +
                     "VALUES(" + insumoPF.Id + ", " + idItem + ", " + insumoPF.QuantidadeInsumo + ");";
@@ -64,9 +64,9 @@ namespace DAO {
             return pFinal;
         }
 
-        private List<InsumoProdutoFinal> ListarInsumos(int idProdutoFinal) {
-            List<InsumoProdutoFinal> lista = new List<InsumoProdutoFinal>();
-            InsumoProdutoFinal insumo;
+        private List<InsumoAcao> ListarInsumos(int idProdutoFinal) {
+            List<InsumoAcao> lista = new List<InsumoAcao>();
+            InsumoAcao insumo;
 
             MySqlConnection conexao = Database.GetInstance().GetConnection();
             
@@ -81,14 +81,14 @@ namespace DAO {
 
             while (dr.Read())
             {
-                insumo = new InsumoProdutoFinal();
+                insumo = new InsumoAcao();
                 insumo.Id = dr.GetInt32("id_insumo");
                 insumo.QuantidadeInsumo = dr.GetInt32("quantidade");
                 lista.Add(insumo);
             }
             conexao.Close();
 
-            foreach(InsumoProdutoFinal insu in lista)
+            foreach(InsumoAcao insu in lista)
             {
                 if (conexao.State != System.Data.ConnectionState.Open)
                     conexao.Open();
@@ -122,7 +122,7 @@ namespace DAO {
 
             int idItem = pFinal.Id;
 
-            foreach (InsumoProdutoFinal insumoPF in pFinal.Insumos)
+            foreach (InsumoAcao insumoPF in pFinal.Insumos)
             {
                 String qryLista = "INSERT INTO lista_itens_produto_final (id_insumo, id_produto_final, quantidade) " +
                     "VALUES(" + insumoPF.Id + ", " + idItem + ", " + insumoPF.QuantidadeInsumo + ");";
@@ -162,5 +162,43 @@ namespace DAO {
             conexao.Close();
             return dtPF;
         }
+
+        public DataTable ListAllProdutoFinal(String buscarPor) {
+
+            MySqlConnection conexao = Database.GetInstance().GetConnection();
+            DataTable dtPF = new DataTable();
+
+            string qry = "SELECT p.id_item, i.nome, i.descricao, p.preco_venda, i.quantidade FROM " +
+                "item i, produto_final p where i.id_item = p.id_item AND i.nome LIKE '%"+ buscarPor +"%';";
+
+            if (conexao.State != System.Data.ConnectionState.Open)
+                conexao.Open();
+
+            MySqlDataAdapter objAdapter = new MySqlDataAdapter(qry, conexao);
+            objAdapter.Fill(dtPF);
+
+            conexao.Close();
+            return dtPF;
+        }
+
+        public DataTable BuscaProdutoFinal(string busca, string campo) {
+
+            MySqlConnection conexao = Database.GetInstance().GetConnection();
+            DataTable dtPFinal = new DataTable();
+
+            string qry = "SELECT p.id_item, i.nome, i.descricao, p.preco_venda, i.quantidade FROM " +
+                "item i, produto_final p where i.id_item = p.id_item AND "
+                + campo + " like '%" + busca + "%';";
+
+            if(conexao.State != System.Data.ConnectionState.Open)
+                conexao.Open();
+
+            MySqlDataAdapter objAdapter = new MySqlDataAdapter(qry, conexao);
+            objAdapter.Fill(dtPFinal);
+
+            conexao.Close();
+            return dtPFinal;
+        }
+
     }
 }

@@ -13,7 +13,7 @@ namespace View
     public partial class ProdutoFinalView : View.ModeloCadastroGeral
     {
 
-        List<InsumoProdutoFinal> listaInsumos = new List<InsumoProdutoFinal>();
+        List<InsumoAcao> listaInsumos = new List<InsumoAcao>();
         public ProdutoFinalView()
         {
             InitializeComponent();
@@ -138,12 +138,14 @@ namespace View
                     {
                         pfDAO.Update(produtoFinal);
                         dgvProdutoFinal.DataSource = pfDAO.ListAllProdutoFinal();
+                        listaInsumos = new List<InsumoAcao>();
                         LimparCampos();                        
                     }
                     else
                     {
                         pfDAO.Create(produtoFinal);
                         dgvProdutoFinal.DataSource = pfDAO.ListAllProdutoFinal();
+                        listaInsumos = new List<InsumoAcao>();
                         LimparCampos();
                     }
 
@@ -161,20 +163,33 @@ namespace View
         }
 
         private void btnBusca_Click(object sender, EventArgs e) {
+            string busca = txtBusca.Text;
+            string campo = null;
+
+            switch(cbCampo.Text) {
+                case "Nome":
+                    campo = "i.nome";
+                    break;
+                case "Descrição":
+                    campo = "i.descricao";
+                    break;
+            }
+            ProdutoFinalDAO idao = new ProdutoFinalDAO();
+            dgvProdutoFinal.DataSource = idao.BuscaProdutoFinal(busca, campo);
         }
 
-        private Decimal somaPrecoVenda(List<InsumoProdutoFinal> listaPF) {
+        private Decimal somaPrecoVenda(List<InsumoAcao> listaPF) {
             Decimal soma = 0;
-            foreach(InsumoProdutoFinal insumo in listaPF){
+            foreach(InsumoAcao insumo in listaPF){
                 soma += insumo.ValorCusto * insumo.QuantidadeInsumo;
             }
             soma = soma + (soma * (40/100));
             return soma;
         }
 
-        private Decimal somaCusto(List<InsumoProdutoFinal> listaPF) {
+        private Decimal somaCusto(List<InsumoAcao> listaPF) {
             Decimal soma = 0;
-            foreach (InsumoProdutoFinal insumo in listaPF)
+            foreach (InsumoAcao insumo in listaPF)
                 {
                     soma += insumo.ValorCusto * insumo.QuantidadeInsumo;
                 }
@@ -195,6 +210,7 @@ namespace View
         }
 
         private void ProdutoFinalView_Load(object sender, EventArgs e) {
+            cbCampo.SelectedIndex = 0;
             ProdutoFinalDAO pfDAO = new ProdutoFinalDAO();
             dgvProdutoFinal.DataSource = pfDAO.ListAllProdutoFinal();
             dgvProdutoFinal.Columns[0].HeaderText = "ID";
