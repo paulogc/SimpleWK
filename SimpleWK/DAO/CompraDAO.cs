@@ -7,15 +7,31 @@ using System.Data;
 namespace DAO {
     public class CompraDAO {
 
-        public void Create(Compra compra) {
-            Database dbSWK = Database.GetInstance();
+        public void Create(Compra compra) {        
                         
             string sqlDateTime = compra.DataHora.ToString("yyyy-MM-dd HH:mm:ss");
 
-            String qryAcao = "INSERT INTO acao (nota_fiscal, valor, data_hora, fk_id_pessoa) VALUES ('" +
-                compra.NotaFiscal +"', " + compra.Valor + ", '" + sqlDateTime + "', " + compra.PessoaFJ.Id + ");";
-            dbSWK.ExecuteSQL(qryAcao);
+            MySqlConnection con = new MySqlConnection();
+            con.ConnectionString = "Server=localhost; Database=simplewk; Uid=root; Pwd=;";
+            if (con.State != System.Data.ConnectionState.Open)
+                con.Open();
 
+            MySqlCommand cmd = new MySqlCommand("INSERT INTO acao (nota_fiscal, valor, data_hora, fk_id_pessoa) VALUES (@nota_fiscal, @valor, @data_hora, @fk_id_pessoa)", con);
+
+            /*String qryAcao = "INSERT INTO acao (nota_fiscal, valor, data_hora, fk_id_pessoa) VALUES ('" +
+                compra.NotaFiscal +"', " + compra.Valor + ", '" + sqlDateTime + "', " + compra.PessoaFJ.Id + ");";
+            dbSWK.ExecuteSQL(qryAcao);*/
+
+            cmd.Parameters.AddWithValue("@nota_fiscal", compra.NotaFiscal);
+            cmd.Parameters.AddWithValue("@valor", compra.Valor);
+            cmd.Parameters.AddWithValue("@data_hora", sqlDateTime);
+            cmd.Parameters.AddWithValue("@fk_id_pessoa", compra.PessoaFJ.Id);
+
+            cmd.ExecuteNonQuery();
+
+            con.Close();
+
+            Database dbSWK = Database.GetInstance();
             int idAcao = dbSWK.GetId();
 
             String qryCompra = "INSERT INTO compra (id_acao) VALUES(" + idAcao + ")";
