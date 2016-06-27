@@ -67,9 +67,11 @@ namespace View
             {
                 Compra compra = new Compra();
                 compra.NotaFiscal = txtNumNF.Text;
-                compra.PessoaFJ.Cnpj = txtCPFCNPJ.Text;
+                PessoaJuridicaDAO pdao = new PessoaJuridicaDAO();
+                compra.PessoaFJ = pdao.BuscarCnpj(txtCPFCNPJ.Text);
                 compra.Valor = totalCompra;
                 compra.Insumos = listaInsumo;
+                compra.DataHora = DateTime.Now;
 
                 CompraDAO compraDAO = new CompraDAO();
                 compraDAO.Create(compra);

@@ -69,10 +69,6 @@
             this.label4.Size = new System.Drawing.Size(110, 15);
             this.label4.Text = "Nome Fornecedor:";
             // 
-            // label2
-            // 
-            this.label2.Location = new System.Drawing.Point(340, 21);
-            this.label2.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             // 
             // txtNomeFornecedor
             // 
@@ -81,11 +77,6 @@
             this.txtNomeFornecedor.Size = new System.Drawing.Size(361, 21);
             this.txtNomeFornecedor.TextChanged += new System.EventHandler(this.txtNomeFornecedor_TextChanged);
             // 
-            // txtDataNF
-            // 
-            this.txtDataNF.Location = new System.Drawing.Point(379, 18);
-            this.txtDataNF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtDataNF.Size = new System.Drawing.Size(99, 21);
             // 
             // txtNumNF
             // 

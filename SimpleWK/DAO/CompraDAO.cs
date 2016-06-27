@@ -9,13 +9,11 @@ namespace DAO {
 
         public void Create(Compra compra) {
             Database dbSWK = Database.GetInstance();
-
-            PessoaJuridicaDAO psDAO = new PessoaJuridicaDAO();
-
-            compra.PessoaFJ = psDAO.BuscarCnpj(compra.PessoaFJ.Cnpj);
+                        
+            string sqlDateTime = compra.DataHora.ToString("yyyy-MM-dd HH:mm:ss");
 
             String qryAcao = "INSERT INTO acao (nota_fiscal, valor, data_hora, fk_id_pessoa) VALUES ('" +
-                compra.NotaFiscal +"', " + compra.Valor + ", " + compra.DataHora + ", " + compra.PessoaFJ.Id + ";";
+                compra.NotaFiscal +"', " + compra.Valor + ", '" + sqlDateTime + "', " + compra.PessoaFJ.Id + ");";
             dbSWK.ExecuteSQL(qryAcao);
 
             int idAcao = dbSWK.GetId();
@@ -48,7 +46,7 @@ namespace DAO {
                 compra.Id = dr.GetInt32("id_acao");
                 compra.NotaFiscal = dr.GetString("nota_fiscal");
                 compra.Valor = dr.GetDecimal("valor");
-                // compra.DataHora = DateTime.Parse(dr.GetMySqlDateTime("data_hora"));
+                compra.DataHora = (dr.GetDateTime("data_hora"));
                 compra.PessoaFJ.Id = dr.GetInt32("fk_id_pessoa");
             }
 
