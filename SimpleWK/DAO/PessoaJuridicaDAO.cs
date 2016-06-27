@@ -70,7 +70,7 @@ namespace DAO
 
             MySqlConnection conexao = Database.GetInstance().GetConnection();
 
-            String qry = "SELECT id_pessoa FROM juridica WHERE cnpj = " + cnpj + ";";
+            String qry = "SELECT fk_id_pessoa FROM juridica WHERE cnpj = '" + cnpj + "';";
 
             if (conexao.State != System.Data.ConnectionState.Open)
                 conexao.Open();
@@ -80,7 +80,7 @@ namespace DAO
 
             if (dr.Read())
             {
-                pessoa.Id = dr.GetInt32("id_pessoa");
+                pessoa.Id = dr.GetInt32("fk_id_pessoa");
             }
             conexao.Close();
 

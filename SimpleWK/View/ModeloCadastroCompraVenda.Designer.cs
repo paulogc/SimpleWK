@@ -51,10 +51,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.btnLocalizarFornecedor = new System.Windows.Forms.Button();
             this.txtNomeFornecedor = new System.Windows.Forms.TextBox();
-            this.txtDataNF = new System.Windows.Forms.TextBox();
             this.txtNumNF = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnFinalizar = new System.Windows.Forms.Button();
@@ -268,10 +266,8 @@
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.btnLocalizarFornecedor);
             this.groupBox1.Controls.Add(this.txtNomeFornecedor);
-            this.groupBox1.Controls.Add(this.txtDataNF);
             this.groupBox1.Controls.Add(this.txtNumNF);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(10, 11);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
@@ -323,14 +319,6 @@
             this.txtNomeFornecedor.Size = new System.Drawing.Size(235, 20);
             this.txtNomeFornecedor.TabIndex = 6;
             // 
-            // txtDataNF
-            // 
-            this.txtDataNF.Location = new System.Drawing.Point(395, 22);
-            this.txtDataNF.Margin = new System.Windows.Forms.Padding(2);
-            this.txtDataNF.Name = "txtDataNF";
-            this.txtDataNF.Size = new System.Drawing.Size(76, 20);
-            this.txtDataNF.TabIndex = 5;
-            // 
             // txtNumNF
             // 
             this.txtNumNF.Location = new System.Drawing.Point(117, 22);
@@ -349,17 +337,6 @@
             this.label4.Size = new System.Drawing.Size(44, 15);
             this.label4.TabIndex = 3;
             this.label4.Text = "Nome:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(356, 24);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 15);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Data:";
             // 
             // label1
             // 
@@ -430,10 +407,8 @@
         protected System.Windows.Forms.Label label9;
         protected System.Windows.Forms.GroupBox groupBox1;
         protected System.Windows.Forms.Label label4;
-        protected System.Windows.Forms.Label label2;
         protected System.Windows.Forms.Label label1;
         protected System.Windows.Forms.TextBox txtNomeFornecedor;
-        protected System.Windows.Forms.TextBox txtDataNF;
         protected System.Windows.Forms.TextBox txtNumNF;
         protected System.Windows.Forms.GroupBox groupBox2;
         protected System.Windows.Forms.TextBox txtNomeItem;
