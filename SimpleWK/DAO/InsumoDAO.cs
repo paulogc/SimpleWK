@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Model;
 using MySql.Data.MySqlClient;
 using System.Data;
+using System.Globalization;
 
 namespace DAO
 {
@@ -13,11 +14,31 @@ namespace DAO
     {
         public void Create(Insumo insumo)
         {
-            Database dbSWK = Database.GetInstance();
 
-            string qryItem = string.Format("INSERT INTO item (nome, descricao, valor_custo, quantidade)" +
-                "VALUES('{0}','{1}','{2}','{3}');",
-                insumo.Nome, insumo.Descricao, insumo.ValorCusto, insumo.Quantidade);
+            MySqlConnection con = new MySqlConnection();
+            con.ConnectionString = "Server=localhost; Database=simplewk; Uid=root; Pwd=;";
+            if (con.State != System.Data.ConnectionState.Open)
+            con.Open();
+
+            MySqlCommand cmd = new MySqlCommand("INSERT INTO item (nome, descricao, quantidade, valor_custo) Values (@nome, @descricao, @quantidade,@valor_custo);", con);
+
+            //Database dbSWK = Database.GetInstance();
+
+            //cmd.CommandText = "INSERT INTO item (nome, descricao, quantidade, valor_custo) Values (@nome, @descricao, @quantidade,@valor_custo);";
+
+            cmd.Parameters.AddWithValue("@nome", insumo.Nome);
+            cmd.Parameters.AddWithValue("@descricao", insumo.Descricao);
+            cmd.Parameters.AddWithValue("@quantidade", insumo.Quantidade);
+            cmd.Parameters.AddWithValue("@valor_custo", insumo.ValorCusto);
+
+            cmd.ExecuteNonQuery();
+
+            con.Close();
+
+
+            /*string qryItem = "INSERT INTO item (nome, descricao, quantidade, valor_custo)" +
+                "VALUES('" + insumo.Nome + "', '" + insumo.Descricao + "', " + insumo.Quantidade + ", '" + insumo.ValorCusto + "');";
+                
 
             dbSWK.ExecuteSQL(qryItem);
 
@@ -25,7 +46,7 @@ namespace DAO
 
             string qryInsumo = string.Format("INSERT INTO insumo (id_item) VALUES('{0}');", idItem);
 
-            dbSWK.ExecuteSQL(qryInsumo);
+            dbSWK.ExecuteSQL(qryInsumo);*/
         }
 
         public Insumo Read(String buscarPor, String BuscaValor)
@@ -33,7 +54,7 @@ namespace DAO
             Insumo insumo = new Insumo();
             MySqlConnection conexao = Database.GetInstance().GetConnection();
 
-            String qry = "SELECT i.id_item, i.nome, i.descricao, i.valor_custo, i.quantidade FROM "
+            String qry = "SELECT i.id_item, i.nome, i.descricao, i.quantidade, i.valor_custo FROM "
                 + "item i WHERE " + buscarPor + " = " + BuscaValor + ";";
 
             return insumo;
@@ -41,7 +62,24 @@ namespace DAO
 
         public void Update(Insumo insumo)
         {
-            Database dbSWK = Database.GetInstance();
+            MySqlConnection con = new MySqlConnection();
+            con.ConnectionString = "Server=localhost; Database=simplewk; Uid=root; Pwd=;";
+            if (con.State != System.Data.ConnectionState.Open)
+                con.Open();
+
+            MySqlCommand cmd = new MySqlCommand("UPDATE item  SET nome = @nome, descricao = @descricao, quantidade = @quantidade, valor_custo = @valor_custo WHERE id_item = @id_item;", con);
+
+            cmd.Parameters.AddWithValue("@id_item", insumo.Id);
+            cmd.Parameters.AddWithValue("@nome", insumo.Nome);
+            cmd.Parameters.AddWithValue("@descricao", insumo.Descricao);
+            cmd.Parameters.AddWithValue("@quantidade", insumo.Quantidade);
+            cmd.Parameters.AddWithValue("@valor_custo", insumo.ValorCusto);
+
+            cmd.ExecuteNonQuery();
+
+            con.Close();
+
+            /*Database dbSWK = Database.GetInstance();
 
 
             String qry = "UPDATE item SET " +
@@ -49,7 +87,7 @@ namespace DAO
                 "', valor_custo = " + insumo.ValorCusto + ", quantidade = " + insumo.Quantidade + 
                 " WHERE id_item = " + insumo.Id + ";";
 
-            dbSWK.ExecuteSQL(qry);
+            dbSWK.ExecuteSQL(qry);*/
         }
 
         public void Delete(Insumo insumo)
@@ -68,7 +106,7 @@ namespace DAO
             MySqlConnection conexao = Database.GetInstance().GetConnection();
             DataTable dtInsumo = new DataTable();
 
-            string qry = "SELECT i.id_item, i.nome, i.descricao, i.valor_custo, i.quantidade FROM item i, insumo n WHERE i.id_item = n.id_item;";
+            string qry = "SELECT id_item, nome, descricao, quantidade, valor_custo FROM item ;" ;
 
             if(conexao.State != System.Data.ConnectionState.Open)
                 conexao.Open();
