@@ -65,14 +65,25 @@ namespace View
         private void btnFinalizar_Click(object sender, EventArgs e) {
             if(totalCompra > 0 && quantidadeTotal > 0)
             {
-                Compra compra = new Compra();
-                compra.NotaFiscal = txtNumNF.Text;
-                compra.PessoaFJ.Cnpj = txtCPFCNPJ.Text;
-                compra.Valor = totalCompra;
-                compra.Insumos = listaInsumo;
+                try {
+                    Compra compra = new Compra();
+                    compra.NotaFiscal = txtNumNF.Text;
+                    PessoaJuridicaDAO pdao = new PessoaJuridicaDAO();
+                    compra.PessoaFJ = pdao.BuscarCnpj(txtCPFCNPJ.Text);
+                    compra.Valor = totalCompra;
+                    compra.Insumos = listaInsumo;
+                    compra.DataHora = DateTime.Now;
 
-                CompraDAO compraDAO = new CompraDAO();
-                compraDAO.Create(compra);
+                    CompraDAO compraDAO = new CompraDAO();
+                    compraDAO.Create(compra);
+                    LimparAposCompra();
+                    MessageBox.Show("Compra finalizada!");
+                }
+                catch (Exception p)
+                {
+                    MessageBox.Show(p.ToString());
+                }
+                
 
             }else
             {
@@ -80,7 +91,7 @@ namespace View
             }
 
 
-            MessageBox.Show("Compra finalizada!");            
+                       
         }
 
         private void btnLocalizarItem_Click(object sender, EventArgs e) {
@@ -110,6 +121,21 @@ namespace View
         }
 
         private void btnBusca_Click(object sender, EventArgs e) {
+        }
+
+        public void LimparAposCompra() {
+            txtIDItem.Text = "";
+            txtItemQuantidade.Text = "";
+            txtNomeItem.Text = "";
+            txtItemValorUnitario.Text = "";
+            txtCPFCNPJ.Text = "";
+            txtNumNF.Text = "";
+            txtToralCompra.Text = "";
+            txtTotalInsumo.Text = "";
+            txtNomeFornecedor.Text = "";
+            totalCompra = 0;
+            quantidadeTotal = 0;
+            dgvItensInseridos.Rows.Clear();
         }
 
         private void LimparCamposInsumo() {

@@ -69,10 +69,6 @@
             this.label4.Size = new System.Drawing.Size(110, 15);
             this.label4.Text = "Nome Fornecedor:";
             // 
-            // label2
-            // 
-            this.label2.Location = new System.Drawing.Point(340, 21);
-            this.label2.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             // 
             // txtNomeFornecedor
             // 
@@ -81,11 +77,6 @@
             this.txtNomeFornecedor.Size = new System.Drawing.Size(361, 21);
             this.txtNomeFornecedor.TextChanged += new System.EventHandler(this.txtNomeFornecedor_TextChanged);
             // 
-            // txtDataNF
-            // 
-            this.txtDataNF.Location = new System.Drawing.Point(379, 18);
-            this.txtDataNF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtDataNF.Size = new System.Drawing.Size(99, 21);
             // 
             // txtNumNF
             // 
@@ -147,9 +138,6 @@
             // 
             this.groupBox3.Controls.Add(this.dgvItensInseridos);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Controls.SetChildIndex(this.txtBusca, 0);
-            this.groupBox3.Controls.SetChildIndex(this.cbCampo, 0);
-            this.groupBox3.Controls.SetChildIndex(this.btnBusca, 0);
             this.groupBox3.Controls.SetChildIndex(this.dgvItensInseridos, 0);
             // 
             // btnLocalizarItem
@@ -179,18 +167,6 @@
             this.btnFinalizar.Text = "Finalizar Compra";
             this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
             // 
-            // btnBusca
-            // 
-            this.btnBusca.FlatAppearance.BorderSize = 0;
-            this.btnBusca.Click += new System.EventHandler(this.btnBusca_Click);
-            // 
-            // cbCampo
-            // 
-            this.cbCampo.Size = new System.Drawing.Size(149, 23);
-            // 
-            // txtBusca
-            // 
-            this.txtBusca.Size = new System.Drawing.Size(336, 21);
             // 
             // dgvItensInseridos
             // 

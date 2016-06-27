@@ -156,7 +156,8 @@ namespace DAO {
 
             cmd.ExecuteNonQuery();
 
-            cmd.CommandText = "DELETE FROM lista_itens_produto_final WHERE id_produto_final = " + pFinal.Id + ";";
+            cmd.CommandText = "DELETE FROM lista_itens_produto_final WHERE id_produto_final = @id_produto_final;";
+            cmd.Parameters.AddWithValue("@id_produto_final", pFinal.Id);
 
             cmd.ExecuteNonQuery();
 

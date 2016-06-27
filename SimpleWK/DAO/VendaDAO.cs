@@ -34,24 +34,17 @@ namespace DAO {
             return venda;
         }
 
-        public void Update(Venda venda) {
-            Database dbSWK = Database.GetInstance();
-
-            String qry = "UPDATE acao SET" +
-                "nota_fiscal = " + venda.NotaFiscal + ", valor = " + venda.Valor + 
-                ", fk_id_pessoa = " + venda.PessoaFJ.Id + "WHERE id_acao = " + venda.acao.Id + ";";
-
-            dbSWK.ExecuteSQL(qry);               
-        }
-
         public void Delete(Venda venda) {
             Database dbSWK = Database.GetInstance();
 
-            String qry = "DELETE FROM acao WHERE id_acao = " + venda.acao.Id;
+            String qry = "DELETE FROM lista_venda_produtos FROM id_venda = " + venda.Id + ";";
             dbSWK.ExecuteSQL(qry);
 
-            String qryDel = "DELETE FROM venda WHERE id_venda = " + venda.Id;
-            dbSWK.ExecuteSQL(qryDel);
+            qry = "DELETE FROM venda WHERE id_venda = " + venda.Id;
+            dbSWK.ExecuteSQL(qry);
+
+            qry = "DELETE FROM acao WHERE id_acao = " + venda.acao.Id;
+            dbSWK.ExecuteSQL(qry);            
 
         }
     }    

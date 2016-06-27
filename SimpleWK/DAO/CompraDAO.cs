@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Model;
 using MySql.Data.MySqlClient;
 using System.Data;
@@ -10,17 +7,31 @@ using System.Data;
 namespace DAO {
     public class CompraDAO {
 
-        public void Create(Compra compra) {
+        public void Create(Compra compra) {        
+                        
+            string sqlDateTime = compra.DataHora.ToString("yyyy-MM-dd HH:mm:ss");
+
+            MySqlConnection con = new MySqlConnection();
+            con.ConnectionString = "Server=localhost; Database=simplewk; Uid=root; Pwd=;";
+            if (con.State != System.Data.ConnectionState.Open)
+                con.Open();
+
+            MySqlCommand cmd = new MySqlCommand("INSERT INTO acao (nota_fiscal, valor, data_hora, fk_id_pessoa) VALUES (@nota_fiscal, @valor, @data_hora, @fk_id_pessoa)", con);
+
+            /*String qryAcao = "INSERT INTO acao (nota_fiscal, valor, data_hora, fk_id_pessoa) VALUES ('" +
+                compra.NotaFiscal +"', " + compra.Valor + ", '" + sqlDateTime + "', " + compra.PessoaFJ.Id + ");";
+            dbSWK.ExecuteSQL(qryAcao);*/
+
+            cmd.Parameters.AddWithValue("@nota_fiscal", compra.NotaFiscal);
+            cmd.Parameters.AddWithValue("@valor", compra.Valor);
+            cmd.Parameters.AddWithValue("@data_hora", sqlDateTime);
+            cmd.Parameters.AddWithValue("@fk_id_pessoa", compra.PessoaFJ.Id);
+
+            cmd.ExecuteNonQuery();
+
+            con.Close();
+
             Database dbSWK = Database.GetInstance();
-
-            PessoaJuridicaDAO psDAO = new PessoaJuridicaDAO();
-
-            compra.PessoaFJ = psDAO.BuscarCnpj(compra.PessoaFJ.Cnpj);
-
-            String qryAcao = "INSERT INTO acao (nota_fiscal, valor, data_hora, fk_id_pessoa) VALUES ('" +
-                compra.NotaFiscal +"', " + compra.Valor + ", " + compra.DataHora + ", " + compra.PessoaFJ.Id + ";";
-            dbSWK.ExecuteSQL(qryAcao);
-
             int idAcao = dbSWK.GetId();
 
             String qryCompra = "INSERT INTO compra (id_acao) VALUES(" + idAcao + ")";
@@ -51,7 +62,7 @@ namespace DAO {
                 compra.Id = dr.GetInt32("id_acao");
                 compra.NotaFiscal = dr.GetString("nota_fiscal");
                 compra.Valor = dr.GetDecimal("valor");
-                // compra.DataHora = DateTime.Parse(dr.GetMySqlDateTime("data_hora"));
+                compra.DataHora = (dr.GetDateTime("data_hora"));
                 compra.PessoaFJ.Id = dr.GetInt32("fk_id_pessoa");
             }
 

@@ -27,15 +27,21 @@ namespace DAO
 
             cmd.ExecuteNonQuery();
 
+
             con.Close();
-            /*Database dbSWK = Database.GetInstance();
-            cmd.CommandText = "INSERT INTO item (nome, descricao, quantidade, valor_custo) Values (@nome, @descricao, @quantidade,@valor_custo);";
-            string qryItem = "INSERT INTO item (nome, descricao, quantidade, valor_custo)" +
+
+            Database dbSWK = Database.GetInstance();
+            int idItem = dbSWK.GetId();
+
+            string qryInsumo = string.Format("INSERT INTO insumo (id_item) VALUES('{0}');", idItem);
+
+            dbSWK.ExecuteSQL(qryInsumo);
+
+            /*string qryItem = "INSERT INTO item (nome, descricao, quantidade, valor_custo)" +
                 "VALUES('" + insumo.Nome + "', '" + insumo.Descricao + "', " + insumo.Quantidade + ", '" + insumo.ValorCusto + "');";
             dbSWK.ExecuteSQL(qryItem);
-            int idItem = dbSWK.GetId();
-            string qryInsumo = string.Format("INSERT INTO insumo (id_item) VALUES('{0}');", idItem);
-            dbSWK.ExecuteSQL(qryInsumo);*/
+
+            */
         }
 
         public Insumo Read(int idIsumo)
