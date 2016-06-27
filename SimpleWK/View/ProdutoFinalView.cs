@@ -116,6 +116,7 @@ namespace View
             add.ShowDialog();
             txtValorVenda.Text = (somaPrecoVenda(listaInsumos)).ToString();
             txtValorCusto.Text = (somaCusto(listaInsumos)).ToString();
+            AtualizarGrid();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -210,14 +211,7 @@ namespace View
         }
 
         private void ProdutoFinalView_Load(object sender, EventArgs e) {
-            cbCampo.SelectedIndex = 0;
-            ProdutoFinalDAO pfDAO = new ProdutoFinalDAO();
-            dgvProdutoFinal.DataSource = pfDAO.ListAllProdutoFinal();
-            dgvProdutoFinal.Columns[0].HeaderText = "ID";
-            dgvProdutoFinal.Columns[1].HeaderText = "Nome";
-            dgvProdutoFinal.Columns[2].HeaderText = "Descrição";
-            dgvProdutoFinal.Columns[3].HeaderText = "Valor Venda";
-            dgvProdutoFinal.Columns[4].HeaderText = "Quantidade";
+            AtualizarGrid();
         }
 
         private void FillProdutoFinal(ProdutoFinal produto) {
@@ -263,6 +257,8 @@ namespace View
                     MessageBox.Show(p.ToString());
                 }
             }
+
+            AtualizarGrid();
         }
 
         public void LimparCampos() {
@@ -321,6 +317,17 @@ namespace View
                 }
                 
             }
+        }
+
+        private void AtualizarGrid()
+        {
+            ProdutoFinalDAO pfDAO = new ProdutoFinalDAO();
+            dgvProdutoFinal.DataSource = pfDAO.ListAllProdutoFinal();
+            dgvProdutoFinal.Columns[0].HeaderText = "ID";
+            dgvProdutoFinal.Columns[1].HeaderText = "Nome";
+            dgvProdutoFinal.Columns[2].HeaderText = "Descrição";
+            dgvProdutoFinal.Columns[3].HeaderText = "Valor Venda";
+            dgvProdutoFinal.Columns[4].HeaderText = "Quantidade";
         }
     }
 }

@@ -12,6 +12,36 @@ namespace DAO {
     {
         public void Create(ProdutoFinal pFinal) {
             Database dbSWK = Database.GetInstance();
+            MySqlConnection con = new MySqlConnection();
+            con.ConnectionString = "Server=localhost; Database=simplewk; Uid=root; Pwd=;";
+            if (con.State != System.Data.ConnectionState.Open)
+                con.Open();
+
+            MySqlCommand cmd = new MySqlCommand("INSERT INTO item (nome, descricao, quantidade, valor_custo) Values (@nome, @descricao, @quantidade,@valor_custo);", con);
+            cmd.Parameters.AddWithValue("@nome", pFinal.Nome);
+            cmd.Parameters.AddWithValue("@descricao", pFinal.Descricao);
+            cmd.Parameters.AddWithValue("@quantidade", pFinal.Quantidade);
+            cmd.Parameters.AddWithValue("@valor_custo", pFinal.ValorCusto);
+
+            cmd.ExecuteNonQuery();
+
+            con.Close();
+
+            int idItem = dbSWK.GetId();
+
+            con.ConnectionString = "Server=localhost; Database=simplewk; Uid=root; Pwd=;";
+            if (con.State != System.Data.ConnectionState.Open)
+                con.Open();
+
+            cmd.CommandText = "INSERT INTO produto_final (id_item, preco_venda) VALUES (@id_item, @preco_venda);";
+            cmd.Parameters.AddWithValue("@id_item", idItem);
+            cmd.Parameters.AddWithValue("@preco_venda", pFinal.PrecoVenda);
+
+            cmd.ExecuteNonQuery();
+
+            con.Close();
+
+            /*Database dbSWK = Database.GetInstance();
 
             String qryItem = "INSERT INTO item (nome, descricao, valor_custo, quantidade) " +
                 "VALUES('" + pFinal.Nome + "', '" 
@@ -25,7 +55,7 @@ namespace DAO {
 
             String qryProduto = "INSERT INTO produto_final (id_item, preco_venda) " +
                 "VALUES(" + idItem + ", " + pFinal.PrecoVenda + ");";
-            dbSWK.ExecuteSQL(qryProduto);
+            dbSWK.ExecuteSQL(qryProduto);*/
 
             foreach(InsumoAcao insumoPF in pFinal.Insumos)
             {
@@ -111,14 +141,36 @@ namespace DAO {
 
         public void Update(ProdutoFinal pFinal) {
             Database dbSWK = Database.GetInstance();
-            String qry = "UPDATE item SET " +
+
+            MySqlConnection con = new MySqlConnection();
+            con.ConnectionString = "Server=localhost; Database=simplewk; Uid=root; Pwd=;";
+            if (con.State != System.Data.ConnectionState.Open)
+                con.Open();
+
+            MySqlCommand cmd = new MySqlCommand("UPDATE item SET nome = @nome, descricao = @descricao, quantidade = @quantidade, valor_custo =@valor_custo WHERE id_item = @id_item;", con);
+            cmd.Parameters.AddWithValue("@nome", pFinal.Nome);
+            cmd.Parameters.AddWithValue("@descricao", pFinal.Descricao);
+            cmd.Parameters.AddWithValue("@quantidade", pFinal.Quantidade);
+            cmd.Parameters.AddWithValue("@valor_custo", pFinal.ValorCusto);
+            cmd.Parameters.AddWithValue("@id_item", pFinal.Id);
+
+            cmd.ExecuteNonQuery();
+
+            cmd.CommandText = "DELETE FROM lista_itens_produto_final WHERE id_produto_final = @id_produto_final;";
+            cmd.Parameters.AddWithValue("@id_produto_final", pFinal.Id);
+
+            cmd.ExecuteNonQuery();
+
+            con.Close();
+
+            /*String qry = "UPDATE item SET " +
                 "nome = '" + pFinal.Nome + "', descricao = '" + pFinal.Descricao +
                 "', valor_custo = " + pFinal.ValorCusto + ", quantidade = " + pFinal.Quantidade +
                 " WHERE id_item = " + pFinal.Id + ";";
             dbSWK.ExecuteSQL(qry);
 
             qry = "DELETE FROM lista_itens_produto_final WHERE id_produto_final = " + pFinal.Id + ";";
-            dbSWK.ExecuteSQL(qry);
+            dbSWK.ExecuteSQL(qry);*/
 
             int idItem = pFinal.Id;
 
