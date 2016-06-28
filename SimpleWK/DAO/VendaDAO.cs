@@ -41,6 +41,9 @@ namespace DAO {
                 String qryLista = "INSERT INTO lista_venda_produtos (id_venda, id_produto_final, quantidade) VALUES(" +
                     idAcao + ", " + produto.Id + ", " + produto.QuantidadeProduto + ");";
                 dbSWK.ExecuteSQL(qryLista);
+
+                String qryIncrementa = "UPDATE item SET quantidade = quantidade - " + produto.QuantidadeProduto + " WHERE id_item = " + produto.Id + ";";
+                dbSWK.ExecuteSQL(qryIncrementa);
             }
 
 

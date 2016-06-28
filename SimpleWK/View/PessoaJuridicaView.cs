@@ -14,6 +14,7 @@ namespace View
     public partial class PessoaJuridicaView : View.ModeloCadastroGeral
     {
         Localizacao localizacao = new Localizacao();
+        
         public PessoaJuridicaView()
         {
             InitializeComponent();
