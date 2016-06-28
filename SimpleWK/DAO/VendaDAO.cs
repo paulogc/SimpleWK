@@ -11,11 +11,25 @@ namespace DAO {
         public void Create(Acao venda) {
             Database dbSWK = Database.GetInstance();
 
-            string qryAcao = string.Format("INSERT INTO acao (nota_fiscal, valor, fk_id_pessoa)" +
+            MySqlConnection con = new MySqlConnection();
+            con.ConnectionString = "Server=localhost; Database=simplewk; Uid=root; Pwd=;";
+            if (con.State != System.Data.ConnectionState.Open)
+                con.Open();
+
+            MySqlCommand cmd = new MySqlCommand("INSERT INTO acao (nota_fiscal, fk_id_pessoa) Values (@nota_fiscal, @valor, @fk_id_pessoa);", con);
+            cmd.Parameters.AddWithValue("@nota_fiscal", venda.NotaFiscal);
+            cmd.Parameters.AddWithValue("@descricao", venda.Valor);
+            cmd.Parameters.AddWithValue("@fk_id_pessoa", venda.PessoaFJ.Id);
+
+            cmd.ExecuteNonQuery();
+
+            con.Close();
+
+            /*string qryAcao = string.Format("INSERT INTO acao (nota_fiscal, valor, fk_id_pessoa)" +
                 "VALUES('{0}','{1}','{2}');",
                 venda.NotaFiscal, venda.Valor, venda.PessoaFJ.Id);
 
-            dbSWK.ExecuteSQL(qryAcao);
+            dbSWK.ExecuteSQL(qryAcao);*/
 
             int idAcao = dbSWK.GetId();            
 
