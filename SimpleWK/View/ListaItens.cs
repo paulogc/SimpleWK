@@ -67,7 +67,7 @@ namespace View {
         public void PreencherGridProduto(String buscarPor) {
             ProdutoFinalDAO produtoFDAO = new ProdutoFinalDAO();
             dgvItens.DataSource = produtoFDAO.ListAllProdutoFinal(buscarPor);
-            HeaderDGV();
+            HeaderDGVProd();
         }
 
         public void HeaderDGV() {
@@ -75,6 +75,13 @@ namespace View {
             dgvItens.Columns[1].HeaderText = "Nome";
             dgvItens.Columns[2].HeaderText = "Descrção";
             dgvItens.Columns[3].HeaderText = "Custo";
+        }
+
+        public void HeaderDGVProd() {
+            dgvItens.Columns[0].HeaderText = "ID";
+            dgvItens.Columns[1].HeaderText = "Nome";
+            dgvItens.Columns[2].HeaderText = "Descrção";
+            dgvItens.Columns[3].HeaderText = "ValorVenda";
         }
 
         public void SelecionarItem() {
@@ -97,6 +104,10 @@ namespace View {
             {
                 Close();
             }
+        }
+
+        private void ListaItens_Load(object sender, EventArgs e) {
+
         }
     }
 }

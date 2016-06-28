@@ -69,8 +69,8 @@ namespace DAO {
             ProdutoFinal pFinal = new ProdutoFinal();
             MySqlConnection conexao = Database.GetInstance().GetConnection();
 
-            String qryItem = "SELECT i.id_item, i.nome, i.descricao, i.valor_custo, i.quantidade FROM "
-                + "item i WHERE i.id_item = " + buscarPor + ";";
+            String qryItem = "SELECT i.id_item, i.nome, i.descricao, i.valor_custo, p.preco_venda, i.quantidade FROM "
+                + "item i, produto_final p WHERE i.id_item = p.id_item AND i.id_item = " + buscarPor + ";";
 
             if (conexao.State != System.Data.ConnectionState.Open)
                 conexao.Open();
@@ -83,7 +83,8 @@ namespace DAO {
                 pFinal.Id = dr.GetInt32("id_item");
                 pFinal.Nome = dr.GetString("nome");
                 pFinal.Descricao = dr.GetString("descricao");
-                //pFinal.ValorCusto = dr.GetDecimal("valor_custo");
+                pFinal.ValorCusto = dr.GetDecimal("valor_custo");
+                pFinal.PrecoVenda = dr.GetDecimal("preco_venda");
                 pFinal.Quantidade = dr.GetInt32("quantidade");
             }
 

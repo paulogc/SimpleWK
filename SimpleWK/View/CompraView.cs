@@ -88,10 +88,7 @@ namespace View
             }else
             {
                 MessageBox.Show("Você precisa inserir itens para efetuar a compra");
-            }
-
-
-                       
+            }                      
         }
 
         private void btnLocalizarItem_Click(object sender, EventArgs e) {

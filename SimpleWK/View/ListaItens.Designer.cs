@@ -61,6 +61,7 @@
             this.MaximizeBox = false;
             this.Name = "ListaItens";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.ListaItens_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).EndInit();
             this.ResumeLayout(false);
 

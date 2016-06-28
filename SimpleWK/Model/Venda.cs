@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 namespace Model {
     public class Venda : Acao{
         public Acao acao;
-        private List<ProdutoFinal> produtos = new List<ProdutoFinal>();
+        private List<ProdutoAcao> produtos = new List<ProdutoAcao>();
 
+        public List<ProdutoAcao> Produtos { get; set; }
     }
 }
