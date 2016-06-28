@@ -73,7 +73,20 @@ namespace View
         }
 
         private void btnBusca_Click(object sender, EventArgs e) {
+            string busca = txtBusca.Text;
+            string campo = null;
 
+            switch(cbCampo.Text) {
+                case "Nome":
+                    campo = "i.nome";
+                    break;
+                case "Descrição":
+                    campo = "i.descricao";
+                    break;
+            }
+
+            InsumoDAO idao = new InsumoDAO();
+            dgvInsumo.DataSource = idao.BuscaInsumo(busca, campo);
         }
 
         private Insumo CreateInsumo() {
@@ -91,6 +104,7 @@ namespace View
         }
 
         private void InsumoView_Load(object sender, EventArgs e) {
+            cbCampo.SelectedIndex = 0;
             AtualizarGrid();
         }
 

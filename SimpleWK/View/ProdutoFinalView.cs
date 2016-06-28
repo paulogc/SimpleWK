@@ -215,6 +215,7 @@ namespace View
         }
 
         private void ProdutoFinalView_Load(object sender, EventArgs e) {
+            cbCampo.SelectedIndex = 0;
             AtualizarGrid();
         }
 
