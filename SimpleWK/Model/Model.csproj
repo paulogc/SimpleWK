@@ -49,6 +49,7 @@
     <Compile Include="Item.cs" />
     <Compile Include="Juridica.cs" />
     <Compile Include="Pessoa.cs" />
+    <Compile Include="ProdutoAcao.cs" />
     <Compile Include="ProdutoFinal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuario.cs" />

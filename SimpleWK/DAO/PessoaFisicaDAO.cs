@@ -153,6 +153,31 @@ namespace DAO {
             return dtFisica;
         }
 
+        public Fisica BuscarCpf(String cpf) {
+            Fisica pessoa = new Fisica();
+            pessoa.Cpf = cpf;
+
+            MySqlConnection conexao = Database.GetInstance().GetConnection();
+
+            String qry = "SELECT fk_id_pessoa FROM fisica WHERE cpf = '" + cpf + "';";
+
+            if (conexao.State != System.Data.ConnectionState.Open)
+                conexao.Open();
+
+            MySqlCommand comm = new MySqlCommand(qry, conexao);
+            MySqlDataReader dr = comm.ExecuteReader();
+
+            if (dr.Read())
+            {
+                pessoa.Id = dr.GetInt32("fk_id_pessoa");
+            }
+            conexao.Close();
+
+            pessoa = Read(pessoa.Id);
+
+            return pessoa;
+        }
+
 
     }
 }

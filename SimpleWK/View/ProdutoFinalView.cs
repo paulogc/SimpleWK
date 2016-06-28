@@ -188,7 +188,7 @@ namespace View
             foreach(InsumoAcao insumo in listaPF){
                 soma += insumo.ValorCusto * insumo.QuantidadeInsumo;
             }
-            soma = soma + (soma * (40/100));
+            soma = soma + soma;
             return soma;
         }
 
@@ -208,9 +208,9 @@ namespace View
             } 
             produtof.Nome = txtNome.Text;
             produtof.Descricao = txtDescricao.Text;
-            produtof.PrecoVenda = Decimal.Parse(txtValorVenda.Text);
+            produtof.PrecoVenda = somaPrecoVenda(listaInsumos);
             produtof.Quantidade = Int32.Parse(txtQuantidade.Text);
-            produtof.ValorCusto = Decimal.Parse(txtValorCusto.Text);
+            produtof.ValorCusto = somaCusto(listaInsumos);
             
         }
 
@@ -282,8 +282,8 @@ namespace View
             txtNome.Text = produtoF.Nome;
             txtDescricao.Text = produtoF.Descricao;
             txtQuantidade.Text = produtoF.Quantidade.ToString();
-            txtValorCusto.Text = produtoF.ValorCusto.ToString();
-            txtValorVenda.Text = produtoF.PrecoVenda.ToString();
+            txtValorCusto.Text = somaCusto(produtoF.Insumos).ToString();
+            txtValorVenda.Text = somaPrecoVenda(produtoF.Insumos).ToString();            
         }
 
         private void btnExcluir_Click(object sender, EventArgs e) {

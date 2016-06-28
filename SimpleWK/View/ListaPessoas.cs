@@ -12,10 +12,10 @@ using DAO;
 
 namespace View {
     public partial class ListaPessoas : Form {
-        Juridica pessoaJuridicaLista = new Juridica();
+        Pessoa pessoaJuridicaLista = new Juridica();
         
 
-        public ListaPessoas(Juridica pessoaJuridica, String nomeForm) {
+        public ListaPessoas(Pessoa pessoaJuridica, String nomeForm) {
             InitializeComponent();
             this.Text = nomeForm;
             if(nomeForm == "Fornecedores")
@@ -29,7 +29,7 @@ namespace View {
             pessoaJuridicaLista = pessoaJuridica;
         }
 
-        public ListaPessoas(String buscarPor, Juridica pessoaJuridica, String nomeForm) {
+        public ListaPessoas(String buscarPor, Pessoa pessoaJuridica, String nomeForm) {
             InitializeComponent();
             this.Text = nomeForm;
             if (nomeForm == "Fornecedores")

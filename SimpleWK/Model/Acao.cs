@@ -10,6 +10,7 @@ namespace Model {
         private String notaFiscal;
         private decimal valor;
         private Juridica pessoaFJ;
+        private Fisica pessoaJF;
         private DateTime dataHora;
 
         public int Id { get; set; }
@@ -17,6 +18,7 @@ namespace Model {
         public decimal Valor { get; set; }
         public Juridica PessoaFJ { get; set; }
         public DateTime DataHora { get; set;}
-        }
+        public Fisica PessoaJF { get; set; }
+    }
     
 }

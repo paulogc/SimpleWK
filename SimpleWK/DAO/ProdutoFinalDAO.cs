@@ -69,8 +69,8 @@ namespace DAO {
             ProdutoFinal pFinal = new ProdutoFinal();
             MySqlConnection conexao = Database.GetInstance().GetConnection();
 
-            String qryItem = "SELECT i.id_item, i.nome, i.descricao, i.valor_custo, i.quantidade FROM "
-                + "item i WHERE i.id_item = " + buscarPor + ";";
+            String qryItem = "SELECT i.id_item, i.nome, i.descricao, i.valor_custo, p.preco_venda, i.quantidade FROM "
+                + "item i, produto_final p WHERE i.id_item = p.id_item AND i.id_item = " + buscarPor + ";";
 
             if (conexao.State != System.Data.ConnectionState.Open)
                 conexao.Open();
@@ -83,7 +83,8 @@ namespace DAO {
                 pFinal.Id = dr.GetInt32("id_item");
                 pFinal.Nome = dr.GetString("nome");
                 pFinal.Descricao = dr.GetString("descricao");
-                //pFinal.ValorCusto = dr.GetDecimal("valor_custo");
+                pFinal.ValorCusto = dr.GetDecimal("valor_custo");
+                pFinal.PrecoVenda = dr.GetDecimal("preco_venda");
                 pFinal.Quantidade = dr.GetInt32("quantidade");
             }
 
@@ -156,8 +157,26 @@ namespace DAO {
 
             cmd.ExecuteNonQuery();
 
-            cmd.CommandText = "DELETE FROM lista_itens_produto_final WHERE id_produto_final = @id_produto_final;";
+            con.Close();
+
+            con.ConnectionString = "Server=localhost; Database=simplewk; Uid=root; Pwd=;";
+            if (con.State != System.Data.ConnectionState.Open)
+                con.Open();
+
+            cmd.CommandText = "UPDATE produto_final SET preco_venda = @preco_venda WHERE id_item = @id_produto_final;";
+            cmd.Parameters.AddWithValue("@preco_venda", pFinal.PrecoVenda);
             cmd.Parameters.AddWithValue("@id_produto_final", pFinal.Id);
+
+            cmd.ExecuteNonQuery();
+
+            con.Close();
+
+            con.ConnectionString = "Server=localhost; Database=simplewk; Uid=root; Pwd=;";
+            if (con.State != System.Data.ConnectionState.Open)
+                con.Open();
+
+            cmd.CommandText = "DELETE FROM lista_itens_produto_final WHERE id_produto_final = @id_produto_fina;";
+            cmd.Parameters.AddWithValue("@id_produto_fina", pFinal.Id);
 
             cmd.ExecuteNonQuery();
 
