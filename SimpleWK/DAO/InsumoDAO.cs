@@ -118,7 +118,7 @@ namespace DAO
             MySqlConnection conexao = Database.GetInstance().GetConnection();
             DataTable dtInsumo = new DataTable();
 
-            string qry = "SELECT id_item, nome, descricao, quantidade, valor_custo FROM item ;";
+            string qry = "SELECT i.id_item, i.nome, i.descricao, i.quantidade, i.valor_custo FROM item i, insumo ins WHERE i.id_item = ins.id_item;";
 
             if(conexao.State != System.Data.ConnectionState.Open)
                 conexao.Open();

@@ -156,8 +156,26 @@ namespace DAO {
 
             cmd.ExecuteNonQuery();
 
-            cmd.CommandText = "DELETE FROM lista_itens_produto_final WHERE id_produto_final = @id_produto_final;";
+            con.Close();
+
+            con.ConnectionString = "Server=localhost; Database=simplewk; Uid=root; Pwd=;";
+            if (con.State != System.Data.ConnectionState.Open)
+                con.Open();
+
+            cmd.CommandText = "UPDATE produto_final SET preco_venda = @preco_venda WHERE id_item = @id_produto_final;";
+            cmd.Parameters.AddWithValue("@preco_venda", pFinal.PrecoVenda);
             cmd.Parameters.AddWithValue("@id_produto_final", pFinal.Id);
+
+            cmd.ExecuteNonQuery();
+
+            con.Close();
+
+            con.ConnectionString = "Server=localhost; Database=simplewk; Uid=root; Pwd=;";
+            if (con.State != System.Data.ConnectionState.Open)
+                con.Open();
+
+            cmd.CommandText = "DELETE FROM lista_itens_produto_final WHERE id_produto_final = @id_produto_fina;";
+            cmd.Parameters.AddWithValue("@id_produto_fina", pFinal.Id);
 
             cmd.ExecuteNonQuery();
 
