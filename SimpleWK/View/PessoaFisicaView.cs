@@ -210,7 +210,9 @@ namespace View
 
                 if (confirm.ToString().ToUpper() == "YES")
                 {
+                    LocalizacaoDAO ldao = new LocalizacaoDAO();
                     pfDao.Delete(pessoaFisica);
+                    ldao.Delete(pessoaFisica.Endereco);
                     LimparCampos();
                     AtualizarGrid();
                 }

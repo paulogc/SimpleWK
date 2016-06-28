@@ -257,6 +257,7 @@
             // 
             // txtValorCusto
             // 
+            this.txtValorCusto.Enabled = false;
             this.txtValorCusto.Location = new System.Drawing.Point(119, 195);
             this.txtValorCusto.Name = "txtValorCusto";
             this.txtValorCusto.Size = new System.Drawing.Size(114, 21);
@@ -264,6 +265,7 @@
             // 
             // txtValorVenda
             // 
+            this.txtValorVenda.Enabled = false;
             this.txtValorVenda.Location = new System.Drawing.Point(345, 196);
             this.txtValorVenda.Name = "txtValorVenda";
             this.txtValorVenda.Size = new System.Drawing.Size(110, 21);

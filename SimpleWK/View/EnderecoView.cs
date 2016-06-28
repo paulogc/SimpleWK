@@ -35,7 +35,15 @@ namespace View
         }
 
         private void btnSalvar_Click(object sender, EventArgs e) {
-            CriarObjeto();
+            try {
+                Convert.ToInt32(txtNum.Text);
+            }
+            catch {
+                txtNum.Text = "0";
+            }
+            finally {
+                CriarObjeto();
+            }
         }
 
         private void CriarObjeto() {
@@ -57,6 +65,9 @@ namespace View
             txtComplemento.Text = local.Complemento;
             txtCep.Text = local.Cep;
             cbUf.Text = local.Uf;                       
+        }
+
+        private void EnderecoView_Load(object sender, EventArgs e) {
         }
     }
 }

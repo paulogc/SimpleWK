@@ -63,35 +63,38 @@ namespace View
         }
 
         private void btnFinalizar_Click(object sender, EventArgs e) {
-            if(totalCompra > 0 && quantidadeTotal > 0)
-            {
-                try {
-                    Compra compra = new Compra();
-                    compra.NotaFiscal = txtNumNF.Text;
-                    PessoaJuridicaDAO pdao = new PessoaJuridicaDAO();
-                    compra.PessoaFJ = pdao.BuscarCnpj(txtCPFCNPJ.Text);
-                    compra.Valor = totalCompra;
-                    compra.Insumos = listaInsumo;
-                    compra.DataHora = DateTime.Now;
-
-                    CompraDAO compraDAO = new CompraDAO();
-                    compraDAO.Create(compra);
-                    LimparAposCompra();
-                    MessageBox.Show("Compra finalizada!");
-                }
-                catch (Exception p)
-                {
-                    MessageBox.Show(p.ToString());
-                }
-                
-
-            }else
-            {
-                MessageBox.Show("Você precisa inserir itens para efetuar a compra");
+            if(txtCPFCNPJ.Text == "") {
+                MessageBox.Show("Um fornecedor deve ser selecionado");
+                txtCPFCNPJ.Text = "";
             }
+            else {
+                if(totalCompra > 0 && quantidadeTotal > 0) {
+                    try {
+                        Compra compra = new Compra();
+                        compra.NotaFiscal = txtNumNF.Text;
+                        PessoaJuridicaDAO pdao = new PessoaJuridicaDAO();
+                        compra.PessoaFJ = pdao.BuscarCnpj(txtCPFCNPJ.Text);
+                        compra.Valor = totalCompra;
+                        compra.Insumos = listaInsumo;
+                        compra.DataHora = DateTime.Now;
+
+                        CompraDAO compraDAO = new CompraDAO();
+                        compraDAO.Create(compra);
+                        MessageBox.Show("Compra finalizada!");
+                        Close();
+                    }
+                    catch(Exception p) {
+                        MessageBox.Show(p.ToString());
+                    }
 
 
-                       
+                }
+                else {
+                    MessageBox.Show("Você precisa inserir itens para efetuar a compra");
+                }
+
+
+            }   
         }
 
         private void btnLocalizarItem_Click(object sender, EventArgs e) {
@@ -145,23 +148,37 @@ namespace View
             txtItemValorUnitario.Text = "";
         }
 
-        private void btnAdicionar_Click(object sender, EventArgs e) {      
+        private void btnAdicionar_Click(object sender, EventArgs e) {
+            if(txtIDItem.Text == "")
+                MessageBox.Show("Um insumo deve ser selecionado.");
+            else {
+                try {
+                    InsumoAcao insumoAcao = new InsumoAcao();
+                    insumoAcao.Id = Int32.Parse(txtIDItem.Text);
+                    insumoAcao.Nome = txtNomeItem.Text;
+                    insumoAcao.QuantidadeInsumo = Int32.Parse(txtItemQuantidade.Text);
+                    insumoAcao.ValorCusto = Decimal.Parse(txtItemValorUnitario.Text);
 
-            InsumoAcao insumoAcao = new InsumoAcao();
-            insumoAcao.Id = Int32.Parse(txtIDItem.Text);
-            insumoAcao.Nome = txtNomeItem.Text;
-            insumoAcao.QuantidadeInsumo = Int32.Parse(txtItemQuantidade.Text);
-            insumoAcao.ValorCusto = Decimal.Parse(txtItemValorUnitario.Text);
+                    listaInsumo.Add(insumoAcao);
 
-            listaInsumo.Add(insumoAcao);            
-
-            dgvItensInseridos.Rows.Add(insumo.Id,
-                insumo.Nome, 
-                insumo.Descricao, 
-                txtItemQuantidade.Text, 
-                insumo.ValorCusto);
-            Somar();
-            LimparCamposInsumo();
+                    dgvItensInseridos.Rows.Add(insumo.Id,
+                        insumo.Nome,
+                        insumo.Descricao,
+                        txtItemQuantidade.Text,
+                        insumo.ValorCusto);
+                    Somar();
+                    LimparCamposInsumo();
+                }
+                catch(FormatException f) {
+                    try {
+                        Convert.ToInt32(txtItemQuantidade);
+                    }
+                    catch {
+                        MessageBox.Show("O campo 'quantidade' deve ser preenchido com um valor numérico e inteiro!");
+                        txtItemQuantidade.Text = "";
+                    }
+                }
+            }
         }
 
         private void Somar() {

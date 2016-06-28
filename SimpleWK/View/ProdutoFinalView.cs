@@ -152,6 +152,10 @@ namespace View
 
                     
                 }
+                catch(FormatException fe) {
+                    MessageBox.Show("O campo 'quantidade' deve ser preenchido com números inteiros.");
+                    txtQuantidade.Text = "";
+                }
                 catch(Exception p)
                 {
                     MessageBox.Show(p.ToString());

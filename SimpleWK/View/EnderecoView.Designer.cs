@@ -307,6 +307,7 @@
             this.Name = "EnderecoView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Endereço";
+            this.Load += new System.EventHandler(this.EnderecoView_Load);
             this.gbEndereco.ResumeLayout(false);
             this.gbEndereco.PerformLayout();
             this.ResumeLayout(false);

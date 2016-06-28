@@ -39,6 +39,35 @@ namespace View
                 AtualizarGrid();
                 LimparCampos();
             }
+            catch(FormatException fe) {
+                int v = 0;
+                try {
+                    Convert.ToInt32(tbQuantidade.Text);
+                }
+                catch {
+                    v = 1;
+                }
+                try {
+                    Convert.ToDecimal(tbValor.Text);
+                }
+                catch {
+                    v += 2;
+                }
+                finally {
+                    if(v == 1) {
+                        MessageBox.Show("O campo 'quantidade' deve ser preenchido com um valor numérico e inteiro!");
+                        tbQuantidade.Text = "";
+                    }
+                    else if(v == 2) {
+                        MessageBox.Show("O campo 'valor' deve ser preenchido com um valor numérico!");
+                        tbValor.Text = "";
+                    }
+                    else if(v == 3) {
+                        MessageBox.Show("Os campos 'valor' e 'quantidade' devem ser preenchidos com valores numéricos!");
+                        tbValor.Text = tbQuantidade.Text = "";
+                    }
+               }
+            }
             catch(Exception p)
             {
                 MessageBox.Show(p.ToString());

@@ -163,7 +163,9 @@ namespace View
 
                 if (confirm.ToString().ToUpper() == "YES")
                 {
+                    LocalizacaoDAO ldao = new LocalizacaoDAO();
                     pjDao.Delete(pessoaJuridica);
+                    ldao.Delete(pessoaJuridica.Endereco);
                     LimparCampos();
                     AtualizarGrid();
                 }

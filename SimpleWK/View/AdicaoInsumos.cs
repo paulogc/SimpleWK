@@ -23,61 +23,56 @@ namespace View {
         }
 
         private void btnAdd_Click(object sender, EventArgs e) {
-            String message = "Você deve selecionar um Insumo na tabela!";
-            bool inserir = false;
-            int qtd = 0;
-            if(txtQtd.Text == "" || Int32.Parse(txtQtd.Text) == 0)
-            {
-                MessageBox.Show("Você deve digitar a quantidade maior que 0!");
-            }
-            else
-            {
-                qtd = Int32.Parse(txtQtd.Text);
-                foreach (DataGridViewRow row in dgvInsumos.Rows)
-                {
-                    InsumoAcao insumoPF = new InsumoAcao();
-                    if (row.Selected)
-                    {
-                        if(Int32.Parse(row.Cells[3].Value.ToString()) < qtd)
-                        {
-                            MessageBox.Show("Não há saldo suficiente em estoque!");
-                            message = "";
-                        }
-                        else
-                        {
-                            insumoPF.Id = Int32.Parse(row.Cells[0].Value.ToString());
-                            insumoPF.Nome = row.Cells[1].Value.ToString();
-                            insumoPF.Descricao = row.Cells[2].Value.ToString();
-                            insumoPF.QuantidadeInsumo = qtd;
-                            insumoPF.ValorCusto = Decimal.Parse(row.Cells[4].Value.ToString());
-                            dgvInsumos.Rows.Remove(row);
-                            message = "";
-                            inserir = true;
-                        }
-                        
-                    }
-                    if(insumoPF.Id > 0)
-                    {
-                        listaPF.Add(insumoPF);
-                    }
+            try {
+                String message = "Você deve selecionar um Insumo na tabela!";
+                bool inserir = false;
+                int qtd = 0;
+                if(txtQtd.Text == "" || Int32.Parse(txtQtd.Text) == 0) {
+                    MessageBox.Show("Você deve digitar a quantidade maior que 0!");
                 }
+                else {
+                    qtd = Int32.Parse(txtQtd.Text);
+                    foreach(DataGridViewRow row in dgvInsumos.Rows) {
+                        InsumoAcao insumoPF = new InsumoAcao();
+                        if(row.Selected) {
+                            if(Int32.Parse(row.Cells[3].Value.ToString()) < qtd) {
+                                MessageBox.Show("Não há saldo suficiente em estoque!");
+                                message = "";
+                            }
+                            else {
+                                insumoPF.Id = Int32.Parse(row.Cells[0].Value.ToString());
+                                insumoPF.Nome = row.Cells[1].Value.ToString();
+                                insumoPF.Descricao = row.Cells[2].Value.ToString();
+                                insumoPF.QuantidadeInsumo = qtd;
+                                insumoPF.ValorCusto = Decimal.Parse(row.Cells[4].Value.ToString());
+                                dgvInsumos.Rows.Remove(row);
+                                message = "";
+                                inserir = true;
+                            }
 
-                if (message != "")
-                {
-                    MessageBox.Show(message);
-                }
-                else if(inserir == true)
-                {
-                    if (listaPF.Count > 0)
-                    {
-                        AtualizaGridInsumoPF(listaPF);
-                        txtQtd.Text = "";
+                        }
+                        if(insumoPF.Id > 0) {
+                            listaPF.Add(insumoPF);
+                        }
+                    }
+
+                    if(message != "") {
+                        MessageBox.Show(message);
+                    }
+                    else if(inserir == true) {
+                        if(listaPF.Count > 0) {
+                            AtualizaGridInsumoPF(listaPF);
+                            txtQtd.Text = "";
+                        }
                     }
                 }
             }
-          
-            
-            
+            catch(FormatException fe) {
+                MessageBox.Show("O campo quantidade só aceita números inteiros.");
+                txtQtd.Text = "";
+            }
+
+
         }
 
         private void btnCancel_Click(object sender, EventArgs e) {
