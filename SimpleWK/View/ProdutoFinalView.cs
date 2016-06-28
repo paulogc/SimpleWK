@@ -331,8 +331,8 @@ namespace View
             dgvProdutoFinal.Columns[0].HeaderText = "ID";
             dgvProdutoFinal.Columns[1].HeaderText = "Nome";
             dgvProdutoFinal.Columns[2].HeaderText = "Descrição";
-            dgvProdutoFinal.Columns[3].HeaderText = "Valor Venda";
-            dgvProdutoFinal.Columns[4].HeaderText = "Quantidade";
+            dgvProdutoFinal.Columns[3].HeaderText = "Quantidade";
+            dgvProdutoFinal.Columns[4].HeaderText = "Valor de Venda";
         }
     }
 }
