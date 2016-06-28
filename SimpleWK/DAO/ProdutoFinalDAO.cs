@@ -221,7 +221,7 @@ namespace DAO {
             MySqlConnection conexao = Database.GetInstance().GetConnection();
             DataTable dtPF = new DataTable();
 
-            string qry = "SELECT p.id_item, i.nome, i.descricao, p.preco_venda, i.quantidade FROM " +
+            string qry = "SELECT p.id_item, i.nome, i.descricao, i.quantidade, p.preco_venda FROM " +
                 "item i, produto_final p where i.id_item = p.id_item";
 
             if (conexao.State != System.Data.ConnectionState.Open)
@@ -239,7 +239,7 @@ namespace DAO {
             MySqlConnection conexao = Database.GetInstance().GetConnection();
             DataTable dtPF = new DataTable();
 
-            string qry = "SELECT p.id_item, i.nome, i.descricao, p.preco_venda, i.quantidade FROM " +
+            string qry = "SELECT p.id_item, i.nome, i.descricao, i.quantidade, p.preco_venda FROM " +
                 "item i, produto_final p where i.id_item = p.id_item AND i.nome LIKE '%"+ buscarPor +"%';";
 
             if (conexao.State != System.Data.ConnectionState.Open)
